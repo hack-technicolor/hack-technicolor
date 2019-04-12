@@ -1,6 +1,8 @@
+#######################################################################################################################################################################################################
+
 ## Unlock Functionality
 
-
+#######################################################################################################################################################################################################
 ### Change DNS
 
 This is by far one of the most requested mods.
@@ -32,6 +34,7 @@ Add
 ```
 list server '<IP of DNS>'
 ```
+#######################################################################################################################################################################################################
 
 ### VOIP Setup
 
@@ -124,6 +127,8 @@ uci commit
 /etc/init.d/mmpbxd restart
 ```
 
+#######################################################################################################################################################################################################
+
 ### VoLTE backup voice service & SMS reception
 
 From firmware 17.2.0406-820-RC on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the modem to provide a phone service on the phone ports and to DECT handsets.  If you have SIP profiles configured, these will be used before the call is routed via the mobile network.  This has been tested with a Telstra 4G SIM; it's unknown if it will work with Vodafone/Optus SIMs due to the internal VoLTE configuration in the 4G module in the modem.
@@ -144,6 +149,7 @@ uci commit
 /etc/init.d/mmpbxd restart
 /etc/init.d/nginx restart
 ```
+#######################################################################################################################################################################################################
 
 ### Speeding up VDSL sync times
 
@@ -173,6 +179,7 @@ uci add_list web.xdsllowmodal.roles='admin'
 uci commit
 /etc/init.d/nginx restart
 ```
+#######################################################################################################################################################################################################
 
 ### Running the TG799vac as the router with a second router behind it (Double NAT)
 
