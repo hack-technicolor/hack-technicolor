@@ -228,6 +228,8 @@ Reboot now if you're not doing any further configuration.
 
 At this point you should now be able to SSH in with root and your password (which should no longer be root at this point!)
 
+<b>If all things go well you should see the modem reboot, then you can move on to Unlock Functionality.</b>
+
 #####################################################################################################################################################################################################################
 
 ### My firmware is so old that AutoFlashGUI can't authenticate!
@@ -245,5 +247,5 @@ $ cp filename.rbi /tmp
 cd /tmp
 sysupgrade filename.rbi
 
-All things going well you should see it progress along and reboot, then you can commence the current procedure.
+
 
