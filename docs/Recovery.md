@@ -2,15 +2,15 @@
 #################################################################################################################################################################################################
 
 ## IMPORTANT: Warning
-This guide is based upon the devices being in the following state:
+This guide is based upon devices being in the following state:
 
-- TG789 - orange status light and rebooting every now and then
-- TG799 - orange status light on and occasional rebooting
-- TG800 - green power light only.
+- TG789vac - orange status light and rebooting every now and then
+- TG799vac - orange status light on and occasional rebooting
+- TG800vac - green power light only.
 
-<b>Before power down or reboot/rtfd you must SSH to device and run `mtd erase -r rootfs_data` (or other name of data partition) or your modem is bricked forever.</b>
+**Before power down or reboot/rtfd you must SSH to device and run `mtd erase -r rootfs_data` (or other name of data partition) or your modem is bricked forever.**
 
-<b>Make sure to follow the steps in order!</b>
+**Make sure to follow the steps in order!**
 
 
 #################################################################################################################################################################################################
@@ -19,41 +19,46 @@ This guide is based upon the devices being in the following state:
 
 If at some point you can no longer connect to the Gateway or you want to make a fresh install, it may be useful to perform a reset to factory defaults.
 
-Note: A reset to factory default settings deletes all configuration changes you made. After the reset a reconfiguration of your Gateway will be needed and wireless clients will also have to be re-associated.
+Note: *A reset to factory default settings deletes all configuration changes you made. After the reset a reconfiguration of your Gateway will be needed and wireless clients will also have to be re-associated.*
 
 Choose between:
-- Resetting the Gateway via the web interface
-- Reset the Gateway via the Reset button
+1. Resetting the Gateway via the web interface
+2. Reset the Gateway via the Reset button
 
-Resetting the Gateway via the web interface:
-1) Browse to the Gateway web interface.
-2) Click Gateway. The Gateway page appears.
-3) Click Reset.
-4) The Gateway restores the factory default configuration and restarts.
+#### Resetting the Gateway via the web interface:
 
-Reset the Gateway via the Reset button:
-1) Make sure the Gateway is turned on.
-2) Push the Reset button for at least 7 seconds and then release it.
-3) The Gateway restarts.
+1. Browse to the Gateway web interface.
+2. Click Gateway. The Gateway page appears.
+3. Click Reset.
+4. The Gateway restores the factory default configuration and restarts.
 
-Note: The physical reset button of the gateway may have been disabled. In this case, a hardware reset to defaults is not possible.
+#### Reset the Gateway via the Reset button:
+1. Make sure the Gateway is turned on.
+2. Push the Reset button for at least 7 seconds and then release it.
+3. The Gateway will restart.
 
-Restore your settings:
+Note: *The physical reset button of the gateway may have been disabled. In this case, a hardware reset to defaults is not possible.*
+
+#### Restore your settings.
+
 If you previously backed up your configuration, you can now restore this configuration to your Gateway.
+
 
 #################################################################################################################################################################################################
 
 ## 2. TFTP Recovery
 
-After soft bricking both my TG789 and TG800 modems and finally getting them working again, this guide should help others who are in the same situation. It may also work for other models such as the TG799 but is untested on other models.
+After soft bricking both my TG789vac and TG800vac modems and finally getting them working again, this guide should help others who are in the same situation. 
 
-<b> What you will need </b>
+It may also work for other models such as the TG799vac.
 
-1. TFTP or similar program
+**What you will need**
 
-2. .rbi firmware file for your device (I suggest using the one that was on there at time of bricking)
+1. TFTP64 or similar program
 
-3. A static ip address assigned to your wired nic
+2. RBI firmware file for your device (I suggest using the one that was on it at time of bricking)
+
+3. A static IP address assigned to your wired NIC
 
 4. A network cable
 
@@ -65,13 +70,11 @@ After soft bricking both my TG789 and TG800 modems and finally getting them work
 
 ### Set up TFTP
 
-This is the procedure for using a <a href="https://en.wikipedia.org/wiki/Preboot_Execution_Environment">PXE</a> firmware update on the Technicolor modems.
-
-#################################################################################################################################################################################################
-
 #### Background
 
-Since basically forever, Technicolor modems have had a corrupt firmware recovery mechanism built in.  By holding down a few buttons at power on on the modem, with the appropriate software running on your PC, you can reload firmware into one of the banks of the modem (bank1; no one has observed it writing to bank2).  
+Since basically forever, Technicolor modems have had a corrupt firmware recovery mechanism built in.  
+
+By holding down a few buttons at power on on the modem, with the appropriate software running on your PC, you can reload firmware into one of the banks of the modem, usually bank1. (no one has observed it writing to bank2).  
 
 Please note:
 - This will not allow you to swap banks, but if both firmware banks are corrupt it will allow recovery. 
@@ -98,9 +101,9 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 ### Setting up the Server
 
-1. Download the latest normal edition of <a href="http://tftpd32.jounin.net/tftpd32_download.html">TFTPD64</a> and install it.
+1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-- Get the <a href="https://whirlpool.net.au/wiki/hw_model_1622">firmware</a> (.rbi) file you want to load into the modem and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
+- Get the [firmware](https://whirlpool.net.au/wiki/hw_model_1622) (.rbi) file you want to load into the modem and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
 
 - Connect the Ethernet port on your PC to one of the LAN ports on the modem (usually LAN1).
 
@@ -108,7 +111,8 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 - On the PC ensure the network card you wish to use is set to DHCP: 
 
-- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all` - <a href="https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings">help</a>. (Unless you are using Static IPs on your network this will already be done.  After the next few steps, the network card will receive an address from the TFTPD64 DHCP server.)
+- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
+(Unless you are using Static IPs on your network this will already be done.  After the next few steps, the network card will receive an address from the TFTPD64 DHCP server.)
 
 - Start TFTP64 as ADMINISTRATOR.
 
@@ -118,7 +122,7 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 ![TFTP64](images/TFTPD_100_GLOBAL.png)
 
-- On the TFTP tab the default options should be OK (base directory should be .) (<a href="https://mswhirl.github.io/tcolmodimages/TFTPD_200_TFTP.png">image</a>).
+- On the TFTP tab the default options should be OK (base directory should be `.` )
 
 ![TFTP64](images/TFTPD_200_TFTP.png)
 
@@ -162,17 +166,17 @@ You are now ready to try booting the modem to do the flash!
 
 ### Flashing the Firmware
 
-<b> Required steps </b>
+** Required steps **
 
-1. Set up TFTP to send firmware in BOOTP mode, please initially see above, or <a href="https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/">this guide</a>.
+1. Set up TFTP to send firmware in BOOTP mode, please initially see above, or [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
 
 2. Ensure TFTP is on the log viewer tab.
 
 3. Connect one end of the network cable to any LAN port on the modem DO NOT use the WAN port, and the other end to the nic on the pc.
 
 4. Place modem into BOOTP mode, this is achieved by turning modem off, holding the reset button down and powering on.
-	- For TG789 and TG799 wait for the ethernet light to flash.
-	- For TG800 count to about 5.
+	- For TG789vac and TG799vac wait for the ethernet light to flash.
+	- For TG800vac count to about 5.
 	- TFTP may detect the sooner though.
 
 
@@ -185,24 +189,24 @@ You are now ready to try booting the modem to do the flash!
 7. Hold down reset button for 15-20 seconds and release.
 
 8. Allow modem to reboot and wait for approx 5min.
-	- On the TG800 you will know it has worked as the online light should be green, for the TG789 there may be some led activity but cant remember.
+	- On the TG800vac you will know it has worked as the online light should be green, for the TG789 there may be some led activity but cant remember.
 	
 
 9. Place the modem back into BOOTP mode & flash again & allow modem to reboot. (give it a few minutes)
 
 From here modem should have recovered from its soft-brick state, and be operational again if everything went smoothly. If for some reason you are not recovered, you can try running the process again and see if you recover.
 
-<b> If successful, remember to un-assign your static ip address.</b>
+**If successful, remember to un-assign your static ip address.**
 
-<b>A few things to note:</b>
+**A few things to note:**
 
-* TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, bootp mode can be a pain.
+- TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, bootp mode can be a pain.
 
-* This guide and process may not work for everyone, depending on their brick state.
+- This guide and process may not work for everyone, depending on their brick state.
 
-* If you have no success with the current firmware, try a different revision - [[hw_model_1622|(check here)]].
+- If you have no success with the current firmware, try a different revision
 
-* If all else fails and you cant recover or get stuck, jump over to the <a href="https://forums.whirlpool.net.au/forum-replies.cfm?t=2650998">thread</a> for help.
+- If all else fails and you cant recover or get stuck, jump over to the [thread](https://forums.whirlpool.net.au/forum-replies.cfm?t=2650998) for help.
 
 #################################################################################################################################################################################################
 
@@ -212,28 +216,30 @@ From here modem should have recovered from its soft-brick state, and be operatio
 
 ### Manually
 
-e.g. If the DJN2130 Telstra Frontier Gateway has v17.2.0261-820-RA loaded it may still be possible to reverted it back to 16.3 using the timed reset method, then exploited via the ping exploit (from <a href="https://forums.whirlpool.net.au/archive/2650998#r55075373">TG799 process</a> and <a href="https://forums.whirlpool.net.au/forum-replies.cfm?r=55792167#r55792167">DJN2130 timing</a>).
+e.g. If the DJN2130 Telstra Frontier Gateway has v17.2.0261-820-RA loaded it may still be possible to reverted it back to 16.3 using the timed reset method, then exploited via the ping exploit (from [TG799vac process](https://forums.whirlpool.net.au/archive/2650998#r55075373) and [DJN2130](https://forums.whirlpool.net.au/forum-replies.cfm?r=55792167#r55792167)).
 
-```
+
 The sequence is (Minutes:Seconds):
-Step	Period	Time	Action
-0	    0	    0	Power on
-1	00:35	00:35	press reset
-2	00:11	00:46	release
-3	00:47	01:33	press reset
-4	00:11	01:44	release
-5	00:47	02:31	press reset
-6	00:11	02:42	release
-7	00:50	03:32	press reset
-8	00:11	03:43	release
-9		06:00	Browse to 192.168.0.1 and confirm firmware version
-```
+
+|Step |	Period     | Time   |	Action
+|-----|:-----------|:-------|:--------------------------------------------------
+| 0	  |    0	   |  0	    | Power on
+| 1	  |00:35	   |  00:35	| Press reset
+| 2	  |00:11	   |  00:46	| Release
+| 3	  |00:47	   |  01:33	| Press reset
+| 4   |00:11	   |  01:44	| Release
+| 5	  |00:47	   |  02:31	| Press reset
+| 6	  |00:11	   |  02:42	| Release
+| 7	  |00:50	   |  03:32	| Press reset
+| 8	  |00:11	   |  03:43	| Release
+| 9	  |06:00	   |    -    | Browse to 192.168.0.1 and confirm firmware version
+
 
 #################################################################################################################################################################################################
 
 ### Potentiometer
 
-<b>You will need</b> 
+**You will need** 
 
 - A 3 watt and 100 Ohm Potentiometer 
 
@@ -248,7 +254,7 @@ Once powered on around 10-15 seconds into the boot cycle you want to turn it aro
 
 ### Monitor Serial Console
 
-A Python program written by Mark Smith is available at <a href="https://github.com/mswhirl/bouncer">GitHub</a> that you can run on a Raspberry Pi which can monitor the serial console output from the modem and then automatically cycle the power to the modem to cause a brown-out condition during boot, to reliably force a temporary bank switch. 
+A Python program written by Mark Smith is available at [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which can monitor the serial console output from the modem and then automatically cycle the power to the modem to cause a brown-out condition during boot, to reliably force a temporary bank switch. 
 
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
