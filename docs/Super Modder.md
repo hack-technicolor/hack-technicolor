@@ -4,88 +4,107 @@
 Your a Super Modder. You flash your modem on a daily basis.
 
 To save the Config:
-* `sysupgrade -i -b filename.tar.gz` - 
+- `sysupgrade -i -b filename.tar.gz` - 
     
 To restore the Config:    
-* `sysupgrade -f filename.tar.gz`] - restore configuration after firmware reflash
+- `sysupgrade -f filename.tar.gz`
 
 ### Decrypting Firmware
 
-See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from <a href="https://pastelink.net/laft">repository</a>, or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
+See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the [repository](https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
 
-| Model Number | Mnemonic |                        OSCK                                      | 
-|:-------------|:---------|:----------------------------------------------------------------:|
-| TG797nv3     |  dant-o  | RBI not encryped, only signed                                    |
-| TG789vac (v1)|  vant-d  | Unknown                                                          |
-| TG789vac v2  |  vant-6  | 546259AFD4E85AA6FFCE358CE0A93452E25A848138A67C142E42FEC79F4F3784 |
-| TG799vac     |  vant-f  | 7fa2fdf4d4dc31bf66f91dda9a3e8777b7d7d2ec6e8db1926c0831ca2a279fdb |
+| Model Number    | Mnemonic |                        OSCK                                      | 
+|:----------------|:---------|:-----------------------------------------------------------------|
+| TG797nv3        |  dant-o  | RBI not encryped, only signed                                    |
+| TG789vac (v1)   |  vant-d  | Unknown                                                          |
+| TG789vac v2     |  vant-6  | 546259AFD4E85AA6FFCE358CE0A93452E25A848138A67C142E42FEC79F4F3784 |
+| TG789vac v2 HP  |  vbnt-l  | a484245ccfbe2541b0c5c5e923be67a7deb9a823dd5cbab92cc619dea1391a42 |
+| TG799vac        |  vant-f  | 7fa2fdf4d4dc31bf66f91dda9a3e8777b7d7d2ec6e8db1926c0831ca2a279fdb |
+| TG799vac XTREAM |  vbnt-h  | Unknown                                                          |
+| TG800vac        |  vant-y  | 8e07111f188641948e84506db65270bd26595ad41327235a53998db068dc3833 |
+| DJA0231         |  vcnt-a  | Unknown                                                          |
+| DJN2130         |  vbnt-j  | 222c4dc4a9df952b02d5a489a112cf5e29aaedf86adb634410d6721f15f451e4 |
+
 
 ### The Boot Process
 
 To be updated - refer to the <a href="https://openwrt.org/docs/techref/process.boot">OpenWrt Boot Process guide</a> as an example for now but don't rely on it.
 
-== <b>The OpenWrt Flash Layout</b>
+### The "TCH" Wrt (Homeware) Flash Layout
+TG799vac:
 
-To be updated - refer to the <a href="https://openwrt.org/docs/techref/flash.layout">The OpenWrt Flash Layout guide</a> as an example for now but don't rely on it. eg:
+`root@mygateway:~# cat /proc/mtd`
+|Device|    Size  | Erasesize | Name
+|:-----|:---------|-----------|-------------
+| mtd0 | 10000000 | 00020000  | "brcmnand.0"
+| mtd1 | 02c60000 | 00020000  | "rootfs"
+| mtd2 | 05920000 | 00020000  | "rootfs_data"
+| mtd3 | 05000000 | 00020000  | "bank_1"
+| mtd4 | 05000000 | 00020000  | "bank_2"
+| mtd5 | 00020000 | 00020000  | "eripv2"
+| mtd6 | 00040000 | 00020000  | "rawstorage"
 
-$ root@mygateway:~# cat /proc/mtd
-dev:    size   erasesize  name
-mtd0: 10000000 00020000 "brcmnand.0"
-mtd1: 02c60000 00020000 "rootfs"
-mtd2: 05920000 00020000 "rootfs_data"
-mtd3: 05000000 00020000 "bank_1"
-mtd4: 05000000 00020000 "bank_2"
-mtd5: 00020000 00020000 "eripv2"
-mtd6: 00040000 00020000 "rawstorage"
+### Backup/Restore bit-for-bit
 
+This guide will show you how to create a bit-for-bit clone of a bank and reflash it.
 
-== <b>Preinit and Root Mount and Firstboot Scripts</b>
+**You will need**
 
-To be updated - refer to the <a href="https://openwrt.org/docs/techref/preinit_mount?s[]=overlay">OpenWrt Preinit and Root Mount and Firstboot Scripts guide</a> as an example for now but don't rely on it.
+- FAT32 USB Stick
+- 5min
 
+Bank_1 is mounted on mtd3 partition and bank_2 is mounted on mtd4. It is good practise to backup to USB to minimise chance of filling the ram, causing a coredump and bricking your device.
 
-== <b>Backup / Restore without rbi file</b>
-
-Bank_1 is on mtd3 partition and bank_2 is on mtd4. Best to backup to usb to minimise chance of filling storage and bricking device.
-
-Plug in a USB stick and run [`ls -la /mnt/usb`]
-
-$ root@mygateway:~# ls -la /mnt/usb/
+1. Plug in a USB stick and run:
+```
+ls -la /mnt/usb
+```
+Example output:
+```
+root@mygateway:~# ls -la /mnt/usb/
 drwxr-xr-x    2 root     root             0 Jan 16 12:31 .
 drwxrwxrwx    1 root     root             0 Jan 16 10:55 ..
 lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/mountd/sda1
+```
 
-* Backup: [`dd if=/dev/mtd[*X*] of=/mnt/usb/USB-A1/mtd[*X*].bin`] (replace [*X*] with 3 or 4)
-* Restore: [`mtd write /mnt/usb/USB-A1/mtd[*X*].bin bank_[*Y*]`] (replace [*Y*] with 1 or 2)
-           Firmware can be restored to either bank. 
+2. To backup, run `dd if=/dev/mtd<X> of=/mnt/usb/<usb-path>/mtd<X>.bin` 
+      - Replace X with 3, 4 or any other block number
+      - Replace usb-path with your USB drive, see Step 1.
 
-Tiscali firmware (which has no RBI files) is flashed this way to other TG789 devices.
+3. To restore, run `mtd write /mnt/usb/<usb-path>/mtd<X>.bin bank_<n>`
+      - Replace usb-path with your USB drive, see Step 1.
+      - Replace X with the block number.
+      - Replace N with the bank number you want to flash to.
+      - Firmware can be restored to either bank. 
+
+Tiscali firmware (which has no RBI files) is flashed this way to some TG789vac devices.
 
 
-== <b>IPv6 Connection Issue</b>
+### IPv6 Issues
 
-['Ipv6 is really problematic... On openwrt on this old base it think it's quite broken... Also the configuration depends on the ISP... Hard to fix...'] https://github.com/Ansuel/tch-nginx-gui/issues/114
+IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor that is used to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
 
-== <b>BusyBox</b>
+### BusyBox (ash)
 
-The gateway runs <a href="https://busybox.net/about.html">busybox</a>, an embedded linux system with minimalist documentation.
+The gateway runs [BusyBox](https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
 
-$ root@mygateway:~# busybox --help
+```
+root@mygateway:~# busybox --help
 BusyBox v1.23.2 (2017-08-22 01:34:50 UTC) multi-call binary.
 BusyBox is copyrighted by many authors between 1998-2012.
 Licensed under GPLv2. See source distribution for detailed
 copyright notices.
-$ 
+
 Usage: busybox [function [arguments]...]
    or: busybox --list
    or: function [arguments]...
-$ 
+ 
         BusyBox is a multi-call binary that combines many common Unix
         utilities into a single executable.  Most people will create a
         link to busybox for each function they wish to use and BusyBox
         will act like whatever it was invoked as.
-$ 
+ 
 Currently defined functions:
         [, [[, addgroup, arping, ash, awk, base64, basename, bunzip2, bzcat,
         cat, chgrp, chmod, chown, chpasswd, chroot, chrt, clear, cmp, cp,
@@ -100,19 +119,22 @@ Currently defined functions:
         sysctl, tail, tar, taskset, tee, telnet, test, time, timeout, top,
         touch, tr, traceroute, traceroute6, true, udhcpd, umount, uname, uniq,
         uptime, vconfig, vi, wc, wget, which, xargs, yes, zcat
+```
+
+### BusyBox (ash) Scripting</b>
+
+In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
+
+[A basic ash Guide]( https://linux.die.net/man/1/ash)
 
 
-== <b>ash script</b>
+### Lua
 
-Shell script is ash and best reference found is https://linux.die.net/man/1/ash. In practical terms it can be thought of as stripped down bash script so write bash script and fix the errors for features not supported.
+All of the web interface and some of the daemons are written in Lua.
 
-<a href="https://www.howtogeek.com/108890/how-to-get-help-with-a-command-from-the-linux-terminal-8-tricks-for-beginners-pros-alike/">-h or –help</a>
-
-== <b>Lua</b>
-
-Much of the interface is written in Lua.
-
-$ $ lua -v
+```
+lua -v
 Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio (double int32)
+```
 
-<a href="https://www.lua.org/manual/5.1/">Lua 5.1 Reference Manual</a>.
+[Lua 5.1 Reference](https://www.lua.org/manual/5.1/)
