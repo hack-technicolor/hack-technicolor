@@ -3,7 +3,7 @@
 ## IMPORTANT - Leave gateway turned off until you understand these instructions.
 
 
-<b>The ISP could lock you out of the gateway by pushing an updated firmware to it through a landline, WiFi or SIM card connection, until the gateway is rooted and remote management disabled.</b>
+**The ISP could lock you out of the gateway by pushing an updated firmware to it through a landline, WiFi or SIM card connection, until the gateway is rooted and remote management disabled.**
 
 Ensure the gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, such as the DJA/DJN Series Frontier or Smart Modem, must also have the SIM removed from under the bottom 25mm x 25mm white plastic sticker. on the DJA0231, the sim is under a small rubber plug above the green phone port.
 
@@ -11,68 +11,94 @@ Ensure the gateway does not have a wired or wireless internet connection. Gatewa
 
 ## Things you will need
 
-<b>You need the following BEFORE you go offline!</b>
+**You need the following BEFORE you go offline:**
 
-- The latest version of the AutoFlashGUI software, available from GitHub either as a ZIP file: <a href="https://github.com/mswhirl/autoflashgui/archive/master.zip">master.zip</a> or you can browse the source code and change history at <a href="https://github.com/mswhirl/autoflashgui">the project page</a>. Make sure the tool runs and GUI loads *before* you go offline!
+- The latest version of the AutoFlashGUI software, available from GitHub either as a ZIP file: [master.zip](https://github.com/mswhirl/autoflashgui/archive/master.zip) or you can browse the source code and change history at [the project page](https://github.com/mswhirl/autoflashgui). Make sure the tool runs and GUI loads *before* you go offline!
 
-- The old RBI <a href="https://whirlpool.net.au/wiki/hw_model_1622">firmware</a> file for your gateway.
+- The old RBI [firmware](https://whirlpool.net.au/wiki/hw_model_1622) file for your gateway.
 
-- The new RBI <a href="https://whirlpool.net.au/wiki/hw_model_1622">firmware</a> file for your gateway <b>only if you want to flash the latest version. 16.3 is the best and most stable.</b>
+- The new RBI [firmware](https://whirlpool.net.au/wiki/hw_model_1622) file for your gateway **only if you want to flash the latest version. 16.3 is the best and most stable.**
 
-- An SSH client - the famous <a href="https://www.chiark.greenend.org.uk/%7Esgtatham/putty/">Putty</a> is recommended for Windows. <a href="https://winscp.net/eng/download.php">WinSCP</a> is optional.
+- An SSH client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is recommended for Windows. [WinSCP](https://winscp.net/eng/download.php) is optional.
 
-- A copy of this web page for reference while you're offline ([*warning:*] the browser can split long command lines which won't work so best to copy code and paste into a text editor like notepad.  Don't just print to PDF, it cuts off lines and breaks things!).  
+- A copy of this web page for reference while you're offline (*warning:* the browser can split long command lines so it is best to copy code and paste into a text editor like Notepad.).  
 
 - Physical access to the gateway so you can power cycle it and unplug the WAN/DSL while you're going through this process.
 
-- A 'happy' gateway! If it's in bridge mode or half the tiles are missing on the screen (which seems to be caused by corrupted config), reset it to <a href="/Technicolor%20Recovery">factory defaults</a> first.
+- A 'happy' gateway! If it's in bridge mode or half the tiles are missing on the screen (which seems to be caused by corrupted config), reset it to [factory defaults](/Technicolor%20Recovery) first.
 
 #######################################################################################################################################################################################################
 
 ## Introduction
 
-#### Known Working Models
+### Known Working Models
 
-- Technicolor TG799vac (aka Telstra Gateway Max)
-- Technicolor TG799vac Xtream
-- Technicolor TG789vac v2
-- Technicolor TG789vac v2 HP
-- Technicolor TG797n v3 (aka Telstra T-Gateway)
-- Technicolor TG800vac (aka Telstra Gateway Max 2)
-- Technicolor DJN2130 (aka Telstra Frontier Gateway) 
-- Technicolor DJA0231 (aka Telstra Smart Modem Gen2)
+ | Model Number    | Product Name             | Mnemonic
+ |-----------------|:-------------------------|:-----------:
+ | DJN2130         | Telstra Frontier Gateway | VBNT-J
+ | DJA0231         | Telstra Smart Modem Gen2 | VCNT-A
+ | TG800vac        | Telstra Gateway Max 2    | VANT-Y
+ | TG799vac        | Telstra Gateway Max      | VANT-F
+ | TG799vac Xtream | -                        | VBNT-H
+ | TG789vac (v1)   | -                        | VANT-D
+ | TG789vac v2     | -                        | VANT-6
+ | TG789vac v2 HP  | -                        | VBNT-L
+ | TG797n v3       | Telstra T-Gateway        | DANT-O
 
-Tip: avoid referring to your device by its commercial name only if it is ambiguous (ie "TG799vac"), refer to your device with its unique board mnemonic identifier XXXX-X instead to avoid ambiguity. You should be able to read this somewhere in the web configuration pages. Golden rule: same mnemonic, same device.
 
-<b>NB: Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available</b>
+**Tip:** avoid referring to your device by its commercial name, refer to your device with its unique board mnemonic identifier XXXX-X to avoid ambiguity. You should be able to read this under the "Gateway" tab in the web interface and above. Golden rule: same mnemonic, same device.
+
+**NB: Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available**
 
 #######################################################################################################################################################################################################
 
 ## The Basics
 
-Devices mentioned above are very capable pieces of equipment each with different feature set which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, <a href="https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station">FXS</a> ports, and <a href="https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station">FXO port</a>, 4G backup, etc.
-They are known to get high sync speeds for VDSL2, have high quality internal PCB and power supply and their power consumption is quite good, for example the 799 Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config). 
 
-The guide was originally written for gateways provided directly by Telstra and as such, has Telstra branded firmware.
-Usually, there is no ‘generic’ firmware available that will just give you access to the gateway as any other device you would purchase. This kind of sucks as if you decide to use this device with anyone other than Telstra, you lose access to the VoIP functionality and therefore also DECT base station, FXS/FXO ports.
-That was the motivation to get into this device and re-enable as many features as possible. For some other devices, an alternative no-brand firmware (MST) is available where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
+Devices mentioned above are very capable pieces of equipment each with different feature set which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, and a [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station), 4G backup, etc.
+They are known to get high sync speeds for VDSL2, have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config). 
+
+
+The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware.
+
+
+Usually, there is no ‘generic’ firmware available that will *just* give you access to the gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with anyone other than Telstra, you lose access to the VoIP functionality, DECT base station and FXS/FXO ports.
+
+
+That was the motivation hack this device and re-enable as many features as possible. For some other devices, an alternative no-brand firmware (MST) is available where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
+
 
 The default IP address of the gateway varies by firmware, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what you get as default gateway.
 
 #######################################################################################################################################################################################################
 
-### Gaining Root Access
+## Gaining Root Access
 
-These instructions were built for the TG799vac, so if you are doing this for a different gateway be sure to use the correct firmwares.
-In this example, 16.3 is the older Type 2 firmware, 17.2 is the newer Type 1 firmware.
+**These instructions were built for the TG799vac, so if you are doing this for a different gateway be sure to use the correct firmwares.**
 
-Run up the AutoFlashGUI tool and flash vant-f_CRF683-17.2.188-820-RA.rbi to your gateway.
+### Flashing and Rooting 16.3
+
+In this example, 16.3.7567 is the older Type 2 firmware.
+
+Using AutoFlashGUI, flash vant-f_CRF687-16.3.7567-660-RG.rbi and allow it to run through including getting root.
+
+![16.3 AFG](images/flashgui_16.3.png)
+
+Fire up your SSH client and connect to the gateway IP on port 22.
+
+Now proceed to permanent root access setup section [below](/Type%201&2/#setting-up-permanent-root-access).
+
+### Flashing and Rooting 17.2
+In this example, `16.3.7567` is the older Type 2 firmware, `17.2.0261` is the newer Type 1 firmware.
+
+Run up the AutoFlashGUI tool and flash `vant-f_CRF683-17.2.188-820-RA.rbi` to your gateway.
+
 
 ![17.2 AFG](images/flashgui_17.2.png)
 
-This will take about 3-4 minutes. The flasher will try and root your gateway but it will fail (silently); this is expected. If the flash fails to push the firmware in, try again (is the username and password correct?), and if it still fails with some permission error in the console, you may have been locked out of flashing via the web interface: bad luck. Maybe a PXE firmware load can help but you require good luck at this point. Ask for help in the whirlpool thread! (Note that firmware before v15.x may require some manual work, see the advanced topic "My firmware is so old that AutoFlashGUI can't authenticate to the gateway!" )
+This will take about 3-4 minutes. The flasher will try and root your gateway but it will fail (silently); this is expected. If the flasher fails to push the firmware, try again (is the username and password correct?), and if it still fails with some permission error in the console, you may have been locked out of flashing via the web interface. Bad Luck. Maybe a [PXE firmware load](Recovery/#2-tftp-recovery) can help. Ask for help in the whirlpool thread! (Note that firmware before v15.x may require some manual work, see the advanced topic "My firmware is so old that AutoFlashGUI can't authenticate to the gateway!" )
 
-Now use AutoFlashGUI to flash in vant-f_CRF687-16.3.7567-660-RG.rbi and allow it to run through including getting root.
+Now use AutoFlashGUI to flash in `vant-f_CRF687-16.3.7567-660-RG.rbi` and allow it to run through including getting root.
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
@@ -81,9 +107,11 @@ At this point we are ready to do the procedure to activate root on 17.2 and swit
 Fire up your SSH client and connect to the gateway IP on port 22.
 
 Run the following command to look at your installed firmwares state:
-`find /proc/banktable -type f -print -exec cat {} ';'`
+
+```find /proc/banktable -type f -print -exec cat {} ';'```
 
 It should look something like this:
+
 ```
 /proc/banktable/notbootedoid
 59b21e26bc549719f7f1bedd
@@ -103,9 +131,10 @@ bank_2
 bank_1
 ```
 
-These gateways use two flash partitions (bank_1 and bank_2) which can be upgraded/used almost independently. They are digital-signature verified before boot so you can't edit the rom image in the flash (yes, we tried).  The config is stored in the matching folder in /overlay i.e. /overlay/bank_2 (hint: you can see your modified config files in here if you want to back stuff up or see what changes you made).  When a proper factory reset is done, the overlay partition is formatted (but not securely wiped; see section later).
+These gateways use two flash partitions (bank_1 and bank_2) which can be upgraded/used almost independently. They are digital-signature verified before boot so you can't edit the rom image in the flash (yes, we tried).  The config is stored in the matching folder in /overlay i.e. /overlay/bank_2 *(hint: you can see your modified config files in here if you want to back stuff up or see what changes you made)*.  When a proper factory reset is done, the overlay partition is formatted (but not securely wiped; see section later).
 
 Run the following to set 17.2 up for temporary root and switch back to it:
+
 ```
 rm -rf /overlay/`cat /proc/banktable/inactive`
 mkdir /overlay/`cat /proc/banktable/inactive`
@@ -127,7 +156,7 @@ dropbear -p 6666 &
 ```
 Reboot and wait 3 to 4 minutes for the gateway to boot into 17.2.
 
-Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to permanent root access setup section below.
+Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to permanent root access setup section [below](/Type%201&2/#setting-up-permanent-root-access).
 
 #####################################################################################################################################################################################################################
 
@@ -137,11 +166,13 @@ Run AutoFlashGUI and select the option for your gateway (in this case "Telstra T
 
 Check "Target IP:" 10.0.0.138 ( or whatever is the default ip of your device ).
 
-Some gateways will not need new firmware flashed. If the Telstra TG799vac gateway is not already on 17.2.0261 firmware version, select the "Flash firmware?" checkbox and put in the firmware file name i.e vant-f_CRF852-17.2.0261-820-RA.rbi . <a href="https://mswhirl.github.io/tcolmodimages/flashgui_16.3.png">Example screenshot</a> (pick the correct options and filename as stated above).
+Some gateways will not need new firmware flashed. If the Telstra TG799vac gateway is not already on 17.2.0261 firmware version, select the "Flash firmware?" checkbox and put in the firmware file name i.e `vant-f_CRF852-17.2.0261-820-RA.rbi` 
+
+![16.3 AFG](images/flashgui_16.3.png)
 
 Select "Run", wait for the process to finish.
 
-Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to the next step.
+Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to permanent root access setup section [below](/Type%201&2/#setting-up-permanent-root-access).
 
 #####################################################################################################################################################################################################################
 
@@ -218,34 +249,45 @@ echo "Please change the root password NOW using the 'passwd' command to secure y
 #####################################################################################################################################################################################################################
 
 ### Change the root Password
-<b>Do not ignore this step!</b> :)
+**Do not ignore this step!** :)
 
-Run: `passwd`
+Run:
 
-
+```
+passwd
+```
 
 Reboot now if you're not doing any further configuration.
 
 At this point you should now be able to SSH in with root and your password (which should no longer be root at this point!)
 
-<b>If all things go well you should see the modem reboot, then you can move on to Unlock Functionality.</b>
-
 #####################################################################################################################################################################################################################
 
 ### My firmware is so old that AutoFlashGUI can't authenticate!
 
-This is because they changed the web authentication method to SRPv6 with firmware v15, and this is the only method that the AutoFlashGUI tool knows how to authenticate with.  You are going to have to flash the v16.3 .rbi file via sysupgrade after using the original manual procedure to get a shell.
+*This is because they changed the web authentication method to SRPv6 with firmware v15, and this is the only method that the AutoFlashGUI tool knows how to authenticate with.* 
+
+You are going to have to flash the v16.3 .rbi file via sysupgrade after using the original manual procedure to get a shell.
 
 Visit the ‘Diagnostics’ page on the gateway, and click on the Ping & Traceroute tab. (If your gateway doesn’t display the Diagnostics tile, factory reset the gateway. The observation is that this only happens when the config is corrupted somehow.) In the IP address section, enter and run:
-$ :::::::;echo root:root | chpasswd; dropbear -p 6666;
+
+```
+:::::::;echo root:root | chpasswd; dropbear -p 6666;
+```
 
 Give it 30 seconds to generate SSH host keys and then try to connect to your gateway with SSH on port 6666 with root/root.
+
 Copy the .rbi to a USB stick (FAT32 formatted is most likely to work on old firmware) and insert it into the gateway.
-If you type 'cd /mnt/' and keep hitting tab it should eventually get to the end of the USB stick path, then hit enter. (You can also run 'mount' and try to work out the path the USB stick is mounted on, or 'dmesg' to check the system log to see if there was an error automatically mounting it.)
+
+If you type `cd /mnt/` and keep hitting tab it should eventually get to the end of the USB stick path, then hit enter. (You can also run 'mount' and try to work out the path the USB stick is mounted on, or 'dmesg' to check the system log to see if there was an error automatically mounting it.)
+
 To be on the on the safe side we will copy the rbi to RAM, then flash it. Do the following with the correct .rbi name (keeping in mind that this is case sensitive):
-$ cp filename.rbi /tmp
+
+```
+cp filename.rbi /tmp
 cd /tmp
 sysupgrade filename.rbi
+```
 
-
+All things going well you should see it progress along and reboot, then you can commence the current procedure.
 
