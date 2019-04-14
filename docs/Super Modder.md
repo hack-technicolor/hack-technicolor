@@ -1,4 +1,3 @@
-## Super Modder
 ### Backing up Configuration
 
 Your a Super Modder. You flash your modem on a daily basis.
