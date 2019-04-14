@@ -1,3 +1,100 @@
+
+
+
+### What tools can I use to administer OpenWrt from a Windows computer?</b>
+
+There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as described in the OpenWRT SSH Administration for Newcomers(https://openwrt.org/docs/guide-quick-start/sshadministration) page.
+
+### Handy Commands
+
+* `find /proc/banktable -type f -print -exec cat {} ';'` 
+    - Checking firmware flashed and what is active.
+
+* `ps` 
+    - Shows processes that are running.
+
+* `netstat -tuplen` 
+    - Shows programs that are listening as network services.
+
+* `netstat -lenp` 
+    - Shows everything that's listening on sockets (TCP, UPD, Unix etc).
+
+* `df -h` 
+    - Free (NAND) space.
+
+* `uci show` 
+    - Dump entire config (~7700+ lines to console).
+
+* `uci show | grep password` 
+    - Example to filter lines with password.
+
+* `logread -f` 
+    - Access logs for most services (which use syslog). Pass an argument of -e nginx to match log entries just related to Nginx, which is perfect for debugging errors in the Web GUI.
+
+    - Remove `-f` flag for all time logs (erased every reboot).
+
+* `for F in /etc/init.d/* ; do $F enabled && echo $F on || echo $F **disabled**; done` 
+    - Display status of all init.d scripts.
+
+* `/rom/usr/lib/cwmpd/transfers/switchover.sh` 
+    - Switch bank and reboot.
+
+* `cat /etc/openwrt_release` 
+    - OpenWrt Release metadata. 
+    - eg TG799:
+```
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='Chaos Calmer'
+DISTRIB_REVISION='r46610'
+DISTRIB_CODENAME='chaos_calmer'
+DISTRIB_TARGET='brcm63xx-tch/VANTF'
+DISTRIB_DESCRIPTION='OpenWrt Chaos Calmer 15.05.1'
+DISTRIB_TAINTS='no-all busybox'
+```
+
+### Files
+
+* `/www/*` 
+    - Lua/HTML Web Interface source files.
+
+* `/etc/config/*` 
+    - UCI config source files, pehaps more readable than `uci show`.
+
+* `/sbin/*.sh, /usr/bin/*.sh, /usr/sbin/*.sh` 
+    - Various executables, many custom-written for this hardware.
+
+* `/etc/init.d/*` 
+    - Services present; May or may not be enabled or running.
+
+
+### LED's
+
+[Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
+
+* `ls -1 /sys/class/leds/` 
+    - List available LED's.
+
+* `cat /sys/class/leds/<led>:<colour>/trigger` 
+    - Shows the triggers available and the current trigger.
+    - Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
+
+* `echo "default-on" > /sys/class/leds/power:green/trigger`
+    - Reset trigger to default.
+
+* `opkg list | grep led` 
+    - List all LED packages used.
+
+
+#### Example:
+
+Turn on LED:
+`echo 1 > /sys/class/leds/power:green/brightness`
+
+Turn off LED:
+`echo 0 > /sys/class/leds/power:red/brightness`
+
+
+## Super Modder
 ### Backing up Configuration
 
 Your a Super Modder. You flash your modem on a daily basis.
@@ -10,7 +107,7 @@ To restore the Config:
 
 ### Decrypting Firmware
 
-See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the [repository](https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
+See secr(https://github.com/mswhirl/secr) for details (original code from here(https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the repository(https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
 
 | Model Number    | Mnemonic |                        OSCK                                      | 
 |:----------------|:---------|:-----------------------------------------------------------------|
@@ -81,12 +178,12 @@ Tiscali firmware (which has no RBI files) is flashed this way to some TG789vac d
 
 ### IPv6 Issues
 
-IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor that is used to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
+IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor that is used to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. See more.(https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
 
 ### BusyBox (ash)
 
-The gateway runs [BusyBox](https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
+The gateway runs BusyBox(https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
 
 ```
 root@mygateway:~# busybox --help
@@ -95,9 +192,9 @@ BusyBox is copyrighted by many authors between 1998-2012.
 Licensed under GPLv2. See source distribution for detailed
 copyright notices.
 
-Usage: busybox [function [arguments]...]
+Usage: busybox function arguments...
    or: busybox --list
-   or: function [arguments]...
+   or: function arguments...
  
         BusyBox is a multi-call binary that combines many common Unix
         utilities into a single executable.  Most people will create a
@@ -105,7 +202,7 @@ Usage: busybox [function [arguments]...]
         will act like whatever it was invoked as.
  
 Currently defined functions:
-        [, [[, addgroup, arping, ash, awk, base64, basename, bunzip2, bzcat,
+        , , addgroup, arping, ash, awk, base64, basename, bunzip2, bzcat,
         cat, chgrp, chmod, chown, chpasswd, chroot, chrt, clear, cmp, cp,
         crond, crontab, cut, date, dd, df, dirname, dmesg, du, echo, egrep,
         env, expr, false, fgrep, find, free, fsync, grep, gunzip, gzip, halt,
@@ -124,7 +221,7 @@ Currently defined functions:
 
 In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
 
-[A basic ash Guide]( https://linux.die.net/man/1/ash)
+A basic ash Guide( https://linux.die.net/man/1/ash)
 
 
 ### Lua
@@ -136,4 +233,4 @@ lua -v
 Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio (double int32)
 ```
 
-[Lua 5.1 Reference](https://www.lua.org/manual/5.1/)
+Lua 5.1 Reference(https://www.lua.org/manual/5.1/)
