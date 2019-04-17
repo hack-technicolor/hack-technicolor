@@ -1,7 +1,11 @@
 
 #################################################################################################################################################################################################
 
-## IMPORTANT: Warning
+## IMPORTANT - Read before Attempting!
+
+**Warning:** This process is not supported by the manufacturer or supplier of your modem. 
+There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+
 This guide is based upon devices being in the following state:
 
 - TG789vac - orange status light and rebooting every now and then
@@ -111,7 +115,7 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 - On the PC ensure the network card you wish to use is set to DHCP: 
 
-- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
+- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help page](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
 (Unless you are using Static IPs on your network this will already be done.  After the next few steps, the network card will receive an address from the TFTPD64 DHCP server.)
 
 - Start TFTP64 as ADMINISTRATOR.
