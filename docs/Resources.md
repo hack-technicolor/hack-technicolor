@@ -130,6 +130,8 @@ To be updated - refer to the <a href="https://openwrt.org/docs/techref/process.b
 TG799vac:
 
 `root@mygateway:~# cat /proc/mtd`
+
+
 |Device|   Size   | Erasesize | Name         |
 |:-----|:---------|:----------|:-------------|
 | mtd0 | 10000000 | 00020000  | "brcmnand.0" |
