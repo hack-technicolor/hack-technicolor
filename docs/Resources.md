@@ -1,9 +1,10 @@
 
-
+**Warning:** This process is not supported by the manufacturer or supplier of your modem. 
+There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ### What tools can I use to administer OpenWrt from a Windows computer?</b>
 
-There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as described in the OpenWRT SSH Administration for Newcomers(https://openwrt.org/docs/guide-quick-start/sshadministration) page.
+There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as described in the [OpenWRT SSH Administration for Newcomers](https://openwrt.org/docs/guide-quick-start/sshadministration) page.
 
 ### Handy Commands
 
@@ -107,7 +108,7 @@ To restore the Config:
 
 ### Decrypting Firmware
 
-See secr(https://github.com/mswhirl/secr) for details (original code from here(https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the repository(https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
+See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the [repository](https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
 
 | Model Number    | Mnemonic |                        OSCK                                      | 
 |:----------------|:---------|:-----------------------------------------------------------------|
@@ -124,7 +125,7 @@ See secr(https://github.com/mswhirl/secr) for details (original code from here(h
 
 ### The Boot Process
 
-To be updated - refer to the <a href="https://openwrt.org/docs/techref/process.boot">OpenWrt Boot Process guide</a> as an example for now but don't rely on it.
+To be updated - refer to the [OpenWrt Boot Process guide](https://openwrt.org/docs/techref/process.boot) as an example for now but don't rely on it.
 
 ### The "TCH" Wrt (Homeware) Flash Layout
 TG799vac:
@@ -180,12 +181,12 @@ Tiscali firmware (which has no RBI files) is flashed this way to some TG789vac d
 
 ### IPv6 Issues
 
-IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor that is used to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. See more.(https://github.com/Ansuel/tch-nginx-gui/issues/114)
+IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor that is used to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
 
 ### BusyBox (ash)
 
-The gateway runs BusyBox(https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
+The gateway runs [BusyBox](https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
 
 ```
 root@mygateway:~# busybox --help
@@ -223,7 +224,7 @@ Currently defined functions:
 
 In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
 
-A basic ash Guide( https://linux.die.net/man/1/ash)
+[A basic ash Guide](https://linux.die.net/man/1/ash)
 
 
 ### Lua
@@ -235,4 +236,4 @@ lua -v
 Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio (double int32)
 ```
 
-Lua 5.1 Reference(https://www.lua.org/manual/5.1/)
+[Lua 5.1 Reference](https://www.lua.org/manual/5.1/)
