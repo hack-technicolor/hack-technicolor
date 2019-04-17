@@ -130,15 +130,15 @@ To be updated - refer to the <a href="https://openwrt.org/docs/techref/process.b
 TG799vac:
 
 `root@mygateway:~# cat /proc/mtd`
-|Device|    Size  | Erasesize | Name
-|:-----|:---------|-----------|-------------
-| mtd0 | 10000000 | 00020000  | "brcmnand.0"
-| mtd1 | 02c60000 | 00020000  | "rootfs"
-| mtd2 | 05920000 | 00020000  | "rootfs_data"
-| mtd3 | 05000000 | 00020000  | "bank_1"
-| mtd4 | 05000000 | 00020000  | "bank_2"
-| mtd5 | 00020000 | 00020000  | "eripv2"
-| mtd6 | 00040000 | 00020000  | "rawstorage"
+|Device|    Size  | Erasesize | Name         |
+|:-----|:---------|:----------|:-------------|
+| mtd0 | 10000000 | 00020000  | "brcmnand.0" |
+| mtd1 | 02c60000 | 00020000  | "rootfs"     |
+| mtd2 | 05920000 | 00020000  | "rootfs_data"|
+| mtd3 | 05000000 | 00020000  | "bank_1"     |
+| mtd4 | 05000000 | 00020000  | "bank_2"     |
+| mtd5 | 00020000 | 00020000  | "eripv2"     |
+| mtd6 | 00040000 | 00020000  | "rawstorage" |
 
 ### Backup/Restore bit-for-bit
 
