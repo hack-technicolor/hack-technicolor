@@ -53,7 +53,7 @@ Type 1/2/3 indicates if it can be rooted directly.
 
 ### TG800vac / VANT-Y
 
-#### Telstra - Gateway Max 2
+**Telstra - Gateway Max 2**
 
 16.3.7567-660-RD (Type 2): 
 http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi
@@ -71,7 +71,7 @@ http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-
 
 ### TG799vac / VANT-F
 
-#### Telstra - Gateway Max
+**Telstra - Gateway Max**
 
 - 15.18.6052-420-RA (Type ?):
 http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi
@@ -97,7 +97,7 @@ http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-
 
 OSCK: Not required.  Firmware images in RBI files are not encrypted with model-specific keys
 
-#### Telstra - T-Gateway
+**Telstra - T-Gateway**
 
 - 16.1.7565-580-RC (Type 2):
  http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi
@@ -113,7 +113,7 @@ OSCK: Not Known
 
 **WARNING**: This is not for the VANT-6, it is for a VANT-D model. Won't boot on common Australian TG789vac v2/v3
 
-#### MST (no-brand) from UNO.UK
+**MST (no-brand) from UNO.UK**
 
 - 16.2.7064 (Type 2):
  https://uno.help/attachments/690
@@ -122,7 +122,7 @@ OSCK: Not Known
 
 ### TG789vac v2 / VANT-6
 
-#### iiNet
+**iiNet**
 
 - 16.3.7196-ver2.0.5 (Type 2):
  https://app.box.com/s/hp780lnir7xbulk10317ia4n3u3jbnee
@@ -138,7 +138,7 @@ OSCK: Not Known
 
      - http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi
 
-#### MST (no-brand) from UNO.UK
+**MST (no-brand) from UNO.UK**
 
 - 17.2.0278 (Type 2):
  https://uno.help/attachments/732
@@ -147,7 +147,7 @@ OSCK: Not Known
 
 ### TG789vac v2 HP / VBNT-L
 
-#### MyRepublic
+**MyRepublic**
 
 - 16.3.7190 (Type 2):
 
@@ -157,7 +157,7 @@ OSCK: Not Known
 
 ### DJN2130 / VBNT-J
 
-#### Telstra - Frontier Gateway
+**Telstra - Frontier Gateway**
 
 - 16.3.7413-660-RF (Type 2):
     - No known RBI url, this version was on some devices when they were shipped. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
@@ -175,7 +175,7 @@ OSCK: Not Known
 
 ### DJA0230 / VBNT-V
 
-#### Telstra - Smart Modem (Gen1)
+**Testra - Smart Modem (Gen1)**
 
 - 17.2.0188-820-RA (Type ???):
     - No known RBI url, but this version was on some devices when they were shipped
@@ -196,7 +196,7 @@ OSCK: Not Known
 
 OSCK: Not Known
 
-#### Telstra - Smart Modem (Gen2)
+**Telstra - Smart Modem (Gen2)**
 
 - 18.1.c.0215-950-RA (Type 2):
  http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi
