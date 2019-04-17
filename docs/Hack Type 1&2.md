@@ -2,6 +2,8 @@
 
 ## IMPORTANT - Leave gateway turned off until you understand these instructions.
 
+**Warning:** This process is not supported by the manufacturer or supplier of your modem. 
+There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 **The ISP could lock you out of the gateway by pushing an updated firmware to it through a landline, WiFi or SIM card connection, until the gateway is rooted and remote management disabled.**
 
