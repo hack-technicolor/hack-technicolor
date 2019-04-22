@@ -101,7 +101,7 @@ Turn off LED:
 Your a Super Modder. You flash your modem on a daily basis.
 
 To save the Config:
-- `sysupgrade -i -b filename.tar.gz` - 
+- `sysupgrade -i -b filename.tar.gz`
     
 To restore the Config:    
 - `sysupgrade -f filename.tar.gz`
