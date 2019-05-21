@@ -88,7 +88,7 @@ Using AutoFlashGUI, flash vant-f_CRF687-16.3.7567-660-RG.rbi and allow it to run
 
 Fire up your SSH client and connect to the gateway IP on port 22.
 
-Now proceed to permanent root access setup section [below](/Type%201&2/#setting-up-permanent-root-access).
+Now proceed to permanent root access setup section [below](/Hack%20Type%201&2/#setting-up-permanent-root-access).
 
 ### Flashing and Rooting 17.2
 In this example, `16.3.7567` is the older Type 2 firmware, `17.2.0261` is the newer Type 1 firmware.
@@ -158,7 +158,7 @@ dropbear -p 6666 &
 ```
 Reboot and wait 3 to 4 minutes for the gateway to boot into 17.2.
 
-Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to permanent root access setup section [below](/Type%201&2/#setting-up-permanent-root-access).
+Log in to the gateway with SSH on port 6666 using root/root. At this point you have temporary root, but you can't stop at this point! Go on and proceed to permanent root access setup section [below](/Hack%20Type%201&2/#setting-up-permanent-root-access).
 
 #####################################################################################################################################################################################################################
 
@@ -166,7 +166,7 @@ Log in to the gateway with SSH on port 6666 using root/root. At this point you h
 
 Run AutoFlashGUI and select the option for your gateway (in this case "Telstra TG799 17.2.0261 Type 2").
 
-Check "Target IP:" 10.0.0.138 ( or whatever is the default ip of your device ).
+Check "Target IP:" 10.0.0.138 (or whatever is the default IP of your device).
 
 Some gateways will not need new firmware flashed. If the Telstra TG799vac gateway is not already on 17.2.0261 firmware version, select the "Flash firmware?" checkbox and put in the firmware file name i.e `vant-f_CRF852-17.2.0261-820-RA.rbi` 
 
