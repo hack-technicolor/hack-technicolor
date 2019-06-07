@@ -251,7 +251,9 @@ OSCK: Not Known
 
 - 16.3.7413-660-RF (Type 2):
 
-    - **WARNING**: This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
+    - **WARNING**: This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools
+    
+     - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
 
 
 
