@@ -82,32 +82,32 @@ Type 1/2/3 indicates if it can be rooted directly.
 
 - 15.18.6052-420-RA (Type ?):
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi
 
 
 - 15.53.6886-510-RF (Type 2):
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi
 
 
 - 16.3.7567-660-RG (Type 2): 
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi
 
 
 - 17.2.188-820-RA (Type 1):
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi
 
 
 - 17.2.0213-820-RC (Type 1):
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi
 
 
 - 17.2.0261-820-RA (Type 2):
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi
+    - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi
 
 
 
@@ -153,17 +153,17 @@ OSCK: Not Known
    
 - 15.53.6627-ver1.6 (Type ?):
 
-   - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi
+    - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi
    
    
 - 15.53.7004-ver1.7.1 (Type ?):
 
-   - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi
+    - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi
    
    
 - 15.53.8141-ver1.9.0 (Type ?):
 
-   - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi
+    - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi
    
    
 ### TG789vac v2 / VANT-6
