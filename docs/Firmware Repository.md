@@ -3,11 +3,11 @@
 
 If you find another firmware for a Technicolor modem, please post it here! Keep an eye on your formatting, follow everyone else's!
 
-### Creating Firmware URL's
+### Guessing Firmware URL's
 
-Stock bootloader allows TFTP flashing only with the correct firmware for the hardware board mnemonic version (something like XXXX-X). 
+Stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X). 
 
-Firmware filename pattern is ISP specific. As you can see from below links, it is often constructed by combining: 
+Firmware filename pattern is ISP specific, so the first thing to do is to find another known one from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining: 
 
 Product Vendor + **Hardware** + CRF + **Firmware**
 
@@ -29,7 +29,10 @@ cat /rom/etc/config/env
 option CONF_VERSION 'CRF483'
 ...
 ```
-Once you have created it please post it here!
+
+The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
+
+Once you have guessed it please post it here!
 
 Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface it first decrypt the RBI payload and then flash its contents into one of the internal "banks".
 
@@ -67,13 +70,11 @@ Type 1/2/3 indicates if it can be rooted directly.
    
    
 
-
 - 17.2.0213-820-RB (Type 1):
 
    - http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi
    
    
-
 
 - 17.2.0261-820-RA (Type 2):
 
@@ -85,7 +86,7 @@ Type 1/2/3 indicates if it can be rooted directly.
 
 **Telstra - Gateway Max**
 
-- 15.18.6052-420-RA (Type ?):
+- 15.18.6052-420-RA (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi
     
@@ -153,32 +154,32 @@ OSCK: Not Known
 
     - https://uno.help/attachments/690
 
+
+
+
 ### TG1 / VANT-5
 
 **iiNet & Internode**
 
-- 15.32.1509-ver1.4 (Type ?):
+- 15.32.1509-ver1.4 (Type ???):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi 
     
-    
    
    
-- 15.53.6627-ver1.6 (Type ?):
+- 15.53.6627-ver1.6 (Type ???):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi
     
     
    
-   
-- 15.53.7004-ver1.7.1 (Type ?):
+- 15.53.7004-ver1.7.1 (Type ???):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi
     
     
    
-   
-- 15.53.8141-ver1.9.0 (Type ?):
+- 15.53.8141-ver1.9.0 (Type ???):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi
     
@@ -206,13 +207,13 @@ OSCK: Not Known
     - https://app.box.com/s/phdp7z9sn7s4sk8sooj7rkiv3bql0h01
     
  
-
+ 
 - 16.3.8046-ver3.0 (Type 1):
 
      - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi
      
-
      - http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi
+     
      
 
 **MST (no-brand) from UNO.UK**
@@ -224,13 +225,23 @@ OSCK: Not Known
 
 
 
+### TG789vac v3 / VBNT-1
+
+**iiNet**
+
+- 18.3.0157-3-2-1-CRF905 (Type ???):
+
+    - No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
+
+
+
 ### TG789vac v2 HP / VBNT-L
 
 **MyRepublic**
 
 - 16.3.7190 (Type 2):
 
-    - No known RBI url, this version was on some devices when they were shipped. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
+    - No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
 
 
 
@@ -240,19 +251,21 @@ OSCK: Not Known
 
 - 16.3.7413-660-RF (Type 2):
 
-    - No known RBI url, this version was on some devices when they were shipped. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
+    - **WARNING**: This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
+
+
 
 - 17.2.0219-820-RA (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi
-    
- 
+
+
 
 - 17.2.0219-820-RB (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi
-    
- 
+
+
 
 - 17.2.0261-820-RA (Type 2):
 
@@ -267,8 +280,9 @@ OSCK: Not Known
 
 - 17.2.0188-820-RA (Type ???):
 
-    - No known RBI url, but this version was on some devices when they were shipped
-    
+    - No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
+
+
 
 - 17.2.0288-820-RA (Type ???):
 
@@ -285,8 +299,7 @@ OSCK: Not Known
 - 17.2.0406-820-RC (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi
-    
- 
+     
 
 
 
