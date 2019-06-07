@@ -58,16 +58,21 @@ Type 1/2/3 indicates if it can be rooted directly.
 - 16.3.7567-660-RD (Type 2): 
 
    - http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi
+   
 
 
 - 17.2.0188-820-RA (Type 1):
 
    - http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi
+   
+   
 
 
 - 17.2.0213-820-RB (Type 1):
 
    - http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi
+   
+   
 
 
 - 17.2.0261-820-RA (Type 2):
@@ -83,26 +88,31 @@ Type 1/2/3 indicates if it can be rooted directly.
 - 15.18.6052-420-RA (Type ?):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi
+    
 
 
 - 15.53.6886-510-RF (Type 2):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi
+    
 
 
 - 16.3.7567-660-RG (Type 2): 
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi
+    
 
 
 - 17.2.188-820-RA (Type 1):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi
+    
 
 
 - 17.2.0213-820-RC (Type 1):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi
+    
 
 
 - 17.2.0261-820-RA (Type 2):
@@ -121,6 +131,7 @@ OSCK: Not required.  Firmware images in RBI files are not encrypted with model-s
 - 16.1.7565-580-RC (Type 2):
 
     - http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi
+    
  
 
 - 15.53.6469-510-RA (Type 2):
@@ -148,22 +159,30 @@ OSCK: Not Known
 
 - 15.32.1509-ver1.4 (Type ?):
 
-   - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi
+    - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi 
+    
+    
    
    
 - 15.53.6627-ver1.6 (Type ?):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi
+    
+    
    
    
 - 15.53.7004-ver1.7.1 (Type ?):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi
+    
+    
    
    
 - 15.53.8141-ver1.9.0 (Type ?):
 
     - ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi
+    
+    
    
    
 ### TG789vac v2 / VANT-6
@@ -173,16 +192,19 @@ OSCK: Not Known
 - 16.3.7196-ver2.0.5 (Type 2):
 
     - https://app.box.com/s/hp780lnir7xbulk10317ia4n3u3jbnee
+    
  
 
 - 16.3.7637-ver2.2.0 (Type 2):
 
     - https://app.box.com/s/o1oxgju3z8ra1d3sb5nmghyvj2v6cqtq
+    
  
 
 - 16.3.7637-ver2.2.1 (Type 2):
 
     - https://app.box.com/s/phdp7z9sn7s4sk8sooj7rkiv3bql0h01
+    
  
 
 - 16.3.8046-ver3.0 (Type 1):
@@ -198,6 +220,7 @@ OSCK: Not Known
 - 17.2.0278 (Type 2):
 
      - https://uno.help/attachments/732
+     
 
 
 
@@ -222,16 +245,19 @@ OSCK: Not Known
 - 17.2.0219-820-RA (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi
+    
  
 
 - 17.2.0219-820-RB (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi
+    
  
 
 - 17.2.0261-820-RA (Type 2):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi
+    
 
 
 
@@ -247,18 +273,20 @@ OSCK: Not Known
 - 17.2.0288-820-RA (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi
+    
  
 
 - 17.2.0320-820-RA (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi
  
+ 
 
 - 17.2.0406-820-RC (Type ???):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi
+    
  
-
 
 
 
@@ -271,14 +299,17 @@ OSCK: Not Known
 - 18.1.c.0215-950-RA (Type 2):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi
+    
  
 
 - 18.1.c.0241-950-RA (Type 1):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi
+    
  
 
 - 18.1.c.0283-950-RA (Type 1):
 
     - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi 
+    
  
