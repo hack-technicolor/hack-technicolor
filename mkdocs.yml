@@ -10,7 +10,6 @@ markdown_extensions:
     - admonition
     - def_list
     - nl2br
-    - mdx_linkify
 
 extra_css:
     - css/extra.css
