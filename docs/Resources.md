@@ -145,14 +145,18 @@ TG799vac:
 
 ### Backup/Restore bit-for-bit
 
-This guide will show you how to create a bit-for-bit clone of a bank and reflash it.
+This guide will show you how to dump a bit-for-bit clone of any partition and reflash it.
 
 **You will need**
 
 - FAT32 USB Stick
 - 5min
 
-Bank_1 is mounted on mtd3 partition and bank_2 is mounted on mtd4. It is good practise to backup to USB to minimise chance of filling the ram, causing a coredump and bricking your device.
+`bank_1` is usually mapped on `mtd3` partition and `bank_2` is usually mapped on `mtd4`, you do not realy need to backup firmware banks if you already have an RBI file for that same firmware available. If you are not sure you already have the same one, you can extract the RBI file, mark the first 4 bytes of the resulting binary to 0x00 and compare its checksum against output of `md5sum /dev/mtd*` (this may take a while to compute, be patient).
+
+You definitely need instead to backup all other partitions, expecially the `eripv2` one, and all the others. You can get the full partition list with `cat /proc/mtd`
+
+It is good practise to keep moving dumped partitions to USB as soon as you complete one in order to minimise chance of filling the ram, and causing an out-of-memory crash and reboot.
 
 1. Plug in a USB stick and run:
 ```
@@ -166,17 +170,19 @@ drwxrwxrwx    1 root     root             0 Jan 16 10:55 ..
 lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/mountd/sda1
 ```
 
-2. To backup, run `dd if=/dev/mtd<X> of=/mnt/usb/<usb-path>/mtd<X>.bin` 
-      - Replace X with 3, 4 or any other block number
-      - Replace usb-path with your USB drive, see Step 1.
+2. To backup, run: `dd if=/dev/mtd<X> of=/tmp/mtd<X>.dump`
+    - Replace `<X>` with any block device number
+3. Move the dumped partition into USB drive, run: `mv /tmp/mtdX.dump /mnt/usb/<usb-path>/`
+    - Replace `<usb-path>` with your USB drive, see Step 1
+4. If `<X>` partition does not include any flash portion currently mounted with enabled write access, make sure to compare checksums to ensure the dump is a 1:1 exact copy
+5. Repeat from Step 1 for every partition you would like to dump
 
-3. To restore, run `mtd write /mnt/usb/<usb-path>/mtd<X>.bin bank_<n>`
-      - Replace usb-path with your USB drive, see Step 1.
-      - Replace X with the block number.
-      - Replace N with the bank number you want to flash to.
-      - Firmware can be restored to either bank. 
+To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <partition_name>`
+- Replace `<usb-path>` with your USB drive path
+- Replace `<X>` with the block number
+- Replace `<partition_name>` whith the partition name you want to flash to (names are shown in `/proc/mtd` too)
 
-Tiscali firmware (which has no RBI files) is flashed this way to some TG789vac devices.
+Raw firmware dumps (which has no RBI files) are flashed this way to matching devices.
 
 
 ### IPv6 Issues
