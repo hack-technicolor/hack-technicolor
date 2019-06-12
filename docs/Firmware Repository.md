@@ -17,8 +17,7 @@ Type 1/2/3 indicates if it can be rooted directly.
 **Telstra - Gateway Max 2**
 
 - 16.3.7567-660-RD (Type 2): 
-
-   - :download:`vant-y_CRF690-16.3.7567-660-RD.rbi <http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi>`
+:download:`vant-y_CRF690-16.3.7567-660-RD.rbi <http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi>`
    
 
 
@@ -104,7 +103,8 @@ OSCK: Not required.  Firmware images in RBI files are not encrypted with model-s
 
 OSCK: Not Known
 
-.. warning:: This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on common Australian TG789vac v2/v3
+.. WARNING:: This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**.
+             This won't boot on common Australian TG789vac v2/v3
 
 **MST (no-brand) from UNO.UK**
 
