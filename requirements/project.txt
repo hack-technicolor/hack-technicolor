@@ -1,1 +1,0 @@
-mdx_linkify>=41.0.1
