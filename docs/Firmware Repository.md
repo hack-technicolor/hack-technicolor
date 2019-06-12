@@ -104,7 +104,8 @@ OSCK: Not required.  Firmware images in RBI files are not encrypted with model-s
 
 OSCK: Not Known
 
-**WARNING**: This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on more common TG789vac v2/v3.
+!!! warning
+    This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on more common TG789vac v2/v3.
 
 **MST (no-brand) from UNO.UK**
 
