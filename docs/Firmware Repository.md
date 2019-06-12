@@ -18,7 +18,7 @@ Type 1/2/3 indicates if it can be rooted directly.
 
 - 16.3.7567-660-RD (Type 2): 
 
-   - http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi
+   - :download:`vant-y_CRF690-16.3.7567-660-RD.rbi <http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi>`
    
 
 
