@@ -157,9 +157,16 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
  
 ### What to do if your firmware is not listed here
 
-If you find another firmware for a Technicolor gateway, please post it here! Keep an eye on your formatting, follow everyone else's!
+If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
-### Guessing Firmware URL's
+- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmwares released via remote upgrade on their server, so you may resort into just guessing the right URL
+- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
+
+Read further below to get some more useful tips.
+
+If you find another firmware for a Technicolor gateway which is not yet listed, please share it here! Keep an eye on your formatting, follow everyone else's!
+
+### Guessing RBI Firmware URL's
 
 Stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X). 
 
@@ -193,3 +200,17 @@ Once you have guessed it please post it here!
 Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface it first decrypt the RBI payload and then flash its contents into one of the internal "banks".
 
 Every firmware image is also authenticated by asymmetric keys used for signing and verifying signature. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
+
+### Make a raw device dump
+
+Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade.
+Such images cannot boot on different boards and **do not include any sensitive info** about your own device. Therefore they are totally safe to be shared.
+In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain a valid firmware in order to boot correctly.
+To make a full dump of them you can easily use the busybox built-in `dd` command:
+
+```
+dd if=/dev/mtd3 of=/tmp/bank_1.dump
+dd if=/dev/mtd4 of=/tmp/bank_2.dump
+```
+
+Please note the two banks are usually mapped into `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device.
