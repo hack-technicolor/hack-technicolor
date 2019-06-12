@@ -1,45 +1,3 @@
-
-### Word on Formatting and New Firmware
-
-If you find another firmware for a Technicolor modem, please post it here! Keep an eye on your formatting, follow everyone else's!
-
-### Guessing Firmware URL's
-
-Stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X). 
-
-Firmware filename pattern is ISP specific, so the first thing to do is to find another known one from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining: 
-
-Product Vendor + **Hardware** + CRF + **Firmware**
-
-Using the web interface, advanced view Gateway tile will give you Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
-
-```
-Global Information
-Product Vendor 	 	Technicolor
-Product Name 	 	Technicolor TG797n v3
-Software Version 	15.3
-Firmware Version 	15.53.6469-510-RA
-Hardware Version 	DANT-O
-```
-
-If the modem is rooted the CRF number can be found in `/rom/etc/config/env`
-```
-cat /rom/etc/config/env
-...
-option CONF_VERSION 'CRF483'
-...
-```
-
-The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
-
-Once you have guessed it please post it here!
-
-Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface it first decrypt the RBI payload and then flash its contents into one of the internal "banks".
-
-Every firmware image is also authenticated by asymmetric keys used for signing and verifying signature. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
-
-
-
 ### Firmware versions and URLs if available
 
 For simplicity, model names are reported here without irrelevant branding codes. 
@@ -146,9 +104,7 @@ OSCK: Not required.  Firmware images in RBI files are not encrypted with model-s
 
 OSCK: Not Known
 
-.. warning::
-
-This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on common Australian TG789vac v2/v3
+.. warning:: This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on common Australian TG789vac v2/v3
 
 **MST (no-brand) from UNO.UK**
 
@@ -330,3 +286,42 @@ OSCK: Not Known
     - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi 
     
  
+
+### What to do if your firmware is not listed here
+
+If you find another firmware for a Technicolor gateway, please post it here! Keep an eye on your formatting, follow everyone else's!
+
+### Guessing Firmware URL's
+
+Stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X). 
+
+Firmware filename pattern is ISP specific, so the first thing to do is to find another known one from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining: 
+
+Product Vendor + **Hardware** + CRF + **Firmware**
+
+Using the web interface, advanced view Gateway tile will give you Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
+
+```
+Global Information
+Product Vendor 	 	Technicolor
+Product Name 	 	Technicolor TG797n v3
+Software Version 	15.3
+Firmware Version 	15.53.6469-510-RA
+Hardware Version 	DANT-O
+```
+
+If the modem is rooted the CRF number can be found in `/rom/etc/config/env`
+```
+cat /rom/etc/config/env
+...
+option CONF_VERSION 'CRF483'
+...
+```
+
+The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
+
+Once you have guessed it please post it here!
+
+Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface it first decrypt the RBI payload and then flash its contents into one of the internal "banks".
+
+Every firmware image is also authenticated by asymmetric keys used for signing and verifying signature. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
