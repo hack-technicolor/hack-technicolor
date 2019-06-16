@@ -99,8 +99,12 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 
 **iiNet**
 
-- 18.3.0157-3-2-1-CRF905 (Type ???):
-    - No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.
+!!! caution "Not an RBI file"
+    This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools
+
+    - 18.3.0157-3-2-1-CRF905 (Type ???):
+        - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz
+
 
 ### TG789vac v2 HP / VBNT-L
 
