@@ -99,12 +99,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 
 **iiNet**
 
-!!! caution "Not an RBI file"
-    This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools
-
-    - 18.3.0157-3-2-1-CRF905 (Type ???):
-        - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz
-
+- 18.3.0157-3-2-1-CRF905 (Type ???):
+     - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz
+     **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools**
 
 ### TG789vac v2 HP / VBNT-L
 
@@ -117,13 +114,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 
 **Telstra - Frontier Gateway**
 
-
-!!! caution "Not an RBI file"
-    This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools
-
-    - 16.3.7413-660-RF (Type 2):
-        - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
-
+- 16.3.7413-660-RF (Type 2):
+    - https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
+    **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools**
 - 17.2.0219-820-RA (Type ???):
     - http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi
 - 17.2.0219-820-RB (Type ???):
