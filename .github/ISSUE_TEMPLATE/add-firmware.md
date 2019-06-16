@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Please fill out the following:
+Please fill out the following, remembering to put an 'X' in the '[ ]' to mark the checkbox:
 
 **Type**
 - [ ] Bank Dump
