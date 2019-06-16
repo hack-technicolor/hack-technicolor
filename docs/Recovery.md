@@ -3,8 +3,8 @@
 
 ## IMPORTANT - Read before Attempting!
 
-**Warning:** This process is not supported by the manufacturer or supplier of your modem. 
-There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+!!! caution "DISCLAIMER"
+    In some cases there is no way of knowing your exact situation and taking the wrong actions could get things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcomes.
 
 This guide is based upon devices being in the following state:
 
@@ -12,63 +12,129 @@ This guide is based upon devices being in the following state:
 - TG799vac - orange status light on and occasional rebooting
 - TG800vac - green power light only.
 
-**Before power down or reboot/rtfd you must SSH to device and run `mtd erase -r rootfs_data` (or other name of data partition) or your modem is bricked forever.**
+**Before power down or reboot/rtfd you must SSH to device and run `mtd erase -r rootfs_data` (or other name of data partition) or your gateway is bricked forever.**
 
-**Make sure to follow the steps in order!**
+#################################################################################################################################################################################################
+
+## 0. Wipe custom data partition
+
+Technicolor gateways platformas are usually built on a firmware+data design, which consists of (a couple of) read-only filesystems (squashfs) stored in *firmware banks* plus a writable filesystem (jffs2) for user dafa storage.
+
+In modern Homeware firmwares, based on a fork of OpenWrt, the user data partition consists of an overlay which contents get applied every time on top of the original root filesystem, stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a distinct overlay for each firmware bank.
+
+The space available into the user data partition is shared across both bank's overlays.
+
+If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data parition only**, and all you did to your device for **both banks** will be lost.
+
+!!! note
+    This reset method is not available if:
+	    - you have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
+		- the gateway bootloops or fails to boot properly
+
+1. Log in to root shell (whatever you have available between SSH, telnet, serial console ...)
+2. Check `cat /proc/mtd` outputs and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
+3. Run `mtd erase rootfs_data` or `mtd erase userfs` accordingly
+4. Reboot the gateway.
 
 
 #################################################################################################################################################################################################
 
-## 1. Reset to Factory Defaults
+## 1. Reset to Factory Defaults (RTFD)
 
-If at some point you can no longer connect to the Gateway or you want to make a fresh install, it may be useful to perform a reset to factory defaults.
+If at some point you can no longer connect to the gateway or you want to make a fresh install, it may be useful to perform a "reset to factory defaults (RTFD)".
 
-Note: *A reset to factory default settings deletes all configuration changes you made. After the reset a reconfiguration of your Gateway will be needed and wireless clients will also have to be re-associated.*
+!!! note
+    A RTFD deletes all changes you made to files and configurations relative to the booted bank. After the reset a reconfiguration of your gateway will be needed and wireless clients will also have to be re-associated.
 
-Choose between:
-1. Resetting the Gateway via the web interface
-2. Reset the Gateway via the Reset button
+This feature is iimplemented by an official tool from technicolor you can invoke in different equivalent ways. Choose between:
+1. RTFD via the web interface
+2. RTFD via the reset button
+3. RTFD via the CLI shell
+4. Manually do what RTFD does via root shell
 
-#### Resetting the Gateway via the web interface:
+!!! caution "Unroot prevention"
+    Some un-root prevention mechanisms implemented by various modders may inject or modify default RTFD behaviour. If you installed some custom mod which has un-root prevention features, take into account that RTFD may be broken because of such modifications.
 
-1. Browse to the Gateway web interface.
-2. Click Gateway. The Gateway page appears.
+#### RTFD via the web interface
+
+!!! note
+    This RTFD method is not available if:
+	    - the web interface is corrupt and not accessible
+		- the gateway bootloops or fails to boot properly
+		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+
+1. Browse to the gateway web interface.
+2. Click gateway. The gateway page appears.
 3. Click Reset.
-4. The Gateway restores the factory default configuration and restarts.
+4. The gateway deletes all customized data for the booted bank and restarts.
 
-#### Reset the Gateway via the Reset button:
-1. Make sure the Gateway is turned on.
-2. Push the Reset button for at least 7 seconds and then release it.
-3. The Gateway will restart.
+#### RTFD via the reset button
 
-Note: *The physical reset button of the gateway may have been disabled. In this case, a hardware reset to defaults is not possible.*
+!!! note
+    This RTFD method is not available if:
+	    - the physical reset button of the gateway have been disabled
+		- the gateway bootloops or fails to boot properly
+		- the `userfs` or `rootfs_data` jffs2 filesystem is full
 
-#### Restore your settings.
+1. Make sure the gateway is turned on and completely booted
+2. Push the Reset button for at least 7 seconds and then release it
+3. The gateway deletes all customized data for the booted bank and restarts
 
-If you previously backed up your configuration, you can now restore this configuration to your Gateway.
+#### RTFD via the CLI shell
+
+!!! note
+    This RTFD method is not available if:
+	    - you have no kind of access to CLI by either SSH, or telnet, or serial console
+		- the gateway bootloops or fails to boot properly
+		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+
+1. Make sure the gateway is turned on and completely booted
+2. Login to the CLI, RTFD is also available in restricted shall (clash)
+3. Just run `rtfd` command
+4. The gateway deletes all customized data for the booted bank and restarts
+
+#### Manually do what RTFD does
+
+!!! note
+    This reset method is not available if:
+	    - you have no kind of access to root shell by either SSH, or telnet, or serial console
+		- the gateway bootloops or fails to boot properly
+		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+
+1. Make sure the gateway is turned on and completely booted.
+2. Login to root shell
+3. Just run `rm -rf /overlay/bank_N` command, where **N** is either number of the bank you want to RTFD
+4. All customized data for that bank is gone. You could now eventually restore some rooting scripts or previous and working backup for the current correct firmware version
+5. Turn off device to reboot
+
+#### Restore your settings
+
+If you previously backed up your configuration, you can now restore this configuration to your gateway.
 
 
 #################################################################################################################################################################################################
 
-## 2. TFTP Recovery
+## 2. TFTP firmware flashing via BOOT-P recovery mode
 
-After soft bricking both my TG789vac and TG800vac modems and finally getting them working again, this guide should help others who are in the same situation. 
+This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
-It may also work for other models such as the TG799vac.
+!!! note "Your firmware is unlikely to be corrupt"
+    If your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
+	Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
-**What you will need**
+This should work for any known Technicolor device build on a Broadcom BCM63xx platoform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
-1. TFTP64 or similar program
+By holding down a button at power on on the gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the gateway, `bank_1` (no one has observed it writing to `bank_2`). 
 
-2. RBI firmware file for your device (I suggest using the one that was on it at time of bricking)
+If both firmware banks contains invalid firmwares the gateway will enter BOOT-P recovery mode automatically after three failed attempts for each bank
 
-3. A static IP address assigned to your wired NIC
+!!! warning "Please note and take into account"
+    - This will not automaticlly switch active bank for you, if active bank is `bank_2` and it stil contains a valid firmware it will still boot it instead of that one you are loading here.
+ 
+    - Flashing via this method does not perform any factory reset, the new firmware will run on old and possibly corrupt or incompatible settings. It is therefore recommended that you perform a factory reset before flashing some firmware which is too different or not capable of managing a settings upgrade from the current one.
+  
+    - The firmware image is digital signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
-4. A network cable
-
-5. A few cups of coffee
-
-6. About 30min to an hour
 
 #################################################################################################################################################################################################
 
@@ -76,29 +142,21 @@ It may also work for other models such as the TG799vac.
 
 #### Background
 
-Since basically forever, Technicolor modems have had a corrupt firmware recovery mechanism built in.  
-
-By holding down a few buttons at power on on the modem, with the appropriate software running on your PC, you can reload firmware into one of the banks of the modem, usually bank1. (no one has observed it writing to bank2).  
-
-Please note:
-- This will not allow you to swap banks, but if both firmware banks are corrupt it will allow recovery. 
- 
-- Flashing via this method does not perform a factory reset.
-  
-- The firmware image is digital signature verified so you can't load an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
-
-
 This guide is written for Windows but it should work on Linux too if you adapt the configuration.
 
-#################################################################################################################################################################################################
+**What you will need**
 
-#### Requirements
+1. A computer running a DHCP server and TFTP server.
+   This guide uses TFTP64 for windows which implements both.
 
-- A computer running a DHCP server and TFTP server.  We will use TFTPD64.
+2. RBI firmware file for your specific gateway board.
 
-- A wired Ethernet connection from your PC to your modem.  Wireless will not work.  You can use wireless to keep an internet connection working while doing this procedure as if you only have one Ethernet port it will be dedicated to the procedure.
+3. A wired ethernet connection with static IP address assigned.
+   BOOT-P recovery mode does not support Wi-Fi.
 
-- You may need to reconfigure your network card settings for this procedure then restore them later.  This is not covered in this guide.
+5. A few cups of coffee
+
+6. About 30min to an hour
 
 
 #################################################################################################################################################################################################
@@ -107,11 +165,11 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-- Get the [firmware](https://whirlpool.net.au/wiki/hw_model_1622) (.rbi) file you want to load into the modem and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
+- Get the [firmware](https://whirlpool.net.au/wiki/hw_model_1622) (.rbi) file you want to load into the gateway and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
 
-- Connect the Ethernet port on your PC to one of the LAN ports on the modem (usually LAN1).
+- Connect the Ethernet port on your PC to one of the LAN ports on the gateway (usually LAN1).
 
-- Turn the modem off.
+- Turn the gateway off.
 
 - On the PC ensure the network card you wish to use is set to DHCP: 
 
@@ -164,7 +222,7 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 ![TFTP64](images/TFTPD_400_Main.png)
 
-You are now ready to try booting the modem to do the flash!
+You are now ready to try booting the gateway to do the flash!
 
 #################################################################################################################################################################################################
 
@@ -176,29 +234,29 @@ You are now ready to try booting the modem to do the flash!
 
 2. Ensure TFTP is on the log viewer tab.
 
-3. Connect one end of the network cable to any LAN port on the modem DO NOT use the WAN port, and the other end to the nic on the pc.
+3. Connect one end of the network cable to any LAN port on the gateway DO NOT use the WAN port, and the other end to the nic on the pc.
 
-4. Place modem into BOOTP mode, this is achieved by turning modem off, holding the reset button down and powering on.
+4. Place gateway into BOOTP mode, this is achieved by turning it off, holding the reset button down and powering on.
 	- For TG789vac and TG799vac wait for the ethernet light to flash.
 	- For TG800vac count to about 5.
 	- TFTP may detect the sooner though.
 
 
-5. Let the firmware flash, and allow modem to reboot.
-	- It may take a few attempts for TFTP to connect and send the firmware, and you may have to put the modem into BOOTP mode several times.
+5. Let the firmware flash, and wait for the gateway to reboot.
+	- It may take a few attempts for TFTP to connect and send the firmware, and you may have to put the gateway into BOOTP mode several times.
 	
 
-6. After modem has rebooted, wait for approx 4-10min, modem may reboot several times.
+6. After gateway has rebooted, wait for approx 4-10min, gateway may reboot several times.
 
 7. Hold down reset button for 15-20 seconds and release.
 
-8. Allow modem to reboot and wait for approx 5min.
+8. Allow gateway to reboot and wait for approx 5min.
 	- On the TG800vac you will know it has worked as the online light should be green, for the TG789 there may be some led activity but cant remember.
 	
 
-9. Place the modem back into BOOTP mode & flash again & allow modem to reboot. (give it a few minutes)
+9. Place the gateway back into BOOTP mode & flash again & allow gateway to reboot. (give it a few minutes)
 
-From here modem should have recovered from its soft-brick state, and be operational again if everything went smoothly. If for some reason you are not recovered, you can try running the process again and see if you recover.
+From here gateway should have recovered from its soft-brick state, and be operational again if everything went smoothly. If for some reason you are not recovered, you can try running the process again and see if you recover.
 
 **If successful, remember to un-assign your static ip address.**
 
@@ -214,14 +272,43 @@ From here modem should have recovered from its soft-brick state, and be operatio
 
 #################################################################################################################################################################################################
 
-## 3. Bank Switching
+## 3. Booting from passive bank
 
 #################################################################################################################################################################################################
 
-### Manually
+Dual-banks gateways work very similar to a dul-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data aprtition and two firmware banks.
 
-e.g. If the DJN2130 Telstra Frontier Gateway has v17.2.0261-820-RA loaded it may still be possible to reverted it back to 16.3 using the timed reset method, then exploited via the ping exploit (from [TG799vac process](https://forums.whirlpool.net.au/archive/2650998#r55075373) and [DJN2130](https://forums.whirlpool.net.au/forum-replies.cfm?r=55792167#r55792167)).
+When you power on your device it starts loading by default the firmware into the so called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be the active one.
 
+!!! hint "BOOT-P flashes into bank_1 only"
+    BOOT-P recovery mode allows flashing a valid firmware into `bank_1` only, and will do so even if the active bank is currently `bank_2`, and will not set `bank_1` as active if it is not.
+
+The process of switching active bank is called *switchover*. Ordinary firmware upgrades gets installed into the passive bank, and a switchover occurs at the end of the upgrade process if all went fine. This meaqs your gateway frequently changes active bank, and if you never unlocked it you are unlikely to know which one is currently active.
+
+Whenever the gateway fails to load or crashes three times in a row, the bootloader will enter *failboot* mode and will try booting fron the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOT-P recovery mode. However, it is still possible that some non critical services stops working as expected whithout crashing the whole system, and therefore not causing a failboot from the passive bank.
+
+If you want your device to forcefully boot from the passive bank, which is not currently active, you therefore have two options:
+- Set is as active (switchover)
+- Trigger a failboot
+
+## Switchover
+
+If you have got shella access into the gateway, this is really trivial as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active`.
+
+If you have no shell access, but you have the possibility to run a formware upgrade (for example via web interface, AutoFlashGUI or CWMP) as previously stated, a switchover will be executed automatically at the end of the process.
+
+If none of the above options are viable in your situation, unfortunately you must opt for failboot instead.
+
+## Failboot
+
+Failboot comes handy whenever you are locked out from your gateway and you want to forcefully boot the passive bank for any reason.
+For example on a Telstra Frontier gateway with v17.2.0261-820-RA loaded, it may be possible to trigger a failboot and boot the old Type 2 16.3 image, which could be still there from into the previous bank by using the timed reset method, and then proceed with the usual rooting guides.
+
+Here you find some alternative ways of triggering a failboot (again, it is a triple boot failure on the active bank). It is really simpler to success if you meanwhile read bootlogs from serial console where you see bootloader messages about each failed attempt. Pick your poison.
+
+#### Timed button action
+
+This is the button pressing sequence for the DJN2130 Telstra Frontier gateway with v17.2.0261-820-RA loaded. Timing for different gateways and very different firmwares may vary.
 
 The sequence is (Minutes:Seconds):
 
@@ -241,7 +328,12 @@ The sequence is (Minutes:Seconds):
 
 #################################################################################################################################################################################################
 
-### Potentiometer
+#### Crazy power switching
+
+If you power on your device, and rapidly toggle power switch on and off fast enough it never miss the required power to remain on,
+the inner circuits will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
+
+#### Potentiometer
 
 **You will need** 
 
@@ -249,19 +341,17 @@ The sequence is (Minutes:Seconds):
 
 ![Pot](images/pot_bankswitch.jpg)
 
-You only use the middle and outside poles and you split the positive cable to the middle pole from the power supply then the outside right pole looking down at the 3 poles from the knob side to the plug going to the modem.
+You only use the middle and outside poles and you split the positive cable to the middle pole from the power supply then the outside right pole looking down at the 3 poles from the knob side to the plug going to the gateway.
 
 Once powered on around 10-15 seconds into the boot cycle you want to turn it around 1/3 turn and just a little more and wait for the led to flash blue then turn it back up and do this 3 times then it will boot on other bank.
 
 
 #################################################################################################################################################################################################
 
-### Monitor Serial Console
+#### Automatic monitoring of serial console
 
-A Python program written by Mark Smith is available at [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which can monitor the serial console output from the modem and then automatically cycle the power to the modem to cause a brown-out condition during boot, to reliably force a temporary bank switch. 
+A Python program written by Mark Smith is available at [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which can monitor the serial console output from the gateway and then automatically cycle the power to the gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch. 
 
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
 If you do any electronics and have some relays and transistors lying around, you probably already have everything required for this just lying around!
-
-
