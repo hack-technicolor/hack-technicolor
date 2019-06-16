@@ -150,7 +150,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 - 18.1.c.0241-950-RA (Type 1):
     - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi
 - 18.1.c.0283-950-RA (Type 1):
-    - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi 
+    - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi
+- 18.1.c.0347-950-RC (Type 2):
+    - http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi
  
 ### What to do if your firmware is not listed here
 
