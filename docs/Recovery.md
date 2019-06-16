@@ -6,13 +6,8 @@
 !!! caution "DISCLAIMER"
     In some cases there is no way of knowing your exact situation and taking the wrong actions could get things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcomes.
 
-This guide is based upon devices being in the following state:
+This guide is based upon most frequent troubles                   where you experience your device being stuck in different states.
 
-- TG789vac - orange status light and rebooting every now and then
-- TG799vac - orange status light on and occasional rebooting
-- TG800vac - green power light only.
-
-**Before power down or reboot/rtfd you must SSH to device and run `mtd erase -r rootfs_data` (or other name of data partition) or your gateway is bricked forever.**
 
 #################################################################################################################################################################################################
 
@@ -26,10 +21,9 @@ The space available into the user data partition is shared across both bank's ov
 
 If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data parition only**, and all you did to your device for **both banks** will be lost.
 
-!!! note
-    This reset method is not available if:
-	    - you have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
-		- the gateway bootloops or fails to boot properly
+!!! note "This reset method is not available if..."    
+	- you have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
+    - the gateway bootloops or fails to boot properly
 
 1. Log in to root shell (whatever you have available between SSH, telnet, serial console ...)
 2. Check `cat /proc/mtd` outputs and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
@@ -57,11 +51,10 @@ This feature is iimplemented by an official tool from technicolor you can invoke
 
 #### RTFD via the web interface
 
-!!! note
-    This RTFD method is not available if:
-	    - the web interface is corrupt and not accessible
-		- the gateway bootloops or fails to boot properly
-		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+!!! note "This RTFD method is not available if..."
+	- the web interface is corrupt and not accessible
+	- the gateway bootloops or fails to boot properly
+	- the `userfs` or `rootfs_data` jffs2 filesystem is full
 
 1. Browse to the gateway web interface.
 2. Click gateway. The gateway page appears.
@@ -70,11 +63,10 @@ This feature is iimplemented by an official tool from technicolor you can invoke
 
 #### RTFD via the reset button
 
-!!! note
-    This RTFD method is not available if:
-	    - the physical reset button of the gateway have been disabled
-		- the gateway bootloops or fails to boot properly
-		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+!!! note "This RTFD method is not available if..."
+	- the physical reset button of the gateway have been disabled
+	- the gateway bootloops or fails to boot properly
+	- the `userfs` or `rootfs_data` jffs2 filesystem is full
 
 1. Make sure the gateway is turned on and completely booted
 2. Push the Reset button for at least 7 seconds and then release it
@@ -82,11 +74,10 @@ This feature is iimplemented by an official tool from technicolor you can invoke
 
 #### RTFD via the CLI shell
 
-!!! note
-    This RTFD method is not available if:
-	    - you have no kind of access to CLI by either SSH, or telnet, or serial console
-		- the gateway bootloops or fails to boot properly
-		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+!!! note "This RTFD method is not available if..."
+	- you have no kind of access to CLI by either SSH, or telnet, or serial console
+	- the gateway bootloops or fails to boot properly
+	- the `userfs` or `rootfs_data` jffs2 filesystem is full
 
 1. Make sure the gateway is turned on and completely booted
 2. Login to the CLI, RTFD is also available in restricted shall (clash)
@@ -95,11 +86,10 @@ This feature is iimplemented by an official tool from technicolor you can invoke
 
 #### Manually do what RTFD does
 
-!!! note
-    This reset method is not available if:
-	    - you have no kind of access to root shell by either SSH, or telnet, or serial console
-		- the gateway bootloops or fails to boot properly
-		- the `userfs` or `rootfs_data` jffs2 filesystem is full
+!!! note "This reset method is not available if..."
+	- you have no kind of access to root shell by either SSH, or telnet, or serial console
+	- the gateway bootloops or fails to boot properly
+	- the `userfs` or `rootfs_data` jffs2 filesystem is full
 
 1. Make sure the gateway is turned on and completely booted.
 2. Login to root shell
@@ -114,7 +104,7 @@ If you previously backed up your configuration, you can now restore this configu
 
 #################################################################################################################################################################################################
 
-## 2. TFTP firmware flashing via BOOT-P recovery mode
+## 2. BOOT-P recovery mode (TFTP flashing)
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
