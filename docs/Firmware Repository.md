@@ -6,7 +6,7 @@ For example "DJA0230TLS", where "TLS" stands for "Telstra", is listed here as si
 
 Other branding codes you could see worldwide are "TS" for "Telia Sonera", "MYR" for MyRepublic, "TI" for Telecom Italia, "VDF" for Vodafone, and so on. You can safely ignore branding codes.
 
-Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to specify and keep this important detail updated** whenever you add a new firmware version to this page.**
+Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.**
 
 ### TG800vac / VANT-Y
 
@@ -40,7 +40,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 
 ### TG797n v3 / DANT-O
 
-!!! note "OSCK Not required"
+!!! note "OSCK Not Required"
     Firmware images in RBI files for this board are not encrypted with model-specific keys
 
 **Telstra - T-Gateway**
@@ -52,11 +52,11 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss to speci
 
 ### TG789vac / VANT-D
 
-!!! warning "Model equivocation"
+!!! warning "Model Warning"
     This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on more common TG789vac v2/v3.
 
 !!! danger "OSCK Not Known"
-    Nobody still shared the model specific key for decrypting firmwares for this board. Hence, we generally don't know their contents.
+    Nobody has shared the model specific key for decrypting firmwares for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
 
 **MST (no-brand) from UNO.UK**
 
@@ -160,6 +160,7 @@ If you want to get an image of a Technicolor firmware which is not listed here y
 
 - Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmwares released via remote upgrade on their server, so you may resort into just guessing the right URL
 - Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
+- Ask kevdagoat and he will use his CRF Guesser :)
 
 Read further below to get some more useful tips.
 
@@ -212,4 +213,4 @@ dd if=/dev/mtd3 of=/tmp/bank_1.dump
 dd if=/dev/mtd4 of=/tmp/bank_2.dump
 ```
 
-Please note the two banks are usually mapped into `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device.
+Please note the two banks are usually mapped into `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
