@@ -166,7 +166,7 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 - Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help page](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
 (Unless you are using Static IPs on your network this will already be done.  After the next few steps, the network card will receive an address from the TFTPD64 DHCP server.)
 
-- Start TFTP64 as ADMINISTRATOR.
+- Start TFTP64.
 
 - Click Settings.
 
@@ -204,9 +204,11 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 - Close TFTPD64.
 
-- Re-open TFTPD64 as ADMINISTRATOR.
+- Re-open TFTPD64.
 
-- If you get a firewall warning, allow access on private and public networks.
+- If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOT-P mode will always be of public type by default.
+
+- If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
 - The server interface should now show an IP in the 10.0.0.x range and after a few seconds: the PC gets an IP from the TFTP64 program via DHCP.
 
@@ -232,33 +234,22 @@ You are now ready to try booting the gateway to do the flash!
 	- TFTP may detect the sooner though.
 
 
-5. Let the firmware flash, and wait for the gateway to reboot.
-	- It may take a few attempts for TFTP to connect and send the firmware, and you may have to put the gateway into BOOTP mode several times.
+5. Let the firmware flash, a download progress bar will show. When completed, the gateway will start flashing the received firmware. Wait for the gateway to reboot.
+	- It may take a few attempts for TFTP to connect and send the firmware, and you may have to put the gateway into BOOTP mode again if you send no firmwares for a while.
 	
 
-6. After gateway has rebooted, wait for approx 4-10min, gateway may reboot several times.
+6. After gateway has rebooted, wait for approx 4-10min.
 
-7. Hold down reset button for 15-20 seconds and release.
+From here, gateway has the firmware you flashed into its `bank_1` partition.
 
-8. Allow gateway to reboot and wait for approx 5min.
-	- On the TG800vac you will know it has worked as the online light should be green, for the TG789 there may be some led activity but cant remember.
-	
+!!! note "A few things to note"
+- Again, the gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware. Would you like to force it booting from `bank_1` instead? Read below chapters.
 
-9. Place the gateway back into BOOTP mode & flash again & allow gateway to reboot. (give it a few minutes)
+- TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOT-P mode can be a pain.
 
-From here gateway should have recovered from its soft-brick state, and be operational again if everything went smoothly. If for some reason you are not recovered, you can try running the process again and see if you recover.
+- This guide and process will not work if your device is bricked at bootloader stage.
 
-**If successful, remember to un-assign your static ip address.**
-
-**A few things to note:**
-
-- TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, bootp mode can be a pain.
-
-- This guide and process may not work for everyone, depending on their brick state.
-
-- If you have no success with the current firmware, try a different revision
-
-- If all else fails and you cant recover or get stuck, jump over to the [thread](https://forums.whirlpool.net.au/forum-replies.cfm?t=2650998) for help.
+- If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
 
 #################################################################################################################################################################################################
 
@@ -266,7 +257,7 @@ From here gateway should have recovered from its soft-brick state, and be operat
 
 #################################################################################################################################################################################################
 
-Dual-banks gateways work very similar to a dul-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data aprtition and two firmware banks.
+Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data aprtition and two firmware banks.
 
 When you power on your device it starts loading by default the firmware into the so called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be the active one.
 
