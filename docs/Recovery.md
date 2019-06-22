@@ -4,26 +4,26 @@
 ## IMPORTANT - Read before Attempting!
 
 !!! caution "DISCLAIMER"
-    In some cases there is no way of knowing your exact situation and taking the wrong actions could get things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcomes.
+    In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcome(s).
 
-This guide is based upon most frequent troubles                   where you experience your device being stuck in different states.
+This Guide is based on a few different states.
 
 
 #################################################################################################################################################################################################
 
-## 0. Wipe custom data partition
+## Wipe custom data partition
 
-Technicolor gateways platformas are usually built on a firmware+data design, which consists of (a couple of) read-only filesystems (squashfs) stored in *firmware banks* plus a writable filesystem (jffs2) for user dafa storage.
+Technicolor gateway platforms are usually built on a `firmware + data` design, which consists of (a few) read-only filesystems (squashfs) stored in *flash banks* plus a writable filesystem (jffs2) for user dafa storage.
 
-In modern Homeware firmwares, based on a fork of OpenWrt, the user data partition consists of an overlay which contents get applied every time on top of the original root filesystem, stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a distinct overlay for each firmware bank.
+In modern Homeware firmwares, based on a fork of OpenWrt (Chaos Calmer 15.05), the user data partition consists of an overlay which contents get applied every time on top of the original root filesystem, which is stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a differing overlay for each firmware bank.
 
 The space available into the user data partition is shared across both bank's overlays.
 
-If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data parition only**, and all you did to your device for **both banks** will be lost.
+If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data parition only**, which will wipe all custom config.
 
 !!! note "This reset method is not available if..."    
-	- you have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
-    - the gateway bootloops or fails to boot properly
+	- You have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
+    - The gateway bootloops or fails to boot properly
 
 1. Log in to root shell (whatever you have available between SSH, telnet, serial console ...)
 2. Check `cat /proc/mtd` outputs and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
@@ -33,18 +33,17 @@ If you think you are not completely aware of what's going on or you don't know w
 
 #################################################################################################################################################################################################
 
-## 1. Reset to Factory Defaults (RTFD)
+## Reset to Factory Defaults (RTFD)
 
 If at some point you can no longer connect to the gateway or you want to make a fresh install, it may be useful to perform a "reset to factory defaults (RTFD)".
 
 !!! note
-    A RTFD deletes all changes you made to files and configurations relative to the booted bank. After the reset a reconfiguration of your gateway will be needed and wireless clients will also have to be re-associated.
+    A RTFD deletes all changes you made to files and configurations on the booted bank. After the reset, a reconfiguration of your gateway will be needed and wireless clients will also have to be re-associated.
 
-This feature is iimplemented by an official tool from technicolor you can invoke in different equivalent ways. Choose between:
+This feature is implemented by an official tool from Technicolor you can invoke in different ways. Choose between:
 1. RTFD via the web interface
 2. RTFD via the reset button
-3. RTFD via the CLI shell
-4. Manually do what RTFD does via root shell
+3. RTFD via the CLI (shell)
 
 !!! caution "Unroot prevention"
     Some un-root prevention mechanisms implemented by various modders may inject or modify default RTFD behaviour. If you installed some custom mod which has un-root prevention features, take into account that RTFD may be broken because of such modifications.
@@ -94,7 +93,7 @@ This feature is iimplemented by an official tool from technicolor you can invoke
 1. Make sure the gateway is turned on and completely booted.
 2. Login to root shell
 3. Just run `rm -rf /overlay/bank_N` command, where **N** is either number of the bank you want to RTFD
-4. All customized data for that bank is gone. You could now eventually restore some rooting scripts or previous and working backup for the current correct firmware version
+4. All customized data for that bank is gone. You could now restore some rooting script or previous and working backup for the current correct firmware version
 5. Turn off device to reboot
 
 #### Restore your settings
@@ -104,7 +103,7 @@ If you previously backed up your configuration, you can now restore this configu
 
 #################################################################################################################################################################################################
 
-## 2. BOOT-P recovery mode (TFTP flashing)
+## BOOT-P recovery mode (TFTP flashing)
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
@@ -112,7 +111,7 @@ This guide is useful if you need to load a different firmware on your `bank_1` f
     If your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
 	Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
-This should work for any known Technicolor device build on a Broadcom BCM63xx platoform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
+This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
 By holding down a button at power on on the gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the gateway, `bank_1` (no one has observed it writing to `bank_2`). 
 
@@ -253,7 +252,7 @@ From here, gateway has the firmware you flashed into its `bank_1` partition.
 
 #################################################################################################################################################################################################
 
-## 3. Booting from passive bank
+## Booting from passive bank
 
 #################################################################################################################################################################################################
 
@@ -272,7 +271,7 @@ If you want your device to forcefully boot from the passive bank, which is not c
 - Set is as active (switchover)
 - Trigger a failboot
 
-## Switchover
+#### Switchover
 
 If you have got shella access into the gateway, this is really trivial as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active`.
 
@@ -280,7 +279,7 @@ If you have no shell access, but you have the possibility to run a formware upgr
 
 If none of the above options are viable in your situation, unfortunately you must opt for failboot instead.
 
-## Failboot
+#### Failboot
 
 Failboot comes handy whenever you are locked out from your gateway and you want to forcefully boot the passive bank for any reason.
 For example on a Telstra Frontier gateway with v17.2.0261-820-RA loaded, it may be possible to trigger a failboot and boot the old Type 2 16.3 image, which could be still there from into the previous bank by using the timed reset method, and then proceed with the usual rooting guides.
@@ -311,8 +310,8 @@ The sequence is (Minutes:Seconds):
 
 #### Crazy power switching
 
-If you power on your device, and rapidly toggle power switch on and off fast enough it never miss the required power to remain on,
-the inner circuits will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
+If you power on your device, and rapidly toggle power switch on and off fast enough it won't get the required power to remain on,
+the bootloader will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
 
 #### Potentiometer
 
