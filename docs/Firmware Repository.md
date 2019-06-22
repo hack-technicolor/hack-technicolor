@@ -11,6 +11,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 ### TG800vac / VANT-Y
 
 **Telstra - Gateway Max 2**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.3.7567-660-RD](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) |
@@ -22,6 +23,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 ### TG799vac / VANT-F
 
 **Telstra - Gateway Max**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | ???    | [15.18.6052-420-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) |
@@ -37,6 +39,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
     Firmware images in RBI files for this board are not encrypted with model-specific keys
 
 **Telstra - T-Gateway**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.1.7565-580-RC](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) |
@@ -51,6 +54,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
     Nobody has shared the model specific key for decrypting firmwares for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
 
 **MST (no-brand) from UNO.UK**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.2.7064](https://uno.help/attachments/690) |
@@ -58,6 +62,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 ### TG-1 / VANT-5
 
 **iiNet & Internode**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | ???    | [15.32.1509-ver1.4](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi) |
@@ -68,6 +73,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 ### TG789vac v2 / VANT-6
 
 **iiNet**
+
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.3.7196-ver2.0.5](https://app.box.com/s/hp780lnir7xbulk10317ia4n3u3jbnee) |
