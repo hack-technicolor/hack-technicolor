@@ -27,9 +27,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | ???    | [15.18.6052-420-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) |
 | 2      | [15.53.6886-510-RF](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) |
 | 2      | [16.3.7567-660-RG](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi)  |
-| 1      | [17.2.188-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi)   |
+| 1      | [17.2.188-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi)  |
 | 1      | [17.2.0213-820-RC](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi)  |
-| 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi)
+| 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi)  |
 
 ### TG797n v3 / DANT-O
 
@@ -72,7 +72,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 |:------:|:-----------------|
 | 2      | [16.3.7196-ver2.0.5](https://app.box.com/s/hp780lnir7xbulk10317ia4n3u3jbnee) |
 | 2      | [16.3.7637-ver2.2.0](https://app.box.com/s/o1oxgju3z8ra1d3sb5nmghyvj2v6cqtq) |
-| 2      | [16.3.7637-ver2.2.1](https://app.box.com/s/phdp7z9sn7s4sk8sooj7rkiv3bql0h01)
+| 2      | [16.3.7637-ver2.2.1](https://app.box.com/s/phdp7z9sn7s4sk8sooj7rkiv3bql0h01) |
 | 1      | [16.3.8046-ver3.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) or [here](http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) |
 
 **MST (no-brand) from UNO.UK**
