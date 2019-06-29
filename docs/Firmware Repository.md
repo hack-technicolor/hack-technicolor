@@ -99,17 +99,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 |:------:|:-----------------|
 | 2      | 16.3.7190 **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
 
-### DJN2130 / VBNT-J
-
-**Telstra - Frontier Gateway**
-
-| Type   | Version          |
-|:------:|:-----------------|
-| 2      | [16.3.7413-660-RF](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools** |
-| ???    | [17.2.0219-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) |
-| ???    | [17.2.0219-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) |
-| 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) |
-
 ### TG-1 / VANT-5
 
 **iiNet & Internode**
@@ -121,6 +110,17 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | ???    | [15.53.7004-ver1.7.1](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
 | ???    | [15.53.8141-ver1.9.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
 
+
+### DJN2130 / VBNT-J
+
+**Telstra - Frontier Gateway**
+
+| Type   | Version          |
+|:------:|:-----------------|
+| 2      | [16.3.7413-660-RF](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools** |
+| ???    | [17.2.0219-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) |
+| ???    | [17.2.0219-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) |
+| 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) |
 
 ### DJA0230 / VBNT-V
 
