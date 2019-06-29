@@ -2,9 +2,9 @@
 
 For simplicity, model names are reported here without irrelevant branding codes.
 
-For example "DJA0230TLS", where "TLS" stands for "Telstra", is listed here as simply "DJA0230" since all of them share the same board mnemonic.
+For example `DJA0230TLS`, where `TLS` stands for `Telstra`, is listed here as simply `DJA0230` since all of them share the same board mnemonic.
 
-Other branding codes you could see worldwide are "TS" for "Telia Sonera", "MYR" for MyRepublic, "TI" for Telecom Italia, "VDF" for Vodafone, and so on. You can safely ignore branding codes.
+Other branding codes you could see worldwide are `TS` for `Telia Sonera`, `MYR` for MyRepublic, `TI` for Telecom Italia, `VDF` for Vodafone, and so on. You can safely ignore branding codes.
 
 Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.**
 
