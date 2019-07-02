@@ -1,7 +1,6 @@
 
-#################################################################################################################################################################################################
 
-## IMPORTANT - Read before Attempting!
+# Read Before Attempting
 
 !!! caution "DISCLAIMER"
     In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcome(s).
@@ -9,13 +8,11 @@
 This Guide is based on a few different states.
 
 
-#################################################################################################################################################################################################
-
 ## Wipe custom data partition
 
 Technicolor gateway platforms are usually built on a `firmware + data` design, which consists of (a few) read-only filesystems (squashfs) stored in *flash banks* plus a writable filesystem (jffs2) for user dafa storage.
 
-In modern Homeware firmwares, based on a fork of OpenWrt (Chaos Calmer 15.05), the user data partition consists of an overlay which contents get applied every time on top of the original root filesystem, which is stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a differing overlay for each firmware bank.
+In modern Homeware firmwares, based on a fork of OpenWrt (Chaos Calmer 15.05), the user data partition consists of an overlay. It's contents get applied on reboot on top of the original root filesystem, which is stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a differing overlay for each firmware bank.
 
 The space available into the user data partition is shared across both bank's overlays.
 
@@ -30,8 +27,6 @@ If you think you are not completely aware of what's going on or you don't know w
 3. Run `mtd erase rootfs_data` or `mtd erase userfs` accordingly
 4. Reboot the gateway.
 
-
-#################################################################################################################################################################################################
 
 ## Reset to Factory Defaults (RTFD)
 
@@ -48,7 +43,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 !!! caution "Unroot prevention"
     Some un-root prevention mechanisms implemented by various modders may inject or modify default RTFD behaviour. If you installed some custom mod which has un-root prevention features, take into account that RTFD may be broken because of such modifications.
 
-#### RTFD via the web interface
+### RTFD via the web interface
 
 !!! note "This RTFD method is not available if..."
 	- the web interface is corrupt and not accessible
@@ -60,7 +55,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 3. Click Reset.
 4. The gateway deletes all customized data for the booted bank and restarts.
 
-#### RTFD via the reset button
+### RTFD via the reset button
 
 !!! note "This RTFD method is not available if..."
 	- the physical reset button of the gateway have been disabled
@@ -71,7 +66,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 2. Push the Reset button for at least 7 seconds and then release it
 3. The gateway deletes all customized data for the booted bank and restarts
 
-#### RTFD via the CLI shell
+### RTFD via the CLI shell
 
 !!! note "This RTFD method is not available if..."
 	- you have no kind of access to CLI by either SSH, or telnet, or serial console
@@ -83,7 +78,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 3. Just run `rtfd` command
 4. The gateway deletes all customized data for the booted bank and restarts
 
-#### Manually do what RTFD does
+### Manually do what RTFD does
 
 !!! note "This reset method is not available if..."
 	- you have no kind of access to root shell by either SSH, or telnet, or serial console
@@ -92,16 +87,13 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 1. Make sure the gateway is turned on and completely booted.
 2. Login to root shell
-3. Just run `rm -rf /overlay/bank_N` command, where **N** is either number of the bank you want to RTFD
-4. All customized data for that bank is gone. You could now restore some rooting script or previous and working backup for the current correct firmware version
-5. Turn off device to reboot
+3. Just run `rm -rf /overlay/bank_N` command, where **N** is either number of the bank you want to RTFD. All customized data for that bank is gone now. 
+4. Turn off device to reboot
 
-#### Restore your settings
+### Restore your settings
 
 If you previously backed up your configuration, you can now restore this configuration to your gateway.
 
-
-#################################################################################################################################################################################################
 
 ## BOOT-P recovery mode (TFTP flashing)
 
@@ -115,17 +107,14 @@ This should work for any known Technicolor device build on a Broadcom BCM63xx pl
 
 By holding down a button at power on on the gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the gateway, `bank_1` (no one has observed it writing to `bank_2`). 
 
-If both firmware banks contains invalid firmwares the gateway will enter BOOT-P recovery mode automatically after three failed attempts for each bank
+If both firmware banks contain invalid firmware's the gateway will enter BOOT-P recovery mode automatically after three failed attempts for each bank
 
 !!! warning "Please note and take into account"
     - This will not automaticlly switch active bank for you, if active bank is `bank_2` and it stil contains a valid firmware it will still boot it instead of that one you are loading here.
  
     - Flashing via this method does not perform any factory reset, the new firmware will run on old and possibly corrupt or incompatible settings. It is therefore recommended that you perform a factory reset before flashing some firmware which is too different or not capable of managing a settings upgrade from the current one.
   
-    - The firmware image is digital signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
-
-
-#################################################################################################################################################################################################
+    - The firmware image is digitally signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
 ### Set up TFTP
 
@@ -147,75 +136,66 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 6. About 30min to an hour
 
-
-#################################################################################################################################################################################################
-
 ### Setting up the Server
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-- Get the [firmware](https://whirlpool.net.au/wiki/hw_model_1622) (.rbi) file you want to load into the gateway and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](/Firmware%20Repository) (.rbi) file you want to load into the gateway and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
 
-- Connect the Ethernet port on your PC to one of the LAN ports on the gateway (usually LAN1).
+3. Connect the Ethernet port on your PC to one of the LAN ports on the gateway (usually LAN1).
 
-- Turn the gateway off.
+4. Turn the gateway off.
 
-- On the PC ensure the network card you wish to use is set to DHCP: 
+5. On the PC ensure the network card you wish to use is set to DHCP
 
-- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help page](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
+	- Press Windows+R to run `ipconfig /all | find "DHCP Enabled"` or check multiple cards with `ipconfig /all`. [Microsoft help page](https://support.microsoft.com/en-us/help/15089/windows-change-tcp-ip-settings). 
 (Unless you are using Static IPs on your network this will already be done.  After the next few steps, the network card will receive an address from the TFTPD64 DHCP server.)
 
-- Start TFTP64.
+6. Start TFTP64.
 
-- Click Settings.
+7. Click Settings.
 
-- On the GLOBAL tab enable only the following: TFTP Server, DHCP Server.
+8. On the GLOBAL tab enable only the following: TFTP Server, DHCP Server.
 
 ![TFTP64](images/TFTPD_100_GLOBAL.png)
 
-- On the TFTP tab the default options should be OK (base directory should be `.` )
+9. On the TFTP tab the default options should be OK (base directory should be `.`)
 
 ![TFTP64](images/TFTPD_200_TFTP.png)
 
-- On the DHCP Server tab: 
+10. On the DHCP Server tab: 
 
-	- 	IP pool start address 10.0.0.100
+	- 	IP pool start address: `10.0.0.100`
 
-	-	Size of pool: 20
+	-	Size of pool: `20`
 
-	-	Boot file: the firmware filename to flash i.e. vant-f_CRF687-16.3.7567-660-RG.rbi
+	-	Boot file: the firmware filename to flash i.e. `vant-f_CRF687-16.3.7567-660-RG.rbi`
 
-	-	Def Router (Opt 3): 10.0.0.99
+	-	Def. Router (Opt 3): `10.0.0.99`
 
-	-	Mask (Opt 1): 255.255.255.0
-
-	- 	DNS Servers (Opt 6): 10.0.0.99
-
-- Check against:
+	-	Mask (Opt 1): `255.255.255.0`
 
 ![TFTP64](images/TFTPD_300_DHCP.png)
 
-- Click OK
+11. Click OK
 
-- Accept the you will need to restart message.
+12. Click *Accept* when prompted to restart.
 
-- On the main screen Change the 'Server Interfaces' selection to your Ethernet network card.
+13. On the main screen Change the *Server Interfaces* selection to your Ethernet network card.
 
-- Close TFTPD64.
+14. Close TFTPD64.
 
-- Re-open TFTPD64.
+15. Re-open TFTPD64.
 
-- If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOT-P mode will always be of public type by default.
+16. If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOT-P mode will always be of public type by default.
 
-- If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
+	- If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
-- The server interface should now show an IP in the 10.0.0.x range and after a few seconds: the PC gets an IP from the TFTP64 program via DHCP.
+The server interface should now show an IP in the 10.0.0.x range and after a few seconds: the PC gets an IP from the TFTP64 program via DHCP.
 
 ![TFTP64](images/TFTPD_400_Main.png)
 
 You are now ready to try booting the gateway to do the flash!
-
-#################################################################################################################################################################################################
 
 ### Flashing the Firmware
 
@@ -250,11 +230,7 @@ From here, gateway has the firmware you flashed into its `bank_1` partition.
 
 - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
 
-#################################################################################################################################################################################################
-
 ## Booting from passive bank
-
-#################################################################################################################################################################################################
 
 Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data aprtition and two firmware banks.
 
@@ -277,14 +253,14 @@ If you have got shella access into the gateway, this is really trivial as you on
 
 If you have no shell access, but you have the possibility to run a formware upgrade (for example via web interface, AutoFlashGUI or CWMP) as previously stated, a switchover will be executed automatically at the end of the process.
 
-If none of the above options are viable in your situation, unfortunately you must opt for failboot instead.
+If none of the above options are viable in your situation, unfortunately you must opt for Bootfail instead.
 
-#### Failboot
+### Bootfail Procedure
 
-Failboot comes handy whenever you are locked out from your gateway and you want to forcefully boot the passive bank for any reason.
-For example on a Telstra Frontier gateway with v17.2.0261-820-RA loaded, it may be possible to trigger a failboot and boot the old Type 2 16.3 image, which could be still there from into the previous bank by using the timed reset method, and then proceed with the usual rooting guides.
+Bootfail comes handy whenever you are locked out from your gateway and you want to forcefully boot the passive bank for any reason.
+For example on a Telstra Frontier gateway with v17.2.0261-820-RA loaded, it may be possible to trigger a Bootfail and boot the old Type 2 16.3 image, which could be still there from the previous bank by using the timed reset method, and then proceeding with the usual rooting guides.
 
-Here you find some alternative ways of triggering a failboot (again, it is a triple boot failure on the active bank). It is really simpler to success if you meanwhile read bootlogs from serial console where you see bootloader messages about each failed attempt. Pick your poison.
+Here you find some alternative ways of triggering a Bootfail (again, it is a triple boot failure on the active bank). It is really simpler to success if you meanwhile read bootlogs from serial console where you see Bootfail messages about each failed attempt. Pick your poison.
 
 #### Timed button action
 
@@ -306,8 +282,6 @@ The sequence is (Minutes:Seconds):
 | 9	  |06:00	   |    -    | Browse to 192.168.0.1 and confirm firmware version
 
 
-#################################################################################################################################################################################################
-
 #### Crazy power switching
 
 If you power on your device, and rapidly toggle power switch on and off fast enough it won't get the required power to remain on,
@@ -325,8 +299,6 @@ You only use the middle and outside poles and you split the positive cable to th
 
 Once powered on around 10-15 seconds into the boot cycle you want to turn it around 1/3 turn and just a little more and wait for the led to flash blue then turn it back up and do this 3 times then it will boot on other bank.
 
-
-#################################################################################################################################################################################################
 
 #### Automatic monitoring of serial console
 
