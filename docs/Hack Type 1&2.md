@@ -15,19 +15,20 @@ Ensure the gateway does not have a wired or wireless internet connection. Gatewa
 
 **You need the following BEFORE you go offline:**
 
-- The latest version of the AutoFlashGUI software, available from GitHub either as a ZIP file: [master.zip](https://github.com/mswhirl/autoflashgui/archive/master.zip) or you can browse the source code and change history at [the project page](https://github.com/mswhirl/autoflashgui). Make sure the tool runs and GUI loads *before* you go offline!
+1) The latest version of the AutoFlashGUI software, available from GitHub either as a  [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or you can browse the source code and change history at [the project page](https://github.com/mswhirl/autoflashgui). 
+*Make sure the tool runs and GUI loads before you go offline!*
 
-- The old RBI [firmware](https://whirlpool.net.au/wiki/hw_model_1622) file for your gateway.
+2) The old RBI [firmware](/Firmware%20Repository/) file for your gateway.
 
-- The new RBI [firmware](https://whirlpool.net.au/wiki/hw_model_1622) file for your gateway **only if you want to flash the latest version. 16.3 is the best and most stable.**
+3) The new RBI [firmware](/Firmware%20Repository/) file for your gateway **only if you want to flash the latest version. 16.3 is the best and most stable.**
 
-- An SSH client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is recommended for Windows. [WinSCP](https://winscp.net/eng/download.php) is optional.
+4) An SSH client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is recommended for Windows. [WinSCP](https://winscp.net/eng/download.php) is optional.
 
-- A copy of this web page for reference while you're offline (*warning:* the browser can split long command lines so it is best to copy code and paste into a text editor like Notepad.).  
+5) A copy of this web page for reference while you're offline *or* clone the [repository](https://github.com/kevdagoat/hack-technicolor) and run `serve.bat` or `mkdocs serve`. (This requires MKDocs to be installed) 
 
-- Physical access to the gateway so you can power cycle it and unplug the WAN/DSL while you're going through this process.
+6) Physical access to the gateway so you can power cycle it and unplug the WAN/DSL while you're going through this process.
 
-- A 'happy' gateway! If it's in bridge mode or half the tiles are missing on the screen (which seems to be caused by corrupted config), reset it to [factory defaults](/Technicolor%20Recovery) first.
+6) A *happy* gateway! If it's in bridge mode or half the tiles are missing on the screen, reset it to [factory defaults](/Technicolor%20Recovery) first.
 
 #######################################################################################################################################################################################################
 
@@ -48,7 +49,9 @@ Ensure the gateway does not have a wired or wireless internet connection. Gatewa
  | TG797n v3       | Telstra T-Gateway        | DANT-O
 
 
-**Tip:** avoid referring to your device by its commercial name, refer to your device with its unique board mnemonic identifier XXXX-X to avoid ambiguity. You should be able to read this under the "Gateway" tab in the web interface and above. Golden rule: same mnemonic, same device.
+**Tip:** avoid referring to your device by its commercial name, refer to your device with its unique board mnemonic identifier XXXX-X to avoid ambiguity.
+
+ You should be able to read this under the "Gateway" tab in the web interface and above. Golden rule: same mnemonic, same device.
 
 **NB: Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available**
 
@@ -82,7 +85,7 @@ The default IP address of the gateway varies by firmware, it could be `10.0.0.13
 
 In this example, 16.3.7567 is the older Type 2 firmware.
 
-Using AutoFlashGUI, flash vant-f_CRF687-16.3.7567-660-RG.rbi and allow it to run through including getting root.
+Using AutoFlashGUI, flash `vant-f_CRF687-16.3.7567-660-RG.rbi` and allow it to run through including getting root.
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
@@ -91,6 +94,8 @@ Fire up your SSH client and connect to the gateway IP on port 22.
 Now proceed to permanent root access setup section [below](/Hack%20Type%201&2/#setting-up-permanent-root-access).
 
 ### Flashing and Rooting 17.2
+**17.2 is not recommended for gateways with a manufacturer-provided 16.3 firmware**
+
 In this example, `16.3.7567` is the older Type 2 firmware, `17.2.0261` is the newer Type 1 firmware.
 
 Run up the AutoFlashGUI tool and flash `vant-f_CRF683-17.2.188-820-RA.rbi` to your gateway.
@@ -98,13 +103,19 @@ Run up the AutoFlashGUI tool and flash `vant-f_CRF683-17.2.188-820-RA.rbi` to yo
 
 ![17.2 AFG](images/flashgui_17.2.png)
 
-This will take about 3-4 minutes. The flasher will try and root your gateway but it will fail (silently); this is expected. If the flasher fails to push the firmware, try again (is the username and password correct?), and if it still fails with some permission error in the console, you may have been locked out of flashing via the web interface. Bad Luck. Maybe a [PXE firmware load](Recovery/#2-tftp-recovery) can help. Ask for help in the whirlpool thread! (Note that firmware before v15.x may require some manual work, see the advanced topic "My firmware is so old that AutoFlashGUI can't authenticate to the gateway!" )
+This will take about 3-4 minutes. 
+
+The flasher will try and root your gateway but it will fail (silently); this is expected. 
+
+If the flasher fails to push the firmware, try again (is the username and password correct?), and if it still fails with some permission error in the console, you may have been locked out of flashing via the web interface. Bad Luck. Maybe a [PXE firmware load](Recovery/#2-tftp-recovery) can help. Ask for help in the whirlpool thread! (Note that firmware before v15.x may require some manual work, see [here](/Hack%20Type%201&2/#my-firmware-is-so-old-that-autoflashgui-cant-authenticate) )
 
 Now use AutoFlashGUI to flash in `vant-f_CRF687-16.3.7567-660-RG.rbi` and allow it to run through including getting root.
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
-At this point we are ready to do the procedure to activate root on 17.2 and switch over to it. This procedure works by allowing us to mod the inactive (but newer) image's file system and config, then switch back to it without doing a factory reset or official upgrade. Note that if you factory reset while on 17.2 you will need to run the entire procedure from where you flashed v16.3 to get root back, and it could upgrade and lock you out permanently in that reset state if it has internet access!
+At this point we are ready to do the procedure to activate root on 17.2 and switch over to it.
+
+ This procedure works by allowing us to mod the inactive (but newer) image's file system and config, then switch back to it without doing a factory reset or official upgrade. Note that if you factory reset while on 17.2 you will need to run the entire procedure from where you flashed v16.3 to get root back, and it could upgrade and lock you out permanently in that reset state if it has internet access!
 
 Fire up your SSH client and connect to the gateway IP on port 22.
 
@@ -133,7 +144,13 @@ bank_2
 bank_1
 ```
 
-These gateways use two flash partitions (bank_1 and bank_2) which can be upgraded/used almost independently. They are digital-signature verified before boot so you can't edit the rom image in the flash (yes, we tried).  The config is stored in the matching folder in /overlay i.e. /overlay/bank_2 *(hint: you can see your modified config files in here if you want to back stuff up or see what changes you made)*.  When a proper factory reset is done, the overlay partition is formatted (but not securely wiped; see section later).
+These gateways use two flash partitions (bank_1 and bank_2) which can be upgraded/used almost independently. 
+
+They are digital-signature verified before boot so you can't edit the rom image in the flash (yes, we tried).  The config is stored in the matching folder in /overlay i.e. /overlay/bank_2
+
+ *(hint: you can see your modified config files in here if you want to back stuff up or see what changes you made)*. 
+ 
+  When a proper factory reset is done, the overlay partition is formatted.
 
 Run the following to set 17.2 up for temporary root and switch back to it:
 

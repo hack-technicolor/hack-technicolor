@@ -152,12 +152,14 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
 - Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmwares released via remote upgrade on their server, so you may resort into just guessing the right URL
+
 - Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
+
 - Ask kevdagoat and he will use his CRF Guesser :)
 
 Read further below to get some more useful tips.
 
-If you find another firmware for a Technicolor gateway which is not yet listed, please share it here! Keep an eye on your formatting, follow everyone else's!
+If you find another firmware for a Technicolor gateway which is not yet listed, create an Issue so it can be added!
 
 ### Guessing RBI Firmware URL's
 
@@ -180,7 +182,7 @@ Hardware Version 	DANT-O
 
 If the modem is rooted the CRF number can be found in `/rom/etc/config/env`
 ```
-root@mygateway# cat /rom/etc/config/env | grep "CRF"
+root@mygateway:~# cat /rom/etc/config/env | grep "CRF"
 option CONF_VERSION 'CRF483'
 ```
 
