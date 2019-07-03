@@ -1,7 +1,7 @@
 # Hacking Technicolor Gateways
 
-**Warning:** This process is not supported by the manufacturer or supplier of your gateway. 
-There is no way of knowing your situation and the process could break your gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+**Warning:** This process is not supported by the manufacturer or supplier of your gateway.
+There is no way of knowing your situation and the process could break your gateway or reduce its security, allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## First Steps
 
@@ -33,16 +33,14 @@ There is no way of knowing your situation and the process could break your gatew
 
 #### Once you understand your current situation
 
-- If you are on a Type 1 or 2 firmware, please see [Type 1 & 2 firmware's](Hack%20Type%201&2/) rooting guides.
+- If you are on a Type 1 or 2 firmware, please see [Hack Type 1 and 2.](Hack%20Type%201&2/)
 
-- If you are on a Type 3 firmware, and a Type 2 firmware is available, please see the [recovery](Recovery/) guide to flash a root-friendly firmware.
+- If you are on a Type 3 firmware, and a Type 2 firmware is available, please see the [recovery](Recovery/) guide to flash it.
 
 - If you are on a Type ??? firmware, you may need to ask for some help on the [thread](https://forums.whirlpool.net.au/thread/9vxxl849).
-
 
 ## Quick Links
 
 - [Resources](Resources/)
 - [Recovery Guides](Recovery/)
 - [Firmware Repository](Firmware%20Repository/)
-

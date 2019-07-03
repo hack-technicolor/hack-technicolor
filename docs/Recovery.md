@@ -1,39 +1,35 @@
 
-
 # Read Before Attempting
 
 !!! caution "DISCLAIMER"
-    In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse and potentially brick your gateway. Anyone following this guide accepts full responsibility for the outcome(s).
+    In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse, potentially leading to a bricked gateway. Anyone following this guide accepts full responsibility for the outcome(s).
 
 This Guide is based on a few different states.
 
+## Wipe Custom Data Partition
 
-## Wipe custom data partition
+Technicolor gateway platforms are usually built on a `firmware + data` design, which consists of read-only filesystems (squashfs) stored in *flash banks* plus a writable filesystem (jffs2) for user dafa storage.
 
-Technicolor gateway platforms are usually built on a `firmware + data` design, which consists of (a few) read-only filesystems (squashfs) stored in *flash banks* plus a writable filesystem (jffs2) for user dafa storage.
+In modern Homeware firmwares, based on a fork of OpenWrt (Chaos Calmer 15.05), the user data partition is an overlay, it's contents get applied on top of the root filesystem, which is stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a differing overlay for each firmware bank.
 
-In modern Homeware firmwares, based on a fork of OpenWrt (Chaos Calmer 15.05), the user data partition consists of an overlay. It's contents get applied on reboot on top of the original root filesystem, which is stored as read-only firmware in the booted bank. For dual-bank gateways, the user data partition contains a differing overlay for each firmware bank.
+The space available into the user data partition is shared across both bank's overlay's.
 
-The space available into the user data partition is shared across both bank's overlays.
-
-If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data parition only**, which will wipe all custom config.
+If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data partition only**, which will wipe all custom config.
 
 !!! note "This reset method is not available if..."    
-	- You have lost any kind of access to root shell by either SSH, or telnet, or serial console, and you have no more ways of executing a custom command as root
-    - The gateway bootloops or fails to boot properly
+	- You have lost any kind of access to root shell by either SSH, Telnet, or Serial console, and you cannot execute a custom command as root.
+    - The gateway bootloops or fails to boot properly.
 
-1. Log in to root shell (whatever you have available between SSH, telnet, serial console ...)
-2. Check `cat /proc/mtd` outputs and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
-3. Run `mtd erase rootfs_data` or `mtd erase userfs` accordingly
-4. Reboot the gateway.
-
+1. Log in to root shell (whatever you have available to you; SSH, telnet, serial console ...)
+2. Run `cat /proc/mtd` and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
+3. Run `mtd -r erase rootfs_data` or `mtd -r erase userfs` accordingly.
 
 ## Reset to Factory Defaults (RTFD)
 
 If at some point you can no longer connect to the gateway or you want to make a fresh install, it may be useful to perform a "reset to factory defaults (RTFD)".
 
 !!! note
-    A RTFD deletes all changes you made to files and configurations on the booted bank. After the reset, a reconfiguration of your gateway will be needed and wireless clients will also have to be re-associated.
+    A RTFD deletes all changes you made to files and configurations on the booted bank. After the reset, a reconfiguration and reroot of your gateway **will** be needed.
 
 This feature is implemented by an official tool from Technicolor you can invoke in different ways. Choose between:
 1. RTFD via the web interface
@@ -46,74 +42,74 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 ### RTFD via the web interface
 
 !!! note "This RTFD method is not available if..."
-	- the web interface is corrupt and not accessible
-	- the gateway bootloops or fails to boot properly
-	- the `userfs` or `rootfs_data` jffs2 filesystem is full
+	- The web interface is corrupt and not accessible.
+	- The gateway bootloops or fails to boot properly.
+	- The `userfs` or `rootfs_data` jffs2 filesystem is full.
 
 1. Browse to the gateway web interface.
 2. Click gateway. The gateway page appears.
 3. Click Reset.
 4. The gateway deletes all customized data for the booted bank and restarts.
 
-### RTFD via the reset button
+### RTFD via the Reset Button
 
 !!! note "This RTFD method is not available if..."
-	- the physical reset button of the gateway have been disabled
-	- the gateway bootloops or fails to boot properly
-	- the `userfs` or `rootfs_data` jffs2 filesystem is full
+	- The physical reset button of the gateway have been disabled.
+	- The gateway bootloops or fails to boot properly.
+	- The `userfs` or `rootfs_data` jffs2 filesystem is full.
 
-1. Make sure the gateway is turned on and completely booted
-2. Push the Reset button for at least 7 seconds and then release it
-3. The gateway deletes all customized data for the booted bank and restarts
+1. Make sure the gateway is turned on and completely booted.
+2. Push the Reset button for at least 7 seconds and then release it.
+3. The gateway will delete all customized data for the booted bank. You will need to reroot.
 
 ### RTFD via the CLI shell
 
 !!! note "This RTFD method is not available if..."
-	- you have no kind of access to CLI by either SSH, or telnet, or serial console
-	- the gateway bootloops or fails to boot properly
-	- the `userfs` or `rootfs_data` jffs2 filesystem is full
+	- You have no access to the CLI by either SSH, or Telnet, or serial console.
+	- The gateway bootloops or fails to boot properly.
+	- The `userfs` or `rootfs_data` jffs2 filesystem is full.
 
-1. Make sure the gateway is turned on and completely booted
-2. Login to the CLI, RTFD is also available in restricted shall (clash)
-3. Just run `rtfd` command
-4. The gateway deletes all customized data for the booted bank and restarts
+1. Make sure the gateway is turned on and completely booted.
+2. Login to the CLI. (RTFD is also available in restricted shell if needed)
+3. Run `rtfd` 
+4. The gateway will delete all customized data for the booted bank. You will need to reroot.
 
 ### Manually do what RTFD does
 
 !!! note "This reset method is not available if..."
-	- you have no kind of access to root shell by either SSH, or telnet, or serial console
-	- the gateway bootloops or fails to boot properly
-	- the `userfs` or `rootfs_data` jffs2 filesystem is full
+	- You have no access to the root shell by either SSH, or Telnet, or serial console.
+	- The gateway bootloops or fails to boot properly.
+	- The `userfs` or `rootfs_data` jffs2 filesystem is full.
 
 1. Make sure the gateway is turned on and completely booted.
-2. Login to root shell
-3. Just run `rm -rf /overlay/bank_N` command, where **N** is either number of the bank you want to RTFD. All customized data for that bank is gone now. 
-4. Turn off device to reboot
+2. Login to root shell.
+3. Run `rm -rf /overlay/bank_N`
+	- Where **N** is either number of the bank you want to RTFD. 
+4. Turn off device to reboot. You will need to reroot.
 
 ### Restore your settings
 
-If you previously backed up your configuration, you can now restore this configuration to your gateway.
-
+If you previously backed up your configuration, you can now restore it to your gateway.
 
 ## BOOT-P recovery mode (TFTP flashing)
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
-!!! note "Your firmware is unlikely to be corrupt"
-    If your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
+!!! note "Your firmware is unlikely to be corrupt if..."
+    - Your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
 	Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
-By holding down a button at power on on the gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the gateway, `bank_1` (no one has observed it writing to `bank_2`). 
+By holding down a button at power on on the gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the gateway, `bank_1` (no one has observed it writing to `bank_2`).
 
-If both firmware banks contain invalid firmware's the gateway will enter BOOT-P recovery mode automatically after three failed attempts for each bank
+If both firmware banks contain invalid firmware's, the gateway will enter BOOT-P recovery mode automatically after three failed boot attempts on both banks.
 
 !!! warning "Please note and take into account"
-    - This will not automaticlly switch active bank for you, if active bank is `bank_2` and it stil contains a valid firmware it will still boot it instead of that one you are loading here.
- 
-    - Flashing via this method does not perform any factory reset, the new firmware will run on old and possibly corrupt or incompatible settings. It is therefore recommended that you perform a factory reset before flashing some firmware which is too different or not capable of managing a settings upgrade from the current one.
-  
+    - This will not automatically switch the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
+
+    - Flashing via this method does not perform any factory reset, the new firmware will run on old and possibly corrupt or incompatible config. It is therefore recommended that you perform a factory reset before flashing a new firmware.
+
     - The firmware image is digitally signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
 ### Set up TFTP
@@ -132,15 +128,15 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 3. A wired ethernet connection with static IP address assigned.
    BOOT-P recovery mode does not support Wi-Fi.
 
-5. A few cups of coffee
+4. A few cups of coffee
 
-6. About 30min to an hour
+5. About 30min to an hour
 
 ### Setting up the Server
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](/Firmware%20Repository) (.rbi) file you want to load into the gateway and place it in the TFTP64 folder.  You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](/Firmware%20Repository) (RBI) file you want to load into the gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the gateway (usually LAN1).
 
@@ -191,7 +187,7 @@ This guide is written for Windows but it should work on Linux too if you adapt t
 
 	- If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
-The server interface should now show an IP in the 10.0.0.x range and after a few seconds: the PC gets an IP from the TFTP64 program via DHCP.
+The server interface should now show an IP in the 10.0.0.x range and after a few seconds, the PC gets an IP from the TFTP64 program via DHCP.
 
 ![TFTP64](images/TFTPD_400_Main.png)
 
@@ -199,7 +195,7 @@ You are now ready to try booting the gateway to do the flash!
 
 ### Flashing the Firmware
 
-** Required steps **
+**Required steps**
 
 1. Set up TFTP to send firmware in BOOTP mode, please initially see above, or [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
 
@@ -232,39 +228,39 @@ From here, gateway has the firmware you flashed into its `bank_1` partition.
 
 ## Booting from passive bank
 
-Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data aprtition and two firmware banks.
+Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data partition and two firmware banks.
 
-When you power on your device it starts loading by default the firmware into the so called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be the active one.
+When you power on your device it starts loading by default the firmware into the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
-!!! hint "BOOT-P flashes into bank_1 only"
-    BOOT-P recovery mode allows flashing a valid firmware into `bank_1` only, and will do so even if the active bank is currently `bank_2`, and will not set `bank_1` as active if it is not.
+!!! hint "TFTP flashes into bank_1 only"
+    TFTP recovery mode allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
 
-The process of switching active bank is called *switchover*. Ordinary firmware upgrades gets installed into the passive bank, and a switchover occurs at the end of the upgrade process if all went fine. This meaqs your gateway frequently changes active bank, and if you never unlocked it you are unlikely to know which one is currently active.
+The process of switching the active bank is called *switchover*. Ordinary firmware upgrades get installed to the passive bank, while a switchover occurs at the end of the upgrade process if it was successful. This means your gateway frequently changes active bank while not unlocked.
 
-Whenever the gateway fails to load or crashes three times in a row, the bootloader will enter *failboot* mode and will try booting fron the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOT-P recovery mode. However, it is still possible that some non critical services stops working as expected whithout crashing the whole system, and therefore not causing a failboot from the passive bank.
+Whenever the gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOT-P recovery mode.
 
-If you want your device to forcefully boot from the passive bank, which is not currently active, you therefore have two options:
-- Set is as active (switchover)
-- Trigger a failboot
+To force-boot from the passive bank, which is not currently active, you have two options:
+- Set it as active (switchover).
+- Trigger a Bootfail.
 
 #### Switchover
 
-If you have got shella access into the gateway, this is really trivial as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active`.
+If you have shell access to the gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active`.
 
-If you have no shell access, but you have the possibility to run a formware upgrade (for example via web interface, AutoFlashGUI or CWMP) as previously stated, a switchover will be executed automatically at the end of the process.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process.
 
 If none of the above options are viable in your situation, unfortunately you must opt for Bootfail instead.
 
 ### Bootfail Procedure
 
 Bootfail comes handy whenever you are locked out from your gateway and you want to forcefully boot the passive bank for any reason.
-For example on a Telstra Frontier gateway with v17.2.0261-820-RA loaded, it may be possible to trigger a Bootfail and boot the old Type 2 16.3 image, which could be still there from the previous bank by using the timed reset method, and then proceeding with the usual rooting guides.
+For example on a Telstra Frontier gateway with `v17.2.0261-820-RA` loaded, it may be possible to trigger a Bootfail and boot the old Type 2 16.3 image, which could be still there in the previous bank. This can be achieved by using the timed reset method.
 
-Here you find some alternative ways of triggering a Bootfail (again, it is a triple boot failure on the active bank). It is really simpler to success if you meanwhile read bootlogs from serial console where you see Bootfail messages about each failed attempt. Pick your poison.
+Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.
 
 #### Timed button action
 
-This is the button pressing sequence for the DJN2130 Telstra Frontier gateway with v17.2.0261-820-RA loaded. Timing for different gateways and very different firmwares may vary.
+This is the button pressing sequence for the DJN2130 Telstra Frontier gateway with `v17.2.0261-820-RA` loaded. Timing for different gateways may vary.
 
 The sequence is (Minutes:Seconds):
 
