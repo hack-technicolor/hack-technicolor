@@ -2,7 +2,7 @@
 **Warning:** This process is not supported by the manufacturer or supplier of your modem. 
 There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-### What tools can I use to administer OpenWrt from a Windows computer?</b>
+### What tools can I use to administer OpenWrt from a Windows computer?
 
 There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as described in the [OpenWRT SSH Administration for Newcomers](https://openwrt.org/docs/guide-quick-start/sshadministration) page.
 
@@ -154,7 +154,7 @@ This guide will show you how to dump a bit-for-bit clone of any partition and re
 
 `bank_1` is usually mapped on `mtd3` partition and `bank_2` is usually mapped on `mtd4`, you do not realy need to backup firmware banks if you already have an RBI file for that same firmware available. If you are not sure you already have the same one, you can extract the RBI file, mark the first 4 bytes of the resulting binary to 0x00 and compare its checksum against output of `md5sum /dev/mtd*` (this may take a while to compute, be patient).
 
-You definitely need instead to backup all other partitions, expecially the `eripv2` one, and all the others. You can get the full partition list with `cat /proc/mtd`
+You definitely need instead to backup all other partitions, especially the `eripv2` one, and all the others. You can get the full partition list with `cat /proc/mtd`
 
 It is good practise to keep moving dumped partitions to USB as soon as you complete one in order to minimise chance of filling the ram, and causing an out-of-memory crash and reboot.
 
