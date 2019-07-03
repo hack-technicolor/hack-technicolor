@@ -1,17 +1,22 @@
 ### Firmware versions and URLs if available
 
-For simplicity, model names are reported here without irrelevant branding codes.
+For simplicity, model names are reported here without branding codes.
 
 For example `DJA0230TLS`, where `TLS` stands for `Telstra`, is listed here as simply `DJA0230` since all of them share the same board mnemonic.
 
-Other branding codes you could see worldwide are `TS` for `Telia Sonera`, `MYR` for MyRepublic, `TI` for Telecom Italia, `VDF` for Vodafone, and so on. You can safely ignore branding codes.
+Other branding codes you could see worldwide:
+| Code | ISP          | Countrie(s)       |
+|------|--------------|-------------------|
+| TLS  | Telstra      | Australia  (AUS)  |
+| TS   | Telia Sonera | Sweden            |
+| MYR  | MyRepublic   | AUS and Singapore |
+| VDF  | Vodafone     | AUS, EU, US and other |
 
-Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.**
-
+Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.
 
 ### TG800vac / VANT-Y
 
-**Telstra - Gateway Max 2**
+#### Telstra - Gateway Max
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -21,10 +26,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [17.2.0213-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) |
 
-
 ### TG799vac / VANT-F
 
-**Telstra - Gateway Max**
+#### Telstra - Gateway Max
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -35,19 +39,17 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [17.2.0213-820-RC](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi)  |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi)  |
 
-
 ### TG797n v3 / DANT-O
 
 !!! note "OSCK Not Required"
     Firmware images in RBI files for this board are not encrypted with model-specific keys
 
-**Telstra - T-Gateway**
+#### Telstra - T-Gateway
 
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.1.7565-580-RC](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) |
 | 2      | [15.53.6469-510-RA](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) |
-
 
 ### TG789vac / VANT-D
 
@@ -55,18 +57,17 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
     This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on more common TG789vac v2/v3.
 
 !!! danger "OSCK Not Known"
-    Nobody has shared the model specific key for decrypting firmwares for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
+    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
 
-**MST (no-brand) from UNO.UK**
+#### MST (no-brand) from UNO.UK
 
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.2.7064](https://uno.help/attachments/690) |
 
-
 ### TG789vac v2 / VANT-6
 
-**iiNet**
+#### iiNet
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -75,7 +76,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 2      | [16.3.7637-ver2.2.1](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/vant-6_16.3.7637-ver2.2.1-CRF695-2721005.rbi?raw=true) |
 | 1      | [16.3.8046-ver3.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) or [here](http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) |
 
-**MST (no-brand) from UNO.UK**
+#### MST (no-brand) from UNO.UK
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -83,17 +84,16 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### TG789vac v3 / VBNT-1
 
-**iiNet**
+#### iiNet
 
 
 | Type   | Version          |
 |:------:|:-----------------|
-| ???    | [18.3.0157-3-2-1](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools**  |
-    
+| ???    | [18.3.0157-3-2-1](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools**  |
 
 ### TG789vac v2 HP / VBNT-L
 
-**MyRepublic**
+#### MyRepublic
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -101,7 +101,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### TG-1 / VANT-5
 
-**iiNet & Internode**
+#### iiNet & Internode
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -110,21 +110,20 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | ???    | [15.53.7004-ver1.7.1](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
 | ???    | [15.53.8141-ver1.9.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
 
-
 ### DJN2130 / VBNT-J
 
-**Telstra - Frontier Gateway**
+#### Telstra - Frontier Gateway
 
 | Type   | Version          |
 |:------:|:-----------------|
-| 2      | [16.3.7413-660-RF](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with tftp or regular firmware upgrade tools** |
+| 2      | [16.3.7413-660-RF](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools** |
 | ???    | [17.2.0219-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) |
 | ???    | [17.2.0219-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) |
 
 ### DJA0230 / VBNT-V
 
-**Testra - Smart Modem (Gen1)**
+#### Testra - Smart Modem (Gen1)
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -136,9 +135,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 ### DJA0231 / VCNT-A
 
 !!! danger "OSCK Not Known"
-    Nobody has shared the model specific key for decrypting firmwares for this board. Hence, we generally don't know their contents.
+    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents.
 
-**Telstra - Smart Modem (Gen2)**
+#### Telstra - Smart Modem (Gen2)
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -146,12 +145,12 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [18.1.c.0241-950-RA](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) |
 | 1      | [18.1.c.0283-950-RA](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) |
 | 2      | [18.1.c.0347-950-RC](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) |
- 
+
 ### What to do if your firmware is not listed here
 
 If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
-- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmwares released via remote upgrade on their server, so you may resort into just guessing the right URL
+- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL
 
 - Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
 
@@ -163,13 +162,13 @@ If you find another firmware for a Technicolor gateway which is not yet listed, 
 
 ### Guessing RBI Firmware URL's
 
-Stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X). 
+The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X).
 
-Firmware filename pattern is ISP specific, so the first thing to do is to find another known one from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining: 
+The Firmware filename combination is usually ISP specific, so the first thing to do is to find another known firmware from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining:
 
 Product Vendor + **Hardware** + CRF + **Firmware**
 
-Using the web interface, advanced view Gateway tile will give you Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
+Using the web interface, go to `Advanced >>Gateway`. In here you will find the Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
 
 ```
 Global Information
@@ -180,30 +179,34 @@ Firmware Version 	15.53.6469-510-RA
 Hardware Version 	DANT-O
 ```
 
-If the modem is rooted the CRF number can be found in `/rom/etc/config/env`
-```
-root@mygateway:~# cat /rom/etc/config/env | grep "CRF"
+If the modem is rooted, the CRF number can be found in `/rom/etc/config/env`
+
+Obtain by running `cat /rom/etc/config/env | grep "CRF"`
+
+```bash
 option CONF_VERSION 'CRF483'
 ```
 
 The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
 
-Once you have guessed it please post it here!
+Once you have guessed it please create an issue to get it added!
 
-Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface it first decrypt the RBI payload and then flash its contents into one of the internal "banks".
+Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface, the gateway first decrypts the RBI and then flashes it to the inactive bank.
 
-Every firmware image is also authenticated by asymmetric keys used for signing and verifying signature. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
+Every firmware image is also verified by asymmetric keys. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
 
 ### Make a raw device dump
 
 Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade.
 Such images cannot boot on different boards and **do not include any sensitive info** about your own device. Therefore they are totally safe to be shared.
-In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain a valid firmware in order to boot correctly.
+
+In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
+
 To make a full dump of them you can easily use the busybox built-in `dd` command:
 
-```
+```bash
 dd if=/dev/mtd3 of=/tmp/bank_1.dump
 dd if=/dev/mtd4 of=/tmp/bank_2.dump
 ```
 
-Please note the two banks are usually mapped into `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
+Please note the two banks are usually mapped to `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
