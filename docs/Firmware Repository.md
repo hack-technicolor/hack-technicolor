@@ -1,4 +1,4 @@
-### Firmware versions and URLs if available
+## Firmware versions and URLs if available
 
 For simplicity, model names are reported here without branding codes.
 
@@ -151,7 +151,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [18.1.c.0283-950-RA](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) |
 | 2      | [18.1.c.0347-950-RC](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) |
 
-### What to do if your firmware is not listed here
+## What to do if your firmware is not listed here
 
 If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
