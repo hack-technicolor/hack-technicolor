@@ -29,5 +29,7 @@ Type: <eg. FTP HTTP>
 **Device Info**
 
 Mnemonic: 
+
 Model Number: 
+
 Vendor Code: 
