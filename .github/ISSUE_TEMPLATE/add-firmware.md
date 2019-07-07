@@ -27,6 +27,7 @@ Please fill out the following, remembering to put an 'X' in the '[ ]' to mark th
 Type: <eg. FTP HTTP>
 
 **Device Info**
+
 Mnemonic: 
 Model Number: 
 Vendor Code: 
