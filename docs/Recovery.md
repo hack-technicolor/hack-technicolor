@@ -1,5 +1,5 @@
-
-# Read Before Attempting
+# Recovery
+## Read Before Attempting
 
 !!! caution "DISCLAIMER"
     In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse, potentially leading to a bricked gateway. Anyone following this guide accepts full responsibility for the outcome(s).
