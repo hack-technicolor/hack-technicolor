@@ -5,12 +5,16 @@ For simplicity, model names are reported here without branding codes.
 For example `DJA0230TLS`, where `TLS` stands for `Telstra`, is listed here as simply `DJA0230` since all of them share the same board mnemonic.
 
 Other branding codes you could see worldwide:
+
 | Code | ISP          | Countrie(s)       |
-|------|--------------|-------------------|
+|:----:|:------------:|:------------------|
 | TLS  | Telstra      | Australia  (AUS)  |
 | TS   | Telia Sonera | Sweden            |
 | MYR  | MyRepublic   | AUS and Singapore |
 | VDF  | Vodafone     | AUS, EU, US and other |
+| FWB  | Fastweb      | Italy             |
+| TIS  | Tiscali      | Italy             |
+| TI   | TIM          | Italy             |
 
 Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.
 
@@ -25,6 +29,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [17.2.0188-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) |
 | 1      | [17.2.0213-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) |
+| ???    | [17.2.0284-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) |
 
 ### TG799vac / VANT-F
 
