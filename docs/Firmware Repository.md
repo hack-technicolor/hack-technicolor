@@ -102,7 +102,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
-| 2      | 16.3.7190 **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
+| 2      | [16.3.7190](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761005-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools** |
 
 ### TG-1 / VANT-5
 
