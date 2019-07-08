@@ -42,7 +42,7 @@ We conventionally define three different *Types*, each requiring different actio
 Once you understand your current situation
 
 - If you are on a `Type 1` or `Type 2` firmware, please see [Hack Type 1 and 2.](Hack%20Type%201&2/)
-- If you are on a `Type 3` or `Type ???` firmware, **and** a `Type 2` firmware is available, please see the [recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) guide to flash it via `BOOT-P`, then start over from yhe beginning.
+- If you are on a `Type 3` or `Type ???` firmware, **and** a `Type 2` firmware is available, please see the [recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) guide to flash it via `BOOT-P` and manually *bankswitch* to it, then start over from yhe beginning.
 - Otherwise, in any other case, you may need to ask for some help from your local community forum threads:
   - AU @ [*whirlpool.net.au*](https://forums.whirlpool.net.au/thread/9vxxl849), IT @ [*ilpuntotecnico.com*](https://www.ilpuntotecnico.com/forum/index.php/board,9.0.html), many others worldwide
 

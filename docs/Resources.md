@@ -123,11 +123,13 @@ See [secr](https://github.com/mswhirl/secr) for details (original code from [her
 | DJN2130         |  vbnt-j  | 222c4dc4a9df952b02d5a489a112cf5e29aaedf86adb634410d6721f15f451e4 |
 
 
+https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility
+
 ### The Boot Process
 
 To be updated - refer to the [OpenWrt Boot Process guide](https://openwrt.org/docs/techref/process.boot) as an example for now but don't rely on it.
 
-### The "TCH" Wrt (Homeware) Flash Layout
+### The Homeware Flash Layout
 TG799vac:
 
 `root@mygateway:~# cat /proc/mtd`
@@ -143,7 +145,9 @@ TG799vac:
 | mtd5 | 00020000 | 00020000  | "eripv2"     |
 | mtd6 | 00040000 | 00020000  | "rawstorage" |
 
-### Backup/Restore bit-for-bit
+Apart from partition sizes, and `mtd2` which may appear named as `userfs` instead, it's always the same.
+
+### Backup/restore bit-for-bit dumps
 
 This guide will show you how to dump a bit-for-bit clone of any partition and reflash it.
 
@@ -151,6 +155,8 @@ This guide will show you how to dump a bit-for-bit clone of any partition and re
 
 - FAT32 USB Stick
 - 5min
+
+#### Making dumps
 
 `bank_1` is usually mapped on `mtd3` partition and `bank_2` is usually mapped on `mtd4`, you do not realy need to backup firmware banks if you already have an RBI file for that same firmware available. If you are not sure you already have the same one, you can extract the RBI file, mark the first 4 bytes of the resulting binary to 0x00 and compare its checksum against output of `md5sum /dev/mtd*` (this may take a while to compute, be patient).
 
@@ -176,6 +182,8 @@ lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/moun
     - Replace `<usb-path>` with your USB drive, see Step 1
 4. If `<X>` partition does not include any flash portion currently mounted with enabled write access, make sure to compare checksums to ensure the dump is a 1:1 exact copy
 5. Repeat from Step 1 for every partition you would like to dump
+
+#### Restoring dumps
 
 To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <partition_name>`
 - Replace `<usb-path>` with your USB drive path
