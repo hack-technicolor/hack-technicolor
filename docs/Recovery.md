@@ -95,8 +95,8 @@ If you previously backed up your configuration, you can now restore it to your g
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
-!!! note "Your firmware is unlikely to be corrupt if..."
-    - Your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
+!!! note "Your firmware is unlikely to be corrupt!"
+    - If Your gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
 	Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
