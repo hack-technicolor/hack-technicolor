@@ -2,7 +2,7 @@ site_name: Hacking Technicolor Gateways
 repo_url: https://github.com/kevdagoat/hack-technicolor/
 
 theme:
-    name: readthedocs
+    name: material
     
 markdown_extensions:
     - toc:
