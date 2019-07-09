@@ -207,7 +207,7 @@ If successful, nuke the `Type 2` firmware from inside booted bank with:
 mtd erase `cat /proc/banktable/inactive`
 ```
 
-then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
+Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
 !!! hint "Something went Wrong?"
     Flash back the same `Type 2` image you were up to now, following the [BOOT-P recovery](/Recovery/#boot-p-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
@@ -227,11 +227,12 @@ passwd
 
 Reboot now if you're not doing any further configuration.
 
-At this point you should now be able to SSH in with root and your password (which should no longer be 'root'!)
+At this point you should now see below to set up permanent SSH access
 
 ### Setting up Permanent SSH Server
 
 !!! info "WIP"
+    Work in Progress
 
 Run these commands to secure permanent SSH access:
 
@@ -242,12 +243,14 @@ uci set dropbear.lan.PasswordAuth=on
 uci set dropbear.lan.RootPasswordAuth=on
 ```
 
+Now you must harden your access, to prevent it from being lost via a Firmware Upgrade in future. See below.
+
 ### Hardening Gained Access
 
 Run the following in the SSH terminal to prevent your Gateway loosing root access unexpectedly.
 
 !!! hint "Pick only what you need"
-    You can paste each block directly into the terminal independently, use only ones your firmware needs.
+    You can paste each block directly into the terminal independently, use only ones your firmware needs. If you don't know, just paste them all. It is very unlikely that it will break your gateway.
 
 ```bash
 # Disable CWMP
