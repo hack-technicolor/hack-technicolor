@@ -1,18 +1,20 @@
-## Unlock Functionality
+# Unlock Functionality
 
-### Custom GUI
+## Custom GUI
+
 A highly universal custom GUI with tons (!) of features is available [here](https://github.com/Ansuel/tch-nginx-gui).
 
 **This is highly recommended for users who want the most usability out of their new gateway!**
 
-### Change DNS
+## Change DNS
 
 This is by far one of the most requested mods.
 
-#### Changing the default assigned server from your modems IP address to your DNS server
+### Changing the default assigned server from your modems IP address to your DNS server
 
 1. Using `vi` or a program like WinSCP edit /etc/config/DHCP
-2. Under 
+2. Under
+
 ```bash
 config dhcp '<interface name>'
 ```
@@ -23,22 +25,22 @@ Add:
 list dhcp_option '6,<dns 1>,<dns 2>'
 ```
 
-#### Redirecting all queries through the gateway to a specific DNS server
+### Redirecting all queries through the gateway to a specific DNS server
 
 1. Using `vi` or a program like WinSCP edit /etc/config/DHCP
 2. Under
 
-```
+```bash
 config dnsmasq 'main'
 ```
 
 Add:
 
-```
+```bash
 list server '<IP of DNS>'
 ```
 
-### VoIP Setup
+## VoIP Setup
 
 If you want to use VoIP, the following is the quickest way to set it up and remove some broken config that causes calls to be sent out via the FXO port which will be unplugged for everyone in Australia, once you are on NBN.
 
@@ -136,7 +138,7 @@ uci commit
 /etc/init.d/mmpbxd restart
 ```
 
-### VoLTE backup voice service & SMS reception
+## VoLTE backup voice service & SMS reception
 
 From firmware `17.2.0406-820-RC` on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the modem to provide a phone service on the phone ports and to DECT handsets.  
 
@@ -159,9 +161,10 @@ uci commit
 /etc/init.d/nginx restart
 ```
 
-### Speeding up VDSL sync times
+## Speeding up VDSL sync times
 
-**NB: Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available**
+!!! note "Firmware 16.3"
+    Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available
 
 If you're on VDSL you may be able to speed up your sync times by removing redundant DSL profiles so the integrated modem does not even try to use them.
 
@@ -192,7 +195,7 @@ uci commit
 /etc/init.d/nginx restart
 ```
 
-### Running the TG799vac as the router with a second router behind it (Double NAT)
+## Running the TG799vac as the router with a second router behind it (Double NAT)
 
 Double NAT used to break many things, but testing with this configuration shows that most current applications are very tolerant of it. Most applications assume they are on a private network and that their visible IP is not the one they are visible on on the internet via, so if it's nested one more level down via NAT with a DMZ redirecting traffic to the second router's WAN interface it makes very little difference (if this guide is followed)!
 
@@ -225,49 +228,3 @@ Here is how you go setting this up properly:
 7. Turn off WiFi on the TG799vac.
 
 At this point the TG799vac should be transparent to incoming requests which will hit the WAN interface of your internal router and be handled normally.
-
-### Disable FON hostspot
-
-```bash
-uci delete dhcp.hotspot
-uci delete dhcp.fonopen
-uci commit
-/etc/init.d/hotspotd disable
-/etc/init.d/hotspotd stop
-```
-
-### Enable more cards on stock webui
-
-```bash
-uci add_list web.ruleset_main.rules=iproutesmodal
-uci set web.iproutesmodal=rule
-uci set web.iproutesmodal.target='/modals/iproutes-modal.lp'
-uci add_list web.iproutesmodal.roles='admin'
-uci add_list web.ruleset_main.rules=systemmodal
-uci set web.systemmodal=rule
-uci set web.systemmodal.target='/modals/system-modal.lp'
-uci add_list web.systemmodal.roles='admin'
-uci add_list web.ruleset_main.rules=relaymodal
-uci set web.relaymodal=rule
-uci set web.relaymodal.target='/modals/relay-modal.lp'
-uci add_list web.relaymodal.roles='admin'
-uci add_list web.ruleset_main.rules=natalghelpermodal
-uci set web.natalghelpermodal=rule
-uci set web.natalghelpermodal.target='/modals/nat-alg-helper-modal.lp'
-uci add_list web.natalghelpermodal.roles='admin'
-uci add_list web.ruleset_main.rules=diagnosticstcpdumpmodal
-uci set web.diagnosticstcpdumpmodal=rule
-uci set web.diagnosticstcpdumpmodal.target='/modals/diagnostics-tcpdump-modal.lp'
-uci add_list web.diagnosticstcpdumpmodal.roles='admin'
-uci set system.config.export_plaintext='1'
-uci set system.config.export_unsigned='1'
-uci set system.config.import_plaintext='1'
-uci set system.config.import_unsigned='1'
-uci set web.uidefault.upgradefw_role='admin'
-uci add_list web.parentalblock.roles='admin'
-sed -e 's/session:hasAccess("\/modals\/diagnostics-network-modal.lp")/session:hasAccess("\/modals\/diagnostics-network-modal.lp") and \n session:hasAccess("\/modals\/diagnostics-tcpdump-modal.lp")/' -i /www/cards/009_diagnostics.lp
-sed -e 's^alt="network"></div></td></tr>\\^alt="network"></div></td>\\\n <td><div data-toggle="modal" data-remote="modals/diagnostics-tcpdump-modal.lp" data-id="diagnostics-tcpdump-modal"><img href="#" rel="tooltip" data-original-title="TCPDUMP" src="/img/network_sans-32.png" alt="network"></div></td></tr>\\^' -i /www/cards/009_diagnostics.lp
-sed -e 's/{"logviewer-modal.lp", T"Log viewer"},/{"logviewer-modal.lp", T"Log viewer"},\n {"diagnostics-tcpdump-modal.lp", T"tcpdump"},\n/' -i /www/snippets/tabs-diagnostics.lp
-sed -e 's/if currentuserrole == "guest" /if currentuserrole == "admin" /' -i /www/docroot/modals/gateway-modal.lp
-/etc/init.d/nginx restart
-```
