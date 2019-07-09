@@ -1,4 +1,4 @@
-## Hacking Technicolor Gateways
+# Hacking Technicolor Gateways
 
 **Disclaimer:** This process is not supported by the manufacturer or supplier of your gateway.
 There is no way of knowing your situation and the process could break your gateway or reduce its security, allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
@@ -8,7 +8,7 @@ There is no way of knowing your situation and the process could break your gatew
 Before you start you need to head over to [the Firmware Repository](Firmware%20Repository/) to find out what *Type* of firmware your gateway is on today and then refer the appropriate section below.
 
 !!! hint "Can't find your firmware?"
-    You can consider any missing or unlisted firmware's as `Type ???`. Very old firmwares from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, you can always upgrade to a newer "*rootable*" firmware, if any, by following the `BOOT-P` flashing guide from the [Recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) section.
+    You can consider any missing or unlisted firmware's as `Type ???`. Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, you can always upgrade to a newer "*rootable*" firmware, if any, by following the `BOOT-P` flashing guide from the [Recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) section.
 
 We conventionally define three different *Types*, each requiring different actions to be taken
 
