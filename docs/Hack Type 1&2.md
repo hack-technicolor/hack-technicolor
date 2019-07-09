@@ -1,40 +1,40 @@
-## IMPORTANT - Leave gateway turned off until you understand these instructions.
+## IMPORTANT - Leave Gateway turned off until you understand these instructions
 
 !!! warning "Disclaimer"
-    This process is not supported by the manufacturer or supplier of your modem. There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+    This process is not supported by the manufacturer or supplier of your Gateway. There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Things you will need
 
 !!! hint
     You need the following **before** you go offline
 
-1. The latest version of the AutoFlashGUI software, available from GitHub either as a  [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source code at [the project page](https://github.com/mswhirl/autoflashgui). 
+1. The latest version of the AutoFlashGUI software, available from GitHub either as a  [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source code at [the project page](https://github.com/mswhirl/autoflashgui).
 *Make sure the tool runs and GUI loads before you go offline!*
 
-2. The RBI [firmware](/Firmware%20Repository/) file of a `Type 2` version comapatible with your gateway.
+2. A `Type 2` RBI [firmware](/Firmware%20Repository/) compatible with your Gateway.
 
-3. **Optionally**, the RBI [firmware](/Firmware%20Repository/) file for the firmware version you would like to stay at the end on your gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, the RBI [firmware](/Firmware%20Repository/) file for the firmware version you would like to stay at the end on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
-4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommanded for SCP, but PuTTY has an SCP client as well. If you have any WSL distribution installed, or you run a native Unix OS you have both SSH and SCP cli clients available already.
+4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP, but PuTTY has an inbuilt SCP client as well. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a native Unix-based OS, you should have both SSH and SCP CLI clients available.
 
-5. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device or print/export this someway. (if you know how MkDocs work you could also clone this repo and render it locally by yourself)
+5. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device. If you know how MkDocs works, you could also clone this repo and render it locally.
 
-6. Physical access to the gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
+6. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
-7. A *happy* gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it simply is not working as expected, just [recover it](/Recovery) to a proper functional state first.
+7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it simply is not working as expected, just [recover it](/Recovery) to get it to a proper functional state first.
 
 ## Introduction
 
 ### Known Working Models
 
- | Model Number    | Mnemonic | ISP's own Commercial Names
+ | Model Number    | Mnemonic | ISP Product Names
  |:---------------:|:--------:|:--------------------------
  | TG797n v3       | DANT-O   | Telstra T-Gateway
  | TG789vac v2     | VANT-6   | -
  | TG799vac        | VANT-F   | Telstra Gateway Max
  | TG789vac (v1)   | VANT-D   | -
  | TG800vac        | VANT-Y   | Telstra Gateway Max 2
- | TG789vac v3     | VBMT-1   | -
+ | TG789vac v3     | VBNT-1   | -
  | TG799vac Xtream | VBNT-H   | -
  | DJN2130         | VBNT-J   | Telstra Frontier Gateway
  | TG789vac v2 HP  | VBNT-L   | -
@@ -50,84 +50,86 @@ They are known to have a high quality internal PCB and low power consumption, fo
 
 The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware.
 
-Usually, there is no ‘generic’ firmware available that will *just* give you access to the gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with different ISP, you are likely to be blocked fomr doing that, or simply loose some functionality like VoIP, DECT base station, FXS/FXO ports, mobile backup or something else.
+Usually, there is no ‘generic’ firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply loose some functionality like VoIP, DECT base station, FXS/FXO ports, mobile backup or something else.
 
-That's what should motivate you to hack your device and at least re-enable as many features as possible. For some small set of devices, an alternative no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
+That's what should motivate you to hack your device and at least re-enable as many features as possible. For some small amount of devices, an alternative no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
 
-The default IP address of the gateway varies by gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default gateway gets assigned to.
+The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
 
 ## Gaining Root Access
 
-!!! caution "Go offline NOW!"
-    The ISP could lock you out of the gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the gateway is rooted and remote management disabled.
+!!! caution "Make sure your Gateway is Offline!"
+    The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
 
-Ensure the gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, such as the DJA/DJN Series, must also have the SIM removed from under the bottom 25mm x 25mm white plastic sticker. On the DJA0231, the SIM is under a small rubber plug above the green port.
+Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, such as the DJA/DJN Series, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. On the DJA0231, the SIM is under a small rubber plug above the green port.
 
 !!! info
-    These instructions were built for the TG799vac, so if you are doing this for a different gateway be sure to substitute the correct firmware files and change the other options as needed.
+    These instructions were built for the TG799vac, so if you are doing this for a different Gateway be sure to substitute the correct firmware files and change the other options as needed.
 
-### Type 1 - Easy flash of Type 2, then Rooting
+### Type 1 - Flash of Type 2, then Root
 
-In this example we work with `VANT-F` gateway, `16.3.7567` is the `Type 2` firmware we need to flash, `17.2.0261` is the `Type 1` firmware we are currently on.
+In this example we are working with `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
-Run up the AutoFlashGUI tool and flash the `Type 2` firmware to your gateway, `vant-f_CRF687-16.3.7567-660-RG.rbi`, and allow it to finish flashing and rooting.
+Run up AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, and allow it to finish flashing and rooting.
 
-!!! warning "Make sure SSH is permanent"
-    If AutoFlashGUI does not know how to set permanent root access on your model it will spawn a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent lan-side SSH server. Read below [permanent ssh](#setting-up-permanent-ssh-server) section, then come back here.
+!!! warning "Make sure the SSH server is permanent"
+    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
 
-Fire up your SSH client and connect with user `root` to the gateway IP on default port `22`, or `6666`.
+Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
-At this point you have a rooted `Type 2` image on your gateway to play with. Would you like to upgrade back to a newer firmware without loosing root access? Fine, jump over to [inactive bank pre-rooting](#root-inactive-bank). Continue reading here otherwise.
+At this point you have a rooted `Type 2` image on your Gateway to play with. Would you like to upgrade back to a newer firmware without loosing root access? If so, jump over to [inactive bank pre-rooting](#root-inactive-bank). **This is not recommended as any 16.3 firmware offers marginal improvements on DSL speed and Ping times.** Continue reading here otherwise.
 
 Now proceed to setting your own root access [password](#change-the-root-password).
 
 ### Type 2 - Direct Rooting
 
-In this example we work with `VANT-F` gateway, `16.3.7567` is the `Type 2` firmware.
+In this example we will be working with the `VANT-F` Gateway on `16.3.7567` which is a `Type 2` firmware.
 
-Using AutoFlashGUI, find or fill-up your gateway settings, allow it to run through getting root.
+Using AutoFlashGUI, allow it to run through getting root.
+If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), please change the defaults in the AutoFlashGUI window.
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
-If you are unable to fill your profile correctly or AutoFlashGUI it's not working, search communities for detailed model-specific root commands and report back your issues. Being a `Type 2` image, a working root guide exists for sure.
+If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local root communities for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
 
-!!! warning "Make sure SSH is permanent"
-    If AutoFlashGUI does not know how to set permanent root access on your model it will spawn a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent lan-side SSH server. Read below [permanent ssh](#setting-up-permanent-ssh-server) section, then come back here.
+!!! warning "Make sure the SSH server is permanent"
+    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
 
-Fire up your SSH client and connect with user `root` to the gateway IP on default port `22`, or `6666`.
+Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
-At this point you have a rooted `Type 2` image on your gateway to play with. Would you like to upgrade back to a newer firmware without loosing root access? Fine, jump over to [inactive bank pre-rooting](#root-inactive-bank). Continue reading here otherwise.
+At this point you have a rooted `Type 2` image on your Gateway to play with. Would you like to upgrade back to a newer firmware without loosing root access? If so, jump over to [inactive bank pre-rooting](#root-inactive-bank). **This is not recommended as any 16.3 firmware offers marginal improvements on DSL speed and Ping times.** Continue reading here otherwise.
 
 Now proceed to setting your own root access [password](#change-the-root-password).
 
-### Type 3 - Hard flash of Type 2, then Rooting
+### Type 3 - Difficult Flash of Type 2, then Root
 
-!!! info "Where you come from??"
-    Do not cheat, restart reading from the [index of this wiki](/). See you later!
+!!! info "Why are You Here?"
+    Did you read the [index of this wiki](/)?
 
-## Post-root procedures
+## Post-Root Procedures
 
-### Root inactive bank
+### Root Inactive Bank
 
-At this point you are ready to activate root on whatever *Type* of firmware you would like to end up having rooted, and finally switch over to it.
+At this point you are ready to activate root on whatever *Type* of firmware you would like, to end up having it rooted and running.
 
- This procedure works by allowing us to mod the not booted bank and config, then switch over to it without doing a factory reset or standard upgrade procedure. Note that if you factory reset while not on `Type 2` you will need to run the entire procedure from the beginning and an eventual auto-upgrade could lock you out permanently in that reset state if it has internet access!
+ This procedure works by allowing us to mod the not booted bank and config, then switch over to it without doing a factory reset or standard upgrade procedure. Note that if you factory reset while not on a `Type 2`
+ firmware, you will need to run the entire procedure from the beginning and a auto-upgrade could lock you out permanently in that reset state if the Gateway has internet access!
 
-Run the following command to look at your gateway's bank state:
+Run the following command to look at your Gateway's bank state:
 
 ```find /proc/banktable -type f -print -exec cat {} ';'```
 
 It should look something like this:
 
-```
+```bash
 /proc/banktable/notbootedoid
-____don't care_____
+<not important>
 /proc/banktable/bootedoid
-____don't care_____
+<not important>
 /proc/banktable/passiveversion
-____don't care_____
+<not important>
 /proc/banktable/activeversion
-____don't care_____
+<not important>
 /proc/banktable/inactive
 bank_2
 /proc/banktable/active
@@ -139,27 +141,32 @@ bank_1
 ```
 
 !!! caution "Bank Planning: "On which bank should I stay to be safe?""
-    It's strongly recommennded to adhere to the above situation before continue following this guide. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really be on a `Type 2` image booted from `bank_1` now, and then you should only mod your preferred firmware version (not necessarily of `Type 2`) booted from `bank_2`. Keypoint: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
+    It's strongly recommended to adhere to the above situation before following this guide further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really be on a `Type 2` image booted from `bank_1` now, and then you should only mod your preferred firmware version (not necessarily of `Type 2`) booted from `bank_2`.
+    Key Point: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
-They are signature checked before boot so you can't flip a single bit of the base firmware image in both banks if you would see your device booting from there. The whole config and customized stuff is stored into the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
+They are signature checked before boot so you can't flip a single bit of the base firmware image in both banks if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
 
 !!! hint
-    You can see your modified config files in `/overlay` if you want to back stuff up or see what changes you made. Conversely, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
+    You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
 
-When a proper Reset To factory Default is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects reading [Recovery](/Recovery) page on this wiki.
+When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
 
-Let's rule out an awful surprising sad ending: run this command *now* to make sure booted and active banks coincide - they should already, but...
+Let's rule out an awful surprising sad ending: run this command *now* to make sure booted and active banks will switch on startup.
+
 ```bash
 cat /proc/banktable/booted > /proc/banktable/active
 ```
 
-Unless your target preferred firmware is there already, it's now time to flash it into its ultimate destination: the `notbooted` bank.
-This time you can't use AutoFlashGui, even if your current firmware is of `Type 2`, otherwise the regular firmware upgrade procedures will perform an unwanted switchover and will reboot the gateway immediately before any indirect root could be performed. So let's distinguish the two different cases:
+Unless your target preferred firmware is there already, it's now time to flash it into its final destination: the `notbooted` bank.
+This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`. Otherwise the regular firmware upgrade procedures will perform an unwanted switchover, leading to a reboot immediately before any indirect root could be performed.
 
-- You love the dark side. If you are still following the **not recommended** bank planning, and your `notbooted` bank is `bank_1`, well, you just need to go with BOOT-P flashing. After reboot you will still be there on your rooted/rootable `Type 2` firmware, ready to continue reading. However, if your preferred firmware has no available RBI file but is only available as raw bank dump you can't continue this way. So, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
-- You are on the right side. If you are following the **recommended** bank planning, and your `notbooted` bank is `bank_2` you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOT-P, actually. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+To decide what procedure you should use for flashing, you must know what bank is the notbooted one. You can find this by running `cat /proc/banktable/inactive`.
+
+- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOT-P flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not a RBI file, you can't continue this way. If not, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
+
+- If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOT-P. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 *15 minutes later*
 
@@ -184,25 +191,28 @@ cat /overlay/`cat /proc/banktable/inactive`/etc/rc.local
 ```
 
 You should get this output from the last command:
+
 ```bash
 echo root:root | chpasswd
 sed -i '\''s#root:/bin/false#root:/bin/ash#'\'' /etc/passwd
 sed -i '\''s/#//'\'' /etc/inittab
 dropbear -p 6666 &
 ```
-If you didn't, reboot the modem and retry the procedure.
 
-If sucessful, nuke the `Type 2` firmware from inside booteed bank with:
+If you didn't, reboot the Gateway and retry the procedure.
+
+If successful, nuke the `Type 2` firmware from inside booted bank with:
+
 ```bash
 mtd erase `cat /proc/banktable/inactive`
 ```
 
-then reboot and wait 3 to 4 minutes for the gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
+then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
-!!! hint "Something went wrong?"
-    Fash back the same `Type 2` image you were up to now, following [BOOT-P recovery](/Recovery/#boot-p-recovery-mode-tftp-flashing). If you followed the initial advice about bank planning, you will be back on tha seme exact situation you were before the last above command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning
+!!! hint "Something went Wrong?"
+    Flash back the same `Type 2` image you were up to now, following the [BOOT-P recovery](/Recovery/#boot-p-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
-Now you have some temporary root access into your preferred firmware. Just conclude all this long trip by reading below section for [permanent ssh](#setting-up-permanent-ssh-server) setup.
+Now you have temporary root access on your preferred firmware, you can now conclude this long trip by reading the section below for [Permanent SSH and Root Access](#setting-up-permanent-ssh-server).
 
 ### Change the Root Password
 
@@ -219,16 +229,25 @@ Reboot now if you're not doing any further configuration.
 
 At this point you should now be able to SSH in with root and your password (which should no longer be 'root'!)
 
-### Setting up permanent SSH server
+### Setting up Permanent SSH Server
 
 !!! info "WIP"
 
-### Hardening gained access
+Run these commands to secure permanent SSH access:
 
-Run the following in the SSH terminal to prevent your gateway loosing root access unexpectedly.
+```bash
+uci set dropbear.wan.enable='0'
+uci set dropbear.lan.enable='1'
+uci set dropbear.lan.PasswordAuth=on
+uci set dropbear.lan.RootPasswordAuth=on
+```
+
+### Hardening Gained Access
+
+Run the following in the SSH terminal to prevent your Gateway loosing root access unexpectedly.
 
 !!! hint "Pick only what you need"
-    You can paste each block directly into the terminal indipendently, use only that ones your firmware needs, keep matching your actual settings paths otherwise they will have no effect.
+    You can paste each block directly into the terminal independently, use only ones your firmware needs.
 
 ```bash
 # Disable CWMP
@@ -250,32 +269,87 @@ uci set cwmpd.cwmpd_config.use_dhcp=0
 uci set cwmpd.cwmpd_config.interface=loopback
 uci set cwmpd.cwmpd_config.enforce_https=1
 uci commit cwmpd
-# Disable telstra monitoring
+# Disable Telstra monitoring
 uci delete tls-vsparc.Config
 uci delete tls-vsparc.Passive
 uci delete autoreset.vsparc_enabled
 uci delete autoreset.thor_enabled
+uci delete wifi_doctor_agent.acs
+uci delete wifi_doctor_agent.config
+uci delete wifi_doctor_agent.as_config
+uci commit
+# Disable Telstra Air/Fon WiFi
+/etc/init.d/hotspotd stop
+/etc/init.d/hotspotd disable
+uci delete dhcp.hotspot
+uci delete dhcp.fonopen
+uci commit
 # Remove any ISP ssh access pubkey
 echo > /etc/dropbear/authorized_keys
 # Completely disable SSH access over wan
 uci set dropbear.wan.enable='0'
+uci commit
+# Free space for gateways with small flash
+opkg --force-removal-of-dependent-packages remove conf-cwmpd cwmpd autoreset-tch mappings-fon geolocation-tch
+find /rom/usr/lib/ipk -type f |xargs -n1 basename | cut -f 1 -d '_' |xargs opkg --force-removal-of-dependent-packages remove
+# Clear startup script DO NOT MISS!!!
+echo > /etc/rc.local
 ```
 
-### My firmware is so old that AutoFlashGUI can't authenticate!
+```bash
+# Unlock Web Interface Tiles (Telstra Devices)
+uci add_list web.ruleset_main.rules=iproutesmodal
+uci set web.iproutesmodal=rule
+uci set web.iproutesmodal.target='/modals/iproutes-modal.lp'
+uci add_list web.iproutesmodal.roles='admin'
+uci add_list web.ruleset_main.rules=systemmodal
+uci set web.systemmodal=rule
+uci set web.systemmodal.target='/modals/system-modal.lp'
+uci add_list web.systemmodal.roles='admin'
+uci add_list web.ruleset_main.rules=relaymodal
+uci set web.relaymodal=rule
+uci set web.relaymodal.target='/modals/relay-modal.lp'
+uci add_list web.relaymodal.roles='admin'
+uci add_list web.ruleset_main.rules=natalghelpermodal
+uci set web.natalghelpermodal=rule
+uci set web.natalghelpermodal.target='/modals/nat-alg-helper-modal.lp'
+uci add_list web.natalghelpermodal.roles='admin'
+uci add_list web.ruleset_main.rules=diagnosticstcpdumpmodal
+uci set web.diagnosticstcpdumpmodal=rule
+uci set web.diagnosticstcpdumpmodal.target='/modals/diagnostics-tcpdump-modal.lp'
+uci add_list web.diagnosticstcpdumpmodal.roles='admin'
+sed -e 's/session:hasAccess("\/modals\/diagnostics-network-modal.lp")/session:hasAccess("\/modals\/diagnostics-network-modal.lp") and \n session:hasAccess("\/modals\/diagnostics-tcpdump-modal.lp")/' -i /www/cards/009_diagnostics.lp
+sed -e 's^alt="network"></div></td></tr>\\^alt="network"></div></td>\\\n <td><div data-toggle="modal" data-remote="modals/diagnostics-tcpdump-modal.lp" data-id="diagnostics-tcpdump-modal"><img href="#" rel="tooltip" data-original-title="TCPDUMP" src="/img/network_sans-32.png" alt="network"></div></td></tr>\\^' -i /www/cards/009_diagnostics.lp
+sed -e 's/{"logviewer-modal.lp", T"Log viewer"},/{"logviewer-modal.lp", T"Log viewer"},\n {"diagnostics-tcpdump-modal.lp", T"tcpdump"},\n/' -i /www/snippets/tabs-diagnostics.lp
+sed -e 's/if currentuserrole == "guest" /if currentuserrole == "admin" /' -i /www/docroot/modals/gateway-modal.lp
+uci commit
+# Enable Unsigned config export and Firmware upgrade in Web GUI
+uci set system.config.export_plaintext='1'
+uci set system.config.export_unsigned='1'
+uci set system.config.import_plaintext='1'
+uci set system.config.import_unsigned='1'
+uci set web.uidefault.upgradefw_role='admin'
+uci add_list web.parentalblock.roles='admin'
+uci commit
+```
+
+**Now you can Move on to [Unlocking Functionality](/Unlock%20Functionality)**
+
+### My Firmware is so Old that AutoFlashGUI can't Authenticate
 
 *This is because they changed the web authentication method to SRPv6 with firmware v15, and this is the only method that the AutoFlashGUI tool knows how to authenticate with.*
 
 You are going to have to flash a newer (let's say v16.3) RBI file via `sysupgrade` after using the original manual procedure to get a shell.
 
-Go to *Advanced > Diagnostics*, and click on the *Ping & Traceroute* tab. (If your gateway doesn’t display the Diagnostics tile, factory reset the gateway. This only happens when the config is corrupted.) In the IP address section, enter your gateway's IP and run:
+Go to *Advanced > Diagnostics*, and click on the *Ping & Traceroute* tab. (If your Gateway doesn’t display the Diagnostics tile, factory reset the Gateway. This only happens when the config is corrupted.) In the IP address section, enter your Gateway's IP and run:
 
 ```bash
 :::::::;echo root:root | chpasswd; dropbear -p 6666;
 ```
 
-Give it 30 seconds to generate SSH host keys and then try to SSH into your gateway on port 6666 with root/root.
+Give it 30 seconds to generate SSH host keys and then try to SSH into your Gateway on port 6666 with root/root.
 
-Copy the RBI to a USB stick (FAT32 formatted is most likely to work on old firmware) and insert it into the gateway's USB port.
+Copy the RBI to a USB stick (FAT32 formatted is most likely to work on old firmware) and insert it into the Gateway's USB port.
 
 If you type `cd /mnt/` and keep hitting tab it should eventually get to the end of the USB stick path, then hit enter. (You can also run `mount` and try to work out the path the USB stick is mounted on.)
 
