@@ -1,3 +1,5 @@
+# Firmware Repository
+
 ## Firmware versions and URLs if available
 
 For simplicity, model names are reported here without branding codes.
@@ -91,7 +93,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 #### iiNet
 
-
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [18.3.0157-3-2-1](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools** |
@@ -175,13 +176,13 @@ Product Vendor + **Hardware** + CRF + **Firmware**
 
 Using the web interface, go to `Advanced >>Gateway`. In here you will find the Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
 
-```
+```bash
 Global Information
-Product Vendor 	 	Technicolor
-Product Name 	 	Technicolor TG797n v3
-Software Version 	15.3
-Firmware Version 	15.53.6469-510-RA
-Hardware Version 	DANT-O
+Product Vendor      Technicolor
+Product Name        Technicolor TG797n v3
+Software Version    15.3
+Firmware Version    15.53.6469-510-RA
+Hardware Version    DANT-O
 ```
 
 If the modem is rooted, the CRF number can be found in `/rom/etc/config/env`
