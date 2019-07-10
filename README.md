@@ -2,7 +2,7 @@
 
 The new Wiki, migrated from https://whirlpool.net.au/wiki/hack_technicolor
 
-### Access the documentation [here](https://hack-technicolor.rtfd.io)(Stable, reflects stable branch), or [here](hack-technicolor.rtfd.io/en/latest)(latest, reflects master branch)
+### Access the documentation [here](https://hack-technicolor.rtfd.io) (Stable, reflects stable branch), or [here](hack-technicolor.rtfd.io/en/latest) (latest, reflects master branch)
 
 ## Editing
 
