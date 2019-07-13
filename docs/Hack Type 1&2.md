@@ -11,9 +11,9 @@
 1. The latest version of the AutoFlashGUI software, available from GitHub either as a  [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source code at [the project page](https://github.com/mswhirl/autoflashgui).
 *Make sure the tool runs and GUI loads before you go offline!*
 
-2. A `Type 2` RBI [firmware](/Firmware%20Repository/) compatible with your Gateway.
+2. A `Type 2` RBI from [firmware repository](/Firmware%20Repository/) compatible with your Gateway. If yoo're on a `Type 2` firmware already and the RBI of your same firmware version is available, prefer that one. Pick another one of `Type 2` from any ISP otherwise.
 
-3. **Optionally**, the RBI [firmware](/Firmware%20Repository/) file for the firmware version you would like to stay at the end on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, another [firmware](/Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay at the end for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP, but PuTTY has an inbuilt SCP client as well. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a native Unix-based OS, you should have both SSH and SCP CLI clients available.
 
