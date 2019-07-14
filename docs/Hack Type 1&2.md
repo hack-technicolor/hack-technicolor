@@ -8,12 +8,12 @@
 !!! hint
     You need the following **before** you go offline
 
-1. The latest version of the AutoFlashGUI software, available from GitHub either as a  [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source code at [the project page](https://github.com/mswhirl/autoflashgui).
+1. The latest version of the AutoFlashGUI software, available from GitHub either as a [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source code at [the project page](https://github.com/mswhirl/autoflashgui).
 *Make sure the tool runs and GUI loads before you go offline!*
 
-2. A `Type 2` RBI [firmware](/Firmware%20Repository/) compatible with your Gateway.
+2. A `Type 2` RBI from [firmware repository](/Firmware%20Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, prefer that one. Pick another one of `Type 2` from any ISP otherwise.
 
-3. **Optionally**, the RBI [firmware](/Firmware%20Repository/) file for the firmware version you would like to stay at the end on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, another [firmware](/Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay at the end for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP, but PuTTY has an inbuilt SCP client as well. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a native Unix-based OS, you should have both SSH and SCP CLI clients available.
 
@@ -68,9 +68,9 @@ Ensure the Gateway does not have a wired or wireless internet connection. Gatewa
 
 ### Type 1 - Flash of Type 2, then Root
 
-In this example we are working with `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
+In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
-Run up AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, and allow it to finish flashing and rooting.
+Run AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, and allow it to finish flashing and rooting.
 
 !!! warning "Make sure the SSH server is permanent"
     If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
@@ -167,8 +167,6 @@ To decide what procedure you should use for flashing, you must know what bank is
 - If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOT-P flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not a RBI file, you can't continue this way. If not, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
 
 - If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOT-P. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
-
-*15 minutes later*
 
 Welcome back! Are you enjoying so far?
 

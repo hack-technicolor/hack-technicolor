@@ -245,7 +245,10 @@ To force-boot from the passive bank, which is not currently active, you have two
 
 ### Switchover
 
-If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active`.
+If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
+```bash
+echo bank_1 > /proc/banktable/active
+```
 
 If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process.
 
@@ -253,8 +256,17 @@ If none of the above options are viable in your situation, unfortunately you mus
 
 ### Bootfail Procedure
 
-Bootfail comes handy whenever you are locked out from your Gateway and you want to forcefully boot the passive bank for any reason.
-For example on a Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded, it may be possible to trigger a Bootfail and boot the old Type 2 16.3 image, which could be still there in the previous bank. This can be achieved by using the timed reset method.
+Bootfail comes handy whenever you have no root access to your Gateway and you want to forcefully boot the passive bank for any reason.
+
+The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOT-P` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
+
+Another common case is that your gateway has self-updated to a firmware version you can't easily root.
+For example, a new Telstra Frontier Gateway that has unfortunately updated to `v17.2.0261-820-RA` can be reverted to the firmware in the passive bank (usually 16.3) using this method. This makes the rooting process a breeze!
+
+**Key Point:** Once you get your passive bank booted, it sadly won't be marked as the active one for the next boot, therefore you will need to repeat the following steps every time you would like to boot that bank until you take *appropriate actions*.
+
+!!! hint "Which kind of actions?"
+    If you came here starting from this wiki index, just keep your device powered on and continue reading, the rooting guide, which includes the correct bank setup steps. Otherwise, cast your eyes over to the [switchover](#switchover) section.
 
 Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.
 
@@ -277,7 +289,7 @@ The sequence is (Minutes:Seconds):
 | 8      |00:11       |  03:43    | Release
 | 9      |06:00       |    -    | Browse to 192.168.0.1 and confirm firmware version
 
-#### Crazy power switching
+#### Crazy Power switching
 
 If you power on your device, and rapidly toggle power switch on and off fast enough it won't get the required power to remain on,
 the bootloader will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
