@@ -258,14 +258,15 @@ If none of the above options are viable in your situation, unfortunately you mus
 
 Bootfail comes handy whenever you have no root access to your Gateway and you want to forcefully boot the passive bank for any reason.
 
-The most common case where you need to exploit this trick is that one where you just flashed a new firmware via `BOOT-P` into `bank_1`, but your active bank is currently set to `bank_2` where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
+The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOT-P` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
 
-Another common case is that one where your gateway self-updated to a firmware version you can't easily root. For example, on a Telstra Frontier Gateway just updated to `v17.2.0261-820-RA`, it may be possible to trigger a Bootfail and boot the previous Type 2 16.3 image, which is still there in the previous bank.
+Another common case is that your gateway has self-updated to a firmware version you can't easily root.
+For example, a new Telstra Frontier Gateway that has unfortunately updated to `v17.2.0261-820-RA` can be reverted to the firmware in the passive bank (usually 16.3) using this method. This makes the rooting process a breeze!
 
-**Keypoint:** Once you get your passive bank booted, it won't become the active one, therefor you will need to repeat the following steps everytime you would like to boot that bank until you take *appropriate actions*.
+**Key Point:** Once you get your passive bank booted, it sadly won't be marked as the active one for the next boot, therefore you will need to repeat the following steps every time you would like to boot that bank until you take *appropriate actions*.
 
 !!! hint "Which kind of actions?"
-    If you came here starting from this wiki index, just keep your device powered on and continue reading, the rooting guide includes the correct bank setup steps. Otherwise, give a look to the previous [switchover](#switchover) section.
+    If you came here starting from this wiki index, just keep your device powered on and continue reading, the rooting guide, which includes the correct bank setup steps. Otherwise, cast your eyes over to the [switchover](#switchover) section.
 
 Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.
 
@@ -288,7 +289,7 @@ The sequence is (Minutes:Seconds):
 | 8      |00:11       |  03:43    | Release
 | 9      |06:00       |    -    | Browse to 192.168.0.1 and confirm firmware version
 
-#### Crazy power switching
+#### Crazy Power switching
 
 If you power on your device, and rapidly toggle power switch on and off fast enough it won't get the required power to remain on,
 the bootloader will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
