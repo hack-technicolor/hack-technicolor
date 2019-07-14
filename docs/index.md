@@ -4,10 +4,10 @@
 
 ## Where to start
 
-- Find out what *Type* of firmware your gateway from the [Firmware Repository](Firmware%20Repository/)
+- Find out what *Type* of firmware is on your gateway from the [Firmware Repository](Firmware%20Repository/)
 
 !!! hint "Can't find your firmware?"
-    Any missing or unlisted firmware is `Type ???`. Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, if newer "*rootable*" firmware exists teh gateway can be upgraded by following the `BOOT-P` flashing guide from the [Recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) section.
+    Any missing or unlisted firmware is `Type ???`. Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, if newer "*rootable*" firmware exists the gateway can be upgraded by following the `BOOT-P` flashing guide from the [Recovery](Recovery/#boot-p-recovery-mode-tftp-flashing) section.
 
 If the gateway firmware is:
 
