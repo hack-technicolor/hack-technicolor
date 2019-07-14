@@ -14,9 +14,12 @@
 
 If your gateway firmware is:
 
-- `Type 1` or `Type 2` - see [Hack Type 1 and 2](Hack%20Type%201&2/)
-- `Type 3` or `Type ???` - see the TFTP [flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing)
-- For any other case, you may need to ask for help on your local community forum threads: AU @ [*whirlpool.net.au*](https://forums.whirlpool.net.au/thread/9vxxl849), IT @ [*ilpuntotecnico.com*](https://www.ilpuntotecnico.com/forum/index.php/board,9.0.html)
+- `Type 1` or `Type 2` 
+  - see [Hack Type 1 and 2](Hack%20Type%201&2/)
+  
+- `Type 3` or `Type ???` 
+  - see the TFTP [flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing)
+  - For any other case, you may need to ask for help on your local community forum threads: AU @ [*whirlpool.net.au*](https://forums.whirlpool.net.au/thread/9vxxl849), IT @ [*ilpuntotecnico.com*](https://www.ilpuntotecnico.com/forum/index.php/board,9.0.html)
 
 ## What are these Types?
 
@@ -30,4 +33,3 @@ We conventionally define three different *Types*. This is to make the rooting pr
 |      2      |  Direct and easy root strategy is known. Can be used for indirect root strategies for other firmware *Types*. |
 |      3      |  No direct root strategy known (*yet*). Hard to replace with a directly rootable firmware, if any. Can be rooted indirectly from `Type 2` firmware, if any. |
 |     ???     |   No known direct root strategy tested yet, some of them may work just fine. May be hard, but still possible, to replace with a directly rootable firmware, if any. Could be rooted indirectly from `Type 2` firmware, if any. No experience has been shared from users on such firmware. If you think you know something more about that please tell us. |
-
