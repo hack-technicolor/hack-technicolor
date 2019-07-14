@@ -37,7 +37,7 @@
  | TG789vac v3     | VBNT-1   | -
  | TG799vac Xtream | VBNT-H   | -
  | DJN2130         | VBNT-J   | Telstra Frontier Gateway
- | TG789vac v2 HP  | VBNT-L   | -
+ | TG789vac v2 HP  | VBNT-L   | MyR WiFi Hub+
  | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
 
 !!! tip "Not sure which one is yours?"
