@@ -1,4 +1,4 @@
-# How to host this Documentation Locally
+# How to Host this Locally
 
 If you ever need to edit or use this documentation without internet, it can be a hard task.
 
@@ -40,11 +40,12 @@ pip install mkdocs mkdocs-material
 
 2. Extract the zip to the directory you want.
 
-### Serve the Docs!
+### Serve the Docs
 
 Click on `serve.bat` and it should tell you that it is serving the docs on `http://localhost:8000`
 
 In my case:
+
 ```bash
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
@@ -53,10 +54,10 @@ INFO    -  Cleaning site directory
 [I 000000 17:35:00 handlers:64] Start detecting changes
 ```
 
-Now head to http://localhost:8000 in your browser of choice.
+Now head to <http://localhost:8000> in your browser of choice.
 
 !!! hint "What about when I unplug my Internet?"
-    Don't worry as the MKDocs development server only uses the internal *network* in your PC, thats why you head to http://localhost:8000, as it is heading to your local PC.
+    Don't worry as the MKDocs development server only uses the internal *network* in your PC, thats why you head to <http://localhost:8000,> as it is heading to your local PC.
 
 ## Linux Users
 
@@ -66,7 +67,8 @@ Usually your distro has its own inbuilt package manager. In this case, we will b
 
 1. Open up a bash shell window, if you do not know, search it up!
 2. Run
-```
+
+```bash
 sudo apt install -y python3 python3-pip git
 ```
 
@@ -84,7 +86,7 @@ pip3 install mkdocs mkdocs-material
 
 2. Extract the zip to the directory you want. This can be achieved by using the `Archive Manager` tool implemented in most Ubuntu-based distro's.
 
-### Serve the Docs!
+### Serve the Docs
 
 Click on `serve.sh` and it should tell you that it is serving the docs on `http://localhost:8000`
 
@@ -98,9 +100,7 @@ INFO    -  Cleaning site directory
 [I 000000 17:35:00 handlers:64] Start detecting changes
 ```
 
-Now head to http://localhost:8000 in your browser of choice.
+Now head to <http://localhost:8000> in your browser of choice.
 
 !!! hint "What about when I unplug my Internet?"
-    Don't worry as the MKDocs development server only uses the internal *network* in your PC, thats why you head to http://localhost:8000, as it is heading to your local PC.
-
-
+    Don't worry as the MKDocs development server only uses the internal *network* in your PC, thats why you head to <http://localhost:8000>, as it is heading to your local PC.
