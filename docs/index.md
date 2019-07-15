@@ -25,4 +25,9 @@ If your gateway firmware is:
 
 We conventionally define three different *Types*. This is to make the rooting process simpler.
 
-See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info
+- Type 1 is not directly rootable so load Type 2  then root other bank
+- Type 2 directly rootable
+- Type 3 has more complicated process to load Type 2
+- Type ??? is unknown
+
+See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info.
