@@ -1,9 +1,7 @@
 # Home
 
 !!! danger "Read Before Proceeding!"
-    This process is not supported by the manufacturer or supplier of your gateway.
-    There is no way of knowing your situation and the process could break your gateway or reduce its security, allowing other people into your network.
-    Anyone following this guide accepts full responsibility for any and all of the outcomes.
+    This process is not supported by the manufacturer or supplier of your gateway. There is no way of knowing your situation and the process could break your gateway or reduce its security, allowing other people into your network. Anyone following this guide accepts full responsibility for any and all of the outcomes.
 
 ## Where to Start
 
