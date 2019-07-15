@@ -5,7 +5,7 @@
     There is no way of knowing your situation and the process could break your gateway or reduce its security, allowing other people into your network.
     Anyone following this guide accepts full responsibility for any and all of the outcomes.
 
-## Where to start
+## Where to Start
 
 - Find out what *Type* of firmware is on your gateway from the [Firmware Repository](Firmware%20Repository/)
 
