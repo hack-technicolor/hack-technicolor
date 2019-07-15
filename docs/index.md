@@ -15,10 +15,10 @@
 If your gateway firmware is:
 
 - `Type 1` or `Type 2`
-  - see [Hack Type 1 and 2](Hack%20Type%201&2/)
+  - see [Hack Type 1 and 2](Hack%20Type%201&2/).
 
 - `Type 3` or `Type ???`
-  - see the TFTP [flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing)
+  - see the TFTP [flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing).
   - For any other case, you may need to ask for help on your local community forum threads: AU @ [*whirlpool.net.au*](https://forums.whirlpool.net.au/thread/9vxxl849), IT @ [*ilpuntotecnico.com*](https://www.ilpuntotecnico.com/forum/index.php/board,9.0.html)
 
 ## What are Types
@@ -26,8 +26,11 @@ If your gateway firmware is:
 We conventionally define three different *Types*. This is to make the rooting process simpler.
 
 - Type 1 is not directly rootable so load Type 2  then root other bank
+
 - Type 2 directly rootable
+
 - Type 3 has more complicated process to load Type 2
+
 - Type ??? is unknown
 
 See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info.
