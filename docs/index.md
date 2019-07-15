@@ -1,4 +1,4 @@
-# Hacking Technicolor Gateways
+# Home
 
 !!! danger "Read Before Proceeding!"
     This process is not supported by the manufacturer or supplier of your gateway.
