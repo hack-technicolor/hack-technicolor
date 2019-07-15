@@ -13,3 +13,13 @@ For pushing docs, [GitLens](https://marketplace.visualstudio.com/items?itemName=
 ## Branches
 
 Please push all edits to the `master` branch. When they are ready and everyone is happy, they will be pused over to the stable branch, which will be the branch that readthedocs uses.
+
+## Types
+
+
+| Type Number |     Definition     |
+|-------------|--------------------|
+|      1      |  No direct root strategy known (*yet*), however it is easy to replace with a directly rootable firmware. Can also be rooted indirectly from `Type 2` firmware. |
+|      2      |  Direct and easy root strategy is known. Can be used for indirect root strategies for other firmware *Types*. |
+|      3      |  No direct root strategy known (*yet*), hard to replace with a directly rootable firmware. Also can be rooted indirectly from `Type 2` firmware. |
+|     ???     |   No known direct root strategy tested yet, some of them may work just fine, may be hard, to replace with a directly rootable firmware. May be able to be rooted indirectly from `Type 2` firmware. No experience has been shared from users on such firmware. If you think you know something more about that please tell us. |
