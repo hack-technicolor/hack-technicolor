@@ -6,7 +6,7 @@ If you ever need to edit or use this documentation without internet, it can be a
 
 ### Install Python
 
-To start off you must install a Python environment. Move on to *Instal MKDocs* if you already have a Python environment installed.
+To start off you must install a Python environment. Move on to *Install MKDocs* if you already have a Python environment installed.
 
 If you will be using Python a lot, install Anaconda, otherwise just install standard Python.
 
