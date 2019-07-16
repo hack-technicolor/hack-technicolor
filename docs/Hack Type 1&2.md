@@ -13,7 +13,7 @@
 
 2. A `Type 2` RBI from [firmware repository](/Firmware%20Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
 
-3. **Optionally**, another [firmware](/Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay at the end for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, another [firmware](/Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
@@ -37,13 +37,15 @@
  | TG789vac v3     | VBNT-1   | -
  | TG799vac Xtream | VBNT-H   | -
  | DJN2130         | VBNT-J   | Telstra Frontier Gateway
- | TG789vac v2 HP  | VBNT-L   | MyR WiFi Hub+
+ | TG789vac v2 HP  | VBNT-L   | MyRepublic WiFi Hub+
  | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
 
 !!! tip "Asking about your gateway?"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
 ### The Basics
+
+#### Why Hack your Gateway?
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
@@ -59,27 +61,27 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. On the DJA0231, the SIM is under a rubber plug above the green port.
 
 !!! info
-    These refers to TG799vac as example, so if you are doing this for a different Gateway be sure to substitute the correct firmware files and change the other options as needed.
+    These instructions have been written for the TG799vac (VANT-F) Gateway. So if you are doing this for a different Gateway, be sure to substitute the correct firmware files and change the other options as needed.
 
-Now jumo below to the right *Type* section which fits your current situation.
+Now head on down to the right *Type* section, which fits your current situation.
 
 ### Type 1 - Flash of Type 2, then Root
 
 In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
-Run AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, and allow it to finish flashing and rooting.
+Run AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, allowing it to finish flashing and rooting.
 
 !!! warning "Make sure the SSH server is permanent"
     If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
 
-Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
+Fire up your SSH client of choice and connect with the Username and Password: `root` to the Gateway IP on default port `22`, or `6666`.
 
 At this point you have a rooted `Type 2` image on your Gateway but your trip is not over.
 
 !!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
+    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firmware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
 
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues you now need to ensure your *bank plan* is the best one for you. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure that your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
 ### Type 2 - Direct Rooting
 
@@ -97,27 +99,28 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
-As your first step into your brand-new root shell you now have to ensure serial console port is enabled - this is useful in case of disasters, so just do it. Execute the following command:
+As your first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
+
 ```bash
 sed -i '\''s/#//'\'' /etc/inittab
 ```
 
-At this point you have a rooted `Type 2` image on your Gateway but your trip is not over.
+At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over.
 
 !!! hint "Upgrade now!"
     Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
 
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues you now need to ensure your *bank plan* is the best one for you. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
 ### Type 3 - Difficult Flash of Type 2, then Root
 
 !!! info "Why are You Here?"
-    Did you read the [index of this wiki](/)?
+    Did you read the [Homepage](/)?
 
 ## Post-Root Procedures
 
 !!! warning "Stop!"
-    Do not follow any post-root procedure unless explicitly invited to.
+    Do not follow any post-root procedure unless explicitly told to.
 
 ### Bank Planning (without firmware upgrade)
 
@@ -128,18 +131,20 @@ Run the following command to look at your Gateway's bank state:
 Take note of `active` and `booted` banks:
 
 ```bash
+xxxxx
+/proc/banktable/inactive
+<take note of this>
 /proc/banktable/active
 <take note of this>
-/proc/banktable/booted
-<take note of this>
+xxxxx
 ```
 
-You will now be guided into switching to the following bank state:
+This guide will try to set your modem to the following bank state:
 
 ```bash
-/proc/banktable/active
+/proc/banktable/inactive
 bank_1
-/proc/banktable/booted
+/proc/banktable/active
 bank_2
 ```
 
@@ -149,7 +154,7 @@ bank_2
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
-They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
+They are signature checked before boot so you can't flip a single bit in the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
 
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
@@ -159,16 +164,16 @@ When a proper Reset to Factory Defaults is done, the overlay partition is not fo
 You now have to make sure you can boot your current firmware from the recommended bank on every reboot.
 
 !!! danger "Notable exception: Missing RBI"
-    In the unfortunate case there are no RBI firmware files available for your model you can't be really safe because you can't exploit `BOOT-P` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
+    In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOT-P` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
 
-If your `booted` bank is `bank_2` already, run the following commands:
+If your `active` bank is `bank_2` already, run the following commands:
 ```bash
 # Activate bank_1
 echo bank_1 > /proc/banktable/active
 # Erase firmware in bank_1
 mtd erase bank_1
 ```
-If your `booted` bank is `bank_1` instead, run the following commands:
+If your `active` bank is `bank_1` instead, run the following commands:
 ```bash
 # Make a temp copy of the firmware in bank_1
 dd if=/dev/mtd3 of=/tmp/bank1.fw
@@ -240,7 +245,7 @@ They are signature checked before boot so you can't flip a single bit of the bas
 
 When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
 
-Let's rule out an awful surprisingly sad ending. Run this command *now* to ensure this guide will work as expected:
+Let's rule out an awful, surprise sad ending. Run this command *now* to ensure this guide will work as expected:
 
 ```bash
 cat /proc/banktable/booted > /proc/banktable/active
@@ -324,7 +329,7 @@ uci rename dropbear.@dropbear[-1]=afg
 uci set dropbear.afg.enable='1'
 uci set dropbear.afg.Interface='lan'
 uci set dropbear.afg.Port='22'
-uci set dropbear.afg.IdleTimeout='0'
+uci set dropbear.afg.IdleTimeout='600'
 uci set dropbear.afg.PasswordAuth='on'
 uci set dropbear.afg.RootPasswordAuth='on'
 uci set dropbear.afg.RootLogin='1'
