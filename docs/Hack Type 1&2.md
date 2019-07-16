@@ -251,7 +251,7 @@ This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`.
 
 To decide what procedure you should use for flashing, you must know what bank is the `notbooted` one. You can find this by running `cat /proc/banktable/inactive`.
 
-- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOT-P flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not a RBI file, you can't continue this way. If not, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOT-P flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
 
 - If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOT-P. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
@@ -329,6 +329,7 @@ uci set dropbear.afg.PasswordAuth='on'
 uci set dropbear.afg.RootPasswordAuth='on'
 uci set dropbear.afg.RootLogin='1'
 uci commit dropbear
+/etc/init.d/dropbear enable
 /etc/init.d/dropbear restart
 ```
 
