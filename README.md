@@ -2,10 +2,10 @@
 
 The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpool.net.au/wiki/hack_technicolor
 
-| Wiki version                                        | git branch | target         |
+| Wiki Version                                        | Git Branch | Target         |
 |-----------------------------------------------------|------------|----------------|
-| [released](https://hack-technicolor.rtfd.io)        | stable     | general public |
-| [latest](https://hack-technicolor.rtfd.io/en/latest) | master     | insiders       |
+| [Stable](https://hack-technicolor.rtfd.io)          | `stable`   | General Public |
+| [Latest](https://hack-technicolor.rtfd.io/en/latest)| `master`   | Insiders/Devs  |
 
 ## Editing
 
