@@ -240,7 +240,7 @@ They are signature checked before boot so you can't flip a single bit of the bas
 
 When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
 
-Let's rule out an awful surprising sad ending: run this command *now* to make sure booted and active banks will switch on startup.
+Let's rule out an awful surprisingly sad ending. Run this command *now* to ensure this guide will work as expected:
 
 ```bash
 cat /proc/banktable/booted > /proc/banktable/active
