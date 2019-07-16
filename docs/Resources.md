@@ -42,7 +42,10 @@ There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as describ
   * Display status of all init.d scripts.
 
 * `/rom/usr/lib/cwmpd/transfers/switchover.sh`
-  * Switch bank and reboot.
+  * **UNSAFE** Switch active bank and reboot.
+
+* `echo bank_1 > /proc/banktable/active`
+  * Set bank_1 as active, replace with `bank_2` for the opposite
 
 * `cat /etc/openwrt_release`
   * OpenWrt Release metadata.
