@@ -203,12 +203,11 @@ Every firmware image is also verified by asymmetric keys. This second action is 
 
 ### Make a raw device dump
 
-Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade.
-Such images cannot boot on different boards and **do not include any sensitive info** about your own device. Therefore they are totally safe to be shared.
+Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
 
 In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
 
-To make a full dump of them you can easily use the busybox built-in `dd` command:
+To make a full dump of them you can easily use the built-in busybox `dd` command:
 
 ```bash
 dd if=/dev/mtd3 of=/tmp/bank_1.dump
