@@ -31,8 +31,8 @@
  |:---------------:|:--------:|:--------------------------
  | TG797n v3       | DANT-O   | Telstra T-Gateway
  | TG789vac v2     | VANT-6   | -
- | TG799vac        | VANT-F   | Telstra Gateway Max
  | TG789vac (v1)   | VANT-D   | -
+ | TG799vac        | VANT-F   | Telstra Gateway Max
  | TG800vac        | VANT-Y   | Telstra Gateway Max 2
  | TG789vac v3     | VBNT-1   | -
  | TG799vac Xtream | VBNT-H   | -
@@ -45,15 +45,9 @@
 
 ### The Basics
 
-Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc.
+Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
-They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
-
-The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware.
-
-Usually, there is no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply loose some functionality.
-
-That's what should motivate you to hack your device and at least re-enable as many features as possible. For some small amount of devices, a no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
+The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware. Usually, there is no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply loose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible. For some other devices, a no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
 
 The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
 
@@ -138,7 +132,7 @@ bank_2
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
-They are signature checked before boot so you can't flip a single bit of the base firmware image in both banks if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
+They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
 
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
@@ -229,7 +223,7 @@ bank_1
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
-They are signature checked before boot so you can't flip a single bit of the base firmware image in both banks if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
+They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
 
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
