@@ -5,8 +5,7 @@
 
 ## Where to Start
 
-We conventionally define different firmware *Types*. This is to address differetn rooting paths and made things simpler for you to follow.
-Find out what *Type* of firmware is on your gateway from the [Firmware Repository](Firmware%20Repository/).
+We conventionally define different firmware *Types* to make things simpler to follow different rooting paths. Find out what *Type* of firmware is on your gateway from the [Firmware Repository](Firmware%20Repository/).
 
 !!! hint "Can't find your firmware?"
     Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, if newer "*rootable*" firmware exists the gateway can be upgraded following the same steps as of `Type ???`. Also, consider any other newer, not yet listed firmware of `Type ???`.
