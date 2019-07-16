@@ -15,7 +15,7 @@ For pushing docs, [GitLens](https://marketplace.visualstudio.com/items?itemName=
 
 ## Testing
 
-For testing page rendering you can serve a local instance of this wiki from your local git clone. Read [here](Hack%20This%20Locally.md) for detailed instructions.
+For testing page rendering you can serve a local instance of this wiki from your local git clone. Read [here](Host%20this%20Locally.md) for detailed instructions.
 
 ## Branches
 
