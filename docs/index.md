@@ -9,7 +9,7 @@ We conventionally define different firmware *Types*. This is to address differet
 Find out what *Type* of firmware is on your gateway from the [Firmware Repository](Firmware%20Repository/).
 
 !!! hint "Can't find your firmware?"
-    Any missing or unlisted firmware is `Type ???`. Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, if newer "*rootable*" firmware exists the gateway can be upgraded by following the [TFTP flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing).
+    Very old firmware's from the Homeware 10.x era are outside the scope of this wiki. Despite the existence of old "*unlocking*" guides, if newer "*rootable*" firmware exists the gateway can be upgraded following the same steps as of `Type ???`. Also, consider any other newer, not yet listed firmware of `Type ???`.
 
 If your gateway firmware is:
 
