@@ -1,8 +1,11 @@
-# hack-technicolor
+# hack-technicolor - insider's README
 
-The new Wiki, migrated from https://whirlpool.net.au/wiki/hack_technicolor
+The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpool.net.au/wiki/hack_technicolor
 
-### Access the documentation [here](https://hack-technicolor.rtfd.io) (Stable, reflects stable branch), or [here](https://hack-technicolor.rtfd.io/en/latest) (latest, reflects master branch)
+| Wiki version                                        | git branch | target         |
+|-----------------------------------------------------|------------|----------------|
+| [released](https://hack-technicolor.rtfd.io)        | stable     | general public |
+| [lates](https://hack-technicolor.rtfd.io/en/latest) | master     | insiders       |
 
 ## Editing
 
@@ -10,12 +13,17 @@ The new Wiki, migrated from https://whirlpool.net.au/wiki/hack_technicolor
 
 For pushing docs, [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) by Eric Armodeo, [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) and [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) both by Don Jayamanne, is used to improve VSCode's Git SCM base.
 
+## Testing
+
+For testing page rendering you can serve a local instance of this wiki from your local git clone. Read [here](Hack%20This%20Locally.md) for detailed instructions.
+
 ## Branches
 
 Please push all edits to the `master` branch. When they are ready and everyone is happy, they will be pused over to the stable branch, which will be the branch that readthedocs uses.
 
-## Types
+## Conventions
 
+### Firmware Types
 
 | Type Number |     Definition     |
 |-------------|--------------------|
