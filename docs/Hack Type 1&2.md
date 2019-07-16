@@ -59,7 +59,9 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. On the DJA0231, the SIM is under a rubber plug above the green port.
 
 !!! info
-    These instructions were built for the TG799vac, so if you are doing this for a different Gateway be sure to substitute the correct firmware files and change the other options as needed.
+    These refers to TG799vac as example, so if you are doing this for a different Gateway be sure to substitute the correct firmware files and change the other options as needed.
+
+Now jumo below to the right *Type* section which fits your current situation.
 
 ### Type 1 - Flash of Type 2, then Root
 
@@ -72,9 +74,12 @@ Run AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case i
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
-At this point you have a rooted `Type 2` image on your Gateway to play with. Would you like to upgrade back to a newer firmware without loosing root access? If so, jump over to [inactive bank pre-rooting](#root-inactive-bank). **This is not recommended as any 16.3 firmware offers marginal improvements on DSL speed and Ping times.** Continue reading here otherwise.
+At this point you have a rooted `Type 2` image on your Gateway but your trip is not over.
 
-Now proceed to setting your own root access [password](#change-the-root-password).
+!!! hint "Upgrade now!"
+    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
+
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues you now need to ensure your *bank plan* is the best one for you. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
 ### Type 2 - Direct Rooting
 
@@ -87,8 +92,8 @@ If you have changed any of the default settings (eg. Gateway IP, Web Interface P
 
 If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local root communities for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
 
-!!! warning "Make sure the SSH server is permanent"
-    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
+!!! warning "Is current SSH server permanent?"
+    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
@@ -100,9 +105,21 @@ sed -i '\''s/#//'\'' /etc/inittab
 At this point you have a rooted `Type 2` image on your Gateway but your trip is not over.
 
 !!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [inactive bank pre-rooting](#root-inactive-bank). Continue reading here otherwise.
+    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
 
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues you know need to ensure your *bank plan* is the best one for you.
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues you now need to ensure your *bank plan* is the best one for you. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
+
+### Type 3 - Difficult Flash of Type 2, then Root
+
+!!! info "Why are You Here?"
+    Did you read the [index of this wiki](/)?
+
+## Post-Root Procedures
+
+!!! warning "Stop!"
+    Do not follow any post-root procedure unless explicitly invited to.
+
+### Bank Planning (without firmware upgrade)
 
 Run the following command to look at your Gateway's bank state:
 
@@ -179,14 +196,7 @@ On each reboot, your device will try booting `active` bank first. Since we set `
 
 Now proceed to setting your own root access [password](#change-the-root-password).
 
-### Type 3 - Difficult Flash of Type 2, then Root
-
-!!! info "Why are You Here?"
-    Did you read the [index of this wiki](/)?
-
-## Post-Root Procedures
-
-### Root Inactive Bank
+### Bank Planning (with firmware upgrade)
 
 At this point you are ready to activate root on whatever *Type* of firmware you would like, to end up having it rooted and running.
 
@@ -287,11 +297,11 @@ Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" root
 !!! hint "Something went Wrong?"
     Flash back the same `Type 2` image you were up to now, following the [BOOT-P recovery](/Recovery/#boot-p-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
-Now you have temporary root access on your preferred firmware, you can now conclude this long trip by reading the section below for [Permanent SSH and Root Access](#setting-up-permanent-ssh-server).
+Now you have temporary root access on your preferred firmware, you can now jump below to set your own root access [password](#change-the-root-password).
 
 ### Change the Root Password
 
-!!! hint "Serious hint!"
+!!! warning "Serious hint!"
     Do not ignore this step! :)
 
 Run:
@@ -302,7 +312,7 @@ passwd
 
 Reboot now if you're not doing any further configuration.
 
-At this point you should now see below to set up permanent SSH access
+At this point you should now read below to set up permanent SSH access
 
 ### Setting up Permanent SSH Server
 
