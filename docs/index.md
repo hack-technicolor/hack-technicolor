@@ -14,13 +14,13 @@ Find out what *Type* of firmware is on your gateway from the [Firmware Repositor
 If your gateway firmware is:
 
 - Type 1 is not directly rootable so load Type 2 then root other bank containing Type 1
-  - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
+    - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
 - Type 2 directly rootable
-  - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
+    - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
 - Type 3 has more complicated process to load Type 2
-  - See the [TFTP flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing) and [bootfail](Recovery/#bootfail-procedure)
+    - See the [TFTP flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing) and [bootfail](Recovery/#bootfail-procedure)
 - Type ??? is unknown
-  - Try the same as for Type 2, follow Type 3 steps otherwise
+    - Try the same as for Type 2, follow Type 3 steps otherwise
 
 See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info about what are *Types*.
 
