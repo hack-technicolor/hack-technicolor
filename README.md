@@ -5,7 +5,7 @@ The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpoo
 | Wiki version                                        | git branch | target         |
 |-----------------------------------------------------|------------|----------------|
 | [released](https://hack-technicolor.rtfd.io)        | stable     | general public |
-| [lates](https://hack-technicolor.rtfd.io/en/latest) | master     | insiders       |
+| [latest](https://hack-technicolor.rtfd.io/en/latest) | master     | insiders       |
 
 ## Editing
 
