@@ -116,19 +116,7 @@ To restore the Config:
 
 ## Decrypting Firmware
 
-See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the [repository](https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
-
-| Model Number    | Mnemonic |                        OSCK                                      |
-|:----------------|:---------|:-----------------------------------------------------------------|
-| TG797nv3        |  dant-o  | RBI not encryped, only signed                                    |
-| TG789vac (v1)   |  vant-d  | Unknown                                                          |
-| TG789vac v2     |  vant-6  | 546259AFD4E85AA6FFCE358CE0A93452E25A848138A67C142E42FEC79F4F3784 |
-| TG789vac v2 HP  |  vbnt-l  | a484245ccfbe2541b0c5c5e923be67a7deb9a823dd5cbab92cc619dea1391a42 |
-| TG799vac        |  vant-f  | 7fa2fdf4d4dc31bf66f91dda9a3e8777b7d7d2ec6e8db1926c0831ca2a279fdb |
-| TG799vac XTREAM |  vbnt-h  | Unknown                                                          |
-| TG800vac        |  vant-y  | 8e07111f188641948e84506db65270bd26595ad41327235a53998db068dc3833 |
-| DJA0231         |  vcnt-a  | Unknown                                                          |
-| DJN2130         |  vbnt-j  | 222c4dc4a9df952b02d5a489a112cf5e29aaedf86adb634410d6721f15f451e4 |
+See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from [here](https://github.com/kevdagoat/hack-technicolor/tree/master/osck). If you cannot find your OSCK and you already rooted your device extract from it, share it, then use it to decrypt firmware. This procedure is safe (no files are overwritten on the modem).
 
 See [Ansuel's Tool](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) for easy decryption of firmware on any platform. (Java Required)
 
