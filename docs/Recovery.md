@@ -103,7 +103,7 @@ This guide is useful if you need to load a different firmware on your `bank_1` f
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
-By holding down a button at power on on the Gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the Gateway, `bank_1` (no one has observed it writing to `bank_2`).
+By holding down a button (usually reset) at power on, the Gateway will enter BOOT-P mode which will allow you to flash firmware into `bank_1`, while the appropriate software is running on your PC
 
 If both firmware banks contain invalid firmware's, the Gateway will enter BOOT-P recovery mode automatically after three failed boot attempts on both banks.
 
@@ -246,6 +246,7 @@ To force-boot from the passive bank, which is not currently active, you have two
 ### Switchover
 
 If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
+
 ```bash
 echo bank_1 > /proc/banktable/active
 ```
@@ -308,7 +309,7 @@ Once powered on around 10-15 seconds into the boot cycle you want to turn it aro
 
 #### Automatic monitoring of serial console
 
-A Python program written by Mark Smith is available at [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which can monitor the serial console output from the Gateway and then automatically cycle the power to the Gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch.
+A Python program written by Mark Smith is available on [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which monitors the serial console output from the Gateway and then automatically cycles the power to the Gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch.
 
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
