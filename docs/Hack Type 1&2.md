@@ -87,8 +87,7 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 In this example we will be working with the `VANT-F` Gateway on `16.3.7567` which is a `Type 2` firmware.
 
-Using AutoFlashGUI, allow it to run through getting root.
-If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), please change the defaults in the AutoFlashGUI window.
+Using AutoFlashGUI, allow it to run through getting root. If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), you must change the defaults in the AutoFlashGUI window.
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
