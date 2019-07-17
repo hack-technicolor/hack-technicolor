@@ -132,7 +132,7 @@ Take note of `active` and `booted` banks:
 
 ```bash
 xxxxx
-/proc/banktable/inactive
+/proc/banktable/booted
 <take note of this>
 /proc/banktable/active
 <take note of this>
@@ -142,9 +142,9 @@ xxxxx
 This guide will try to set your modem to the following bank state:
 
 ```bash
-/proc/banktable/inactive
-bank_1
 /proc/banktable/active
+bank_1
+/proc/banktable/booted
 bank_2
 ```
 
@@ -166,7 +166,7 @@ You now have to make sure you can boot your current firmware from the recommende
 !!! danger "Notable exception: Missing RBI"
     In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOT-P` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
 
-If your `active` bank is `bank_2` already, run the following commands:
+If your `booted` bank is `bank_2` already, run the following commands:
 
 ```bash
 # Activate bank_1
@@ -175,7 +175,7 @@ echo bank_1 > /proc/banktable/active
 mtd erase bank_1
 ```
 
-If your `active` bank is `bank_1` instead, run the following commands:
+If your `booted` bank is `bank_1` instead, run the following commands:
 
 ```bash
 # Make a temp copy of the firmware in bank_1
