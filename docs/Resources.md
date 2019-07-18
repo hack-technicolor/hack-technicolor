@@ -116,7 +116,7 @@ To restore the Config:
 
 ## Decrypting Firmware
 
-Firmware is easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it - see [secr](https://github.com/mswhirl/secr) for details. The process is safe (no files are overwritten on the device). Please [share your OSCK](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/issues/new) and use it to decrypt firmware.
+Firmware is easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it. See [secr](https://github.com/mswhirl/secr) for details of a safe process which does not overwrite any files on the device. Please [share your OSCK](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/issues/new) and use it to decrypt firmware.
 
 ## The Boot Process
 
