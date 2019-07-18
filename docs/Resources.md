@@ -116,9 +116,7 @@ To restore the Config:
 
 ## Decrypting Firmware
 
-See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from [here](https://github.com/kevdagoat/hack-technicolor/tree/master/osck). If you cannot find your OSCK and you already rooted your device extract from it, share it, then use it to decrypt firmware. This procedure is safe (no files are overwritten on the modem).
-
-See [Ansuel's Tool](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) for easy decryption of firmware on any platform. (Java Required)
+Firmware is easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it - see [secr](https://github.com/mswhirl/secr) for details. The process is safe (no files are overwritten on the device). Please [share your OSCK](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/issues/new) and use it to decrypt firmware.
 
 ## The Boot Process
 
