@@ -92,15 +92,13 @@ DISTRIB_TAINTS='no-all busybox'
 * `opkg list | grep led`
   * List all LED packages used.
 
-### Examples
+Examples:
 
 Turn on LED:
 `echo 1 > /sys/class/leds/power:green/brightness`
 
 Turn off LED:
 `echo 0 > /sys/class/leds/power:red/brightness`
-
-# Super Modder
 
 ## Backing up Configuration
 
@@ -198,11 +196,11 @@ To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <pa
 
 Raw firmware dumps (which are not RBI files) are flashed this way to matching devices.
 
-### IPv6 Issues
+## IPv6 Issues
 
 IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
-### BusyBox (ash)
+## BusyBox (ash)
 
 The gateway runs [BusyBox](https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
 
@@ -238,13 +236,13 @@ Currently defined functions:
         uptime, vconfig, vi, wc, wget, which, xargs, yes, zcat
 ```
 
-### BusyBox (ash) Scripting</b>
+## BusyBox (ash) Scripting</b>
 
 In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
 
 [A basic ash Guide](https://linux.die.net/man/1/ash)
 
-### Lua
+## Lua
 
 All of the web interface and some of the daemons are written in Lua.
 
