@@ -184,7 +184,7 @@ lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/moun
 
 4. Repeat from Step 1 for every partition you would like to dump.
 
-#### Restoring dumps
+### Restoring dumps
 
 To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <partition_name>`
 
