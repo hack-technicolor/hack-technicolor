@@ -111,10 +111,10 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
-| ???    | [15.32.1509-ver1.4](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi) |
-| ???    | [15.53.6627-ver1.6](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
-| ???    | [15.53.7004-ver1.7.1](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
-| ???    | [15.53.8141-ver1.9.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
+| ???    | [15.32.1509-ver1.4] **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
+| ???    | [15.53.6627-ver1.6](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
+| ???    | [15.53.7004-ver1.7.1](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
+| ???    | [15.53.8141-ver1.9.0](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
 | ???    | [15.53.8141-ver1.9.2](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) | 
 
 ### DJN2130 / VBNT-J
