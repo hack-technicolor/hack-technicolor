@@ -163,7 +163,7 @@ When a proper Reset to Factory Defaults is done, the overlay partition is not fo
 You now have to make sure you can boot your current firmware from the recommended bank on every reboot.
 
 !!! danger "Notable exception: Missing RBI"
-    In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOT-P` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
+    In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
 
 If your `booted` bank is `bank_2` already, run the following commands:
 
