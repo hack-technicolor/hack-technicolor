@@ -93,7 +93,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 If you previously backed up your configuration, you can now restore it to your Gateway.
 
-## BOOT-P recovery mode (TFTP flashing)
+## BOOTP recovery mode (TFTP flashing)
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
@@ -103,9 +103,9 @@ This guide is useful if you need to load a different firmware on your `bank_1` f
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
-By holding down a button (usually reset) at power on, the Gateway will enter BOOT-P mode which will allow you to flash firmware into `bank_1`, while the appropriate software is running on your PC
+By holding down a button (usually reset) at power on, the Gateway will enter BOOTP mode which will allow you to flash firmware into `bank_1`, while the appropriate software is running on your PC
 
-If both firmware banks contain invalid firmware's, the Gateway will enter BOOT-P recovery mode automatically after three failed boot attempts on both banks.
+If both firmware banks contain invalid firmware's, the Gateway will enter BOOTP recovery mode automatically after three failed boot attempts on both banks.
 
 !!! warning "Please note and take into account"
     - This will not automatically switch the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
@@ -128,7 +128,7 @@ What you will Need
 2. RBI firmware file for your specific Gateway board.
 
 3. A wired ethernet connection with static IP address assigned.
-   BOOT-P recovery mode does not support Wi-Fi.
+   BOOTP recovery mode does not support Wi-Fi.
 
 4. A few cups of coffee
 
@@ -184,7 +184,7 @@ What you will Need
 
 15. Re-open TFTPD64.
 
-16. If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOT-P mode will always be of public type by default.
+16. If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOTP mode will always be of public type by default.
 
     - If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
@@ -219,7 +219,7 @@ From here, Gateway has the firmware you flashed into its `bank_1` partition.
 !!! note "A few things to note"
     - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware. Would you like to force it booting from `bank_1` instead? Read below chapters.
 
-    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOT-P mode can be a pain.
+    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
 
     - This guide and process will not work if your device is bricked at bootloader stage.
 
@@ -236,7 +236,7 @@ When you power on your device it starts loading by default the firmware into the
 
 The process of switching the active bank is called *switchover*. Ordinary firmware upgrades get installed to the passive bank, while a switchover occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
 
-Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOT-P recovery mode.
+Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP recovery mode.
 
 To force-boot from the passive bank, which is not currently active, you have two options:
 
@@ -259,7 +259,7 @@ If none of the above options are viable in your situation, unfortunately you mus
 
 Bootfail comes handy whenever you have no root access to your Gateway and you want to forcefully boot the passive bank for any reason.
 
-The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOT-P` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
+The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOTP` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
 
 Another common case is that your gateway has self-updated to a firmware version you can't easily root.
 For example, a new Telstra Frontier Gateway that has unfortunately updated to `v17.2.0261-820-RA` can be reverted to the firmware in the passive bank (usually 16.3) using this method. This makes the rooting process a breeze!
