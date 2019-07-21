@@ -258,9 +258,9 @@ This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`.
 
 To decide what procedure you should use for flashing, you must know what bank is the `notbooted` one. You can find this by running `cat /proc/banktable/inactive`.
 
-- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOT-P flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOT-P flashing](/Recovery/#boot-p-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](/Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
 
-- If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOT-P. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+- If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 Welcome back! Are you enjoying so far?
 
@@ -302,7 +302,7 @@ mtd erase `cat /proc/banktable/inactive`
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
 !!! hint "Something went Wrong?"
-    Flash back the same `Type 2` image you were up to now, following the [BOOT-P recovery](/Recovery/#boot-p-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
+    Flash back the same `Type 2` image you were up to now, following the [BOOTP recovery](/Recovery/#bootp-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
 Now you have temporary root access on your preferred firmware, you can now jump below to set your own root access [password](#change-the-root-password).
 
