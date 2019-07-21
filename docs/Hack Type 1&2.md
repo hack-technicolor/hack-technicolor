@@ -356,6 +356,7 @@ uci delete firewall.cwmpd
 uci del_list watchdog.@watchdog[0].pidfile='/var/run/cwmpd.pid'
 uci del_list watchdog.@watchdog[0].pidfile='/var/run/cwmpevents.pid'
 uci commit
+/etc/init.d/watchdog-tch reload
 /etc/init.d/cwmpd disable
 /etc/init.d/cwmpd stop
 /etc/init.d/cwmpdboot disable
