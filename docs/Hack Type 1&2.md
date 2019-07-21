@@ -101,7 +101,7 @@ Fire up your SSH client and connect with user `root` to the Gateway IP on defaul
 As your first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
 
 ```bash
-sed -i '\''s/#//'\'' /etc/inittab
+sed -i 's/#//' /etc/inittab
 ```
 
 At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over.
@@ -273,8 +273,8 @@ chmod 755 /overlay/`cat /proc/banktable/inactive`
 mkdir /overlay/`cat /proc/banktable/inactive`/etc
 chmod 775 /overlay/`cat /proc/banktable/inactive`/etc
 echo -e "echo root:root | chpasswd
-sed -i '\''s#root:/bin/false#root:/bin/ash#'\'' /etc/passwd
-sed -i '\''s/#//'\'' /etc/inittab
+sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
+sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
 " >> /overlay/`cat /proc/banktable/inactive`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/inactive`/etc/rc.local
@@ -286,8 +286,8 @@ You should get this output from the last command:
 
 ```bash
 echo root:root | chpasswd
-sed -i '\''s#root:/bin/false#root:/bin/ash#'\'' /etc/passwd
-sed -i '\''s/#//'\'' /etc/inittab
+sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
+sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
 ```
 
