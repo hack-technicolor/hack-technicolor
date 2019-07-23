@@ -43,13 +43,11 @@
 !!! tip "Asking about your gateway?"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
-### The Basics
-
 #### Why Hack your Gateway?
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
-The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware. Usually, there is no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible. For some other devices, a no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
+The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware. There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible. For some other devices, a no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
 
 The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
 
@@ -91,7 +89,7 @@ Using AutoFlashGUI, allow it to run through getting root. If you have changed an
 
 ![16.3 AFG](images/flashgui_16.3.png)
 
-If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local root communities for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
+If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local forums for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
 
 !!! warning "Is current SSH server permanent?"
     If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
@@ -114,7 +112,7 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 ### Type 3 - Difficult Flash of Type 2, then Root
 
 !!! info "Why are You Here?"
-    Did you read the [Homepage](/)?
+    Re-read the [Homepage](/)?
 
 ## Post-Root Procedures
 
@@ -258,9 +256,9 @@ This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`.
 
 To decide what procedure you should use for flashing, you must know what bank is the `notbooted` one. You can find this by running `cat /proc/banktable/inactive`.
 
-- If you are still following the **not recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](/Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are **not following the recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](/Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
 
-- If you are following the **recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [flash it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster then BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+- If you are **following the recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [copy it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 Welcome back! Are you enjoying so far?
 
@@ -302,7 +300,7 @@ mtd erase `cat /proc/banktable/inactive`
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
 !!! hint "Something went Wrong?"
-    Flash back the same `Type 2` image you were up to now, following the [BOOTP recovery](/Recovery/#bootp-recovery-mode-tftp-flashing) guide. If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
+    Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](/Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
 Now you have temporary root access on your preferred firmware, you can now jump below to set your own root access [password](#change-the-root-password).
 
