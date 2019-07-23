@@ -19,7 +19,7 @@ If your gateway firmware is:
     * See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
 
 * Type 3 has more complicated process to load Type 2
-    * See the [TFTP flashing guide](Recovery/#boot-p-recovery-mode-tftp-flashing) and [bootfail](Recovery/#bootfail-procedure)
+    * See [BOOTP flashing](Recovery/#bootp-flashing) and [Bootfail Procedure](Recovery/#bootfail-procedure)
 
 * Type ??? is unknown
     * Try the same as for Type 2, follow Type 3 steps otherwise
