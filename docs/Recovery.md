@@ -135,7 +135,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](/#Firmware%20Repository) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](Firmware%20Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -189,7 +189,7 @@ You are now ready to try booting the Gateway to do the flash!
 
 ### Flashing the Firmware
 
-1. Set up TFTP to send firmware in BOOTP mode [as described above](#Set-up-TFTP) or in [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
+1. Set up TFTP to send firmware in BOOTP mode [as described above](#set-up-tftp) or in [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
 
 2. Ensure TFTP is on the log viewer tab.
 
