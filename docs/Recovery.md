@@ -135,7 +135,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](Firmware%20Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](/Firmware%20Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -150,10 +150,12 @@ What you will Need
 7. Click Settings.
 
 8. On the GLOBAL tab enable only the following: TFTP Server, DHCP Server.
-![TFTP64](images/TFTPD_100_GLOBAL.png)
+
+    ![TFTP64](images/TFTPD_100_GLOBAL.png)
 
 9. On the TFTP tab the default options should be OK (base directory should be `.`)
-![TFTP64](images/TFTPD_200_TFTP.png)
+
+    ![TFTP64](images/TFTPD_200_TFTP.png)
 
 10. On the DHCP Server tab:
 
@@ -166,7 +168,8 @@ What you will Need
     - Def. Router (Opt 3): `10.0.0.99`
 
     - Mask (Opt 1): `255.255.255.0`
-![TFTP64](images/TFTPD_300_DHCP.png)
+
+    ![TFTP64](images/TFTPD_300_DHCP.png)
 
 11. Click OK
 
@@ -182,8 +185,9 @@ What you will Need
 
     - If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
-The server interface should now show an IP in the 10.0.0.x range and after a few seconds, the PC gets an IP from the TFTP64 program via DHCP.
-![TFTP64](images/TFTPD_400_Main.png)
+    The server interface should now show an IP in the 10.0.0.x range and after a few seconds, the PC gets an IP from the TFTP64 program via DHCP.
+
+    ![TFTP64](images/TFTPD_400_Main.png)
 
 You are now ready to try booting the Gateway to do the flash!
 
