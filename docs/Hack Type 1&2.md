@@ -11,9 +11,9 @@
 1. The latest version of the AutoFlashGUI software, available either as a [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source at [the project page](https://github.com/mswhirl/autoflashgui).
 *Make sure the tool runs and GUI loads before you go offline!*
 
-2. A `Type 2` RBI from [firmware repository](/Firmware%20Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
+2. A `Type 2` RBI from [firmware repository](../Firmware%20Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
 
-3. **Optionally**, another [firmware](/Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, another [firmware](../Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
@@ -21,7 +21,7 @@
 
 6. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
-7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](/Recovery) to get it to a stock state first.
+7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
 
 ## Introduction
 
@@ -156,7 +156,7 @@ They are signature checked before boot so you can't flip a single bit in the bas
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
 
-When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
+When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery) page.
 
 You now have to make sure you can boot your current firmware from the recommended bank on every reboot.
 
@@ -256,9 +256,9 @@ This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`.
 
 To decide what procedure you should use for flashing, you must know what bank is the `notbooted` one. You can find this by running `cat /proc/banktable/inactive`.
 
-- If you are **not following the recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](/Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are **not following the recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](../Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
 
-- If you are **following the recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](/Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [copy it manually](/Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+- If you are **following the recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](../Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [copy it manually](../Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 Welcome back! Are you enjoying so far?
 
@@ -300,7 +300,7 @@ mtd erase `cat /proc/banktable/inactive`
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
 !!! hint "Something went Wrong?"
-    Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](/Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](/Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
+    Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](../Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](../Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
 Now you have temporary root access on your preferred firmware, you can now jump below to set your own root access [password](#change-the-root-password).
 
@@ -395,7 +395,7 @@ find /rom/usr/lib/ipk -type f |xargs -n1 basename | cut -f 1 -d '_' |xargs opkg 
 echo > /etc/rc.local
 ```
 
-**Now you can Move on to [Unlocking Functionality](/Unlock%20Functionality)**
+**Now you can Move on to [Unlocking Functionality](../Unlock%20Functionality)**
 
 ### My Firmware is so Old that AutoFlashGUI can't Authenticate
 
