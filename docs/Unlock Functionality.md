@@ -48,7 +48,7 @@ A highly universal custom GUI with tons (!) of features is available [here](http
 **This is highly recommended for users who want the most usability out of their new gateway!**
 
 !!! danger "Custom GUI has permanently bricked modems before"
-    In older versions of this GUI, it has bricked low space devices like the TG799vac. Make sure you remove uneeded packages before installing!
+    In older versions of this GUI, it has bricked low space devices like the TG799vac. Make sure you remove unneeded packages before installing!
     It now has a brick prevention method in place so this is not so much of a worry.
 
 ## Change DNS
@@ -72,7 +72,7 @@ list dhcp_option '6,<dns 1>,<dns 2>'
 
 ### Redirecting all queries through the gateway to a specific DNS server
 
-1. Using `vi` or a program like WinSCP edit /etc/config/DHCP
+1. Using `vi` or a program like WinSCP edit /etc/config/dhcp
 2. Under
 
 ```bash
