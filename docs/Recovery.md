@@ -15,11 +15,11 @@ In modern Homeware firmware's, based on a fork of OpenWrt (Chaos Calmer 15.05), 
 
 The space available in the the user data partition is shared across both bank's overlay's.
 
-If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data partition only**, which will wipe all custom config.
+If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data partition only** as follows, which will wipe all custom config.
 
 !!! note "This reset method is not available if..."
-  - You have lost any kind of access to root shell by either SSH, Telnet, or Serial console, and you cannot execute a custom command as root.
-  - The Gateway bootloops or fails to boot properly.
+    - You have lost any kind of access to root shell by either SSH, Telnet, or Serial console, and you cannot execute a custom command as root.
+    - The Gateway bootloops or fails to boot properly.
 
 1. Log in to root shell (whatever you have available to you; SSH, telnet, serial console ...)
 2. Run `cat /proc/mtd` and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
@@ -39,7 +39,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 3. RTFD via the CLI (shell)
 
 !!! caution "Unroot prevention"
-    Some un-root prevention mechanisms implemented by various modders may inject or modify default RTFD behavior. If you installed some custom mod which has un-root prevention features, take into account that RTFD may be broken because of such modifications.
+    The procedures in these guidelines will not break RTFD functionality. Some heavy mods, like the custom tch-nginx-gui, can also modify RTFD scripts to prevent unrooting which breaks RTFD functionality. If the Gateway has one of these mods installed and RTFD does not work then check the mod details.
 
 ### RTFD via the web interface
 
@@ -72,7 +72,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
     - The `userfs` or `rootfs_data` jffs2 filesystem is full.
 
 1. Make sure the Gateway is turned on and completely booted.
-2. Login to the CLI. (RTFD is also available in restricted shell if needed)
+2. Login to the CLI (RTFD is also available in restricted shell if needed).
 3. Run `rtfd`
 4. The Gateway will delete all customized data for the booted bank. You will need to reroot.
 
@@ -93,19 +93,18 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 If you previously backed up your configuration, you can now restore it to your Gateway.
 
-## BOOT-P recovery mode (TFTP flashing)
+## BOOTP flashing
 
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
 !!! note "Your firmware is unlikely to be corrupt!"
-    - If Your Gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead.
-    Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
+    - If your Gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead. Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
-By holding down a button at power on on the Gateway, while the appropriate software is running on your PC, you can reload firmware into the first firmware bank of the Gateway, `bank_1` (no one has observed it writing to `bank_2`).
+By holding down a button (usually reset) at power on, the Gateway will enter BOOTP mode which will allow you to flash firmware into `bank_1`, while the appropriate software is running on your PC
 
-If both firmware banks contain invalid firmware's, the Gateway will enter BOOT-P recovery mode automatically after three failed boot attempts on both banks.
+If both firmware banks contain invalid firmware's, the Gateway will enter BOOTP mode automatically after three failed boot attempts on both banks.
 
 !!! warning "Please note and take into account"
     - This will not automatically switch the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
@@ -115,8 +114,6 @@ If both firmware banks contain invalid firmware's, the Gateway will enter BOOT-P
     - The firmware image is digitally signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
 ### Set up TFTP
-
-#### Background
 
 This guide is written for Windows but it should work on Linux too if you adapt the configuration.
 
@@ -128,7 +125,7 @@ What you will Need
 2. RBI firmware file for your specific Gateway board.
 
 3. A wired ethernet connection with static IP address assigned.
-   BOOT-P recovery mode does not support Wi-Fi.
+   BOOTP recovery mode does not support Wi-Fi.
 
 4. A few cups of coffee
 
@@ -138,7 +135,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](/Firmware%20Repository) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](../Firmware%20Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -154,11 +151,11 @@ What you will Need
 
 8. On the GLOBAL tab enable only the following: TFTP Server, DHCP Server.
 
-![TFTP64](images/TFTPD_100_GLOBAL.png)
+    ![TFTP64](images/TFTPD_100_GLOBAL.png)
 
 9. On the TFTP tab the default options should be OK (base directory should be `.`)
 
-![TFTP64](images/TFTPD_200_TFTP.png)
+    ![TFTP64](images/TFTPD_200_TFTP.png)
 
 10. On the DHCP Server tab:
 
@@ -172,7 +169,7 @@ What you will Need
 
     - Mask (Opt 1): `255.255.255.0`
 
-![TFTP64](images/TFTPD_300_DHCP.png)
+    ![TFTP64](images/TFTPD_300_DHCP.png)
 
 11. Click OK
 
@@ -184,25 +181,23 @@ What you will Need
 
 15. Re-open TFTPD64.
 
-16. If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOT-P mode will always be of public type by default.
+16. If you get a firewall warning, allow access on both private **and public** networks. Please note the temporary network between your PC and device in BOOTP mode will always be of public type by default.
 
     - If you don't get any firewall warning and you don't remember if you have already allowed access for TFTP64 in past, please, check firewall settings to confirm it's allowed already or temporally disable firewall.
 
-The server interface should now show an IP in the 10.0.0.x range and after a few seconds, the PC gets an IP from the TFTP64 program via DHCP.
+    The server interface should now show an IP in the 10.0.0.x range and after a few seconds, the PC gets an IP from the TFTP64 program via DHCP.
 
-![TFTP64](images/TFTPD_400_Main.png)
+    ![TFTP64](images/TFTPD_400_Main.png)
 
 You are now ready to try booting the Gateway to do the flash!
 
 ### Flashing the Firmware
 
-#### Required steps
-
-1. Set up TFTP to send firmware in BOOTP mode, please initially see above, or [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
+1. Set up TFTP to send firmware in BOOTP mode [as described above](#set-up-tftp) or in [this guide](https://www.jonathandavis.me.uk/2013/12/flashing-generic-firmware-on-a-technicolor-tg582n/).
 
 2. Ensure TFTP is on the log viewer tab.
 
-3. Connect one end of the network cable to any LAN port on the Gateway DO NOT use the WAN port, and the other end to the nic on the pc.
+3. Connect one end of the network cable to any LAN port on the Gateway, DO NOT use the WAN port, and the other end to the nic on the pc.
 
 4. Place Gateway into BOOTP mode, this is achieved by turning it off, holding the reset button down and powering on.
     - For TG789vac and TG799vac wait for the ethernet light to flash.
@@ -219,7 +214,7 @@ From here, Gateway has the firmware you flashed into its `bank_1` partition.
 !!! note "A few things to note"
     - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware. Would you like to force it booting from `bank_1` instead? Read below chapters.
 
-    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOT-P mode can be a pain.
+    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
 
     - This guide and process will not work if your device is bricked at bootloader stage.
 
@@ -232,11 +227,11 @@ Dual-banks gateways work very similar to a dual-boot system. You have a data par
 When you power on your device it starts loading by default the firmware into the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
 !!! hint "TFTP flashes into bank_1 only"
-    TFTP recovery mode allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
+    BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
 
 The process of switching the active bank is called *switchover*. Ordinary firmware upgrades get installed to the passive bank, while a switchover occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
 
-Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOT-P recovery mode.
+Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
 
 To force-boot from the passive bank, which is not currently active, you have two options:
 
@@ -246,6 +241,7 @@ To force-boot from the passive bank, which is not currently active, you have two
 ### Switchover
 
 If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
+
 ```bash
 echo bank_1 > /proc/banktable/active
 ```
@@ -258,10 +254,9 @@ If none of the above options are viable in your situation, unfortunately you mus
 
 Bootfail comes handy whenever you have no root access to your Gateway and you want to forcefully boot the passive bank for any reason.
 
-The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOT-P` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
+The most common case where you can use this trick is if you have a Gateway that you have just flashed a new firmware via `BOOTP` into `bank_1`, but your active bank is currently set to `bank_2`, where you have a firmware you can't easily root, so you won't be able to boot your new firmware.
 
-Another common case is that your gateway has self-updated to a firmware version you can't easily root.
-For example, a new Telstra Frontier Gateway that has unfortunately updated to `v17.2.0261-820-RA` can be reverted to the firmware in the passive bank (usually 16.3) using this method. This makes the rooting process a breeze!
+Another common case is that your gateway has self-updated to a firmware version you can't easily root. For example, a new Telstra Frontier Gateway that has unfortunately updated to `v17.2.0261-820-RA` can be reverted to the firmware in the passive bank (usually 16.3) using this method. This makes the rooting process a breeze!
 
 **Key Point:** Once you get your passive bank booted, it sadly won't be marked as the active one for the next boot, therefore you will need to repeat the following steps every time you would like to boot that bank until you take *appropriate actions*.
 
@@ -308,7 +303,7 @@ Once powered on around 10-15 seconds into the boot cycle you want to turn it aro
 
 #### Automatic monitoring of serial console
 
-A Python program written by Mark Smith is available at [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which can monitor the serial console output from the Gateway and then automatically cycle the power to the Gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch.
+A Python program written by Mark Smith is available on [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which monitors the serial console output from the Gateway and then automatically cycles the power to the Gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch.
 
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
