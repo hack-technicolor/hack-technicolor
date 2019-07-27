@@ -111,10 +111,11 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
-| ???    | [15.32.1509-ver1.4](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5-15.32.1509-ver1.4-CRF434-1049003.rbi) |
-| ???    | [15.53.6627-ver1.6](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
-| ???    | [15.53.7004-ver1.7.1](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
-| ???    | [15.53.8141-ver1.9.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
+| ???    | [15.32.1509-ver1.4] **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
+| ???    | [15.53.6627-ver1.6](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
+| ???    | [15.53.7004-ver1.7.1](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
+| ???    | [15.53.8141-ver1.9.0](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
+| ???    | [15.53.8141-ver1.9.2](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) | 
 
 ### DJN2130 / VBNT-J
 
@@ -203,12 +204,11 @@ Every firmware image is also verified by asymmetric keys. This second action is 
 
 ### Make a raw device dump
 
-Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade.
-Such images cannot boot on different boards and **do not include any sensitive info** about your own device. Therefore they are totally safe to be shared.
+Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
 
 In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
 
-To make a full dump of them you can easily use the busybox built-in `dd` command:
+To make a full dump of them you can easily use the built-in busybox `dd` command:
 
 ```bash
 dd if=/dev/mtd3 of=/tmp/bank_1.dump

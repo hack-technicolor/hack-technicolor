@@ -42,7 +42,10 @@ There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as describ
   * Display status of all init.d scripts.
 
 * `/rom/usr/lib/cwmpd/transfers/switchover.sh`
-  * Switch bank and reboot.
+  * **UNSAFE** Switch active bank and reboot.
+
+* `echo bank_1 > /proc/banktable/active`
+  * Set bank_1 as active, replace with `bank_2` for the opposite
 
 * `cat /etc/openwrt_release`
   * OpenWrt Release metadata.
@@ -89,15 +92,13 @@ DISTRIB_TAINTS='no-all busybox'
 * `opkg list | grep led`
   * List all LED packages used.
 
-### Examples
+Examples:
 
 Turn on LED:
 `echo 1 > /sys/class/leds/power:green/brightness`
 
 Turn off LED:
 `echo 0 > /sys/class/leds/power:red/brightness`
-
-# Super Modder
 
 ## Backing up Configuration
 
@@ -113,21 +114,7 @@ To restore the Config:
 
 ## Decrypting Firmware
 
-See [secr](https://github.com/mswhirl/secr) for details (original code from [here](https://github.com/pedro-n-rocha/secr)). Follow instructions with OSCK from below. If you cannot find your OSCK, you can check out the [repository](https://pastelink.net/laft), or extract OSCK from modem, then decrypt firmware. This procedure is safe (no files are overwritten on the modem).
-
-| Model Number    | Mnemonic |                        OSCK                                      |
-|:----------------|:---------|:-----------------------------------------------------------------|
-| TG797nv3        |  dant-o  | RBI not encryped, only signed                                    |
-| TG789vac (v1)   |  vant-d  | Unknown                                                          |
-| TG789vac v2     |  vant-6  | 546259AFD4E85AA6FFCE358CE0A93452E25A848138A67C142E42FEC79F4F3784 |
-| TG789vac v2 HP  |  vbnt-l  | a484245ccfbe2541b0c5c5e923be67a7deb9a823dd5cbab92cc619dea1391a42 |
-| TG799vac        |  vant-f  | 7fa2fdf4d4dc31bf66f91dda9a3e8777b7d7d2ec6e8db1926c0831ca2a279fdb |
-| TG799vac XTREAM |  vbnt-h  | Unknown                                                          |
-| TG800vac        |  vant-y  | 8e07111f188641948e84506db65270bd26595ad41327235a53998db068dc3833 |
-| DJA0231         |  vcnt-a  | Unknown                                                          |
-| DJN2130         |  vbnt-j  | 222c4dc4a9df952b02d5a489a112cf5e29aaedf86adb634410d6721f15f451e4 |
-
-See [Ansuel's Tool](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) for easy decryption of firmware on any platform. (Java Required)
+Firmware is easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
 
 ## The Boot Process
 
@@ -197,7 +184,7 @@ lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/moun
 
 4. Repeat from Step 1 for every partition you would like to dump.
 
-#### Restoring dumps
+### Restoring dumps
 
 To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <partition_name>`
 
@@ -209,11 +196,11 @@ To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <pa
 
 Raw firmware dumps (which are not RBI files) are flashed this way to matching devices.
 
-### IPv6 Issues
+## IPv6 Issues
 
 IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
-### BusyBox (ash)
+## BusyBox (ash)
 
 The gateway runs [BusyBox](https://busybox.net/about.html) as it's terminal emulator, designed for Embedded Linux systems.
 
@@ -249,13 +236,13 @@ Currently defined functions:
         uptime, vconfig, vi, wc, wget, which, xargs, yes, zcat
 ```
 
-### BusyBox (ash) Scripting</b>
+## BusyBox (ash) Scripting</b>
 
 In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
 
 [A basic ash Guide](https://linux.die.net/man/1/ash)
 
-### Lua
+## Lua
 
 All of the web interface and some of the daemons are written in Lua.
 
