@@ -12,17 +12,17 @@ We conventionally define different firmware *Types* to make different paths easi
 
 If your gateway firmware is:
 
-* Type 1 is not directly rootable so load Type 2 then root other bank containing Type 1
-    * See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
+- Type 1 is not directly rootable so load Type 2 then root other bank containing Type 1
+    - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
 
-* Type 2 directly rootable
-    * See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
+- Type 2 directly rootable
+    - See [Hack Type 1 and 2](Hack%20Type%201&2/) for detailed guide
 
-* Type 3 has more complicated process to load Type 2
-    * See [BOOTP flashing](Recovery/#bootp-flashing) and [Bootfail Procedure](Recovery/#bootfail-procedure)
+- Type 3 has more complicated process to load Type 2
+    - See [BOOTP flashing](Recovery/#bootp-flashing) and [Bootfail Procedure](Recovery/#bootfail-procedure)
 
-* Type ??? is unknown
-    * Try the same as for Type 2, follow Type 3 steps otherwise
+- Type ??? is unknown
+    - Try the same as for Type 2, follow Type 3 steps otherwise
 
 See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info about what are *Types*.
 
