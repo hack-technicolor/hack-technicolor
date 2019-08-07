@@ -105,7 +105,7 @@ sed -i 's/#//' /etc/inittab
 At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over.
 
 !!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
+    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firmware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
 
 If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
