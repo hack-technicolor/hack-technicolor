@@ -81,7 +81,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 2      | [16.3.7196-ver2.0.5](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi?raw=true) |
 | 2      | [16.3.7637-ver2.2.0](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002%20.rbi?raw=true) |
 | 2      | [16.3.7637-ver2.2.1](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/vant-6_16.3.7637-ver2.2.1-CRF695-2721005.rbi?raw=true) |
+| ???    | [16.3.8046-ver2.5.3](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) |
 | 1      | [16.3.8046-ver3.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) or [here](http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) |
+
 
 #### MST (no-brand) from UNO.UK
 
