@@ -22,7 +22,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### TG800vac / VANT-Y
 
-#### Telstra - Gateway Max
+#### Telstra - Gateway Max 2
 
 | Type   | Version          |
 |:------:|:-----------------|
@@ -84,7 +84,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | ???    | [16.3.8046-ver2.5.3](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) |
 | 1      | [16.3.8046-ver3.0](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) or [here](http://mirror.internode.on.net/pub/internode-support/hardware/tg789/firmware/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) |
 
-
 #### MST (no-brand) from UNO.UK
 
 | Type   | Version          |
@@ -117,7 +116,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | ???    | [15.53.6627-ver1.6](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
 | ???    | [15.53.7004-ver1.7.1](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
 | ???    | [15.53.8141-ver1.9.0](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
-| ???    | [15.53.8141-ver1.9.2](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) | 
+| ???    | [15.53.8141-ver1.9.2](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) |
 
 ### DJN2130 / VBNT-J
 
