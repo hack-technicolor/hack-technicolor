@@ -112,17 +112,45 @@ To restore the Config:
 
 * `sysupgrade -f filename.tar.gz`
 
-## Decrypting Firmware
-
-Firmware is easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
-
 ## The Boot Process
 
 To be updated * refer to the [OpenWrt Boot Process guide](https://openwrt.org/docs/techref/process.boot) as an example for now but don't rely on it.
 
+## Different methods of flashing firmwares
+
+Depending on the situation, you are usually asked to perform firmware flashing in different ways. Here is a short summary of them and some background details to better understand the big picture.
+
+You can get a firmware image flashed:
+
+* via bootloader recovery mode
+    * accepts RBI firmware images specified in BOOTP option of DHCP protocol
+    * the firmware is transferred to the gateway via TFTP from your PC
+    * RBI file is decrypted, unpacked, sigchecked and flashed into `bank_1` partition and finally marked as correctly flashed
+    * no active bank switch occurs
+    * this flashing method is always available unless you wiped the bootloader from the flash
+* via direct partition writing
+    * accepts either bank dumps or manually decrypted, unpacked and marked images from RBI files
+    * the firmware is usually transferred to the gateway temp filesystem via SSH/SCP or USB drive
+    * firmware image is directly written into the bank you specify on mtd command line
+    * this flashing method requires root access to a booted firmware
+* via sysupgrade
+    * accepts RBI firmware images
+    * the firmware is transferred to the gateway in various ways (WebUI, CWMP, SSH/SCP, USB, ...)
+    * RBI firmware is decrypted, unpacked, validated, simultaneously sigchecked and flashed into the `inactive` bank partition, marked as correctly flashed
+    * if all checks pass, a switchover is done, which means the active bank is switched and some operations on config like validation and migration is attempted
+    * this flashing method is suited for firmware upgrades only, may not allow or correctly handle downgrades
+    * this flashing method availability depends on a lot of different things, including firmware version and ISP's customisation, of course it requires a working booted firmware and it's always available if you have root access
+    * sysupgrade scripts are based on the original OpenWrt implementation with RBI, dual-bank, and switchover support implemented by Technicolor
+    * sysupgrade and switchover scripts may have been patched by a custom mod you installed to behave differently
+    * AutoFlashGUI exploits this fleshing method
+
+## Decrypting Firmware
+
+Firmware RBI files are easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
+
 ## The Homeware Flash Layout
 
-TG799vac:
+Example from TG799vac:
 
 `root@mygateway:~# cat /proc/mtd`
 
