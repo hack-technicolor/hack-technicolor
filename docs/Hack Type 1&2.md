@@ -1,7 +1,8 @@
-## IMPORTANT - Leave Gateway turned off until you understand these instructions
+## IMPORTANT, do not SKIP
 
-!!! warning "Disclaimer"
-    This process is not supported by the manufacturer or supplier of your Gateway. There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
+
+There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Things you will need
 
@@ -43,7 +44,7 @@
 !!! tip "Asking about your gateway?"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
-#### Why Hack your Gateway?
+#### Why Hack your Gateway
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
@@ -136,7 +137,7 @@ xxxxx
 xxxxx
 ```
 
-This guide will try to set your modem to the following bank state:
+This guide will try to set your Gateway to the following bank state:
 
 ```bash
 /proc/banktable/active
