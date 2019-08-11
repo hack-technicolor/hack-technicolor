@@ -2,9 +2,9 @@
 
 ## IMPORTANT, do not SKIP
 
-**Warning:** This process is not supported by the manufacturer or supplier of your modem.
+**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
 
-There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Firmware versions and URLs if available
 
@@ -193,7 +193,7 @@ Firmware Version    15.53.6469-510-RA
 Hardware Version    DANT-O
 ```
 
-If the modem is rooted, the CRF number can be found in `/rom/etc/config/env`
+If the Gateway is rooted, the CRF number can be found in `/rom/etc/config/env`
 
 Obtain by running `cat /rom/etc/config/env | grep "CRF"`
 
