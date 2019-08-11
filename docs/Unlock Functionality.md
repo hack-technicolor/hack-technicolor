@@ -1,5 +1,11 @@
 # Unlock Functionality
 
+## IMPORTANT, do not SKIP
+
+**Warning:** This process is not supported by the manufacturer or supplier of your modem.
+
+There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+
 ## Unlock Web GUI Tiles
 
 Tested on Telstra Gateways
