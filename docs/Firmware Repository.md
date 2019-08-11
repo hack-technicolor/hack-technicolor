@@ -132,7 +132,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### DJA0230 / VBNT-V
 
-#### Testra - Smart Modem (Gen1)
+#### Telstra - Smart Modem (Gen1)
 
 | Type   | Version          |
 |:------:|:-----------------|
