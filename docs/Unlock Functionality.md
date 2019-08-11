@@ -2,9 +2,9 @@
 
 ## IMPORTANT, do not SKIP
 
-**Warning:** This process is not supported by the manufacturer or supplier of your modem.
+**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
 
-There is no way of knowing your situation and the process could break your modem or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Unlock Web GUI Tiles
 
@@ -53,7 +53,7 @@ A highly universal custom GUI with tons (!) of features is available [here](http
 
 **This is highly recommended for users who want the most usability out of their new gateway!**
 
-!!! danger "Custom GUI has permanently bricked modems before"
+!!! danger "Custom GUI has permanently bricked Gateways before"
     In older versions of this GUI, it has bricked low space devices like the TG799vac. Make sure you remove unneeded packages before installing!
     It now has a brick prevention method in place so this is not so much of a worry.
 
@@ -61,7 +61,7 @@ A highly universal custom GUI with tons (!) of features is available [here](http
 
 This is by far one of the most requested mods.
 
-### Changing the default assigned server from your modems IP address to your DNS server
+### Changing the default assigned server from your Gateways IP address to your DNS server
 
 1. Using `vi` or a program like WinSCP edit /etc/config/DHCP
 2. Under
@@ -191,9 +191,9 @@ uci commit
 
 ## VoLTE backup voice service & SMS reception
 
-From firmware `17.2.0406-820-RC` on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the modem to provide a phone service on the phone ports and to DECT handsets.  
+From firmware `17.2.0406-820-RC` on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the Gateway to provide a phone service on the phone ports and to DECT handsets.  
 
-If you have SIP profiles configured, these will be used before the call is routed via the mobile network.  This has been tested with a Telstra 4G SIM; it's unknown if it will work with Vodafone/Optus SIMs due to the internal VoLTE configuration in the 4G module in the modem.
+If you have SIP profiles configured, these will be used before the call is routed via the mobile network.  This has been tested with a Telstra 4G SIM; it's unknown if it will work with Vodafone/Optus SIMs due to the internal VoLTE configuration in the 4G module in the Gateway.
 
 VoLTE status is visible under *Advanced > Telephony > VoLTE tab*; SMS messages are under the *Advanced > Mobile > SMS tab*.
 
@@ -217,7 +217,7 @@ uci commit
 !!! note "Firmware 16.3"
     Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available
 
-If you're on VDSL you may be able to speed up your sync times by removing redundant DSL profiles so the integrated modem does not even try to use them.
+If you're on VDSL you may be able to speed up your sync times by removing redundant DSL profiles so the integrated Gateway does not even try to use them.
 
 **Don't do this if you're still on ADSL!**
 
