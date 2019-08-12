@@ -12,44 +12,57 @@ There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as describ
 
 ## Handy Commands
 
+Check firmware flashed and what is active:
+
 * `find /proc/banktable -type f -print -exec cat {} ';'`
-  * Checking firmware flashed and what is active.
+
+Show processes that are running:
 
 * `ps`
-  * Shows processes that are running.
+
+Show programs that are listening as network services:
 
 * `netstat -tuplen`
-  * Shows programs that are listening as network services.
+
+Show everything that's listening on sockets (TCP, UPD, Unix etc):
 
 * `netstat -lenp`
-  * Shows everything that's listening on sockets (TCP, UPD, Unix etc).
+
+Free (NAND) space:
 
 * `df -h`
-  * Free (NAND) space.
+
+Dump entire config (~7700+ lines to console):
 
 * `uci show`
-  * Dump entire config (~7700+ lines to console).
+
+Example to filter lines with password:
 
 * `uci show | grep password`
-  * Example to filter lines with password.
+
+Access logs for most services (which use syslog):
 
 * `logread -f`
-  * Access logs for most services (which use syslog). Pass an argument of -e nginx to match log entries just related to Nginx, which is perfect for debugging errors in the Web GUI.
 
-  * Remove `-f` flag for all time logs (erased every reboot).
+Access logs for most services (which use syslog). Pass an argument of `-e nginx` to match log entries just related to Nginx, which is perfect for debugging errors in the Web GUI. Pass an argument of `-e nginx` to match log entries just related to Nginx, which is perfect for debugging errors in the Web GUI. Remove `-f` flag for all time logs (erased every reboot).
+
+Display status of all init.d scripts:
 
 * `for F in /etc/init.d/* ; do $F enabled && echo $F on || echo $F **disabled**; done`
-  * Display status of all init.d scripts.
+
+Switch active bank and reboot - **UNSAFE**:
 
 * `/rom/usr/lib/cwmpd/transfers/switchover.sh`
-  * **UNSAFE** Switch active bank and reboot.
+
+Set bank_1 as active, replace with `bank_2` for the opposite:
 
 * `echo bank_1 > /proc/banktable/active`
-  * Set bank_1 as active, replace with `bank_2` for the opposite
+
+OpenWrt Release metadata:
 
 * `cat /etc/openwrt_release`
-  * OpenWrt Release metadata.
-  * eg TG799:
+
+eg TG799:
 
 ```bash
 DISTRIB_ID='OpenWrt'
@@ -63,17 +76,21 @@ DISTRIB_TAINTS='no-all busybox'
 
 ## Files
 
+Lua/HTML Web Interface source files:
+
 * `/www/*`
-  * Lua/HTML Web Interface source files.
+
+UCI config source files, pehaps more readable than `uci show`:
 
 * `/etc/config/*`
-  * UCI config source files, pehaps more readable than `uci show`.
+
+Various executables, many custom-written for this hardware:
 
 * `/sbin/*.sh, /usr/bin/*.sh, /usr/sbin/*.sh`
-  * Various executables, many custom-written for this hardware.
+
+Services present; May or may not be enabled or running:
 
 * `/etc/init.d/*`
-  * Services present; May or may not be enabled or running.
 
 ## LED's
 
