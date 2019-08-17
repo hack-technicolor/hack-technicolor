@@ -25,7 +25,7 @@ If your gateway firmware is:
     - See [BOOTP flashing](Recovery/#bootp-flashing) and [Bootfail Procedure](Recovery/#bootfail-procedure)
 
 - Type ??? is unknown
-    - Try the same as for Type 2, follow Type 3 steps otherwise
+    - Try following Type 2, if that doesn't work try Type 1, otherwise follow Type 3 steps
 
 See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info about what are *Types*.
 
