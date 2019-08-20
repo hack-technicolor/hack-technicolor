@@ -148,9 +148,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### DJA0231 / VCNT-A
 
-!!! danger "OSCK Not Known"
-    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents.
-
+[//]: <> (leep for future usage danger "OSCK Not Known" Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents.)
 #### Telstra - Smart Modem (Gen2)
 
 | Type   | Version          |
@@ -159,7 +157,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | [18.1.c.0241-950-RA](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) |
 | 1      | [18.1.c.0283-950-RA](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) |
 | 2      | [18.1.c.0347-950-RC](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) |
-| 2      | [18.1.c.0347-950-RC](https://drive.google.com/file/d/1LjHIc_Vecd5LY6FY1AihzYJelzfscNwn/view?usp=sharing) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools** |
 
 ## What to do if your firmware is not listed here
 
