@@ -148,7 +148,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 ### DJA0231 / VCNT-A
 
-[//]: <> (leep for future usage danger "OSCK Not Known" Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents.)
 #### Telstra - Smart Modem (Gen2)
 
 | Type   | Version          |
