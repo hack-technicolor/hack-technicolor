@@ -1,1 +1,2 @@
 mkdocs-material==4.4.0
+mkdocs-pdf-export-plugin==0.5.5

@@ -1,7 +1,7 @@
 ---
-name: Add Firmware
-about: Add firmware to guide
-title: ''
+name: Share new Firmware
+about: Share a new firmware to be included in the guide
+title: 'Add _VERSION_ for _BOARD_'
 labels: Add FW Request
 assignees: ''
 
@@ -9,27 +9,28 @@ assignees: ''
 
 Please fill out the following, remembering to put an 'X' in the '[ ]' to mark the checkbox:
 
-**Type**
-- [ ] Bank Dump
-- [ ] URL
+**Firmware version**
+_VERSION_
 
-**Have you followed formatting?**
-- [ ] Yes
-- [ ] No
-- [ ] Please check for me :)
+**Image Format**
+- [ ] Link to Bank Dump (compressed as xz)
+- [ ] Link to RBI
 
-**Bank Dump Info**
-- [ ] Compressed as xz
-- [ ] Uploaded to firmware/
+**Would you create a PR with wiki updates mentioning this new firmware?**
+- [ ] Yes! I will take care of that
+- [ ] No, do it for me, I can't use GitHub...
 
-**URL Info**
-- [ ] Easily accesible
-Type: <eg. FTP HTTP>
+**Where we can get it**
+- [ ] From ISP's url - public
+- [ ] From ISP's url - private
+- [ ] From own cloud sharing
+
+Type: _<eg. FTP HTTP>_
 
 **Device Info**
 
-Mnemonic: 
+Board Mnemonic: _<eg: VCNT-A for DJA0231TLS>_
 
-Model Number: 
+Model Number: _<eg: DJA0231 for DJA0231TLS>_
 
-Vendor Code: 
+Vendor Name/Code: _<eg: Telstra or TLS for DJA0231TLS>_
