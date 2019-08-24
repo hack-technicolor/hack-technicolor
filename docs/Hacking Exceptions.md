@@ -16,7 +16,7 @@ This Gateway is an exception to the general process. Somehow, Technicolor patche
 
 ### Requirements
 
-1. One of the two rooting programs (see [Choose your Program](Hacking%20Exceptions/#Choose-your-Program))
+1. One of the two rooting programs (see [Choose your Program](#Choose-your-Program))
 2. Spare/Free Ethernet adaptor and Cable
 3. Time
 
