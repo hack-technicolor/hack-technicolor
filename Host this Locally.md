@@ -4,6 +4,8 @@ If you ever need to edit or use this documentation without internet, it can be a
 
 ## Windows
 
+Tip: if you have any WSL distro installed, just use it following Linux instructions
+
 ### Install Python
 
 To start off you must install a Python environment. Move on to *Install MKDocs* if you already have a Python environment installed.
@@ -77,7 +79,7 @@ sudo apt install -y python3 python3-pip git
 1. In your bash shell window, run:
 
 ```bash
-pip3 install mkdocs mkdocs-material
+pip3 install mkdocs mkdocs-material mkdocs-pdf-export-plugin
 ```
 
 ### Download the Repository
