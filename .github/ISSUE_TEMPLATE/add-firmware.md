@@ -16,7 +16,7 @@ _VERSION_
 - [ ] Link to Bank Dump (compressed as xz)
 - [ ] Link to RBI
 
-**Would you create a PR with wiki updates mentioning this new firmware?**
+**Would you take care of adding this new firmware in the wiki?**
 - [ ] Yes! I will take care of that
 - [ ] No, do it for me, I can't use GitHub...
 
@@ -24,6 +24,13 @@ _VERSION_
 - [ ] From ISP's url - public
 - [ ] From ISP's url - private
 - [ ] From own cloud sharing
+
+**Did you manage to root this firmware version already?**
+- [ ] Yes, following Type 2 instructions
+- [ ] Yes, following Type 1 instructions
+- [ ] Yes, following Type 3 instructions
+- [ ] No, I can't root it following instructions from the wiki
+- [ ] I didn't try
 
 Type: _<eg. FTP HTTP>_
 
