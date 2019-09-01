@@ -131,8 +131,8 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.3.7413-660-RF](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) **This is not an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools** |
-| ???    | [17.2.0219-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) |
-| ???    | [17.2.0219-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) |
+| 2      | [17.2.0219-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) |
+| 2      | [17.2.0219-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) |
 | ???    | [17.2.0284-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF913-17.2.0284-820-RA/vbnt-j_CRF913-17.2.0284-820-RA.rbi) |
 
@@ -142,9 +142,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
-| ???    | 17.2.0188-820-RA **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
-| ???    | [17.2.0288-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi) |
-| ???    | [17.2.0320-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi) |
+| 2      | 17.2.0188-820-RA **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
+| 2      | [17.2.0288-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi) |
+| 2      | [17.2.0320-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi) |
 | ???    | [17.2.0406-820-RC](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi) |
 
 ### DJA0231 / VCNT-A
