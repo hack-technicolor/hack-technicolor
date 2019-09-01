@@ -26,31 +26,16 @@ There is no way of knowing your situation and the process could break your Gatew
 
 ## Introduction
 
-### Known Working Models
-
- | Model Number    | Mnemonic | ISP Product Names
- |:---------------:|:--------:|:--------------------------
- | TG797n v3       | DANT-O   | Telstra T-Gateway
- | TG789vac v2     | VANT-6   | -
- | TG789vac (v1)   | VANT-D   | -
- | TG799vac        | VANT-F   | Telstra Gateway Max
- | TG800vac        | VANT-Y   | Telstra Gateway Max 2
- | TG789vac v3     | VBNT-1   | -
- | TG799vac Xtream | VBNT-H   | -
- | DJN2130         | VBNT-J   | Telstra Frontier Gateway
- | TG789vac v2 HP  | VBNT-L   | MyRepublic WiFi Hub+
- | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
-
-!!! tip "Asking about your gateway?"
-    Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
-
-#### Why Hack your Gateway
+## Why Hack your Gateway
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
 The guide was originally written for gateways provided by Telstra and as such, have Telstra branded firmware. There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible. For some other devices, a no-brand firmware (MST) exists, where no configurations options are locked out, but getting root access to it will still open a wider window of possibilities.
 
 The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
+
+!!! tip "Asking about your gateway?"
+    Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
 ## Gaining Root Access
 
@@ -84,6 +69,23 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 ### Type 2 - Direct Rooting
 
+#### Rooting via AutoFlashGUI
+
+AutoFlashGUI tested working with some firmwares for these models. It may work with other models too. If you get it working with other models not listed here, let us know.
+
+ | Model Number    | Mnemonic | ISP Product Names
+ |:---------------:|:--------:|:--------------------------
+ | TG797n v3       | DANT-O   | Telstra T-Gateway
+ | TG789vac v2     | VANT-6   | -
+ | TG789vac (v1)   | VANT-D   | -
+ | TG799vac        | VANT-F   | Telstra Gateway Max
+ | TG800vac        | VANT-Y   | Telstra Gateway Max 2
+ | TG789vac v3     | VBNT-1   | -
+ | TG799vac Xtream | VBNT-H   | -
+ | DJN2130         | VBNT-J   | Telstra Frontier Gateway
+ | TG789vac v2 HP  | VBNT-L   | MyRepublic WiFi Hub+
+ | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
+
 In this example we will be working with the `VANT-F` Gateway on `16.3.7567` which is a `Type 2` firmware.
 
 Using AutoFlashGUI, allow it to run through getting root. If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), you must change the defaults in the AutoFlashGUI window.
@@ -96,6 +98,19 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
     If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
+
+#### Rooting via different strategies
+
+Some Type 2 firmwares need more sophisticated rooting strategies, and may not be supported by AutoFlashGUI (yet). For such firmwares, there exist at least one public root guide available. Once you get your SSH client connected into a root shell come back here and continue reading below.
+
+Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
+
+ | Model Number    | Mnemonic | ISP Product Names         | External resource |
+ |:---------------:|:--------:|:-------------------------:|:------------------|
+ | DGA4131         | VBNT-O   | FASTGate                  | [link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598)    |
+ | DJA0230         | VBNT-V   | Telstra Smart Modem Gen1  | [link](https://github.com/BoLaMN/tch-exploit)          |
+
+#### Final Type 2 steps
 
 As your first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
 
