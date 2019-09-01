@@ -33,7 +33,6 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | Type   | Version          |
 |:------:|:-----------------|
 | 2      | [16.3.7567-660-RD](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) |
-| 2      | [16.3.7567-660-RD](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) |
 | 1      | [17.2.0188-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) |
 | 1      | [17.2.0213-820-RB](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) |
 | 2      | [17.2.0261-820-RA](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) |
@@ -61,8 +60,9 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
+| 2      | [15.53.6469-510-RA](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi)|
 | 2      | [16.1.7565-580-RC](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) |
-| 2      | [15.53.6469-510-RA](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) |
+
 
 ### TG789vac / VANT-D
 
@@ -118,7 +118,7 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          |
 |:------:|:-----------------|
-| ???    | [15.32.1509-ver1.4] **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
+| ???    | 15.32.1509-ver1.4 **No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.** |
 | ???    | [15.53.6627-ver1.6](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) |
 | ???    | [15.53.7004-ver1.7.1](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) |
 | ???    | [15.53.8141-ver1.9.0](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) |
