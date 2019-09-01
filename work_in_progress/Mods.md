@@ -8,9 +8,9 @@ The aim of this section is to tell you how to safely modify your gateway to prod
 
 There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-## Finding Buttons
+## Changing the function of the buttons
 
-You can find the functions of the buttons on your Gateway to do whatever you want with them.
+You can change the functions of the buttons on your Gateway to do whatever you want with them.
 
 To do this, you will need:
 
