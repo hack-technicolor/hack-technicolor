@@ -154,7 +154,7 @@ xxxxx
 xxxxx
 ```
 
-This guide will try to set your Gateway to the following bank state:
+At the end of this guide your Gateway will boot the current firmware image as per *optimal* bank plan:
 
 ```bash
 /proc/banktable/active
@@ -163,8 +163,8 @@ bank_1
 bank_2
 ```
 
-!!! caution "Bank Planning: "On which bank should I stay to be safe?""
-    It's strongly recommended to adhere to the above situation before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
+!!! caution "On which bank should I stay to be safe?"
+    It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
@@ -176,7 +176,7 @@ They are signature checked before boot so you can't flip a single bit in the bas
 
 When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery) page.
 
-You now have to make sure you can boot your current firmware from the recommended bank on every reboot.
+We need to make sure the current firmware loads from the recommended bank on every reboot.
 
 !!! danger "Notable exception: Missing RBI"
     In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
@@ -227,34 +227,74 @@ At this stage it's possible to choose whatever *Type* of firmware you would like
 
 We need to mod the `notbooted` bank's config, then switch over to it without doing a factory reset or standard upgrade procedure. Note that if you factory reset while not on a `Type 2` firmware, you will need to follow the entire guide from the beginning and a auto-upgrade could lock you out permanently in that reset state if the Gateway has internet access!
 
-Run the following command to look at your Gateway's bank state:
-
-```find /proc/banktable -type f -print -exec cat {} ';'```
-
-It should look something like this:
+Let's rule out any current bank plan inconsistency. Run this command **now** to ensure this guide will work as expected:
 
 ```bash
-/proc/banktable/notbootedoid
-<not important>
-/proc/banktable/bootedoid
-<not important>
-/proc/banktable/passiveversion
-<not important>
-/proc/banktable/activeversion
-<not important>
-/proc/banktable/inactive
-bank_2
-/proc/banktable/active
-bank_1
-/proc/banktable/notbooted
-bank_2
+cat /proc/banktable/booted > /proc/banktable/active
+```
+
+Run the following command to look at your current Gateway's bank plan:
+
+```find /proc/banktable/*booted -type f -print -exec cat {} ';'```
+
+It should now look either like this (let's call this *"state A"*):
+
+```bash
 /proc/banktable/booted
+bank_2
+/proc/banktable/notbooted
 bank_1
 ```
 
-!!! caution "Bank Planning: "On which bank should I stay to be safe?""
-    It's strongly recommended to adhere to the above situation before following this guide further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really be on a `Type 2` image booted from `bank_1` now, and then you should only mod your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2`.
+or this (*"state B"*):
+
+```bash
+/proc/banktable/booted
+bank_1
+/proc/banktable/notbooted
+bank_2
+```
+
+!!! hint "Move to *state B* now!"
+    To let you end up in the following *optimal* bank plan we need to move your gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
+
+The *optimal* bank plan looks like this:
+
+```bash
+/proc/banktable/active
+bank_1
+/proc/banktable/booted
+bank_2
+```
+
+!!! caution "On which bank should I stay to be safe?"
+    It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
+
+Run these commands to move from *state A* to *state B*:
+
+```bash
+# Make a temp copy of the firmware in bank_2
+dd if=/dev/mtd4 of=/tmp/bank2.fw
+# Flash that copy into bank_1
+mtd write /tmp/bank2.fw bank_1
+# Clean temp firmware copy
+rm /tmp/bank2.fw
+# Clean any existing overlay for bank_1 firmware
+rm -rf /overlay/bank_1
+# Make a temp copy of overlay for bank_2 firmware
+cp -rf /overlay/bank_2 /tmp/bank_2_backup
+# Free up overlay space by removing existing overlay for bank_2 firmware
+rm -rf /overlay/bank_2
+# Use the previously made temp copy as overlay for bank_1 firmware
+cp -rf /tmp/bank_2_backup /overlay/bank_1
+# Activate bank_1
+echo bank_1 > /proc/banktable/active
+# Erase firmware in bank_1
+mtd erase bank_2
+# Reboot to first valid firmware
+reboot
+```
 
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
@@ -265,39 +305,33 @@ They are signature checked before boot so you can't flip a single bit of the bas
 
 When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
 
-Let's rule out an awful, surprise sad ending. Run this command *now* to ensure this guide will work as expected:
-
-```bash
-cat /proc/banktable/booted > /proc/banktable/active
-```
-
 Unless your target preferred firmware is there already, it's now time to flash it into its final destination: the `notbooted` bank.
-This time you can't use AutoFlashGUI, even if your current firmware is `Type 2`. Otherwise the regular firmware upgrade procedures will perform an unwanted switchover, leading to a reboot immediately before any indirect root could be performed.
+This time you can't use just AutoFlashGUI, even if your current firmware is `Type 2`. Otherwise the regular firmware upgrade procedures will perform an unwanted switchover, leading to a reboot immediately before any indirect root could be performed.
 
-To decide what procedure you should use for flashing, you must know what bank is the `notbooted` one. You can find this by running `cat /proc/banktable/inactive`.
+The shortest path for firmware flashing depends whether you start from on *"state A"* or *"state B"*.
 
-- If you are **not following the recommended** bank planning and your `notbooted` bank is `bank_1`, well, you will need to go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](../Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are on **state A** and your `notbooted` bank is `bank_1` since you didn't care the hints, well, go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware from `bank_2`. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](../Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
 
-- If you are **following the recommended** bank planning and your `notbooted` bank is `bank_2`, you will now need to [decrypt and extract](../Resources/#decrypting-firmware) the raw bank image from the RBI firmware file and [copy it manually](../Resources/#backuprestore-bit-for-bit-dumps) into the right bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+- If you are on **state B** and your `notbooted` bank is `bank_2`, you now need to [decrypt and extract](../Resources/#decrypting-firmware) the raw bank image from the RBI firmware file, change its first 4 bytes to 0x00 and [copy it manually](../Resources/#backuprestore-bit-for-bit-dumps) into `notbooted` bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time: just copy it back into `notbooted` bank. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 Welcome back! Are you enjoying so far?
 
-Now, run the following to prepare inactive bank for temporary root and switch back to it:
+Now, run the following to prepare `notbooted` bank for temporary root and switch back to it:
 
 ```bash
-rm -rf /overlay/`cat /proc/banktable/inactive`
-mkdir /overlay/`cat /proc/banktable/inactive`
-chmod 755 /overlay/`cat /proc/banktable/inactive`
-mkdir /overlay/`cat /proc/banktable/inactive`/etc
-chmod 775 /overlay/`cat /proc/banktable/inactive`/etc
+rm -rf /overlay/`cat /proc/banktable/notbooted`
+mkdir /overlay/`cat /proc/banktable/notbooted`
+chmod 755 /overlay/`cat /proc/banktable/notbooted`
+mkdir /overlay/`cat /proc/banktable/notbooted`/etc
+chmod 775 /overlay/`cat /proc/banktable/notbooted`/etc
 echo -e "echo root:root | chpasswd
 sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
-" >> /overlay/`cat /proc/banktable/inactive`/etc/rc.local
-chmod +x /overlay/`cat /proc/banktable/inactive`/etc/rc.local
+" >> /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
+chmod +x /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
 sync
-cat /overlay/`cat /proc/banktable/inactive`/etc/rc.local
+cat /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
 ```
 
 You should get this output from the last command:
@@ -311,10 +345,10 @@ dropbear -p 6666 &
 
 If you didn't, reboot the Gateway and retry the procedure.
 
-If successful, nuke the `Type 2` firmware from inside booted bank with:
+If successful, nuke the `Type 2` firmware from inside `booted` bank with:
 
 ```bash
-mtd erase `cat /proc/banktable/inactive`
+mtd erase `cat /proc/banktable/booted`
 ```
 
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
