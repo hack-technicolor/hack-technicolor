@@ -137,6 +137,8 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 ### Bank Planning (without firmware upgrade)
 
+We are now going to prepare an optimal bank planning for the same firmware version you have now booted.
+
 Run the following command to look at your Gateway's bank state:
 
 ```find /proc/banktable -type f -print -exec cat {} ';'```
@@ -219,9 +221,11 @@ Now proceed to setting your own root access [password](#change-the-root-password
 
 ### Bank Planning (with firmware upgrade)
 
-At this point you are ready to activate root on whatever *Type* of firmware you would like, to end up having it rooted and running.
+We are now going to prepare an optimal bank planning for another firmware you don't have on your Gateway yet.
 
- This procedure works by allowing us to mod the not booted bank and config, then switch over to it without doing a factory reset or standard upgrade procedure. Note that if you factory reset while not on a `Type 2` firmware, you will need to run the entire procedure from the beginning and a auto-upgrade could lock you out permanently in that reset state if the Gateway has internet access!
+At this stage it's possible to choose whatever *Type* of firmware you would like, to end up having it rooted and running.
+
+We need to mod the `notbooted` bank's config, then switch over to it without doing a factory reset or standard upgrade procedure. Note that if you factory reset while not on a `Type 2` firmware, you will need to follow the entire guide from the beginning and a auto-upgrade could lock you out permanently in that reset state if the Gateway has internet access!
 
 Run the following command to look at your Gateway's bank state:
 
