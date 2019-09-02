@@ -69,9 +69,17 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 ### Type 2 - Direct Rooting
 
+Every `Type 2` firmware can be rooted directly by some known rooting strategy.
+
+AutoFlashGUI implements most common rooting strategies. Other peculiar firmwares require more sophisticated strategies and tools.
+
+Here we describe how to get root by AutoFlashGUI and where to find a correct special rooting guide in case you need it.
+
+Existing rooting strategies may work with firmwares for models you don't see listed here. If you get some success with other models not listed here, let us know.
+
 #### Rooting via AutoFlashGUI
 
-AutoFlashGUI tested working with some firmwares for these models. It may work with other models too. If you get it working with other models not listed here, let us know.
+AutoFlashGUI tested working with some firmwares for these models.
 
  | Model Number    | Mnemonic | ISP Product Names
  |:---------------:|:--------:|:--------------------------
@@ -101,7 +109,7 @@ Fire up your SSH client and connect with user `root` to the Gateway IP on defaul
 
 #### Rooting via different strategies
 
-Some Type 2 firmwares need more sophisticated rooting strategies, and may not be supported by AutoFlashGUI (yet). For such firmwares, there exist at least one public root guide available. Once you get your SSH client connected into a root shell come back here and continue reading below.
+For any Type 2 firmware not supported by AutoFlashGUI (yet), there exist at least one public root guide available. Once you get your SSH client connected into a root shell come back here and continue reading below.
 
 Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
 
