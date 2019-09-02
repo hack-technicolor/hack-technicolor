@@ -7,9 +7,7 @@
 There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Where to Start
-!!! danger "Is your gateway a..."
-    DJA0230? Please see the [General Process Exceptions](Hacking%20Exceptions/) page for rooting info.
-    
+
 We conventionally define different firmware *Types* to make different paths easier to follow. Determine your current firmware version and find out which *Type* it is by using the [Firmware Repository](Firmware%20Repository/).
 
 !!! hint "Can't find your firmware?"
