@@ -199,6 +199,14 @@ Obtain by running `cat /rom/etc/config/env | grep "CRF"`
 option CONF_VERSION 'CRF483'
 ```
 
+You can also run
+
+```bash
+strings /etc/cwmpd.db
+```
+
+Which may yield some firmware URL's.
+
 The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
 
 Once you have guessed it please create an issue to get it added!
