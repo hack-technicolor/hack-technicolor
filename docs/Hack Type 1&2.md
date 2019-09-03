@@ -69,11 +69,7 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 ### Type 2 - Direct Rooting
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy.
-
-AutoFlashGUI implements most common rooting strategies. Other peculiar firmwares require more sophisticated strategies and tools.
-
-Here we describe how to get root by AutoFlashGUI and where to find a correct special rooting guide in case you need it.
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. AutoFlashGUI implements most common rooting strategies and is described in detail followed by the location of processes for other peculiar firmwares which require rooting via different strategies. Check the tables below for the device model.
 
 Existing rooting strategies may work with firmwares for models you don't see listed here. If you get some success with other models not listed here, let us know.
 
