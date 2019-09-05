@@ -145,7 +145,7 @@ You can get a firmware image flashed by using one of the following modes:
 | Direct Partition Writing | Can use bank dumps as well as RBI's                | No Bank switch occurs and the process requires root access |
 | Sysupgrade Command       | Bank switch occurs and so does a basic factory reset | Process requires root access                             |
 
-## Mode Step Outline
+### Mode Step Outline
 
 #### Bootloader Recovery
 
