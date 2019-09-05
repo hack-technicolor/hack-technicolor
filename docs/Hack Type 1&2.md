@@ -262,7 +262,7 @@ bank_2
 !!! hint "Move to *state B* now!"
     To let you end up in the following *optimal* bank plan we need to move your gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
 
-The *optimal* bank plan looks like this:
+The *optimal* bank plan will look like this once you reach the end of this guide:
 
 ```bash
 /proc/banktable/active
@@ -294,7 +294,7 @@ rm -rf /overlay/bank_2
 cp -rf /tmp/bank_2_backup /overlay/bank_1
 # Activate bank_1
 echo bank_1 > /proc/banktable/active
-# Erase firmware in bank_1
+# Erase firmware in bank_2
 mtd erase bank_2
 # Reboot to first valid firmware
 reboot
@@ -356,6 +356,8 @@ mtd erase `cat /proc/banktable/booted`
 ```
 
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
+
+You should now be in the "optimal" bank plan state.
 
 !!! hint "Something went Wrong?"
     Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](../Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](../Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
