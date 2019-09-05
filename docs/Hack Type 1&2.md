@@ -219,7 +219,7 @@ mtd erase bank_1
 reboot
 ```
 
-On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
+You should now be in the previously mentioned "optimal" bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
 Now proceed to setting your own root access [password](#change-the-root-password).
 
@@ -262,19 +262,6 @@ bank_2
 !!! hint "Move to *state B* now!"
     To let you end up in the following *optimal* bank plan we need to move your gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
 
-The *optimal* bank plan will look like this once you reach the end of this guide:
-
-```bash
-/proc/banktable/active
-bank_1
-/proc/banktable/booted
-bank_2
-```
-
-!!! caution "On which bank should I stay to be safe?"
-    It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
-    **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
-
 Run these commands to move from *state A* to *state B*:
 
 ```bash
@@ -300,6 +287,19 @@ mtd erase bank_2
 reboot
 ```
 
+The *optimal* bank plan will look like this once you reach the end of this guide:
+
+```bash
+/proc/banktable/active
+bank_1
+/proc/banktable/booted
+bank_2
+```
+
+!!! caution "On which bank should I stay to be safe?"
+    It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
+    **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
+    
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
 They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
@@ -357,7 +357,7 @@ mtd erase `cat /proc/banktable/booted`
 
 Then reboot and wait 3 to 4 minutes for the Gateway to boot into this "new" rooted bank. It will fail three attempts to boot from the empty active bank, then it will load your firmware from the inactive one.
 
-You should now be in the "optimal" bank plan state.
+You should now be in the previously mentioned "optimal" bank plan unless you opted to go on from *state A*.
 
 !!! hint "Something went Wrong?"
     Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](../Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](../Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
