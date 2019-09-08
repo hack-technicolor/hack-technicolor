@@ -145,13 +145,13 @@ You can get a firmware image flashed by using one of the following modes:
 | Direct Partition Writing | Can use bank dumps as well as RBI's                | No Bank switch occurs and the process requires root access |
 | Sysupgrade Command       | Bank switch occurs and so does a basic factory reset | Process requires root access                             |
 
-## Mode Step Outline
+### Mode Step Outline
 
 #### Bootloader Recovery
 
-* Accepts RBI firmware images specified in BOOTP option of the TFTP server.
+* Loads RBI firmware images using BOOTP flashing.
 * The firmware is transferred to the gateway via TFTP from your PC.
-* RBI file is decrypted, unpacked, signature checked and flashed into the `bank_1` partition and marked as correctly flashed.
+* RBI file is decrypted, unpacked and, if signature check passed, flashed into the `bank_1` partition then marked as correctly flashed.
 
 #### Direct Partition Writing
 
