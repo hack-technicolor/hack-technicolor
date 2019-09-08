@@ -149,9 +149,9 @@ You can get a firmware image flashed by using one of the following modes:
 
 #### Bootloader Recovery
 
-* Accepts RBI firmware images specified in BOOTP option of the TFTP server.
+* Loads RBI firmware images using BOOTP flashing.
 * The firmware is transferred to the gateway via TFTP from your PC.
-* RBI file is decrypted, unpacked, signature checked and flashed into the `bank_1` partition and marked as correctly flashed.
+* RBI file is decrypted, unpacked and, if signature check passed, flashed into the `bank_1` partition then marked as correctly flashed.
 
 #### Direct Partition Writing
 
