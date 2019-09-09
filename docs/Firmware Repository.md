@@ -111,6 +111,17 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | 1      | 17.2.0213-820-RC  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
 | 2      | 17.2.0261-820-RA  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
 
+### TG799vac / VANT-R
+
+#### Telia - Trådlös router
+
+| Type   | Version          | Timestamp  | Mirror |
+|:------:|:-----------------|:-----------|:-------|
+| 2      | 15.51.6436       | 2016-02-05 | [https](javascript:alert("Fix me!")) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.2.7732        | 2017-05-02 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
+
 ### TG789vac v2 HP / VBNT-L
 
 #### MyRepublic
