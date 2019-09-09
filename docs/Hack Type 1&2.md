@@ -69,13 +69,13 @@ If you would like to stay on this `Type 2` firmware for daily usage and stay saf
 
 ### Type 2 - Direct Rooting
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy. AutoFlashGUI implements most common rooting strategies and is described in detail followed by the location of processes for other peculiar firmwares which require rooting via different strategies. Check the tables below for the device model.
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. AutoFlashGUI implements most common rooting strategies and is hereby described in detail followed by the location of processes for other peculiar firmwares which require rooting via different strategies. Check the tables below for the device model.
 
 Existing rooting strategies may work with firmwares for models you don't see listed here. If you get some success with other models not listed here, let us know.
 
 #### Rooting via AutoFlashGUI
 
-AutoFlashGUI tested working with some firmwares for these models.
+AutoFlashGUI tested working with some firmwares for these models. Unfortunately, most people gets root access on older firmwares then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
 
  | Model Number    | Mnemonic | ISP Product Names
  |:---------------:|:--------:|:--------------------------
@@ -83,6 +83,7 @@ AutoFlashGUI tested working with some firmwares for these models.
  | TG789vac v2     | VANT-6   | -
  | TG789vac (v1)   | VANT-D   | -
  | TG799vac        | VANT-F   | Telstra Gateway Max
+ | TG799vac        | VANT-R   | Telia Trådlös router
  | TG800vac        | VANT-Y   | Telstra Gateway Max 2
  | TG789vac v3     | VBNT-1   | -
  | TG799vac Xtream | VBNT-H   | -
