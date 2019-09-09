@@ -26,31 +26,6 @@ Other branding codes you could see worldwide:
 
 Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.
 
-### TG800vac / VANT-Y
-
-#### Telstra - Gateway Max 2
-
-| Type   | Version          | Mirror |
-|:------:|:-----------------|:-------|
-| 2      | 16.3.7567-660-RD | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF690-16.3.7567-660-RD.rbi.torrent?raw=true) |
-| 1      | 17.2.0188-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
-| 1      | 17.2.0213-820-RB | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF779-17.2.0213-820-RB.rbi.torrent?raw=true) |
-| 2      | 17.2.0261-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
-| ???    | 17.2.0284-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
-
-### TG799vac / VANT-F
-
-#### Telstra - Gateway Max
-
-| Type   | Version           | Mirror |
-|:------:|:------------------|:-------|
-| ???    | 15.18.6052-420-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF363-15.18.6052-420-RA.rbi.torrent?raw=true) |
-| 2      | 15.53.6886-510-RF | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF540-15.53.6886-510-RF.rbi.torrent?raw=true) |
-| 2      | 16.3.7567-660-RG  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF687-16.3.7567-660-RG.rbi.torrent?raw=true) |
-| 1      | 17.2.188-820-RA   | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF683-17.2.188-820-RA.rbi.torrent?raw=true) |
-| 1      | 17.2.0213-820-RC  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
-| 2      | 17.2.0261-820-RA  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
-
 ### TG797n v3 / DANT-O
 
 !!! note "OSCK Not Required"
@@ -77,6 +52,18 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 | Type   | Version          | Mirror      |
 |:------:|:-----------------|:------------|
 | 2      | 16.2.7064        | [https](https://uno.help/attachments/690) |
+
+### TG-1 / VANT-5
+
+#### iiNet & Internode
+
+| Type   | Version             | Mirror |
+|:------:|:--------------------|:-------|
+| ???    | 15.32.1509-ver1.4   | *None, **no RBI available**!, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
+| ???    | 15.53.6627-ver1.6   | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi.torrent?raw=true) |
+| ???    | 15.53.7004-ver1.7.1 | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi.torrent?raw=true) |
+| ???    | 15.53.8141-ver1.9.0 | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi.torrent?raw=true) |
+| ???    | 15.53.8141-ver1.9.2 | [ftp](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi.torrent?raw=true) |
 
 ### TG789vac v2 / VANT-6
 
@@ -111,6 +98,19 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 |:------:|:----------------|:-------|
 | 2      | 18.3.0157-3-2-1 | [https](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
+### TG799vac / VANT-F
+
+#### Telstra - Gateway Max
+
+| Type   | Version           | Mirror |
+|:------:|:------------------|:-------|
+| ???    | 15.18.6052-420-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF363-15.18.6052-420-RA.rbi.torrent?raw=true) |
+| 2      | 15.53.6886-510-RF | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF540-15.53.6886-510-RF.rbi.torrent?raw=true) |
+| 2      | 16.3.7567-660-RG  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF687-16.3.7567-660-RG.rbi.torrent?raw=true) |
+| 1      | 17.2.188-820-RA   | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF683-17.2.188-820-RA.rbi.torrent?raw=true) |
+| 1      | 17.2.0213-820-RC  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
+| 2      | 17.2.0261-820-RA  | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
+
 ### TG789vac v2 HP / VBNT-L
 
 #### MyRepublic
@@ -119,17 +119,17 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 |:------:|:-----------------|:-------|
 | 2      | 16.3.7190        | [https](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
-### TG-1 / VANT-5
+### TG800vac / VANT-Y
 
-#### iiNet & Internode
+#### Telstra - Gateway Max 2
 
-| Type   | Version             | Mirror |
-|:------:|:--------------------|:-------|
-| ???    | 15.32.1509-ver1.4   | *None, **no RBI available**!, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
-| ???    | 15.53.6627-ver1.6   | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi.torrent?raw=true) |
-| ???    | 15.53.7004-ver1.7.1 | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi.torrent?raw=true) |
-| ???    | 15.53.8141-ver1.9.0 | [http](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi.torrent?raw=true) |
-| ???    | 15.53.8141-ver1.9.2 | [ftp](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi.torrent?raw=true) |
+| Type   | Version          | Mirror |
+|:------:|:-----------------|:-------|
+| 2      | 16.3.7567-660-RD | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF690-16.3.7567-660-RD.rbi.torrent?raw=true) |
+| 1      | 17.2.0188-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
+| 1      | 17.2.0213-820-RB | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF779-17.2.0213-820-RB.rbi.torrent?raw=true) |
+| 2      | 17.2.0261-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
+| ???    | 17.2.0284-820-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ### DJN2130 / VBNT-J
 
