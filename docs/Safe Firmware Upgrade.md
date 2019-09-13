@@ -38,7 +38,7 @@ Check the file format your new firmware is. It could be either an RBI file or a 
 Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP or USB drive. Run this command to unpack the RBI image, will take a while:
 
 ```bash
-cat "/tmp/new.rbi" | (bli_parser && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
+cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
 ```
 
 ### Raw bank dump
