@@ -52,7 +52,7 @@ It is **not recommended** to keep custom changes to files and configs if you are
 Make a full backup of your bank configuration:
 
 ```bash
-tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz bank_*
+tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz bank_1 bank_2
 ```
 
 Move the backup to your PC by SCP or USB drive. Make sure you can open the backup archive and keep it in a safe place.
