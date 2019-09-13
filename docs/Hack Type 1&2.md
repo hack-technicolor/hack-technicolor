@@ -51,21 +51,26 @@ Now head on down to the right *Type* section, which fits your current situation.
 
 ### Type 1 - Flash of Type 2, then Root
 
+Every `Type 1` firmware allows you to perform a firmware *upgrade*, either via stock web UI, or official *unlocked* modes, or hidden web pages. We are going to exploit this possibility in order to flash an arbitrary firmware version of `Type 2`.
+
+#### Flashing via AutoFlashGUI
+
 In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
-Run AutoFlashGUI and flash the `Type 2` firmware to your Gateway. In this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`, allowing it to finish flashing and rooting.
+First, make sure you changed the default web admin password. Run AutoFlashGUI and configure your gateway ip address and web admin credentials. Browse for the `Type 2` RBI firmware to flash on your Gateway, in this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`. Tick the "Flash firmware?" checkbox and click "Run". Allow it to finish flashing. It will also attempt rooting.
 
-!!! warning "Make sure the SSH server is permanent"
-    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You should now configure dropbear in order to run a permanent LAN-side SSH server. Read below, ([Setting up Permanent Root Access](#setting-up-permanent-ssh-server) section), then come back here.
+!!! warning "Is current SSH server permanent?"
+    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
-Fire up your SSH client of choice and connect with the Username and Password: `root` to the Gateway IP on default port `22`, or `6666`.
+Try firing up your SSH client of choice and connect with the Username and Password as `root/root` to the Gateway IP on default port `22`, or `6666`. If you manage to login into root shell, jump to [Final Type 2 Steps](#final-type-2-steps) now. Otherwise, if AutoFlashGUI didn't manage to get root, your Type 2 firmware requires a different rooting strategy: continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
-At this point you have a rooted `Type 2` image on your Gateway but your trip is not over.
+#### Flashing via Web UI
 
-!!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firmware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
+Sometimes the stock web UI allows users to perform firmware upgrades on their own. In such cases AutoFlashGUI should also work as it exploits the same feature, but it is good to know you don't strictly need to depend on some tool.
 
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure that your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
+It may also happen the firmware allows you to activate some kind of "*Unlocked*" mode where you can reconfigure hidden options for use with different ISPs. This is typical of Gateways deployed in countries where local laws enforce ISPs to allow users reusing their hardware. Such unlocking mode is usually offered after factory reset, before the Gateway gets automatically provisioned from the ISP. Of course it is not rooting, but it is very likely a firmware upgrade option becomes available in such modes.
+
+In any of the above cases you can easily flash the `Type 2` firmware we need. Do it, wait for the flashing to complete, then continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
 ### Type 2 - Direct Rooting
 
