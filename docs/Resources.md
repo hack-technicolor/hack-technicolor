@@ -92,6 +92,11 @@ Services present; May or may not be enabled or running:
 
 * `/etc/init.d/*`
 
+## Change the logo
+
+Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
+[technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)
+
 ## LED's
 
 [Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
