@@ -62,7 +62,7 @@ rm -rf /overlay/`cat /proc/banktable/booted`
 mkdir -p /overlay/`cat /proc/banktable/booted`/etc
 chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/booted`/etc
 echo -e "echo root:root | chpasswd
-sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
+sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
 uci add dropbear dropbear
 uci rename dropbear.@dropbear[-1]=afg
