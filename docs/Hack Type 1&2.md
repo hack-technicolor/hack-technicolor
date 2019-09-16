@@ -335,7 +335,7 @@ rm -rf /overlay/`cat /proc/banktable/notbooted`
 mkdir -p /overlay/`cat /proc/banktable/notbooted`/etc
 chmod 755 /overlay/`cat /proc/banktable/notbooted` /overlay/`cat /proc/banktable/notbooted`/etc
 echo -e "echo root:root | chpasswd
-sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
+sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
 rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
@@ -349,7 +349,7 @@ You should get this output from the last command:
 
 ```bash
 echo root:root | chpasswd
-sed -i 's#root:/bin/false#root:/bin/ash#' /etc/passwd
+sed -i 's#/root:.*$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
 ```
