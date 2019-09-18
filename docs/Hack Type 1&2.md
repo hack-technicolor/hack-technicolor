@@ -106,10 +106,7 @@ Using AutoFlashGUI, allow it to run through getting root. If you have changed an
 
 If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local forums for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
 
-!!! warning "Is current SSH server permanent?"
-    If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
-
-Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
+Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
 #### Rooting via different strategies
 
@@ -122,7 +119,14 @@ Every rooting guide intentionally written or adapted to be explicitly compatible
  | DGA4131         | VBNT-O   | FASTGate                  | [link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598)    |
  | DJA0230         | VBNT-V   | Telstra Smart Modem Gen1  | [link](https://github.com/BoLaMN/tch-exploit)          |
 
+Once you finished running through any of the above guides, continue to [Final Type 2 steps](#final-type-2-steps) below.
+
 #### Final Type 2 steps
+
+!!! warning "Is current SSH server permanent?"
+    If the tool you used does not know how to correctly set permanent root access on your firmware, it will create a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
+
+Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
 As your first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
 
@@ -229,7 +233,7 @@ reboot
 
 You should now be in the previously mentioned "optimal" bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
-Now proceed to setting your own root access [password](#change-the-root-password).
+At this point you have to now read how to check your [SSH server setup](#setting-up-permanent-ssh-server) is permanent.
 
 ### Bank Planning (with firmware upgrade)
 
@@ -341,7 +345,6 @@ dropbear -p 6666 &
 rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
 " > /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
-sync
 cat /overlay/`cat /proc/banktable/notbooted`/etc/rc.local
 ```
 
@@ -349,9 +352,10 @@ You should get this output from the last command:
 
 ```bash
 echo root:root | chpasswd
-sed -i 's#/root:.*$#/root:/bin/ash#' /etc/passwd
+sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
 dropbear -p 6666 &
+rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
 
 If you didn't, reboot the Gateway and retry the procedure.
@@ -369,26 +373,13 @@ You should now be in the previously mentioned "optimal" bank plan unless you opt
 !!! hint "Something went Wrong?"
     Flash back the same `Type 2` image you were up to now, following [BOOTP flashing](../Recovery/#bootp-flashing). If you followed the initial advice about bank planning, you will be back on the exact situation you were before the last command. Otherwise, you will likely need to solve a typical *soft-brick* issue: prepare some extra luck, perform a [RTFD](../Recovery/#reset-to-factory-defaults-rtfd) and then restart over from the beginning.
 
-Now you have temporary root access on your preferred firmware, you can now jump below to set your own root access [password](#change-the-root-password).
-
-### Change the Root Password
-
-!!! warning "Serious hint!"
-    Do not ignore this step! :)
-
-Run:
-
-```bash
-passwd
-```
-
-Reboot now if you're not doing any further configuration.
-
-At this point you should now read below to set up permanent SSH access
+Now you have temporary root access on your preferred firmware, you can now jump below to set up [permanent SSH server](#setting-up-permanent-ssh-server).
 
 ### Setting up Permanent SSH Server
 
-Run these commands to setup a permanent SSH access on port `22` by defining a new dropbear instance:
+Are you connected to SSH on port `6666`?
+
+If the answer is "Yes", run these commands to setup a permanent SSH access on port `22` by defining a new dropbear instance:
 
 ```bash
 uci add dropbear dropbear
@@ -405,9 +396,22 @@ uci commit dropbear
 /etc/init.d/dropbear restart
 ```
 
-Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](Hardening%20Root%20Access/) page.
+You don't need to run the above commands if you are already able to connect on port `22`, the default one.
 
-**Now you can Move on to [Unlocking Functionality](../Unlock%20Functionality)**
+Now proceed to changing your [root password](#change-the-root-password), this is **mandatory**.
+
+### Change the Root Password
+
+!!! warning "Serious hint!"
+    Do not ignore this step! Your firmware was probably designed to work only on certain specific ISP network. Some kind of remote SSH access could be left open by design in such a way only that same ISP could access. Connecting to some different ISP network could lead to this open access to be exposed on the internet.
+
+Run:
+
+```bash
+passwd
+```
+
+Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](Hardening%20Root%20Access/) page.
 
 ### My Firmware is so Old that AutoFlashGUI can't Authenticate
 
