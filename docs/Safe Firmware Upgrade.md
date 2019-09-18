@@ -15,17 +15,20 @@ What you will need:
     - Check if it's available from [Firmware Repository](Firmware%20Repository/)
 - A way to access this documentation in case of issues
     - If this is your main Gateway, a mobile internet connection is recommended
-- Your current bank planning. Check and take note of firmware flashed, *active* and *booted* banks by running:
-    - `find /proc/banktable -type f -print -exec cat {} ';'`
+- Your current bank planning. Check and take note of firmware flashed, *active* and *booted* banks after running:
+`find /proc/banktable -type f -print -exec cat {} ';'`
 
 ## Things to know
 
 Will root access will be preserved?
   - Yes, of course.
-On which bank the new firmware will be flashed?
+
+On which bank will the new firmware be flashed?
   - The booted one, current firmware will be overwritten.
+
 Will the upgrade affect my bank planning?
-  - No it won't, no bank switches will occur.
+  - No it won't, there won't be any bank switches.
+
 Will any setting and customization be lost?
   - It depends on the firmware you want to flash, read further.
 
