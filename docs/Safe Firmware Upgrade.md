@@ -9,24 +9,27 @@ This is the way you should regularly install firmware upgrades when available. O
 What you will need:
 
 - A rooted Gateway in working order
-- The firmware image to flash, either RBI file or braw ank dump
-  - Pick one for your model, of whatever *Type*, from the [Firmware Repository](Firmware%20Repository/)
+- The firmware image to flash, either RBI file or raw bank dump
+    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](Firmware%20Repository/)
 - Make sure you can eventually get a copy of your current firmware
-  - Check if it's available from [Firmware Repository](Firmware%20Repository/)
+    - Check if it's available from [Firmware Repository](Firmware%20Repository/)
 - A way to access this documentation in case of issues
-  - If this is your main Gateway, a mobile internet connection is recommended
-- Check and take note of your current bank planning.
-  - Run `find /proc/banktable -type f -print -exec cat {} ';'`
+    - If this is your main Gateway, a mobile internet connection is recommended
+- Your current bank planning. Check and take note of firmware flashed, *active* and *booted* banks after running:
+`find /proc/banktable -type f -print -exec cat {} ';'`
 
 ## Things to know
 
-- Will root access will be preserved?
+Will root access will be preserved?
   - Yes, of course.
-- On which bank the new firmware will be flashed?
+
+On which bank will the new firmware be flashed?
   - The booted one, current firmware will be overwritten.
-- Will the upgrade affect my bank planning?
-  - No, it won't, no bank switches will occur.
-- Will any setting and customization be lost?
+
+Will the upgrade affect my bank planning?
+  - No it won't, there won't be any bank switches.
+
+Will any setting and customization be lost?
   - It depends on the firmware you want to flash, read further.
 
 ## Preparing Firmware
