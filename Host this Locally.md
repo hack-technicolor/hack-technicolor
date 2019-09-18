@@ -16,7 +16,7 @@ If you will be using Python a lot, install Anaconda, otherwise just install stan
 
 1. Go to the [Anaconda Distribution](https://www.anaconda.com/distribution/#windows) download page.
 2. Under `Python 3.7 version`, hit the download button.
-3. Follow the prompts during the install process.
+3. Follow the prompts during the install process for default install ie *Just Me*, default folder, Don't add to path or register as system python.
 
 #### Installing Standard Python
 
@@ -28,19 +28,23 @@ If you will be using Python a lot, install Anaconda, otherwise just install stan
 
 1. Open a CMD Window. `Win + R` then type `cmd` + Enter.
 
-2. If you have installed Anaconda, run `activate base` to activate the python environment.
+2. If you have installed Anaconda, run `Anaconda Prompt` from the `Start Menu` to activate the python environment.
 
 3. Run:
 
-```bash
-pip install mkdocs mkdocs-material
 ```
+pip install mkdocs mkdocs-material mkdocs-pdf-export-plugin
+```
+
+Weasyprint requires [windows](https://weasyprint.readthedocs.io/en/latest/install.html#windows) support libraries. Steps 1 to 3 should be done so assuming [GTK+ 64 Bit Installer](https://weasyprint.readthedocs.io/en/latest/install.html#gtk-64-bit-installer), accept default install to C:\Program Files\GTK3-Runtime Win64\bin
 
 ### Download the Repository
 
 1. Click [here](https://github.com/kevdagoat/hack-technicolor/archive/master.zip) to download a zip version of the documentation.
 
 2. Extract the zip to the directory you want.
+
+3. Check paths in `serve.bat`.
 
 ### Serve the Docs
 
@@ -106,3 +110,4 @@ Now head to <http://localhost:8000> in your browser of choice.
 
 !!! hint "What about when I unplug my Internet?"
     Don't worry as the MKDocs development server only uses the internal *network* in your PC, thats why you head to <http://localhost:8000>, as it is heading to your local PC.
+
