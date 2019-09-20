@@ -24,7 +24,7 @@ Other branding codes you could see worldwide:
 | TIS  | Tiscali      | Italy             |
 | TI   | TIM          | Italy             |
 
-Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this important detail** whenever you add a new firmware version to this page.
+Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
 ### TG797n v3 / DANT-O
 
