@@ -76,16 +76,16 @@ In any of the above cases you can easily flash the `Type 2` firmware we need. Do
 
 ### Type 2 - Direct Rooting
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy. AutoFlashGUI implements most common rooting strategies and is hereby described in detail followed by the location of processes for other peculiar firmwares which require rooting via different strategies. Check the tables below for the device model.
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. AutoFlashGUI implements most common rooting strategies and is hereby described in detail. Other known `Type 2` firmwares require rooting via different strategies. Check them all and pick the best one four your model.
 
-Existing rooting strategies may work with firmwares for models you don't see listed here. If you get some success with other models not listed here, let us know.
+Existing rooting strategies may also work with firmwares for models you don't see listed here. If you get some success with other models not listed here, let us know.
 
 #### Rooting via AutoFlashGUI
 
 AutoFlashGUI tested working with some firmwares for these models. Unfortunately, most people gets root access on older firmwares then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
 
  | Model Number    | Mnemonic | ISP Product Names
- |:---------------:|:--------:|:--------------------------
+ |:----------------|:---------|:--------------------------
  | TG797n v3       | DANT-O   | Telstra T-Gateway
  | TG789vac v2     | VANT-6   | -
  | TG789vac (v1)   | VANT-D   | -
@@ -114,10 +114,12 @@ For any Type 2 firmware not supported by AutoFlashGUI (yet), there exist at leas
 
 Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
 
- | Model Number    | Mnemonic | ISP Product Names         | External resource |
- |:---------------:|:--------:|:-------------------------:|:------------------|
- | DGA4131         | VBNT-O   | FASTGate                  | [link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598)    |
- | DJA0230         | VBNT-V   | Telstra Smart Modem Gen1  | [link](https://github.com/BoLaMN/tch-exploit)          |
+ | Strategy # | Originally written for | Variant- Commercial name   | Where to look for instructions |
+ |:----------:|:-----------------------|:--------------------------:|:------------------------------:|
+ | #0         | TG799vac / VANT-F      | Telstra - Gateway Max      | [AutoFlashGUI](#rooting-via-autoflashgui) |
+ | #1         | DGA4131 / VBNT-O       | Fastweb - FASTGate         | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
+ | #2         | DJA0230 / VBNT-V       | Telstra - Smart Modem Gen1 | [external link](https://github.com/BoLaMN/tch-exploit) |
+ | #3         | TG789vac v2 / VANT-6   | MST                        | [external link (ita)]() |
 
 Once you finished running through any of the above guides, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
