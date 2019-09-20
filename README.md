@@ -7,7 +7,6 @@ The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpoo
 | [Stable](https://hack-technicolor.rtfd.io)          | `stable`   | General Public |
 | [Latest](https://hack-technicolor.rtfd.io/en/latest)| `master`   | Insiders/Devs  |
 
-Discord chat: https://discord.gg/tZsXkMR
 
 ## Editing
 
