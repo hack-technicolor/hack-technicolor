@@ -33,11 +33,11 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 #### Telstra - T-Gateway
 
-| Type   | Version           | Mirror |
-|:------:|:------------------|:-------|
-| 2      | 15.53.6469-510-RA | [http](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
-| 2      | 16.1.7565-580-RC  | [http](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
-
+| Type   | Version           | Timestamp  | Mirror |
+|:------:|:------------------|:-----------|:-------|
+| 2      | 15.53.6469-510-RA | 2016-01-07 | [http](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
+| 2      | 16.1.7565-580-RC  | 2017-06-08 | [http](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
+| ???    | 16.1.8372-580-RA  | 2018-09-20 | [http](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF869-16.1.8372-580-RA/dant-o_CRF869-16.1.8372-580-RA.rbi) - [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF869-16.1.8372-580-RA.rbi.torrent?raw=true) |
 
 ### TG789vac / VANT-D
 
@@ -118,10 +118,18 @@ Type 1/2/3 indicates if it can be rooted directly. Please, **don't miss this imp
 
 | Type   | Version          | Timestamp  | Mirror |
 |:------:|:-----------------|:-----------|:-------|
-| 2      | 15.51.6436       | 2016-02-05 | [https](javascript:alert("Fix me!")) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.51.6436       | 2016-02-05 | [https](Fix me!) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 16.2.7732        | 2017-05-02 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
+
+### TG799vac Xtream / VBNT-H
+
+#### Telia - Wifi-router Plus
+
+| Type   | Version          | Timestamp  | Mirror |
+|:------:|:-----------------|:-----------|:-------|
+| 2      | 17.2.0339        | 2018-04-16 | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 
 ### TG789vac v2 HP / VBNT-L
 
