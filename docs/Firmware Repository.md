@@ -125,7 +125,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # 
 
 ### TG799vac Xtream / VBNT-H
 
-#### Telia - Wifi-router Plus
+#### Telia - Wifi-router Plus v3
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
