@@ -1,5 +1,7 @@
 # hack-technicolor - insider's README
 
+[![Gitter](https://badges.gitter.im/Hack-Technicolor/community.svg)](https://gitter.im/Hack-Technicolor/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpool.net.au/wiki/hack_technicolor
 
 | Wiki Version                                        | Git Branch | Target         |
