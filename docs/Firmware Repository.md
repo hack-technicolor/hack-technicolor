@@ -131,7 +131,10 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # 
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.2.7732        | 2017-05-02 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/1627732h2221002closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h144102closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
+| ???    | 17.2.0405        | 2019-03-29 | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 
 ### TG789vac v2 HP / VBNT-L
 
