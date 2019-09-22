@@ -24,22 +24,22 @@ There is no way of knowing your situation and the process could break your Gatew
 
 7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
 
-## Introduction
+# Introduction
 
-### Why Hack your Gateway
+## Why Hack your Gateway
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
 There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down in functionality to match service requirements. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible.
 
-For some other devices, a no-brand firmware exists. They appear as "Technicolor" branded and implement "MST" integration, a default third-party remote management platform for ISPs that do not pay for firmware customization. On such firmwares no regular configuration options are locked out, but getting root access will still open a wider window of possibilities.
+For some other devices, a no-brand firmware exists. They appear as "Technicolor" branded and implement "MST" integration, a default third-party remote management platform for ISP's that do not pay for firmware customization. On such firmware's no regular configuration options are locked out, but getting root access will still open a wider window of possibilities.
 
 The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
 
 !!! tip "Asking about your gateway?"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
-## Gaining Root Access
+# Gaining Root Access
 
 !!! caution "Make sure your Gateway is offline!"
     The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
@@ -51,11 +51,11 @@ Ensure the Gateway does not have a wired or wireless internet connection. Gatewa
 
 Now head on down to the right *Type* section, which fits your current situation.
 
-### Type 1 - Flash of Type 2, then Root
+## Type 1 - Flash of Type 2, then Root
 
 Every `Type 1` firmware allows you to perform a firmware *upgrade*, either via stock web UI, or official *unlocked* modes, or hidden web pages. We are going to exploit this possibility in order to flash an arbitrary firmware version of `Type 2`.
 
-#### Flashing via AutoFlashGUI
+### Flashing via AutoFlashGUI
 
 In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
@@ -66,35 +66,35 @@ First, make sure you changed the default web admin password. Run AutoFlashGUI an
 
 Try firing up your SSH client of choice and connect with the Username and Password as `root/root` to the Gateway IP on default port `22`, or `6666`. If you manage to login into root shell, jump to [Final Type 2 Steps](#final-type-2-steps) now. Otherwise, if AutoFlashGUI didn't manage to get root, your Type 2 firmware requires a different rooting strategy: continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
-#### Flashing via Web UI
+### Flashing via Web UI
 
 Sometimes the stock web UI allows users to perform firmware upgrades on their own. In such cases AutoFlashGUI should also work as it exploits the same feature, but it is good to know you don't strictly need to depend on some tool.
 
-It may also happen the firmware allows you to activate some kind of "*Unlocked*" mode where you can reconfigure hidden options for use with different ISPs. This is typical of Gateways deployed in countries where local laws enforce ISPs to allow users reusing their hardware. Such unlocking mode is usually offered after factory reset, before the Gateway gets automatically provisioned from the ISP. Of course it is not rooting, but it is very likely a firmware upgrade option becomes available in such modes.
+It may also happen the firmware allows you to activate some kind of "*Unlocked*" mode where you can reconfigure hidden options for use with different ISP's. This is typical of Gateways deployed in countries where local laws enforce ISP's to allow users reusing their hardware. Such unlocking mode is usually offered after factory reset, before the Gateway gets automatically provisioned from the ISP. Of course it is not rooting, but it is very likely a firmware upgrade option becomes available in such modes.
 
 In any of the above cases you can easily flash the `Type 2` firmware we need. Do it, wait for the flashing to complete, then continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
-### Type 2 - Direct Rooting
+## Type 2 - Direct Rooting
 
-#### Rooting via different strategies
+### Rooting via different strategies
 
 Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...).
 
 !!! info "WANTED!"
-    Existing rooting strategies may also work with firmwares for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
+    Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
 
  | Strategy # | Originally written for | Variant- Commercial name   | Where to look for instructions |
  |:----------:|:-----------------------|:--------------------------:|:------------------------------:|
  | #0         | TG799vac / VANT-F      | Telstra - Gateway Max      | [AutoFlashGUI](#rooting-via-autoflashgui) |
  | #1         | DGA4131 / VBNT-O       | Fastweb - FASTGate         | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
  | #2         | DJA0230 / VBNT-V       | Telstra - Smart Modem Gen1 | [external link](https://github.com/BoLaMN/tch-exploit) |
- | #3         | TG789vac v2 / VANT-6   | MST                        | [external link (ita)]() |
+ | #3         | TG789vac v2 / VANT-6   | MST                        | external link (ita) |
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
-#### Rooting via AutoFlashGUI
+### Rooting via AutoFlashGUI
 
-AutoFlashGUI implements most common rooting strategies and is hereby described in detail. It has been tested working with some firmwares for these models. Unfortunately, most people gets root access on older firmwares then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
+AutoFlashGUI implements most common rooting strategies and is hereby described in detail. It has been tested working with some firmware's for these models. Unfortunately, most people gets root access on older firmware's then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
 
  | Model Number    | Mnemonic | ISP Product Names
  |:----------------|:---------|:--------------------------
@@ -120,9 +120,9 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
 
 Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
-#### Final Type 2 steps
+### Final Type 2 steps
 
-!!! warning "Is current SSH server permanent?"
+!!! warning "Is the current SSH server permanent?"
     If the tool you used does not know how to correctly set permanent root access on your firmware, it will create a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
@@ -140,17 +140,17 @@ At this point you have a rooted `Type 2` image on your Gateway, but your trip is
 
 If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
-### Type 3 - Difficult Flash of Type 2, then Root
+## Type 3 - Difficult Flash of Type 2, then Root
 
 !!! info "Why are You Here?"
-    Re-read the [Homepage](/)?
+    Re-read the [Homepage](/)!
 
-## Post-Root Procedures
+# Post-Root Procedures
 
 !!! warning "Stop!"
     Do not follow any post-root procedure unless explicitly told to.
 
-### Bank Planning (without firmware upgrade)
+## Bank Planning (without firmware upgrade)
 
 We are now going to prepare an optimal bank planning for the same firmware version you have now booted.
 
@@ -179,22 +179,22 @@ bank_2
 ```
 
 !!! caution "On which bank should I stay to be safe?"
-    It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
+    It's strongly recommended to stick to the *optimal* bank plan (listed above) before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
 
-These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
+These gateways use two flash partitions (`bank_1` and `bank_2`), which can be upgraded/used almost independently.
 
 They are signature checked before boot so you can't flip a single bit in the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
 
 !!! hint
-    You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
+    You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made. All original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
 
 When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery) page.
 
 We need to make sure the current firmware loads from the recommended bank on every reboot.
 
 !!! danger "Notable exception: Missing RBI"
-    In the unfortunate case there are no RBI firmware files available for your model, you can't be really safe because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
+    In the unfortunate case that there are no RBI firmware files available for your model, you are not in a safe position because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
 
 If your `booted` bank is `bank_2` already, run the following commands:
 
@@ -230,11 +230,11 @@ mtd erase bank_1
 reboot
 ```
 
-You should now be in the previously mentioned "optimal" bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
+You should now be in the previously mentioned *optimal* bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
-At this point you have to now read how to check your [SSH server setup](#setting-up-permanent-ssh-server) is permanent.
+At this point, you now need to check if your [SSH server setup](#setting-up-permanent-ssh-server) is permanent.
 
-### Bank Planning (with firmware upgrade)
+## Bank Planning (with firmware upgrade)
 
 We are now going to prepare an optimal bank planning for another firmware you don't have on your Gateway yet.
 
@@ -252,7 +252,7 @@ Run the following command to look at your current Gateway's bank plan:
 
 ```find /proc/banktable/*booted -type f -print -exec cat {} ';'```
 
-It should now look either like this (let's call this *"state A"*):
+It should now look either like this (*"State A"*):
 
 ```bash
 /proc/banktable/booted
@@ -261,7 +261,7 @@ bank_2
 bank_1
 ```
 
-or this (*"state B"*):
+or this (*"State B"*):
 
 ```bash
 /proc/banktable/booted
@@ -270,8 +270,8 @@ bank_1
 bank_2
 ```
 
-!!! hint "Move to *state B* now!"
-    To let you end up in the following *optimal* bank plan we need to move your gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
+!!! hint "If you are not on *State A*, move to *State B* now!"
+    To follow the *optimal* bank plan configuration, we need to swap your Gateway to *State B*.
 
 Run these commands to move from *state A* to *state B*:
 
@@ -310,7 +310,7 @@ bank_2
 !!! caution "On which bank should I stay to be safe?"
     It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
-    
+
 These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
 
 They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
@@ -412,7 +412,7 @@ passwd
 
 Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](Hardening%20Root%20Access/) page.
 
-### My Firmware is so Old that AutoFlashGUI can't Authenticate
+# My Firmware is so Old that AutoFlashGUI can't Authenticate
 
 *This is because they changed the web authentication method to SRPv6 with firmware v15, and this is the only method that the AutoFlashGUI tool knows how to authenticate with.*
 
