@@ -24,7 +24,7 @@ Other branding codes you could see worldwide:
 | TIS  | Tiscali      | Italy             |
 | TI   | TIM          | Italy             |
 
-Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Type # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
+Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
 ## TG797n v3 / DANT-O
 
@@ -35,7 +35,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - T-Gateway
 
-| Type   | Version           | Timestamp  | Firmware Type | Mirror |
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:-------------:|:-------|
 | 2      | 15.53.6469-510-RA | 2016-01-07 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
 | 2      | 16.1.7565-580-RC  | 2017-06-08 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
@@ -51,7 +51,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### MST (no-brand) from UNO.UK
 
-| Type   | Version          | Firmware Type | Mirror      |
+| Type   | Version          | Root Strategy | Mirror      |
 |:------:|:-----------------|:--------------|:------------|
 | 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690) |
 
@@ -59,7 +59,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### iiNet & Internode
 
-| Type   | Version             | Firmware Type | Mirror |
+| Type   | Version             | Root Strategy | Mirror |
 |:------:|:--------------------|:--------------|:-------|
 | ???    | 15.32.1509-ver1.4   | -             | *None, **no RBI available**!, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
 | ???    | 15.53.6627-ver1.6   | -             | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi.torrent?raw=true) |
@@ -71,7 +71,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### iiNet
 
-| Type   | Version            | Firmware Type | Mirror      |
+| Type   | Version            | Root Strategy | Mirror      |
 |:------:|:-------------------|:--------------|:------------|
 | 2      | 16.3.7196-ver2.0.5 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi?raw=true) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi.torrent?raw=true) |
 | 2      | 16.3.7637-ver2.2.0 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002.rbi?raw=true) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002.rbi.torrent?raw=true) |
@@ -82,13 +82,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Tiscali
 
-| Type   | Version          | Firmware Type | Mirror      |
+| Type   | Version          | Root Strategy | Mirror      |
 |:------:|:-----------------|:--------------|:------------|
 | 2      |  16.3.7636       | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi) - [Torrent](HTTPS://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
 
 ### MST (no-brand) from UNO.UK
 
-| Type   | Version          | Firmware Type | Mirror |
+| Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 17.2.0278        | #3            | [HTTPS](https://uno.help/attachments/732) |
 
@@ -96,7 +96,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### iiNet
 
-| Type   | Version         | Firmware Type | Mirror |
+| Type   | Version         | Root Strategy | Mirror |
 |:------:|:----------------|:--------------|:-------|
 | 2      | 18.3.0157-3-2-1 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-3-2-1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
@@ -104,7 +104,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Gateway Max
 
-| Type   | Version           | Firmware Type | Mirror |
+| Type   | Version           | Root Strategy | Mirror |
 |:------:|:------------------|:--------------|:-------|
 | ???    | 15.18.6052-420-RA | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF363-15.18.6052-420-RA.rbi.torrent?raw=true) |
 | 2      | 15.53.6886-510-RF | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF540-15.53.6886-510-RF.rbi.torrent?raw=true) |
@@ -118,7 +118,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telia - Trådlös router
 
-| Type   | Version          | Timestamp  | Firmware Type | Mirror |
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 15.51.6436       | 2016-02-05 | #0            | [HTTPS](Fix me!) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
@@ -129,7 +129,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telia - Wifi-router Plus v3
 
-| Type   | Version          | Timestamp  | Firmware Type | Mirror |
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 
@@ -137,7 +137,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### MyRepublic
 
-| Type   | Version          | Firmware Type | Mirror |
+| Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 16.3.7190        | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
@@ -145,7 +145,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Gateway Max 2
 
-| Type   | Version          | Firmware Type | Mirror |
+| Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 16.3.7567-660-RD | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF690-16.3.7567-660-RD.rbi.torrent?raw=true) |
 | 2      | 17.2.0188-820-RA | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
@@ -157,7 +157,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Frontier Gateway
 
-| Type   | Version          | Firmware Type | Mirror |
+| Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 16.3.7413-660-RF | #0 #2            |  [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 17.2.0219-820-RA | #2            |  [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF752-17.2.0219-820-RA.rbi.torrent?raw=true) |
@@ -169,7 +169,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Smart Modem (Gen1)
 
-| Type   | Version          | Firmware Type | Mirror |
+| Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 17.2.0188-820-RA | #2            | *No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
 | 2      | 17.2.0288-820-RA | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF761-17.2.0288-820-RA.rbi.torrent?raw=true) |
@@ -180,7 +180,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Smart Modem (Gen2)
 
-| Type   | Version            | Firmware Type | Mirror |
+| Type   | Version            | Root Strategy | Mirror |
 |:------:|:-------------------|:--------------|:-------|
 | 2      | 18.1.c.0215-950-RA | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0241-950-RA | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
