@@ -127,12 +127,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | ???    | 17.2.0405        | 2019-03-29 | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
-### TG799vac Xtream / VANT-W
+## TG799vac Xtream / VANT-W
 
 !!! danger "OSCK Not Known"
     Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
 
-#### Telia - Wifi-router Plus
+### Telia - Wifi-router Plus
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
