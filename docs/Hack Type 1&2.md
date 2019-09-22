@@ -4,47 +4,6 @@
 
 There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-## Introduction
-
-### Why Hack your Gateway
-
-Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
-
-There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down in functionality to match service requirements. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible.
-
-For some other devices, a no-brand firmware exists. They appear as "Technicolor" branded and implement "MST" integration, a default third-party remote management platform for ISP's that do not pay for firmware customization. On such firmware's no regular configuration options are locked out, but getting root access will still open a wider window of possibilities.
-
-The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
-
-!!! tip "Asking about your Gateway?"
-    Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
-
-# Italian Gateways
-
-!!! hint
-    You need the following **before** you go offline
-
-1. The latest version of the AutoFlashGUI software, available either as a [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source at [the project page](https://github.com/mswhirl/autoflashgui).
-*Make sure the tool runs and GUI loads before you go offline!*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Telstra/Australian Gateways
-
 ## Things you will need
 
 !!! hint
@@ -65,10 +24,27 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 
 7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
 
+## Introduction
+
+### Why Hack your Gateway
+
+Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
+
+There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down in functionality to match service requirements. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible.
+
+For some other devices, a no-brand firmware exists. They appear as "Technicolor" branded and implement "MST" integration, a default third-party remote management platform for ISPs that do not pay for firmware customization. On such firmwares no regular configuration options are locked out, but getting root access will still open a wider window of possibilities.
+
+The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
+
+!!! tip "Asking about your gateway?"
+    Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
+
 ## Gaining Root Access
 
 !!! caution "Make sure your Gateway is offline!"
     The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
+
+Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. On the DJA0231, the SIM is under a rubber plug above the green port.
 
 !!! info
     These instructions have been written for the TG799vac (VANT-F) Gateway. So if you are doing this for a different Gateway, be sure to substitute the correct firmware files and change the other options as needed.
@@ -83,7 +59,7 @@ Every `Type 1` firmware allows you to perform a firmware *upgrade*, either via s
 
 In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
-First, make sure you changed the default web admin password. Run AutoFlashGUI and configure your Gateway IP address and web admin credentials. Browse for the `Type 2` RBI firmware to flash on your Gateway, in this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`. Tick the "Flash firmware?" checkbox and click "Run". Allow it to finish flashing. It will also attempt rooting.
+First, make sure you changed the default web admin password. Run AutoFlashGUI and configure your gateway ip address and web admin credentials. Browse for the `Type 2` RBI firmware to flash on your Gateway, in this case it is `vant-f_CRF687-16.3.7567-660-RG.rbi`. Tick the "Flash firmware?" checkbox and click "Run". Allow it to finish flashing. It will also attempt rooting.
 
 !!! warning "Is current SSH server permanent?"
     If AutoFlashGUI does not know how to set permanent root access on your model it will create a temporary SSH dropbear instance on port `6666`. You will configure  dropbear in order to run a permanent LAN-side SSH server later on following this guide.
@@ -295,7 +271,7 @@ bank_2
 ```
 
 !!! hint "Move to *state B* now!"
-    To let you end up in the following *optimal* bank plan we need to move your Gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
+    To let you end up in the following *optimal* bank plan we need to move your gateway into *state B*, if it's not there already. Otherwise, you can continue from *state A* as well, but you won't go for the *optimal* bank plan. Going for optimal bank later is possible, but extra steps are required.
 
 Run these commands to move from *state A* to *state B*:
 
