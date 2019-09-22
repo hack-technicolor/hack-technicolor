@@ -2,13 +2,12 @@
 
 [![Gitter](https://badges.gitter.im/Hack-Technicolor/community.svg)](https://gitter.im/Hack-Technicolor/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-The new Wiki for openwrt-based Homeware releases, migrated from https://whirlpool.net.au/wiki/hack_technicolor
+The new Wiki for openwrt-based Homeware releases, migrated from [Whirlpool](https://whirlpool.net.au/wiki/hack_technicolor)
 
 | Wiki Version                                        | Git Branch | Target         |
 |-----------------------------------------------------|------------|----------------|
 | [Stable](https://hack-technicolor.rtfd.io)          | `stable`   | General Public |
 | [Latest](https://hack-technicolor.rtfd.io/en/latest)| `master`   | Insiders/Devs  |
-
 
 ## Editing
 
