@@ -118,10 +118,12 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # 
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.51.6436       | 2016-02-05 | #0            | [https](Fix me!) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.51.6436       | 2016-02-05 | #0            | [https](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/vant-r_15.51.6436-1361003-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.51.6436       | 2016-05-27 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/15516436r1361008closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
+| ???    | 17.2.0405        | 20??-??-?? | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
 ### TG799vac Xtream / VBNT-H
 
