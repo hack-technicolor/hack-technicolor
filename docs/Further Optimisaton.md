@@ -2,7 +2,7 @@
 
 ## Turning off Power-Saving features
 
-In theory, by turning off all powersaving features, the gateway should be more responsive in every way. To do this
+In theory, by turning off all power-saving features, the gateway should be more responsive in every way. To do this
 
 1. Log in via SSH to your gateway
 2. Run these commands:

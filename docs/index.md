@@ -30,3 +30,5 @@ If your gateway firmware is:
 See the [README](https://github.com/kevdagoat/hack-technicolor/blob/master/README.md) for more info about what are *Types*.
 
 If in doubt, you may need to ask for help on your local community forum threads: AU @ [*whirlpool.net.au*](https://forums.whirlpool.net.au/thread/9vxxl849), IT @ [*ilpuntotecnico.com*](https://www.ilpuntotecnico.com/forum/index.php/board,9.0.html)
+
+[![Gitter](https://badges.gitter.im/Hack-Technicolor/community.svg)](https://gitter.im/Hack-Technicolor/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
