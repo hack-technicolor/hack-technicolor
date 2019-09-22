@@ -33,10 +33,8 @@ If you will be using Python a lot, install Anaconda, otherwise just install stan
 3. Run:
 
 ```
-pip install mkdocs mkdocs-material mkdocs-pdf-export-plugin
+pip install mkdocs mkdocs-material
 ```
-
-Weasyprint requires [windows](https://weasyprint.readthedocs.io/en/latest/install.html#windows) support libraries. Steps 1 to 3 should be done so assuming [GTK+ 64 Bit Installer](https://weasyprint.readthedocs.io/en/latest/install.html#gtk-64-bit-installer), accept default install to C:\Program Files\GTK3-Runtime Win64\bin
 
 ### Download the Repository
 

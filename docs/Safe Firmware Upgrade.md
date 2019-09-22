@@ -1,30 +1,36 @@
 # Safe Firmware Upgrade
 
-This simple guide will show you how to change your rooted Gateway firmware avoiding or handling any possible issues. If your Gateway is not rooted or you don't know what *rooting* is about go to Home page.
+This simple guide will show you how to change your rooted Gateway firmware avoiding or handling any possible issues. If your Gateway is not rooted or you don't know what *rooting* is about, go to Home page.
 
-This is the way you should regularly install firmware upgrades when available. Ordinary firmware flashing via *sysupgrade* or *BOOTP* is not safe, we direct partition writing to flash the firmware exactly where we need and to guarantee the results we want. Read [here](Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
+This is the way you should regularly install firmware upgrades when available. Firmware flashing via *sysupgrade* or *BOOTP* is not safe as it will remove root access.
+
+This method will use direct partition writing to flash the firmware exactly where it needs to be and to guarantee root. Read [here](Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
 
 ## Get prepared
 
 What you will need:
 
-- A rooted Gateway in working order
-- The firmware image to flash, either RBI file or raw bank dump
+1. A rooted Gateway in working order
+
+2. The firmware image to flash, either RBI file or raw bank dump
     - Pick one for your model, of whatever *Type*, from the [Firmware Repository](Firmware%20Repository/)
-- Make sure you can eventually get a copy of your current firmware
+
+3. Make sure you can eventually get a copy of your current firmware
     - Check if it's available from [Firmware Repository](Firmware%20Repository/)
-- A way to access this documentation in case of issues
+
+4. A way to access this documentation in case of issues
     - If this is your main Gateway, a mobile internet connection is recommended
-- Your current bank planning. Check and take note of firmware flashed, *active* and *booted* banks after running:
+
+5. Your current bank planning. Check and take note of firmware flashed, *active* and *booted* banks after running:
 `find /proc/banktable -type f -print -exec cat {} ';'`
 
 ## Things to know
 
 Will root access will be preserved?
-  - Yes, of course.
+  - Well, that is the point.
 
 On which bank will the new firmware be flashed?
-  - The booted one, current firmware will be overwritten.
+  - The booted one, the current firmware will be overwritten.
 
 Will the upgrade affect my bank planning?
   - No it won't, there won't be any bank switches.
@@ -50,7 +56,9 @@ Download **and extract** the raw bank image, and move this file into `/tmp/new.b
 
 ## Preserving root access
 
-It is **not recommended** to keep custom changes to files and configs if you are either downgrading or moving to a firmware of a different brand. If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping this section and jumping [over](#flashing-firmware). In this section you have required steps to keep root access only.
+It is **not recommended** to keep custom changes to files and configs if you are either downgrading or moving to a firmware of a different brand.
+
+If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping this section and jumping [over](#flashing-firmware). In this section you have required steps to keep root access only.
 
 Make a full backup of your bank configuration:
 
@@ -84,7 +92,7 @@ rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
 
-Note that your root credentials will be changed back to `root:root`.
+Note that your ssh credentials will be changed back to `root:root`.
 
 ## Flashing firmware
 
@@ -98,4 +106,4 @@ Reboot the Gateway now.
 
 ## Completing setup
 
-The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: redo [Hardening Root Access](Hardening%20Root%20Access/).
+The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](Hardening%20Root%20Access/).
