@@ -123,7 +123,21 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # 
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | 20??-??-?? | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
+| ???    | 17.2.0405        | 2019-03-29 | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
+
+### TG799vac Xtream / VANT-W
+
+!!! danger "OSCK Not Known"
+    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
+
+#### Telia - Wifi-router Plus
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.2.7732        | 2017-05-02 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/1627732h2221002closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339h1441004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339h1441020closed.rbi.torrent?raw=true) |
+| ???    | 17.2.0405        | 2019-03-29 | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405h1441030closed.rbi.torrent?raw=true) |
 
 ### TG799vac Xtream / VBNT-H
 
@@ -132,7 +146,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Root Strategy # 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/1627732h2221002closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h144102closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | ???    | 17.2.0405        | 2019-03-29 | -             | [torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 
