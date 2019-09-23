@@ -16,7 +16,6 @@ extra_css:
     
 plugins:
     - search
-    - pdf-export
 
 nav:
     - 'Home': 'index.md'
