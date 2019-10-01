@@ -16,4 +16,14 @@ extra_css:
     
 plugins:
     - search
-    - pdf-export
+
+nav:
+    - 'Home': 'index.md'
+    - 'Firmware Repository': 'Firmware Repository.md'
+    - 'Hack Type 1&2': 'Hack Type 1&2.md'
+    - 'Hardening Root Access': 'Hardening Root Access.md'
+    - 'Unlock Functionality': 'Unlock Functionality.md'
+    - 'Further Optimisaton': 'Further Optimisaton.md'
+    - 'Recovery': 'Recovery.md'
+    - 'Resources': 'Resources.md'
+    - 'Safe Firmware Upgrade': 'Safe Firmware Upgrade.md'
