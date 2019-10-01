@@ -3,7 +3,7 @@
 Run the following in the SSH terminal to prevent your Gateway loosing root access unexpectedly.
 
 !!! hint "You can pick only what you need"
-    You can paste each block directly into the terminal independently, use only ones your firmware needs. If you don't know, just paste them all. If you get any error from some command just ignore it, it means that command wasn't needed for your firmware version.
+    You can paste each block directly into the terminal independently, use only ones your firmware needs. If you don't know, just paste them all. If you get any error messages from a command, just ignore it, it means that command wasn't needed for your firmware version.
 
 ```bash
 # Disable CWMP

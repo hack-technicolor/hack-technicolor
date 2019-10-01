@@ -13,19 +13,23 @@ Please fill out the following, remembering to put an 'X' in the '[ ]' to mark th
 _VERSION_
 
 **Image Format**
-- [ ] Link to Bank Dump (compressed as xz)
-- [ ] Link to RBI
+
+- [ ] Bank Dump (compressed as xz)
+- [ ] RBI
 
 **Would you take care of adding this new firmware in the wiki?**
+
 - [ ] Yes! I will take care of that
 - [ ] No, do it for me, I can't use GitHub...
 
-**Where we can get it**
+**Where can we get it?**
+
 - [ ] From ISP's url - public
 - [ ] From ISP's url - private
 - [ ] From own cloud sharing
 
 **Did you manage to root this firmware version already?**
+
 - [ ] Yes, following Type 2 instructions
 - [ ] Yes, following Type 1 instructions
 - [ ] Yes, following Type 3 instructions
@@ -33,6 +37,8 @@ _VERSION_
 - [ ] I didn't try
 
 Type: _<eg. FTP HTTP>_
+
+Link: _<PUT LINK HERE>_
 
 **Device Info**
 
