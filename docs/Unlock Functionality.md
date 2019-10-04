@@ -98,15 +98,24 @@ If you want to use VoIP, the following is the quickest way to set it up and remo
 ```bash
 # Block 1
 # Edit these lines as required, or use the GUI afterwards to fix the values
-uci set mmpbxrvsipnet.sip_net.primary_proxy='sipserver'
-uci set mmpbxrvsipnet.sip_net.primary_registrar='sipserver'
-uci set mmpbxrvsipnet.sip_profile_0.uri='SIPuserName'
-uci set mmpbxrvsipnet.sip_profile_0.user_name='SIPuserName'
-uci set mmpbxrvsipnet.sip_profile_0.password='SIPpassword'
-uci set mmpbxrvsipnet.sip_net.primary_proxy_port='5060'
-uci set mmpbxrvsipnet.sip_net.primary_registrar_port='5060'
-# End Edit these lines as required
+uci set mmpbxrvsipnet.sip_profile_0=profile
 uci set mmpbxrvsipnet.sip_profile_0.enabled='1'
+uci set mmpbxrvsipnet.sip_profile_0.network='sip_net'
+uci set mmpbxrvsipnet.sip_profile_0.user_name='UserName0'
+uci set mmpbxrvsipnet.sip_profile_0.display_name='DisplayName0'
+uci set mmpbxrvsipnet.sip_profile_0.password='Password0'
+uci set mmpbxrvsipnet.sip_profile_0.uri='Uri0'
+uci set mmpbxrvsipnet.sip_net.primary_proxy='primary.proxy.0'
+uci set mmpbxrvsipnet.sip_net.user_friendly_name='SIP Network 0'
+uci set mmpbxrvsipnet.sip_net.local_port='5070'
+uci set mmpbxrvsipnet.sip_net.primary_registrar='primary.registrar.0'
+uci set mmpbxrvsipnet.sip_net.primary_proxy_port='5060'
+uci set mmpbxrvsipnet.sip_net.reg_expire='3600'
+uci set mmpbxrvsipnet.sip_net.primary_registrar_port='5060'
+uci set mmpbxrvsipnet.sip_profile_0.enabled='1'
+uci set mmpbxbrcmfxsdev.fxs_dev_0.relay_state='1'
+uci set mmpbxbrcmfxsdev.fxs_dev_1.relay_state='1'
+uci set mmpbxrvsipnet.sip_profile_1.enabled='1'
 uci set mmpbxbrcmfxsdev.fxs_dev_0.relay_state='1'
 uci set mmpbxbrcmfxsdev.fxs_dev_1.relay_state='1'
 uci del_list mmpbx.@outgoing_map[0].profile='fxo_profile'
@@ -125,6 +134,20 @@ uci del_list mmpbx.@outgoing_map[6].profile='fxo_profile'
 uci del_list mmpbx.@outgoing_map[6].priority='2'
 uci del_list mmpbx.@outgoing_map[7].profile='fxo_profile'
 uci del_list mmpbx.@outgoing_map[7].priority='2'
+uci del_list mmpbx.@outgoing_map[8].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[8].priority='2'
+uci del_list mmpbx.@outgoing_map[9].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[9].priority='2'
+uci del_list mmpbx.@outgoing_map[10].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[10].priority='2'
+uci del_list mmpbx.@outgoing_map[11].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[11].priority='2'
+uci del_list mmpbx.@outgoing_map[12].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[12].priority='2'
+uci del_list mmpbx.@outgoing_map[13].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[13].priority='2'
+uci del_list mmpbx.@outgoing_map[14].profile='fxo_profile'
+uci del_list mmpbx.@outgoing_map[14].priority='2'
 sed -e 's/getrole()=="guest"/getrole()=="admin"/' -i /www/snippets/tabs-voice.lp
 uci commit
 /etc/init.d/nginx restart
@@ -153,20 +176,6 @@ uci add_list web.ruleset_main.rules=mmpbxstatisticsmodal
 uci set web.mmpbxstatisticsmodal=rule
 uci set web.mmpbxstatisticsmodal.target='/modals/mmpbx-statistics-modal.lp'
 uci add_list web.mmpbxstatisticsmodal.roles='admin'
-uci del_list mmpbx.@outgoing_map[8].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[8].priority='2'
-uci del_list mmpbx.@outgoing_map[9].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[9].priority='2'
-uci del_list mmpbx.@outgoing_map[10].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[10].priority='2'
-uci del_list mmpbx.@outgoing_map[11].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[11].priority='2'
-uci del_list mmpbx.@outgoing_map[12].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[12].priority='2'
-uci del_list mmpbx.@outgoing_map[13].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[13].priority='2'
-uci del_list mmpbx.@outgoing_map[14].profile='fxo_profile'
-uci del_list mmpbx.@outgoing_map[14].priority='2'
 uci set mmpbxrvsipdev.sip_dev_0.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
 uci set mmpbxrvsipdev.sip_dev_1.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
 uci set mmpbxrvsipdev.sip_dev_2.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
@@ -185,8 +194,97 @@ uci delete mmpbxrvsipdev.sip_server.apn_cert_key
 uci delete mmpbxrvsipdev.sip_server.apn_interface
 sed -e 's/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},\n{"mmpbx-inoutgoingmap-modal.lp", T"In-Out Mapping"},\n{"mmpbx-statistics-modal.lp", T"Statistics"},/' -i /www/snippets/tabs-voice.lp
 uci commit
+```
+## Unlocking the option to add a second SIP Network Provider
+
+```bash
+# Block 3A (Optional: Adding 2nd SIP Provider)
+uci set mmpbx.sip_net_1=network
+uci set mmpbx.sip_net_1.config='uci set mmpbxrvsipnet'
+uci commit
+uci set mmpbxrvsipnet.sip_net_1=network
+uci set mmpbxrvsipnet.sip_net_1.session_expires='180'
+uci set mmpbxrvsipnet.sip_net_1.no_answer_response='480'
+uci set mmpbxrvsipnet.sip_net_1.dtmf_relay_translation='0'
+uci set mmpbxrvsipnet.sip_net_1.call_waiting_reject_response='486'
+uci set mmpbxrvsipnet.sip_net_1.cac='-1'
+uci set mmpbxrvsipnet.sip_net_1.ingress_media_timeout='1000'
+uci set mmpbxrvsipnet.sip_net_1.timer_D='50000'
+uci set mmpbxrvsipnet.sip_net_1.privacy_handling='apply'
+uci set mmpbxrvsipnet.sip_net_1.timer_J='32000'
+uci set mmpbxrvsipnet.sip_net_1.reliable_provisional_response='supported'
+uci set mmpbxrvsipnet.sip_net_1.transparent_soc_transmission='0'
+uci set mmpbxrvsipnet.sip_net_1.switch_back_to_primary_proxy_timer='0'
+uci set mmpbxrvsipnet.sip_net_1.transport_type='UDP'
+uci set mmpbxrvsipnet.sip_net_1.control_qos_field='dscp'
+uci set mmpbxrvsipnet.sip_net_1.timer_T4='5000'
+uci set mmpbxrvsipnet.sip_net_1.realtime_qos_field='dscp'
+uci set mmpbxrvsipnet.sip_net_1.escape_hash='1'
+uci set mmpbxrvsipnet.sip_net_1.dtmf_relay='auto'
+uci set mmpbxrvsipnet.sip_net_1.realtime_qos_value='af42'
+uci set mmpbxrvsipnet.sip_net_1.fail_behaviour='stop'
+uci set mmpbxrvsipnet.sip_net_1.escape_star='0'
+uci set mmpbxrvsipnet.sip_net_1.timer_F='32000'
+uci set mmpbxrvsipnet.sip_net_1.primary_proxy_port='5060'
+uci set mmpbxrvsipnet.sip_net_1.realm_check='0'
+uci set mmpbxrvsipnet.sip_net_1.reg_expire='3600'
+uci set mmpbxrvsipnet.sip_net_1.reg_back_off_timeout='180'
+uci set mmpbxrvsipnet.sip_net_1.secondary_proxy_port='0'
+uci set mmpbxrvsipnet.sip_net_1.timer_B='32000'
+uci set mmpbxrvsipnet.sip_net_1.uri_clir_format='standard'
+uci set mmpbxrvsipnet.sip_net_1.reg_expire_T_before='1'
+uci set mmpbxrvsipnet.sip_net_1.re_registration_mode='standard'
+uci set mmpbxrvsipnet.sip_net_1.timer_T1='500'
+uci set mmpbxrvsipnet.sip_net_1.call_waiting_provisional_response='182'
+uci set mmpbxrvsipnet.sip_net_1.forking_mode='default'
+uci set mmpbxrvsipnet.sip_net_1.interface='wan'
+uci set mmpbxrvsipnet.sip_net_1.session_timer='enabled'
+uci set mmpbxrvsipnet.sip_net_1.control_qos_value='ef'
+uci set mmpbxrvsipnet.sip_net_1.secondary_registrar_port='5060'
+uci set mmpbxrvsipnet.sip_net_1.min_period_proxy_redundancy='0'
+uci set mmpbxrvsipnet.sip_net_1.min_session_expires='90'
+uci set mmpbxrvsipnet.sip_net_1.primary_registrar_port='5060'
+uci set mmpbxrvsipnet.sip_net_1.timer_T2='4000'
+uci set mmpbxrvsipnet.sip_net_1.rport_in_via='1'
+uci set mmpbxrvsipnet.sip_net_1.provisional_timer='180'
+uci set mmpbxrvsipnet.sip_net_1.rejection_response='486'
+uci commit
+uci set mmpbxrvsipnet.sip_net_1.primary_proxy='primary.proxy.1'
+uci set mmpbxrvsipnet.sip_net_1.user_friendly_name='SIP Network 1'
+uci set mmpbxrvsipnet.sip_net_1.local_port='5071'
+uci set mmpbxrvsipnet.sip_net_1.primary_registrar='primary.registrar.1'
+uci set mmpbxrvsipnet.sip_net_1.domain_name='domain.name.1'
+uci commit
 /etc/init.d/nginx restart
 /etc/init.d/mmpbxd restart
+```
+Setting SIP profiles which can be easily edited via GUI for multiple accounts per VOIP provider
+
+```bash
+# SIP Account defaults
+# Edit these lines as required, or use the GUI afterwards to fix the values
+uci set mmpbxrvsipnet.sip_profile_1=profile
+uci set mmpbxrvsipnet.sip_profile_1.enabled='1'
+uci set mmpbxrvsipnet.sip_profile_1.network='sip_net_1'
+uci set mmpbxrvsipnet.sip_profile_1.user_name='UserName1'
+uci set mmpbxrvsipnet.sip_profile_1.display_name='DisplayName1'
+uci set mmpbxrvsipnet.sip_profile_1.password='Password1'
+uci set mmpbxrvsipnet.sip_profile_1.uri='Uri1'
+uci set mmpbxrvsipnet.sip_profile_2=profile
+uci set mmpbxrvsipnet.sip_profile_2.enabled='1'
+uci set mmpbxrvsipnet.sip_profile_2.network='sip_net'
+uci set mmpbxrvsipnet.sip_profile_2.user_name='UserName2'
+uci set mmpbxrvsipnet.sip_profile_2.display_name='DisplayName2'
+uci set mmpbxrvsipnet.sip_profile_2.password='Password2'
+uci set mmpbxrvsipnet.sip_profile_2.uri='Uri2'
+uci set mmpbxrvsipnet.sip_profile_3=profile
+uci set mmpbxrvsipnet.sip_profile_3.enabled='1'
+uci set mmpbxrvsipnet.sip_profile_3.network='sip_net_1'
+uci set mmpbxrvsipnet.sip_profile_3.user_name='UserName3'
+uci set mmpbxrvsipnet.sip_profile_3.display_name='DisplayName3'
+uci set mmpbxrvsipnet.sip_profile_3.password='Password3'
+uci set mmpbxrvsipnet.sip_profile_3.uri='Uri3'
+uci commit
 ```
 
 ## VoLTE backup voice service & SMS reception
@@ -209,6 +307,17 @@ uci set web.ltesms.target='/modals/lte-sms.lp'
 uci add_list web.ltesms.roles='admin'
 uci commit
 /etc/init.d/mmpbxd restart
+/etc/init.d/nginx restart
+```
+## Enable VOIP for both SIP providers while on 4G Backup (Frontier DJN2130 & SMG1 DJA0230)
+
+```bash
+# Enable VOIP while on backup
+uci set mmpbxrvsipnet.sip_net.interface='lan'
+uci set mmpbxrvsipnet.sip_net.interface6='lan6'
+uci set mmpbxrvsipnet.sip_net_1.interface='lan'
+uci set mmpbxrvsipnet.sip_net_1.interface6='lan6'
+uci commit
 /etc/init.d/nginx restart
 ```
 
