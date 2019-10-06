@@ -24,9 +24,9 @@ There is no way of knowing your situation and the process could break your Gatew
 
 7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
 
-# Introduction
+## Introduction
 
-## Why Hack your Gateway
+### Why Hack your Gateway
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
@@ -39,7 +39,7 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 !!! tip "Asking about your gateway?"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
 
-# Gaining Root Access
+## Gaining Root Access
 
 !!! caution "Make sure your Gateway is offline!"
     The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
@@ -51,11 +51,11 @@ Ensure the Gateway does not have a wired or wireless internet connection. Gatewa
 
 Now head on down to the right *Type* section, which fits your current situation.
 
-## Type 1 - Flash of Type 2, then Root
+### Type 1 - Flash of Type 2, then Root
 
 Every `Type 1` firmware allows you to perform a firmware *upgrade*, either via stock web UI, or official *unlocked* modes, or hidden web pages. We are going to exploit this possibility in order to flash an arbitrary firmware version of `Type 2`.
 
-### Flashing via AutoFlashGUI
+#### Flashing via AutoFlashGUI
 
 In this example we are working with the `VANT-F` Gateway on `17.2.0261`, which is a `Type 1` firmware. `16.3.7567` is the `Type 2` firmware we are going to flash.
 
@@ -66,7 +66,7 @@ First, make sure you changed the default web admin password. Run AutoFlashGUI an
 
 Try firing up your SSH client of choice and connect with the Username and Password as `root/root` to the Gateway IP on default port `22`, or `6666`. If you manage to login into root shell, jump to [Final Type 2 Steps](#final-type-2-steps) now. Otherwise, if AutoFlashGUI didn't manage to get root, your Type 2 firmware requires a different rooting strategy: continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
-### Flashing via Web UI
+#### Flashing via Web UI
 
 Sometimes the stock web UI allows users to perform firmware upgrades on their own. In such cases AutoFlashGUI should also work as it exploits the same feature, but it is good to know you don't strictly need to depend on some tool.
 
@@ -74,9 +74,9 @@ It may also happen the firmware allows you to activate some kind of "*Unlocked*"
 
 In any of the above cases you can easily flash the `Type 2` firmware we need. Do it, wait for the flashing to complete, then continue reading from [Type 2 - Direct Rooting](#type-2-direct-rooting) section.
 
-## Type 2 - Direct Rooting
+### Type 2 - Direct Rooting
 
-### Rooting via different strategies
+#### Rooting via different strategies
 
 Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...).
 
@@ -92,7 +92,7 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
-### Rooting via AutoFlashGUI
+#### Rooting via AutoFlashGUI
 
 AutoFlashGUI implements most common rooting strategies and is hereby described in detail. It has been tested working with some firmware's for these models. Unfortunately, most people gets root access on older firmware's then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
 
@@ -120,7 +120,7 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
 
 Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
-### Final Type 2 steps
+#### Final Type 2 steps
 
 !!! warning "Is the current SSH server permanent?"
     If the tool you used does not know how to correctly set permanent root access on your firmware, it will create a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
@@ -140,17 +140,17 @@ At this point you have a rooted `Type 2` image on your Gateway, but your trip is
 
 If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
 
-## Type 3 - Difficult Flash of Type 2, then Root
+### Type 3 - Difficult Flash of Type 2, then Root
 
 !!! info "Why are You Here?"
     Re-read the [Homepage](/)!
 
-# Post-Root Procedures
+## Post-Root Procedures
 
 !!! warning "Stop!"
     Do not follow any post-root procedure unless explicitly told to.
 
-## Bank Planning (without firmware upgrade)
+### Bank Planning (without firmware upgrade)
 
 We are now going to prepare an optimal bank planning for the same firmware version you have now booted.
 
@@ -234,7 +234,7 @@ You should now be in the previously mentioned *optimal* bank plan. On each reboo
 
 At this point, you now need to check if your [SSH server setup](#setting-up-permanent-ssh-server) is permanent.
 
-## Bank Planning (with firmware upgrade)
+### Bank Planning (with firmware upgrade)
 
 We are now going to prepare an optimal bank planning for another firmware you don't have on your Gateway yet.
 
@@ -412,7 +412,7 @@ passwd
 
 Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](Hardening%20Root%20Access/) page.
 
-# My Firmware is so Old that AutoFlashGUI can't Authenticate
+## My Firmware is so Old that AutoFlashGUI can't Authenticate
 
 *This is because they changed the web authentication method to SRPv6 with firmware v15, and this is the only method that the AutoFlashGUI tool knows how to authenticate with.*
 
