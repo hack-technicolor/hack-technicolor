@@ -120,6 +120,20 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
 
 Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
+
+#### Rooting via tch-exploit (Telstra models only)
+
+tch-exploit implements rooting via the wan port by emulating tr-069. It has been tested working with some firmware from v15 - v18
+
+ | Model Number    | Mnemonic | ISP Product Names
+ |:----------------|:---------|:--------------------------
+ | TG797n v3       | DANT-O   | Telstra T-Gateway
+ | TG799vac        | VANT-F   | Telstra Gateway Max
+ | TG800vac        | VANT-Y   | Telstra Gateway Max 2
+ | DJN2130         | VBNT-J   | Telstra Frontier Gateway
+ | DJA0230         | VBNT-F   | Telstra Smart Modem Gen1
+ | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
+ 
 #### Final Type 2 steps
 
 !!! warning "Is the current SSH server permanent?"
