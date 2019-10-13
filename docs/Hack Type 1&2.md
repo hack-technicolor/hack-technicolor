@@ -123,7 +123,7 @@ Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps)
 
 #### Rooting via [tch-exploit](https://github.com/BoLaMN/tch-exploit) (Telstra models only)
 
-tch-exploit implements rooting via the wan port by emulating tr-069. It has been tested working with some firmware from v15 - v18
+tch-exploit implements rooting via the wan port by emulating tr-069. It has been tested working with firmware from v15 - v18
 
  | Model Number    | Mnemonic | ISP Product Names
  |:----------------|:---------|:--------------------------
