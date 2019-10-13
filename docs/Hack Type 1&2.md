@@ -92,34 +92,6 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
-#### [TO BE MOVED] Rooting via AutoFlashGUI
-
-AutoFlashGUI implements most common rooting strategies and is hereby described in detail. It has been tested working with some firmware's for various models. Unfortunately, most people gets root access on older firmware's then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
-
- | Model Number    | Mnemonic | ISP Product Names
- |:----------------|:---------|:--------------------------
- | TG797n v3       | DANT-O   | Telstra T-Gateway
- | TG789vac v2     | VANT-6   | -
- | TG789vac (v1)   | VANT-D   | -
- | TG799vac        | VANT-F   | Telstra Gateway Max
- | TG799vac        | VANT-R   | Telia Trådlös router
- | TG800vac        | VANT-Y   | Telstra Gateway Max 2
- | TG789vac v3     | VBNT-1   | -
- | TG799vac Xtream | VBNT-H   | -
- | DJN2130         | VBNT-J   | Telstra Frontier Gateway
- | TG789vac v2 HP  | VBNT-L   | MyRepublic WiFi Hub+
- | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
-
-In this example we will be working with the `VANT-F` Gateway on `16.3.7567` which is a `Type 2` firmware.
-
-Using AutoFlashGUI, allow it to run through getting root. If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), you must change the defaults in the AutoFlashGUI window.
-
-![16.3 AFG](images/flashgui_16.3.png)
-
-If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local forums for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
-
-Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
-
 #### Final Type 2 steps
 
 !!! warning "Is the current SSH server permanent?"
