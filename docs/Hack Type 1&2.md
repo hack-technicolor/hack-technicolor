@@ -121,7 +121,7 @@ If you are unable to fill your profile correctly or AutoFlashGUI is not working,
 Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
 
-#### Rooting via tch-exploit (Telstra models only)
+#### Rooting via [tch-exploit]](https://github.com/BoLaMN/tch-exploit) (Telstra models only)
 
 tch-exploit implements rooting via the wan port by emulating tr-069. It has been tested working with some firmware from v15 - v18
 
