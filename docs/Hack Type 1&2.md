@@ -83,42 +83,14 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
 !!! info "WANTED!"
     Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
 
- | Strategy # | Originally written for | Variant- Commercial name   | Where to look for instructions |
- |:----------:|:-----------------------|:--------------------------:|:------------------------------:|
- | #0         | TG799vac / VANT-F      | Telstra - Gateway Max      | [AutoFlashGUI](#rooting-via-autoflashgui) |
- | #1         | DGA4131 / VBNT-O       | Fastweb - FASTGate         | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
- | #2         | DJA0230 / VBNT-V       | Telstra - Smart Modem Gen1 | [external link](https://github.com/BoLaMN/tch-exploit) |
- | #3         | TG789vac v2 / VANT-6   | MST                        | external link (ita) |
+ | Strategy # | Known as            | Where to look for instructions |
+ |:----------:|:--------------------|:------------------------------:|
+ | #0         | AutoFlashGUI        | [external link](https://github.com/mswhirl/autoflashgui) |
+ | #1         | FASTGate samba hack | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
+ | #2         | tch-exploit         | [external link](https://github.com/BoLaMN/tch-exploit) |
+ | #3         | MST WPS hack        | external link (ita) |
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
-
-#### Rooting via AutoFlashGUI
-
-AutoFlashGUI implements most common rooting strategies and is hereby described in detail. It has been tested working with some firmware's for these models. Unfortunately, most people gets root access on older firmware's then stop testing AutoFlashGUI on newer ones, so it's pretty difficult to maintain an updated list of tested firmware versions.
-
- | Model Number    | Mnemonic | ISP Product Names
- |:----------------|:---------|:--------------------------
- | TG797n v3       | DANT-O   | Telstra T-Gateway
- | TG789vac v2     | VANT-6   | -
- | TG789vac (v1)   | VANT-D   | -
- | TG799vac        | VANT-F   | Telstra Gateway Max
- | TG799vac        | VANT-R   | Telia Trådlös router
- | TG800vac        | VANT-Y   | Telstra Gateway Max 2
- | TG789vac v3     | VBNT-1   | -
- | TG799vac Xtream | VBNT-H   | -
- | DJN2130         | VBNT-J   | Telstra Frontier Gateway
- | TG789vac v2 HP  | VBNT-L   | MyRepublic WiFi Hub+
- | DJA0231         | VCNT-A   | Telstra Smart Modem Gen2
-
-In this example we will be working with the `VANT-F` Gateway on `16.3.7567` which is a `Type 2` firmware.
-
-Using AutoFlashGUI, allow it to run through getting root. If you have changed any of the default settings (eg. Gateway IP, Web Interface Password), you must change the defaults in the AutoFlashGUI window.
-
-![16.3 AFG](images/flashgui_16.3.png)
-
-If you are unable to fill your profile correctly or AutoFlashGUI is not working, have a look on your local forums for detailed model-specific root commands. If you manage to find a root command not listed in AutoFlashGUI, create an issue and we will get it added in. Being a `Type 2` firmware, a working root guide surely exists.
-
-Once AutoFlashGUI succeed, continue to [Final Type 2 steps](#final-type-2-steps) below.
 
 #### Final Type 2 steps
 
