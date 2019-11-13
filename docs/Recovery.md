@@ -224,14 +224,19 @@ From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
     - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
 
-## Booting from passive bank
+## Changing booted bank
 
-Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data partition and two firmware banks.
+Dual-banks gateways work very similar to a dual-boot computer system. For example, the computer might have a data partition with personal data and two OS partitions, each with a different OS. The gateway has a data partition and two firmware banks.
 
 When you power on your device it starts loading by default the firmware into the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
-!!! hint "TFTP flashes into bank_1 only"
+!!! note "TFTP flashes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
+
+!!! hint "Check the current *active bank*"
+    - read contents of `/proc/banktable/active`
+    - read serial console log during boot
+    - try flashing something with TFTP and see if it's being booted
 
 Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
 
@@ -239,13 +244,7 @@ The process of switching the active bank is called *switchover*, and does not in
 
 *Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
 
-You can check or understand which is the current *active bank* in different ways:
-
-- read contents of `/proc/banktable/active`
-- read serial console log during boot
-- try flashing something with TFTP and see if it's being booted
-
-To force-boot from the passive bank, which by definition is not currently active, you have two options:
+ To force-boot from the other bank, which by definition is not currently active, you have two options:
 
 - Set it as active (switchover), and let the gateway boot it regularly
 - Trigger a *Bootfail*, and let the gateway fallback to the passive one
