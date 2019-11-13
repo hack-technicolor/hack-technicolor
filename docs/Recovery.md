@@ -224,19 +224,23 @@ From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
     - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
 
-## Changing booted bank
+### Check booted bank
 
 Dual-banks gateways work very similar to a dual-boot computer system. For example, the computer might have a data partition with personal data and two OS partitions, each with a different OS. The gateway has a data partition and two firmware banks.
 
-When you power on your device it starts loading by default the firmware into the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
+When you power on your device it starts loading by default the firmware from the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
 !!! note "TFTP flashes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
 
-!!! hint "Check the current *active bank*"
+!!! hint "Check current *active bank*"
     - read contents of `/proc/banktable/active`
     - read serial console log during boot
     - try flashing something with TFTP and see if it's being booted
+
+If the required firmware is in the *active bank* this process is completed and the device can be restarted.
+
+## Change booted bank
 
 Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
 
