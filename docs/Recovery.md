@@ -283,18 +283,18 @@ This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway wi
 
 The sequence is (Minutes:Seconds):
 
-|Step |    Period     | Time   |    Action
-|-----|:-----------|:-------|:--------------------------------------------------
-| 0      |    0       |  0        | Power on
-| 1      |00:35       |  00:35    | Press reset
-| 2      |00:11       |  00:46    | Release
-| 3      |00:47       |  01:33    | Press reset
-| 4   |00:11       |  01:44    | Release
-| 5      |00:47       |  02:31    | Press reset
-| 6      |00:11       |  02:42    | Release
-| 7      |00:50       |  03:32    | Press reset
-| 8      |00:11       |  03:43    | Release
-| 9      |06:00       |    -    | Browse to 192.168.0.1 and confirm firmware version
+| Step | Period | Time  | Action
+|------|:-------|:------|:--------------------------------------------------
+| 0    |     0  | 0     | Power on
+| 1    | 00:35  | 00:35 | Press reset
+| 2    | 00:11  | 00:46 | Release
+| 3    | 00:47  | 01:33 | Press reset
+| 4    | 00:11  | 01:44 | Release
+| 5    | 00:47  | 02:31 | Press reset
+| 6    | 00:11  | 02:42 | Release
+| 7    | 00:50  | 03:32 | Press reset
+| 8    | 00:11  | 03:43 | Release
+| 9    | 06:00  |   -   | Browse to 192.168.0.1 and confirm firmware version
 
 #### Crazy Power switching
 
