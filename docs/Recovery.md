@@ -233,26 +233,34 @@ When you power on your device it starts loading by default the firmware into the
 !!! hint "TFTP flashes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
 
-The process of switching the active bank is called *switchover*. Ordinary firmware upgrades get installed to the passive bank, while a switchover occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
-
 Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
 
-To force-boot from the passive bank, which is not currently active, you have two options:
+The process of switching the active bank is called *switchover*, and does not involve flashing or upgrading firmware. Which one is your current *active bank* depends on how many times your device did a *switchover*, So it's best to understand when this is usually occurring.
 
-- Set it as active (switchover).
-- Trigger a Bootfail.
+*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
+
+You can check or understand which is the current *active bank* in different ways:
+
+- read contents of `/proc/banktable/active`
+- read serial console log during boot
+- try flashing something with TFTP and see if it's being booted
+
+To force-boot from the passive bank, which by definition is not currently active, you have two options:
+
+- Set it as active (switchover), and let the gateway boot it regularly
+- Trigger a *Bootfail*, and let the gateway fallback to the passive one
 
 ### Switchover
 
-If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
+If you have shell access to the Gateway, or you can easily get root or run arbitrary commands from your firmware version, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
 
 ```bash
 echo bank_1 > /proc/banktable/active
 ```
 
-If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. Please note: this will also imply a firmware flashing via [sysupgrade](Resources/#sysupgrade) and every drawbacks it derives.
 
-If none of the above options are viable in your situation, unfortunately you must opt for Bootfail instead.
+If none of the above options are viable in your situation, unfortunately you must opt for *Bootfail* instead.
 
 ### Bootfail Procedure
 
