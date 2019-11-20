@@ -156,9 +156,9 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### MyRepublic
 
-| Type   | Version          | Root Strategy | Mirror |
-|:------:|:-----------------|:--------------|:-------|
-| 2      | 16.3.7190        | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG800vac / VANT-Y
 
