@@ -11,6 +11,31 @@ There is no way of knowing your situation and the process could break your Gatew
 
 This Guide is based on a few different states.
 
+## Recovering gateways on optimal bank plan
+
+If you followed rooting guides from this Wiki, you were suggested to implement the so called *optimal* bank plan.
+
+!!! note "This recovery method is **not** available if..."
+    - You are not or no more on *optimal* bank plan
+    - Your `/overlay/bank_1` contents is messed up
+    - Your active bank is `bank_2`
+    - There are no RBI firmware images of `Type 2` available for your board
+
+Recovery from any bad state (**excluding full overlay partition issues**) while *optimal* bank plan is in place, always consists in following this path:
+
+1. Use [BOOTP flashing](#bootp-flashing) to flash a valid `Type 2` firmware for your board. Because of *optimal* bank plan, the Gateway is guaranteed to boot this sort of *recovery disk* from `bank_1`. The `Type 2` image you choose to pick now for recovery purposes does not depend on which one you have in `bank_2`. If this is not your first time booting this *recovery disk*, choose the same `Type 2` firmware you used in past.
+2. Being on *optimal* bank plan your `/overlay/bank_1` is assumed to be in a good shape as whatever you work on daily is inside `/overlay/bank_2` instead. For that reason the gateway will boot just fine the image you just flashed. Fire up your SSH client and get in the root shell. If this is your first time booting this *recovery disk* you will need to hack it following [Type 2 rooting](Hack%20Type%201&2/#type-2-direct-rooting) instructions stopping just before [Post-Root Procedures](Hack%20Type%201&2/#post-root-procedures).
+3. Whatever was wrong and causing issues with your mods related to the firmware you were booting from `bank_2` is now inside `/overlay/bank_2` folder. Fix it manually if you know what was your mistake, otherwise restore `/overlay/bank_2` folder contents from a previous overlay backup. If you didn't get any (shame on you) forget about whatever you were running from `bank_2`, jump to and go through [Post-Root Procedures](Hack%20Type%201&2/#post-root-procedures) to the end as if it were the first time you read that page, do not come back to this recovery guide.
+4. When you have finished, go back booting form `bank_2`: run `mtd erase bank_1` to eject this *recovery image* and reboot.
+
+!!! warning "DO NOT..."
+    * Do not switch active bank, it always has to be `bank_1`
+    * Do not apply any mod except root access while booting the *recovery disk*
+    * Do not try RTFD or bootfail
+
+!!! note "What if my overlay partition is full?"
+    *Optimal* bank plan is not intended to make things easier in such cases. You can still try booting recovery as explained above and [wipe the filled up partition](#wipe-custom-data-partition) as soon as you get a root shell. Expect something in the above step 2 to go wrong: either your *recovery disk* doesn't boot fine (bootloops) since something running upon startup is crashing because of file writing failures, or you can't get root access because root strategies fail to apply needed changes. Your chances to sort out from this situation are bigger if this is not the first time booting into recovery since everything usually created upon startup and root access is there already.
+
 ## Wipe Custom Data Partition
 
 Technicolor Gateway platforms are usually built on a `firmware + data` design, which consists of read-only filesystems (squashfs) stored in *flash banks* plus a writable filesystem (jffs2) for user dafa storage.
@@ -21,7 +46,7 @@ The space available in the the user data partition is shared across both bank's 
 
 If you think you are not completely aware of what's going on or you don't know what you did wrong, it is strongly recommended you just completely **wipe the user data partition only** as follows, which will wipe all custom config.
 
-!!! note "This reset method is not available if..."
+!!! note "This reset method is **not** available if..."
     - You have lost any kind of access to root shell by either SSH, Telnet, or Serial console, and you cannot execute a custom command as root.
     - The Gateway bootloops or fails to boot properly.
 
@@ -47,7 +72,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 ### RTFD via the web interface
 
-!!! note "This RTFD method is not available if..."
+!!! note "This RTFD method is **not** available if..."
     - The web interface is corrupt and not accessible.
     - The Gateway bootloops or fails to boot properly.
     - The `userfs` or `rootfs_data` jffs2 filesystem is full.
@@ -59,7 +84,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 ### RTFD via the Reset Button
 
-!!! note "This RTFD method is not available if..."
+!!! note "This RTFD method is **not** available if..."
     - The physical reset button of the Gateway have been disabled.
     - The Gateway bootloops or fails to boot properly.
     - The `userfs` or `rootfs_data` jffs2 filesystem is full.
@@ -70,7 +95,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 ### RTFD via the CLI shell
 
-!!! note "This RTFD method is not available if..."
+!!! note "This RTFD method is **not** available if..."
     - You have no access to the CLI by either SSH, or Telnet, or serial console.
     - The Gateway bootloops or fails to boot properly.
     - The `userfs` or `rootfs_data` jffs2 filesystem is full.
@@ -82,7 +107,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 
 ### Manually do what RTFD does
 
-!!! note "This reset method is not available if..."
+!!! note "This reset method is **not** available if..."
     - You have no access to the root shell by either SSH, or Telnet, or serial console.
     - The Gateway bootloops or fails to boot properly.
     - The `userfs` or `rootfs_data` jffs2 filesystem is full.
