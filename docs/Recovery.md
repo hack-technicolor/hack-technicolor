@@ -224,35 +224,46 @@ From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
     - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
 
-## Booting from passive bank
+### Check booted bank
 
-Dual-banks gateways work very similar to a dual-boot system. You have a data partition where to store personal data and two OS partitions each one with a different OS. Here we have a data partition and two firmware banks.
+Dual-banks gateways work very similar to a dual-boot computer system. For example, the computer might have a data partition with personal data and two OS partitions, each with a different OS. The gateway has a data partition and two firmware banks.
 
-When you power on your device it starts loading by default the firmware into the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
+When you power on your device it starts loading by default the firmware from the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
-!!! hint "TFTP flashes into bank_1 only"
+!!! note "TFTP flashes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
 
-The process of switching the active bank is called *switchover*. Ordinary firmware upgrades get installed to the passive bank, while a switchover occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
+!!! hint "Check current *active bank*"
+    - read contents of `/proc/banktable/active`
+    - read serial console log during boot
+    - try flashing something with TFTP and see if it's being booted
+
+If the required firmware is in the *active bank* this process is completed and the device can be restarted.
+
+## Change booted bank
 
 Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
 
-To force-boot from the passive bank, which is not currently active, you have two options:
+The process of switching the active bank is called *switchover*, and does not involve flashing or upgrading firmware. Which one is your current *active bank* depends on how many times your device did a *switchover*, So it's best to understand when this is usually occurring.
 
-- Set it as active (switchover).
-- Trigger a Bootfail.
+*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
+
+ To force-boot from the other bank, which by definition is not currently active, you have two options:
+
+- Set it as active (switchover), and let the gateway boot it regularly
+- Trigger a *Bootfail*, and let the gateway fallback to the passive one
 
 ### Switchover
 
-If you have shell access to the Gateway, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
+If you have shell access to the Gateway, or you can easily get root or run arbitrary commands from your firmware version, this is easy as you only need to run the `switchover` command, or manually update contents of `/proc/banktable/active` with either `bank_1` or `bank_2`. For example this will set `bank_1` as active:
 
 ```bash
 echo bank_1 > /proc/banktable/active
 ```
 
-If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. Please note: this will also imply a firmware flashing via [sysupgrade](Resources/#sysupgrade) and every drawbacks it derives.
 
-If none of the above options are viable in your situation, unfortunately you must opt for Bootfail instead.
+If none of the above options are viable in your situation, unfortunately you must opt for *Bootfail* instead.
 
 ### Bootfail Procedure
 
@@ -275,18 +286,18 @@ This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway wi
 
 The sequence is (Minutes:Seconds):
 
-|Step |    Period     | Time   |    Action
-|-----|:-----------|:-------|:--------------------------------------------------
-| 0      |    0       |  0        | Power on
-| 1      |00:35       |  00:35    | Press reset
-| 2      |00:11       |  00:46    | Release
-| 3      |00:47       |  01:33    | Press reset
-| 4   |00:11       |  01:44    | Release
-| 5      |00:47       |  02:31    | Press reset
-| 6      |00:11       |  02:42    | Release
-| 7      |00:50       |  03:32    | Press reset
-| 8      |00:11       |  03:43    | Release
-| 9      |06:00       |    -    | Browse to 192.168.0.1 and confirm firmware version
+| Step | Period | Time  | Action
+|------|:-------|:------|:--------------------------------------------------
+| 0    |     0  | 0     | Power on
+| 1    | 00:35  | 00:35 | Press reset
+| 2    | 00:11  | 00:46 | Release
+| 3    | 00:47  | 01:33 | Press reset
+| 4    | 00:11  | 01:44 | Release
+| 5    | 00:47  | 02:31 | Press reset
+| 6    | 00:11  | 02:42 | Release
+| 7    | 00:50  | 03:32 | Press reset
+| 8    | 00:11  | 03:43 | Release
+| 9    | 06:00  |   -   | Browse to 192.168.0.1 and confirm firmware version
 
 #### Crazy Power switching
 
