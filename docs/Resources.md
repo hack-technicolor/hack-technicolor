@@ -136,7 +136,106 @@ To restore the Config:
 
 ## The Boot Process
 
-To be updated * refer to the [OpenWrt Boot Process guide](https://openwrt.org/docs/techref/process.boot) as an example for now but don't rely on it.
+There are 4 different stages involved in the boot process:
+boot0: BootROM (BTRM v1.6) - to be dumped
+
+Boot memory is mapped to 0x80700000 with the following layout
+
+| Load Address | Offset | Name  |
+| :------ | :------| :------ |
+| 0x80700000 | - | boot0 - BootRom (mapped from ROM) |
+| 0x80710000 | 0x10000 | boot1-factory |
+| 0x80710000 | 0x20000 | boot1-secure |
+| 0x00f00000 | 0x60000 | boot2 (main loader) |
+| - | 0x80000 | unknown |
+
+### boot0
+boot0 is a mask ROM embedded in the CPU
+Its job is to initialize the system and load the next stage.
+The next stage is apparently chosed depending on the secure boot state (it's unverified, tho)
+- no secure boot: boot1-factory
+- secure boot: boot1-secure
+
+While booting the next stage, boot0 makes available the BEK and the MCV key starting from address 0x8073F000
+Both the ROM and the BEK/MCV keys are wiped at the end of the boot process, and are thus inaccessible from the OS.
+
+### boot1-factory
+boot1 variant that is ran only once, in factory
+it's job is to burn the Market ID and the Secure Boot configuration in the CPU.
+once it has ran, the system won't accept unsigned software anymore
+
+### boot1-secure
+boot1 variant that is ran once secure boot has been enabled
+it's signed and verified by bootrom
+
+It can be interrupted by holding 'a' on the UART console while booting up
+This allows to enter the CFE ABORT menu with the following options
+- c  - continue
+- s  - DDR safe mode
+
+No other option is available
+
+It initializes the DDR memory, uncompresses boot2, verifies it, and jumps to it
+
+### boot2
+boot2 is compressed with LZMA. It's uncompressed by boot1 and ran at 0x00f00000
+boot2 contains a factory menu that is ran in factory by sending a special DHCP/BOOTP packet while booting.
+Once started, the menu awaits for commands on UDP port 11138.
+
+#### DHCP Packet
+The dhcp packet must contain vendor specific options (id 43)
+Encoding seems similar to rfc1048, with the addition of a header
+
+Values in Big Endian order
+
+| Offset | Size | Description |
+| :------ | :------| :------ |
+| 0 | 2 | Magic (0x5354 or 'ST') |
+| 2 | 1 | Body length (without header magic) |
+| 3 | * | Options (rfc1048 encoding: u8 code, u8 length, ...data) |
+
+Options table (by code)
+Size excludes code and size fields
+
+| Code | Size | Description |
+| :------ | :------| :------ |
+| 0x1  | 1  | must hold the value 0xD5 for the menu to spawn |
+| 0x2  | 2  | must hold the value 63381 (0xF795) for the menu to spawn |
+| 0x3  | 4  | unknown |
+
+I couldn't get the menu to appear yet.
+TODO: verify if the menu is accessible, or if it's locked out once out of factory
+
+Commands available within this menu regard the device lockdown and don't seem to allow arbitrary code execution
+
+#### Known commands
+
+| Command | Description |
+| :------ | :------|
+| I | Print Device Informations | 
+| N | unknown |
+| T 5 | Program Chip ID and JTAG Password |
+| T 6 | Flash Factory Date |
+| T 8 | Fuse JTAG and OTP locks |
+| T 9 | Flash RIP2 image |
+| X | Exit from menu |
+
+Since boot2 is derived from CFE, it holds some of the code that would handle the CFE command line menu, and has the string "CFE> " included in the binary.
+However, the code to spawn the shell seems to be removed. It's as such impossible to enter the CFE shell
+
+### bootloader unlocking
+boot2 can be unlocked to load unsigned linux kernels. However, this requires a signed RIP_ID_UNLOCK_TAG to be present in the RIP storage. Such tag is valid only for the specific device it was issued for as it's based on some device-unique parameters such as the S/N and chipid, and must be issued by Technicolor.
+
+Device specific parameters can be obtained from
+- /proc/efu
+- /proc/otp
+
+### JTAG unlocking
+JTAG seems to be enabled by boot2 when there's no software to boot, to allow recovery of bricked devices
+Unlocking jtag is accomplished by writing 0x2 to the JTAG/OTP register 0xFFFEB614
+
+TODO: verify if JTAG is accessible
+
 
 ## Different methods of flashing firmware's
 
