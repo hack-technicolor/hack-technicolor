@@ -6,11 +6,150 @@
 
 There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-## Administering OpenWRT from Windows
+## The flash layout
+
+Example from newer ARM boards:
+
+`root@mygateway:~# cat /proc/mtd`
+
+| Device | Size       | Erasesize   | Name         |
+|:-------|:-----------|:------------|:-------------|
+| `mtd0` | `10000000` | `00020000`  | `brcmnand.0` |
+| `mtd1` | `02c60000` | `00020000`  | `rootfs`     |
+| `mtd2` | `05920000` | `00020000`  | `rootfs_data`|
+| `mtd3` | `05000000` | `00020000`  | `bank_1`     |
+| `mtd4` | `05000000` | `00020000`  | `bank_2`     |
+| `mtd5` | `00020000` | `00020000`  | `eripv2`     |
+| `mtd6` | `00040000` | `00020000`  | `rawstorage` |
+
+Apart from partition sizes and `mtd2` which may appear named as `userfs` on older MIPS boards instead, it's *usually* always the same.
+It may be different for newer gateways in future.
+
+## The boot process
+
+There exist many versions of this bootloader stack. Here we describe one from a VBNT-O (ARM) board. Actual addresses or unpacking code may differ between board versions, still what you read here is quite general.
+
+There are 4 different stages involved in the boot process:
+`boot0`: BootROM (BTRM v1.6) - to be dumped
+
+Boot memory is mapped to `0x80700000` with the following layout
+
+| Load Address | Offset | Name  |
+| :------ | :------| :------ |
+| `0x80700000` | - | `boot0` - BootRom (mapped from ROM) |
+| `0x80710000` | `0x10000` | `boot1-factory` |
+| `0x80710000` | `0x20000` | `boot1-secure` |
+| `0x00f00000` | `0x60000` | `boot2` (main loader) |
+| - | `0x80000` | unknown |
+
+### boot0
+
+`boot0` is a mask ROM embedded in the CPU
+Its job is to initialize the system and load the next stage.
+The next stage is apparently chosen depending on the secure boot state (it's unverified, tho)
+
+* no secure boot: `boot1-factory`
+* secure boot: `boot1-secure`
+
+While booting the next stage, `boot0` makes available the BEK and the MCV key starting from address `0x8073F000`
+Both the ROM and the BEK/MCV keys are wiped at the end of the boot process, and are thus inaccessible from the OS.
+
+### boot1-factory
+
+`boot1` variant that is ran only once, in factory
+it's job is to burn the Market ID and the Secure Boot configuration in the CPU.
+once it has ran, the system won't accept unsigned software anymore
+
+### boot1-secure
+
+`boot1` variant that is ran once secure boot has been enabled
+it's signed and verified by BootROM
+
+It can be interrupted by holding '`a`' on the UART console while booting up
+This allows to enter the CFE ABORT menu with the following options
+
+* c  - continue
+* s  - DDR safe mode
+
+No other option is available
+
+It initializes the DDR memory, decompresses `boot2`, verifies it, and jumps to it
+
+### boot2
+
+`boot2` is compressed with LZMA. It's decompressed by `boot1` and ran at `0x00f00000`
+`boot2` contains a factory menu that is ran in factory by sending a special DHCP/BOOTP packet while booting.
+Once started, the menu awaits for commands on UDP port `11138`.
+
+#### DHCP packet structure
+
+The dhcp packet must contain vendor specific options (id 43)
+Encoding seems similar to rfc1048, with the addition of a header
+
+Values in Big Endian order
+
+| Offset | Size | Description |
+| :------ | :------| :------ |
+| 0 | 2 | Magic (0x5354 or 'ST') |
+| 2 | 1 | Body length (without header magic) |
+| 3 | * | Options (rfc1048 encoding: u8 code, u8 length, ...data) |
+
+Options table (by code)
+Size excludes code and size fields
+
+| Code | Size | Description |
+| :------ | :------| :------ |
+| `0x1`  | 1  | must hold the value `0xD5` for the menu to spawn |
+| `0x2`  | 2  | must hold the value `63381` (`0xF795`) for the menu to spawn |
+| `0x3`  | 4  | unknown |
+
+I couldn't get the menu to appear yet.
+TODO: verify if the menu is accessible, or if it's locked out once out of factory
+
+Commands available within this menu regard the device lock-down and don't seem to allow arbitrary code execution
+
+#### Known commands
+
+| Command | Description |
+| :------ | :------|
+| I | Print Device Information |
+| N | unknown |
+| T 5 | Program Chip ID and JTAG Password |
+| T 6 | Flash Factory Date |
+| T 8 | Fuse JTAG and OTP locks |
+| T 9 | Flash RIP2 image |
+| X | Exit from menu |
+
+Since `boot2` is derived from CFE, it holds some of the code that would handle the CFE command line menu, and has the string "`CFE> `" included in the binary.
+However, the code to spawn the shell seems to be removed. It's as such impossible to enter the CFE shell
+
+### Bootloader unlocking
+
+`boot2` can be unlocked to load unsigned linux kernels. However, this requires a signed `RIP_ID_UNLOCK_TAG` to be present in the RIP storage. Such tag is valid only for the specific device it was issued for as it's based on some device-unique parameters such as the S/N and Chip ID, and must be issued by Technicolor.
+
+Device specific parameters can be obtained from
+
+* `/proc/efu`
+* `/proc/otp`
+
+### JTAG unlocking
+
+JTAG seems to be enabled by `boot2` when there's no software to boot, to allow recovery of bricked devices
+Unlocking JTAG is accomplished by writing `0x2` to the JTAG/OTP register `0xFFFEB614`
+
+TODO: verify if JTAG is accessible
+
+## Administering OpenWRT
+
+### From Windows
 
 There are a number of tools such as cmder, SmarTTY, PuTTY, and WinSCP as described in the [OpenWRT SSH Administration for Newcomers](https://openwrt.org/docs/guide-quick-start/sshadministration) page.
 
-## Handy Commands
+### From Linux
+
+As a Linux user, you're supposed to know how administer another Linux machine via SSH.
+
+## Handy commands
 
 Check firmware flashed and what is active:
 
@@ -54,7 +193,7 @@ Switch active bank and reboot - **UNSAFE**:
 
 * `/rom/usr/lib/cwmpd/transfers/switchover.sh`
 
-Set bank_1 as active, replace with `bank_2` for the opposite:
+Set `bank_1` as active, replace with `bank_2` for the opposite:
 
 * `echo bank_1 > /proc/banktable/active`
 
@@ -62,7 +201,7 @@ OpenWrt Release metadata:
 
 * `cat /etc/openwrt_release`
 
-eg TG799:
+eg, from VANT-F:
 
 ```bash
 DISTRIB_ID='OpenWrt'
@@ -74,7 +213,7 @@ DISTRIB_DESCRIPTION='OpenWrt Chaos Calmer 15.05.1'
 DISTRIB_TAINTS='no-all busybox'
 ```
 
-## Files
+## Notable files
 
 Lua/HTML Web Interface source files:
 
@@ -92,151 +231,6 @@ Services present; May or may not be enabled or running:
 
 * `/etc/init.d/*`
 
-## Change the logo
-
-Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
-[technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)
-
-## LED's
-
-[Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
-
-* `ls -1 /sys/class/leds/`
-  * List available LED's.
-
-* `cat /sys/class/leds/<led>:<colour>/trigger`
-  * Shows the triggers available and the current trigger.
-  * Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
-
-* `echo "default-on" > /sys/class/leds/power:green/trigger`
-  * Reset trigger to default.
-
-* `opkg list | grep led`
-  * List all LED packages used.
-
-Examples:
-
-Turn on LED:
-`echo 1 > /sys/class/leds/power:green/brightness`
-
-Turn off LED:
-`echo 0 > /sys/class/leds/power:red/brightness`
-
-## Backing up Configuration
-
-Your a Super Modder. You flash your Gateway on a daily basis.
-
-To save the Config:
-
-* `sysupgrade -i -b filename.tar.gz`
-
-To restore the Config:
-
-* `sysupgrade -f filename.tar.gz`
-
-## The Boot Process
-
-There are 4 different stages involved in the boot process:
-boot0: BootROM (BTRM v1.6) - to be dumped
-
-Boot memory is mapped to 0x80700000 with the following layout
-
-| Load Address | Offset | Name  |
-| :------ | :------| :------ |
-| 0x80700000 | - | boot0 - BootRom (mapped from ROM) |
-| 0x80710000 | 0x10000 | boot1-factory |
-| 0x80710000 | 0x20000 | boot1-secure |
-| 0x00f00000 | 0x60000 | boot2 (main loader) |
-| - | 0x80000 | unknown |
-
-### boot0
-boot0 is a mask ROM embedded in the CPU
-Its job is to initialize the system and load the next stage.
-The next stage is apparently chosed depending on the secure boot state (it's unverified, tho)
-- no secure boot: boot1-factory
-- secure boot: boot1-secure
-
-While booting the next stage, boot0 makes available the BEK and the MCV key starting from address 0x8073F000
-Both the ROM and the BEK/MCV keys are wiped at the end of the boot process, and are thus inaccessible from the OS.
-
-### boot1-factory
-boot1 variant that is ran only once, in factory
-it's job is to burn the Market ID and the Secure Boot configuration in the CPU.
-once it has ran, the system won't accept unsigned software anymore
-
-### boot1-secure
-boot1 variant that is ran once secure boot has been enabled
-it's signed and verified by bootrom
-
-It can be interrupted by holding 'a' on the UART console while booting up
-This allows to enter the CFE ABORT menu with the following options
-- c  - continue
-- s  - DDR safe mode
-
-No other option is available
-
-It initializes the DDR memory, uncompresses boot2, verifies it, and jumps to it
-
-### boot2
-boot2 is compressed with LZMA. It's uncompressed by boot1 and ran at 0x00f00000
-boot2 contains a factory menu that is ran in factory by sending a special DHCP/BOOTP packet while booting.
-Once started, the menu awaits for commands on UDP port 11138.
-
-#### DHCP Packet
-The dhcp packet must contain vendor specific options (id 43)
-Encoding seems similar to rfc1048, with the addition of a header
-
-Values in Big Endian order
-
-| Offset | Size | Description |
-| :------ | :------| :------ |
-| 0 | 2 | Magic (0x5354 or 'ST') |
-| 2 | 1 | Body length (without header magic) |
-| 3 | * | Options (rfc1048 encoding: u8 code, u8 length, ...data) |
-
-Options table (by code)
-Size excludes code and size fields
-
-| Code | Size | Description |
-| :------ | :------| :------ |
-| 0x1  | 1  | must hold the value 0xD5 for the menu to spawn |
-| 0x2  | 2  | must hold the value 63381 (0xF795) for the menu to spawn |
-| 0x3  | 4  | unknown |
-
-I couldn't get the menu to appear yet.
-TODO: verify if the menu is accessible, or if it's locked out once out of factory
-
-Commands available within this menu regard the device lockdown and don't seem to allow arbitrary code execution
-
-#### Known commands
-
-| Command | Description |
-| :------ | :------|
-| I | Print Device Informations | 
-| N | unknown |
-| T 5 | Program Chip ID and JTAG Password |
-| T 6 | Flash Factory Date |
-| T 8 | Fuse JTAG and OTP locks |
-| T 9 | Flash RIP2 image |
-| X | Exit from menu |
-
-Since boot2 is derived from CFE, it holds some of the code that would handle the CFE command line menu, and has the string "CFE> " included in the binary.
-However, the code to spawn the shell seems to be removed. It's as such impossible to enter the CFE shell
-
-### bootloader unlocking
-boot2 can be unlocked to load unsigned linux kernels. However, this requires a signed RIP_ID_UNLOCK_TAG to be present in the RIP storage. Such tag is valid only for the specific device it was issued for as it's based on some device-unique parameters such as the S/N and chipid, and must be issued by Technicolor.
-
-Device specific parameters can be obtained from
-- /proc/efu
-- /proc/otp
-
-### JTAG unlocking
-JTAG seems to be enabled by boot2 when there's no software to boot, to allow recovery of bricked devices
-Unlocking jtag is accomplished by writing 0x2 to the JTAG/OTP register 0xFFFEB614
-
-TODO: verify if JTAG is accessible
-
-
 ## Different methods of flashing firmware's
 
 Depending on the situation, you are usually asked to perform firmware flashing in different ways. Here is a short summary of them and some background details to better understand the big picture.
@@ -249,15 +243,15 @@ You can get a firmware image flashed by using one of the following modes:
 | Direct Partition Writing | Can use bank dumps as well as RBI's                | No Bank switch occurs and the process requires root access |
 | Sysupgrade Command       | Bank switch occurs and so does a basic factory reset | Process requires root access                             |
 
-### Mode Step Outline
+### Mode step outline
 
-#### Bootloader Recovery
+#### Bootloader recovery
 
 * Loads RBI firmware images using BOOTP flashing.
 * The firmware is transferred to the gateway via TFTP from your PC.
 * RBI file is decrypted, unpacked and, if signature check passed, flashed into the `bank_1` partition then marked as correctly flashed.
 
-#### Direct Partition Writing
+#### Direct partition writing
 
 * The firmware is usually transferred to the gateway temp filesystem via SSH/SCP or USB drive.
 * The firmware image is directly written to the bank you specify on the command line.
@@ -274,28 +268,9 @@ You can get a firmware image flashed by using one of the following modes:
 * Sysupgrade and switchover scripts may have been patched by a custom mod you installed to behave differently.
 * AutoFlashGUI exploits this flashing method.
 
-## Decrypting Firmware
+## Decrypting firmware
 
 Firmware RBI files are easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
-
-## The Homeware Flash Layout
-
-Example from TG799vac:
-
-`root@mygateway:~# cat /proc/mtd`
-
-|Device|   Size   | Erasesize | Name         |
-|:-----|:---------|:----------|:-------------|
-| mtd0 | 10000000 | 00020000  | "brcmnand.0" |
-| mtd1 | 02c60000 | 00020000  | "rootfs"     |
-| mtd2 | 05920000 | 00020000  | "rootfs_data"|
-| mtd3 | 05000000 | 00020000  | "bank_1"     |
-| mtd4 | 05000000 | 00020000  | "bank_2"     |
-| mtd5 | 00020000 | 00020000  | "eripv2"     |
-| mtd6 | 00040000 | 00020000  | "rawstorage" |
-
-Apart from partition sizes and `mtd2` which may appear named as `userfs` instead, it's *usually* always the same.
-It may be different for newer gateways in future.
 
 ## Backup/restore bit-for-bit dumps
 
@@ -355,7 +330,69 @@ To restore a partition dump, run: `mtd write /mnt/usb/<usb-path>/mtd<X>.dump <pa
 
 Raw firmware dumps (which are not RBI files) are flashed this way to matching devices.
 
-## IPv6 Issues
+## Backing up configuration
+
+Your a Super Modder. You flash your Gateway on a daily basis.
+
+Backing up your current state it's all about backing up overlay contents. Keep in mind that copying overlay folder's content is not as effective as a bit-for-bit overlay partition (`mtd2`) backup: you will loose any deletion or renaming. However this is good enough in most cases.
+
+Use the command below to manually create an archive with all your modified files from both firmware banks:
+
+```bash
+tar -C /overlay -cz -f /tmp/overlay-files-backup-$(date -I).tar.gz bank_1 bank_2
+```
+
+If you prefer, you can rely on `sysupgrade` to achieve a similar result for the booted bank only.
+
+To save the Config:
+
+```bash
+sysupgrade -i -b /tmp/sysupgrade-backup-$(date -I).tar.gz
+```
+
+To restore the Config:
+
+```bash
+sysupgrade -f /tmp/sysupgrade-backup-*.tar.gz
+```
+
+## Change the logo
+
+Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
+[technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)
+
+## LED's management
+
+[Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
+
+* `ls -1 /sys/class/leds/`
+  * List available LED's.
+
+* `cat /sys/class/leds/<led>:<colour>/trigger`
+  * Shows the triggers available and the current trigger.
+  * Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
+
+* `echo "default-on" > /sys/class/leds/power:green/trigger`
+  * Reset trigger to default.
+
+* `opkg list | grep led`
+  * List all LED packages used.
+
+Examples:
+
+Turn on LED:
+
+```bash
+echo 1 > /sys/class/leds/power:green/brightness
+```
+
+Turn off LED:
+
+```bash
+echo 0 > /sys/class/leds/power:red/brightness
+```
+
+## IPv6 issues
 
 IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
@@ -395,7 +432,7 @@ Currently defined functions:
         uptime, vconfig, vi, wc, wget, which, xargs, yes, zcat
 ```
 
-### BusyBox (ash) Scripting
+### BusyBox (ash) scripting
 
 In practical terms it can be thought of as a stripped down version of bash, so write bash script and fix the errors for features not supported.
 
