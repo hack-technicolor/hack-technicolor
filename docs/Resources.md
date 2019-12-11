@@ -276,7 +276,7 @@ Firmware RBI files are easily decrypted using [Decrypt_RBI_Firmware_Utility](htt
 
 This guide will show you how to dump a bit-for-bit clone of any partition and reflash it.
 
-!!! note "Decrypted RBI v.s. bank dumps
+!!! info "Decrypted RBI v.s. bank dumps"
     Decrypted RBI firmwares are the same as `bank_1` or `bank_2` dumps except for their first four bytes. A correctly decrypted RBI starts with a sequence of four `0xFF`. You can edit these bytes to `0x00` and use the resulting file as a bank dump to be restored.
 
 ### You will need
