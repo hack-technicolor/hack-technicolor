@@ -78,7 +78,7 @@ In any of the above cases you can easily flash the `Type 2` firmware we need. Do
 
 #### Rooting via different strategies
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...).
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...). It is recommended to always perform a factory reset before any new attempt otherwise you could get unpredictable results.
 
 !!! info "WANTED!"
     Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
@@ -95,7 +95,7 @@ Once you finished running through any of the above guides, and you got your SSH 
 #### Final Type 2 steps
 
 !!! warning "Is the current SSH server permanent?"
-    If the tool you used does not know how to correctly set permanent root access on your firmware, it will create a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
+    If the tool you used does not know how to correctly set permanent root access on your firmware, or you mixed different rooting strategies without resetting between them, you may get a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
