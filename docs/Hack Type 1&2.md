@@ -78,7 +78,7 @@ In any of the above cases you can easily flash the `Type 2` firmware we need. Do
 
 #### Rooting via different strategies
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...).
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...). It is recommended to always perform a factory reset before any new attempt otherwise you could get unpredictable results.
 
 !!! info "WANTED!"
     Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
@@ -95,7 +95,7 @@ Once you finished running through any of the above guides, and you got your SSH 
 #### Final Type 2 steps
 
 !!! warning "Is the current SSH server permanent?"
-    If the tool you used does not know how to correctly set permanent root access on your firmware, it will create a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
+    If the tool you used does not know how to correctly set permanent root access on your firmware, or you mixed different rooting strategies without resetting between them, you may get a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide.
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
@@ -242,7 +242,7 @@ bank_1
 bank_2
 ```
 
-!!! hint "If you are not on *State A*, move to *State B* now!"
+!!! hint "If you are on *State A*, move to *State B* now!"
     To follow the *optimal* bank plan configuration, we need to swap your Gateway to *State B*.
 
 Run these commands to move from *state A* to *state B*:
@@ -297,9 +297,9 @@ This time you can't use just AutoFlashGUI, even if your current firmware is `Typ
 
 The shortest path for firmware flashing depends whether you start from on *"state A"* or *"state B"*.
 
-- If you are on **state A** and your `notbooted` bank is `bank_1` since you didn't care the hints, well, go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware from `bank_2`. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](../Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
+- If you are on **state A** and your `notbooted` bank is `bank_1` since you didn't take the hints, well, go with BOOTP flashing. After reboot you will still be on your rooted/rootable `Type 2` firmware from `bank_2`. However, if your preferred firmware is not available as RBI file, you can't continue this way. If not, go with [BOOTP flashing](../Recovery/#bootp-recovery-mode-tftp-flashing) then come back here and continue reading.
 
-- If you are on **state B** and your `notbooted` bank is `bank_2`, you now need to [decrypt and extract](../Resources/#decrypting-firmware) the raw bank image from the RBI firmware file, change its first 4 bytes to 0x00 and [copy it manually](../Resources/#backuprestore-bit-for-bit-dumps) into `notbooted` bank - it's easier and faster than BOOTP. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time: just copy it back into `notbooted` bank. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
+- If you are on **state B** and your `notbooted` bank is `bank_2`, you now need to [decrypt and extract](../Resources/#decrypting-firmware) the raw bank image from the RBI firmware file, change its first 4 bytes to 0x00 and [restore it manually](../Resources/#backuprestore-bit-for-bit-dumps) into `notbooted` bank as you were restoring a previous backup - it's easier and faster than BOOTP. There's another way of doing the very same thing in a single command, however it's really recommended you do it manually at least once in your life to take confidence with all the tools and take this opportunity to also make backups. Is your preferred firmware available as raw bank dump already? You just saved some good amount of fun ... and time: just restore it back into `notbooted` bank. Is the OSCK for your device model unknown? You have root access right now on the current `Type 2` firmware, so get it, **share it**, and use it. Come back here and continue reading when you are done.
 
 Welcome back! Are you enjoying so far?
 
