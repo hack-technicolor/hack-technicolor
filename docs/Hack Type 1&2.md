@@ -242,7 +242,7 @@ bank_1
 bank_2
 ```
 
-!!! hint "If you are not on *State A*, move to *State B* now!"
+!!! hint "If you are on *State A*, move to *State B* now!"
     To follow the *optimal* bank plan configuration, we need to swap your Gateway to *State B*.
 
 Run these commands to move from *state A* to *state B*:
