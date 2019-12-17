@@ -195,21 +195,21 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0320-820-RA   |            | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF795-17.2.0320-820-RA.rbi.torrent?raw=true) |
 | 2      | 17.2.0406-820-RC   |            | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF909-17.2.0406-820-RC.rbi.torrent?raw=true) |
 | 2      | 17.2.0468-820-RA   | 2019-07-19 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF928-17.2.0468-820-RA/vbnt-v_CRF928-17.2.0468-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF928-17.2.0468-820-RA.rbi.torrent?raw=true) |
-| ???    | 18.1.c.0429-950-RA | 2019-09-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979-18.1.c.0429-950-RA/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0429-950-RA | 2019-09-20 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979-18.1.c.0429-950-RA/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi.torrent?raw=true) |
 | ???    | 18.1.c.0443-950-RA | 2019-10-21 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979_18.1.c.0443-950-RA/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
 
 ### Telstra - Smart Modem (Gen2)
 
-| Type   | Version            | Root Strategy | Mirror |
-|:------:|:-------------------|:--------------|:-------|
-| 2      | 18.1.c.0215-950-RA | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0241-950-RA | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0283-950-RA | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0347-950-RC | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0384-950-RB | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
-| ???    | 18.1.c.0443-950-RB | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) |
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 18.1.c.0215-950-RA |            | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0241-950-RA |            | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0283-950-RA |            | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0347-950-RC |            | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0384-950-RB |            | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
+| ???    | 18.1.c.0443-950-RB | 2019-11-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
 
 # What to do if your firmware is not listed here
 
