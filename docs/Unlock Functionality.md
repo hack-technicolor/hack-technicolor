@@ -95,6 +95,10 @@ list server '<IP of DNS>'
 
 If you want to use VoIP, the following is the quickest way to set it up and remove some broken config that causes calls to be sent out via the FXO port which will be unplugged for everyone in Australia, once you are on NBN.
 
+!!! hint
+    This code will not work for some Gateway / Firmware combinations (eg [DJA0230](https://forums.whirlpool.net.au/thread/9vxxl849?p=204#r64998059)). Use:
+    ```uci del_list mmpbx.@outgoing_map[*].priority='3' instead of '2'```
+
 ```bash
 # Block 1
 # Edit these lines as required, or use the GUI afterwards to fix the values
