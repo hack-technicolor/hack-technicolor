@@ -4,7 +4,7 @@ This simple guide will show you how to change your rooted Gateway firmware avoid
 
 This is the way you should regularly install firmware upgrades when available. Firmware flashing via *sysupgrade* or *BOOTP* is not safe as it will remove root access.
 
-This method will use direct partition writing to flash the firmware exactly where it needs to be and to guarantee root. Read [here](Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
+This method will use direct partition writing to flash the firmware exactly where it needs to be and to guarantee root. Read [here](../Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
 
 ## Get prepared
 
@@ -13,10 +13,10 @@ What you will need:
 1. A rooted Gateway in working order
 
 2. The firmware image to flash, either RBI file or raw bank dump
-    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](Firmware%20Repository/)
+    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](../Firmware%20Repository/)
 
 3. Make sure you can eventually get a copy of your current firmware
-    - Check if it's available from [Firmware Repository](Firmware%20Repository/)
+    - Check if it's available from [Firmware Repository](../Firmware%20Repository/)
 
 4. A way to access this documentation in case of issues
     - If this is your main Gateway, a mobile internet connection is recommended
@@ -106,4 +106,4 @@ Reboot the Gateway now.
 
 ## Completing setup
 
-The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](Hardening%20Root%20Access/).
+The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening%20Root%20Access/).
