@@ -26,7 +26,7 @@ What you will need:
 
 ## Things to know
 
-Will root access will be preserved?
+Will root access be preserved?
   - Well, that is the point.
 
 On which bank will the new firmware be flashed?
@@ -44,11 +44,14 @@ Check the file format your new firmware is. It could be either an RBI file or a 
 
 ### RBI file
 
-Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP or USB drive. Run this command to unpack the RBI image, will take a while:
+Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP. Run this command to unpack the RBI image, will take a while:
 
 ```bash
 cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
 ```
+
+!!! hint "Something went wrong?"
+    If the above command causes the gateway to reboot, use an USB drive instead. Move the RBI file into the USB drive and use it as working folder in place of `/tmp/new.rbi`. This is usually needed when there is not enough free RAM to perform firmware unpacking in memory.
 
 ### Raw bank dump
 
@@ -107,3 +110,6 @@ Reboot the Gateway now.
 ## Completing setup
 
 The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening%20Root%20Access/).
+
+!!! hint "Something went wrong?"
+    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan.
