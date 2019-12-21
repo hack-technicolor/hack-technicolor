@@ -112,4 +112,4 @@ Reboot the Gateway now.
 The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening%20Root%20Access/).
 
 !!! hint "Something went wrong?"
-    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan.
+    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same Type 2 firmware you had on bank_1 during root, we assume you remember which one it was since we asked you to take note. You will need to follow the rooting guide from scratch.
