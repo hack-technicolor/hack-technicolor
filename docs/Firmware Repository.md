@@ -41,6 +41,16 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.1.7565-580-RC  | 2017-06-08 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
 | ???    | 16.1.8372-580-RA  | 2018-09-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF869-16.1.8372-580-RA/dant-o_CRF869-16.1.8372-580-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF869-16.1.8372-580-RA.rbi.torrent?raw=true) |
 
+## TG799vn v2 / VDNT-O
+
+### Telia
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:-------------:|:-------|
+| ???    | 15.51.6436       | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
+| ???    | 15.51.6436       | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732        | -          | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
+
 ## TG789vac / VANT-D
 
 !!! warning "Model Warning"
@@ -51,8 +61,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### MST (no-brand) from UNO.UK
 
-| Type   | Version          | Root Strategy | Mirror      |
-|:------:|:-----------------|:--------------|:------------|
+| Type   | Version          | Root Strategy | Mirror |
+|:------:|:-----------------|:--------------|:-------|
 | 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690) |
 
 ## TG-1 / VANT-5
@@ -71,8 +81,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### iiNet
 
-| Type   | Version            | Root Strategy | Mirror      |
-|:------:|:-------------------|:--------------|:------------|
+| Type   | Version            | Root Strategy | Mirror |
+|:------:|:-------------------|:--------------|:-------|
 | 2      | 16.3.7196-ver2.0.5 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi.torrent?raw=true) |
 | 2      | 16.3.7637-ver2.2.0 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002%20.rbi.torrent?raw=true) |
 | 2      | 16.3.7637-ver2.2.1 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7637-ver2.2.1-CRF695-2721005.rbi.torrent?raw=true) |
@@ -82,8 +92,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Tiscali
 
-| Type   | Version          | Root Strategy | Mirror      |
-|:------:|:-----------------|:--------------|:------------|
+| Type   | Version          | Root Strategy | Mirror |
+|:------:|:-----------------|:--------------|:-------|
 | 2      |  16.3.7636       | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi) - [Torrent](HTTPS://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
 
 ### MST (no-brand) from UNO.UK
@@ -172,6 +182,16 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0261-820-RA |            | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | ???    | 17.2.0284-820-RA |            | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
+## DGA0130 / VANT-9
+
+### Vodafone - Ultra Hub
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:---------------- -|:-----------|:-------------:|:-------|
+| 1      | 17.1.7875         | -          | -             | [HTTP](http://downloads.vodafone.co.nz/ultrahub_crf731.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/ultrahub_crf731.rbi.torrent?raw=true) |
+| 2      | 17.1.7988-RC2.4.6 | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
+| 1      | 17.1.7988-RC2-4-9 | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/DGA-2-4-9-Prod.rbi.torrent?raw=true) |
+
 ## DJN2130 / VBNT-J
 
 ### Telstra - Frontier Gateway
@@ -197,6 +217,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0468-820-RA   | 2019-07-19 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF928-17.2.0468-820-RA/vbnt-v_CRF928-17.2.0468-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF928-17.2.0468-820-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0429-950-RA | 2019-09-20 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979-18.1.c.0429-950-RA/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi.torrent?raw=true) |
 | ???    | 18.1.c.0443-950-RA | 2019-10-21 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979_18.1.c.0443-950-RA/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi.torrent?raw=true) |
+
+## DNA0130 / VBNT-Z
+
+### Vodafone - Ultra Hub Plus
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:-------------:|:-------|
+| 2      | 17.4.0182        | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
 
