@@ -108,14 +108,9 @@ sed -i 's/#//' /etc/inittab
 At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over. Take note of the exact `Type 2` firmware version you are now running, could be useful in future for recovery purposes.
 
 !!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware without loosing root access? If so, jump over to [Bank Planning (with firmware upgrade)](#bank-planning-with-firmware-upgrade). Continue reading here otherwise.
+    Would you like to upgrade to a newer firmware? Doing it now would require more effort but would also save expert users some time and steps. You could also upgrade later in future following a simpler upgrade guide. Jump over to [Bank Planning (with firmware upgrade)](#bank-planning-with-firmware-upgrade) to directly complete this guide on the updated firmware. Continue reading below otherwise.
 
 If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](#bank-planning-without-firmware-upgrade).
-
-### Type 3 - Difficult Flash of Type 2, then Root
-
-!!! info "Why are You Here?"
-    Re-read the [Homepage](/)!
 
 ## Post-Root Procedures
 
@@ -208,7 +203,10 @@ At this point, you now need to check if your [SSH server setup](#setting-up-perm
 
 ### Bank Planning (with firmware upgrade)
 
-We are now going to prepare an optimal bank planning for another firmware you don't have on your Gateway yet.
+!!! warning "Are you looking for firmware upgrade guide?"
+    This is not a firmware upgrade guide. This is a bank planning guide with integrated firmware upgrade. If you came here in search of firmware upgrade guide you are in the wrong place. You can find that guide in this wiki homepage.
+
+We are now going to prepare an optimal bank plan for another firmware you don't have on your Gateway yet.
 
 At this stage it's possible to choose whatever *Type* of firmware you would like, to end up having it rooted and running.
 
