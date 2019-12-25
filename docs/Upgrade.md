@@ -13,10 +13,10 @@ What you will need:
 1. A rooted Gateway in working order
 
 2. The firmware image to flash, either RBI file or raw bank dump
-    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](../Firmware%20Repository/)
+    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](../Repository/)
 
 3. Make sure you can eventually get a copy of your current firmware
-    - Check if it's available from [Firmware Repository](../Firmware%20Repository/)
+    - Check if it's available from [Firmware Repository](../Repository/)
 
 4. A way to access this documentation in case of issues
     - If this is your main Gateway, a mobile internet connection is recommended
@@ -109,7 +109,7 @@ Reboot the Gateway now.
 
 ## Completing setup
 
-The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening%20Root%20Access/).
+The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening/).
 
 !!! hint "Something went wrong?"
     BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same Type 2 firmware you had on bank_1 during root, we assume you remember which one it was since we asked you to take note. You will need to follow the rooting guide from scratch.
