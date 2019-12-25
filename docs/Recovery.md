@@ -24,8 +24,8 @@ If you followed rooting guides from this Wiki, you were suggested to implement t
 Recovery from any bad state (**excluding full overlay partition issues**) while *optimal* bank plan is in place, always consists in following this path:
 
 1. Use [BOOTP flashing](#bootp-flashing) to flash a valid `Type 2` firmware for your board. Because of *optimal* bank plan, the Gateway is guaranteed to boot this sort of *recovery disk* from `bank_1`. The `Type 2` image you choose to pick now for recovery purposes does not depend on which one you have in `bank_2`. If this is not your first time booting this *recovery disk*, choose the same `Type 2` firmware you used in past.
-2. Being on *optimal* bank plan your `/overlay/bank_1` is assumed to be in a good shape as whatever you work on daily is inside `/overlay/bank_2` instead. For that reason the gateway will boot just fine the image you just flashed. Fire up your SSH client and get in the root shell. If this is your first time booting this *recovery disk* you will need to hack it following [Type 2 rooting](Hack%20Type%201&2/#type-2-direct-rooting) instructions stopping just before [Post-Root Procedures](Hack%20Type%201&2/#post-root-procedures).
-3. Whatever was wrong and causing issues with your mods related to the firmware you were booting from `bank_2` is now inside `/overlay/bank_2` folder. Fix it manually if you know what was your mistake, otherwise restore `/overlay/bank_2` folder contents from a previous overlay backup. If you didn't get any (shame on you) forget about whatever you were running from `bank_2`, jump to and go through [Post-Root Procedures](Hack%20Type%201&2/#post-root-procedures) to the end as if it were the first time you read that page, do not come back to this recovery guide.
+2. Being on *optimal* bank plan your `/overlay/bank_1` is assumed to be in a good shape as whatever you work on daily is inside `/overlay/bank_2` instead. For that reason the gateway will boot just fine the image you just flashed. Fire up your SSH client and get in the root shell. If this is your first time booting this *recovery disk* you will need to hack it following [Type 2 rooting](../Hack%20Type%201&2/#type-2-direct-rooting) instructions stopping just before [Post-Root Procedures](../Hack%20Type%201&2/#post-root-procedures).
+3. Whatever was wrong and causing issues with your mods related to the firmware you were booting from `bank_2` is now inside `/overlay/bank_2` folder. Fix it manually if you know what was your mistake, otherwise restore `/overlay/bank_2` folder contents from a previous overlay backup. If you didn't get any (shame on you) forget about whatever you were running from `bank_2`, jump to and go through [Post-Root Procedures](../Hack%20Type%201&2/#post-root-procedures) to the end as if it were the first time you read that page, do not come back to this recovery guide.
 4. When you have finished, go back booting form `bank_2`: run `mtd erase bank_1` to eject this *recovery image* and reboot.
 
 !!! warning "DO NOT..."
@@ -164,7 +164,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](../Firmware%20Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the [firmware](../Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -271,7 +271,7 @@ Whenever the Gateway fails to load the image three times in a row, the bootloade
 
 The process of switching the active bank is called *switchover*, and does not involve flashing or upgrading firmware. Which one is your current *active bank* depends on how many times your device did a *switchover*, So it's best to understand when this is usually occurring.
 
-*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
+*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](../Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
 
  To force-boot from the other bank, which by definition is not currently active, you have two options:
 
@@ -286,7 +286,7 @@ If you have shell access to the Gateway, or you can easily get root or run arbit
 echo bank_1 > /proc/banktable/active
 ```
 
-If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. Please note: this will also imply a firmware flashing via [sysupgrade](Resources/#sysupgrade) and every drawbacks it derives.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. You could also use the same firmware version you're running for this purpose.  Please note: this will also imply a firmware flashing via [sysupgrade](../Resources/#sysupgrade) and every drawbacks it derives.
 
 If none of the above options are viable in your situation, unfortunately you must opt for *Bootfail* instead.
 

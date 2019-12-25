@@ -12,9 +12,9 @@ There is no way of knowing your situation and the process could break your Gatew
 1. The latest version of the AutoFlashGUI software, available either as a [ZIP file](https://github.com/mswhirl/autoflashgui/archive/master.zip) or the source at [the project page](https://github.com/mswhirl/autoflashgui).
 *Make sure the tool runs and GUI loads before you go offline!*
 
-2. A `Type 2` RBI from [firmware repository](../Firmware%20Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
+2. A `Type 2` RBI from [firmware repository](../Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
 
-3. **Optionally**, another [firmware](../Firmware%20Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+3. **Optionally**, another [firmware](../Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 4. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
@@ -22,7 +22,7 @@ There is no way of knowing your situation and the process could break your Gatew
 
 6. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
-7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
+7. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery/) to get it to a stock state first.
 
 ## Introduction
 
@@ -78,10 +78,10 @@ In any of the above cases you can easily flash the `Type 2` firmware we need. Do
 
 #### Rooting via different strategies
 
-Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](Firmware%20Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...). It is recommended to always perform a factory reset before any new attempt otherwise you could get unpredictable results.
+Every `Type 2` firmware can be rooted directly by some known rooting strategy. Look into [Firmware Repository](../Repository/) for known valid Root Strategy # for your firmware. If no Root Strategy is specified, try them all or pick one that could reasonably work because of similarities (same ISP, same webUI, same model,...). It is recommended to always perform a factory reset before any new attempt otherwise you could get unpredictable results.
 
 !!! info "WANTED!"
-    Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](Firmware%20Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
+    Existing rooting strategies may also work with firmware's for models you don't see listed here or in the [Firmware Repository](../Repository/). If you get some success with other models not listed here, let us know! Every rooting guide intentionally written or adapted to be explicitly compatible with this wiki could be linked here.
 
  | Strategy # | Known as            | Where to look for instructions |
  |:----------:|:--------------------|:------------------------------:|
@@ -161,7 +161,7 @@ They are signature checked before boot so you can't flip a single bit in the bas
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made. All original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
 
-When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery) page.
+When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery/) page.
 
 We need to make sure the current firmware loads from the recommended bank on every reboot.
 
@@ -290,7 +290,7 @@ They are signature checked before boot so you can't flip a single bit of the bas
 !!! hint
     You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
 
-When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](/Recovery) page.
+When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../Recovery/) page.
 
 Unless your target preferred firmware is there already, it's now time to flash it into its final destination: the `notbooted` bank.
 This time you can't use just AutoFlashGUI, even if your current firmware is `Type 2`. Otherwise the regular firmware upgrade procedures will perform an unwanted switchover, leading to a reboot immediately before any indirect root could be performed.
@@ -382,7 +382,7 @@ Run:
 passwd
 ```
 
-Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](Hardening%20Root%20Access/) page.
+Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](../Hardening/) page.
 
 ## My Firmware is so Old that AutoFlashGUI can't Authenticate
 
