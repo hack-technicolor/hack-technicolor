@@ -20,7 +20,7 @@ plugins:
 nav:
     - 'Home': 'index.md'
     - 'Firmware Repository': 'Repository.md'
-    - 'Hack Type 1&2': 'Hack Type 1&2.md'
+    - 'Hacking Introduction': 'Hacking/Introduction.md'
     - 'Hardening Root Access': 'Hardening.md'
     - 'Unlock Functionality': 'Unlock.md'
     - 'Recovery': 'Recovery.md'
