@@ -12,7 +12,7 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
  | #0         | AutoFlashGUI        | [external link](https://github.com/mswhirl/autoflashgui) |
  | #1         | FASTGate samba hack | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
  | #2         | tch-exploit         | [external link](https://github.com/BoLaMN/tch-exploit) |
- | #3         | MST WPS hack        | external link (ita) |
+ | #3         | clash escaping      | not documented yet, ask communities |
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
