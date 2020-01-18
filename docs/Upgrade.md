@@ -71,6 +71,8 @@ tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz bank_1 bank_2
 
 Move the backup to your PC by SCP or USB drive. Make sure you can open the backup archive and keep it in a safe place.
 
+Run the following set of commands
+
 ```bash
 rm -rf /overlay/`cat /proc/banktable/booted`
 mkdir -p /overlay/`cat /proc/banktable/booted`/etc
@@ -78,6 +80,10 @@ chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/bo
 echo -e "echo root:root | chpasswd
 sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
+uci -q set $(uci show firewall | grep -m 1 $(fw3 -q print | \
+egrep 'iptables -t filter -A zone_lan_input -p tcp -m tcp --dport 22 -m comment --comment \"!fw3: .+\" -j DROP' | \
+sed -n -e 's/^iptables.\+fw3: \(.\+\)\".\+/\1/p') | \
+sed -n -e \"s/\(.\+\).name='.\+'$/\1/p\").target='ACCEPT'
 uci add dropbear dropbear
 uci rename dropbear.@dropbear[-1]=afg
 uci set dropbear.afg.enable='1'
@@ -95,7 +101,7 @@ rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
 
-Note that your ssh credentials will be changed back to `root:root`.
+Please note: your ssh credentials will be changed back to `root:root`.
 
 ## Flashing firmware
 
