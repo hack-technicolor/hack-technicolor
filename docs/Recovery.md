@@ -328,10 +328,11 @@ The sequence is (Minutes:Seconds):
 
 If you power on your device, and rapidly toggle power switch on and off fast enough it won't get the required power to remain on,
 the bootloader will fail to load and pass firmware validation and corruption checks. Once such checks fail, device will reboot for a new boot attempt. Repeat such that the first three boot attempts fail, then let the fourth attempt to complete.
+This method is perfectly described in [this video](https://www.youtube.com/watch?v=BMT8AhA4qns).
 
 #### Potentiometer
 
- You will Need
+This works the same as the above *Crazy Power Switching*, but uses some hardware to precisely control the power. You will need:
 
 - A 3 watt and 100 Ohm Potentiometer
 
