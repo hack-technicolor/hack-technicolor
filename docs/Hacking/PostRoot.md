@@ -5,7 +5,7 @@
 
 ## Bank Planning (without firmware upgrade)
 
-We are now going to prepare an optimal bank planning for the same firmware version you have now booted.
+We are now going to prepare an optimal bank plan for the same firmware version you have now booted.
 
 Run the following command to look at your Gateway's bank state:
 
@@ -34,15 +34,6 @@ bank_2
 !!! caution "On which bank should I stay to be safe?"
     It's strongly recommended to stick to the *optimal* bank plan (listed above) before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
-
-These gateways use two flash partitions (`bank_1` and `bank_2`), which can be upgraded/used almost independently.
-
-They are signature checked before boot so you can't flip a single bit in the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
-
-!!! hint
-    You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made. All original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
-
-When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../../Recovery/) page.
 
 We need to make sure the current firmware loads from the recommended bank on every reboot.
 
@@ -166,15 +157,6 @@ bank_2
 !!! caution "On which bank should I stay to be safe?"
     It's strongly recommended to adhere to the above *optimal* bank plan before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
-
-These gateways use two flash partitions (`bank_1` and `bank_2`) which can be upgraded/used almost independently.
-
-They are signature checked before boot so you can't flip a single bit of the base firmware image in either bank if you want to see your device booting. The whole config and customized stuff is stored in the matching folder within the [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt), i.e. `/overlay/bank_2`
-
-!!! hint
-    You can see your modified config files in `/overlay` if you want to backup stuff or see what changes you made, however, all original versions of modified files are stored permanently in `/rom`, in case you would like to revert something back.
-
-When a proper Reset to Factory Defaults is done, the overlay partition is not formatted, just the relevant `/overlay/bank_*` partition is deleted. You can learn more on such aspects by reading the [Recovery](../../Recovery/) page.
 
 Unless your target preferred firmware is there already, it's now time to flash it into its final destination: the `notbooted` bank.
 This time you can't use just AutoFlashGUI, even if your current firmware is `Type 2`. Otherwise the regular firmware upgrade procedures will perform an unwanted switchover, leading to a reboot immediately before any indirect root could be performed.
