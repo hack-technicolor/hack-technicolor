@@ -256,7 +256,7 @@ Dual-banks gateways work very similar to a dual-boot computer system. For exampl
 When you power on your device it starts loading by default the firmware from the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
 !!! note "TFTP flashes into bank_1 only"
-    BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the active bank is currently `bank_2`. It will never set `bank_1` as active.
+    BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the *active bank* is currently `bank_2`. It will never set `bank_1` as active.
 
 !!! hint "Check current *active bank*"
     - read contents of `/proc/banktable/active`
@@ -267,11 +267,11 @@ If the required firmware is in the *active bank* this process is completed and t
 
 ## Change booted bank
 
-Whenever the Gateway fails to load the image three times in a row, the bootloader will enter *Bootfail* mode and will try booting from the passive bank, without setting it as active. If the firmware in passive bank fails too, then the bootloader will automatically enter BOOTP flashing.
+Whenever the Gateway fails to load the firmware image three times in a row from the *active bank*, the bootloader will enter *Bootfail* mode and will try booting from the *inactive/passive bank*, without setting it as active. If the firmware inside *passive bank* fails too, then the bootloader will automatically enter BOOTP flashing mode for firmware recovery.
 
-The process of switching the active bank is called *switchover*, and does not involve flashing or upgrading firmware. Which one is your current *active bank* depends on how many times your device did a *switchover*, So it's best to understand when this is usually occurring.
+The process of switching the *active bank* is called *switchover*, and does not involve flashing or upgrading firmware. Which one is your current *active bank* depends on how many times your device did a *switchover*, So it's best to understand when this is usually occurring.
 
-*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](../Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes active bank while not unlocked.
+*Switchover* usually occurs on every regular firmware upgrade done via [sysupgrade](../Resources/#different-methods-of-flashing-firmwares). Regular firmware upgrades get installed to the passive bank, and a *switchover* occurs at the end of the upgrade process if it was successful. This means your Gateway frequently changes *active bank* while not unlocked.
 
  To force-boot from the other bank, which by definition is not currently active, you have two options:
 
