@@ -8,7 +8,7 @@ There is no way of knowing your situation and the process could break your Gatew
 
 ## The flash layout
 
-Example from newer ARM boards:
+Here is how the Homeware flash layout typically looks like on newer ARM boards:
 
 `root@mygateway:~# cat /proc/mtd`
 
@@ -22,8 +22,17 @@ Example from newer ARM boards:
 | `mtd5` | `00020000` | `00020000`  | `eripv2`     |
 | `mtd6` | `00040000` | `00020000`  | `rawstorage` |
 
-Apart from partition sizes and `mtd2` which may appear named as `userfs` on older MIPS boards instead, it's *usually* always the same.
-It may be different for newer gateways in future.
+Apart from partition sizes and older MIPS boards where `mtd2` is `userfs` instead, the above layout is *usually* always the same.
+It may change for newer gateways in future.
+
+These gateways reserve two flash partitions (`bank_1` and `bank_2`) to store firmwares, which can be upgraded/used almost independently. The two banks contain read-only squashfs filesystem images, and that one being booted gets mounted as root `/`. They are digitally signed and the boot loader performs signature checking before boot, so you can't flip a single bit in the firmware image in either bank if you want to see your device booting. You may want to learn more about which bank is used by [different methods of flashing firmwares](#different-methods-of-flashing-firmwares) and which one will be the [booted bank](../Recovery/#change-booted-bank).
+
+The `rootfs_data` (formerly `userfs`) partition holds whatever file change (config and customized stuff) or deletion you perform on either of both firmwares. It gets formatted as JFFS2 filesystem on boot when it appears as empty. Such filesystem gets mounted into `/overlay` and is used for storing two folders, each named as the firmware bank it relates (i.e. `/overlay/bank_1` and `/overlay/bank_2`). Their contents get applied on top of read-only firmwares banks as an [overlay filesystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt). The booted read-only image is also mounted into `/rom` and remains available after overlay is applied.
+
+!!! hint
+    You can directly access `/overlay` folder in case you want to backup stuff or revert some change you made. Every change made to the root filesystem will immediately appear in there. Remember, original versions of modified file are permanently available from `/rom`, in case you would like to compare.
+
+When a proper [Reset to Factory Defaults (RTFD)](../Recovery/#reset-to-factory-defaults-rtfd) is done, the overlay partition is not formatted, the only relevant `/overlay/bank_*` folder is deleted instead. You can learn more on such aspects by reading the [Recovery](../Recovery/) page.
 
 ## The boot process
 

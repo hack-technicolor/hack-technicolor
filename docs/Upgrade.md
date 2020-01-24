@@ -4,7 +4,7 @@ This simple guide will show you how to change your rooted Gateway firmware avoid
 
 This is the way you should regularly install firmware upgrades when available. Firmware flashing via *sysupgrade* or *BOOTP* is not safe as it will remove root access.
 
-This method will use direct partition writing to flash the firmware exactly where it needs to be and to guarantee root. Read [here](Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
+This method will use direct partition writing to flash the firmware exactly where it needs to be and to guarantee root. Read [here](../Resources/#different-methods-of-flashing-firmwares) for extra details about different flashing methods.
 
 ## Get prepared
 
@@ -13,10 +13,10 @@ What you will need:
 1. A rooted Gateway in working order
 
 2. The firmware image to flash, either RBI file or raw bank dump
-    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](Firmware%20Repository/)
+    - Pick one for your model, of whatever *Type*, from the [Firmware Repository](../Repository/)
 
 3. Make sure you can eventually get a copy of your current firmware
-    - Check if it's available from [Firmware Repository](Firmware%20Repository/)
+    - Check if it's available from [Firmware Repository](../Repository/)
 
 4. A way to access this documentation in case of issues
     - If this is your main Gateway, a mobile internet connection is recommended
@@ -26,7 +26,7 @@ What you will need:
 
 ## Things to know
 
-Will root access will be preserved?
+Will root access be preserved?
   - Well, that is the point.
 
 On which bank will the new firmware be flashed?
@@ -44,11 +44,14 @@ Check the file format your new firmware is. It could be either an RBI file or a 
 
 ### RBI file
 
-Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP or USB drive. Run this command to unpack the RBI image, will take a while:
+Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP. Run this command to unpack the RBI image, will take a while:
 
 ```bash
 cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
 ```
+
+!!! hint "Something went wrong?"
+    If the above command causes the gateway to reboot, use an USB drive instead. Move the RBI file into the USB drive and use it as working folder in place of `/tmp/new.rbi`. This is usually needed when there is not enough free RAM to perform firmware unpacking in memory.
 
 ### Raw bank dump
 
@@ -68,6 +71,8 @@ tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz bank_1 bank_2
 
 Move the backup to your PC by SCP or USB drive. Make sure you can open the backup archive and keep it in a safe place.
 
+Run the following set of commands
+
 ```bash
 rm -rf /overlay/`cat /proc/banktable/booted`
 mkdir -p /overlay/`cat /proc/banktable/booted`/etc
@@ -75,6 +80,10 @@ chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/bo
 echo -e "echo root:root | chpasswd
 sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
+uci -q set $(uci show firewall | grep -m 1 $(fw3 -q print | \
+egrep 'iptables -t filter -A zone_lan_input -p tcp -m tcp --dport 22 -m comment --comment \"!fw3: .+\" -j DROP' | \
+sed -n -e 's/^iptables.\+fw3: \(.\+\)\".\+/\1/p') | \
+sed -n -e \"s/\(.\+\).name='.\+'$/\1/p\").target='ACCEPT'
 uci add dropbear dropbear
 uci rename dropbear.@dropbear[-1]=afg
 uci set dropbear.afg.enable='1'
@@ -92,7 +101,7 @@ rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
 
-Note that your ssh credentials will be changed back to `root:root`.
+Please note: your ssh credentials will be changed back to `root:root`.
 
 ## Flashing firmware
 
@@ -106,4 +115,7 @@ Reboot the Gateway now.
 
 ## Completing setup
 
-The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](Hardening%20Root%20Access/).
+The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening/).
+
+!!! hint "Something went wrong?"
+    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same Type 2 firmware you had on bank_1 during root, we assume you remember which one it was since we asked you to take note. You will need to follow the rooting guide from scratch.
