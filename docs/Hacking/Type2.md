@@ -31,7 +31,4 @@ sed -i 's/#//' /etc/inittab
 
 At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over. Take note of the exact `Type 2` firmware version you are now running, could be useful in future for recovery purposes.
 
-!!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware? Doing it now would require more effort but would also save expert users some time and steps. You could also upgrade later in future following a simpler upgrade guide. Jump over to [Bank Planning (with firmware upgrade)](../PostRoot/#bank-planning-with-firmware-upgrade) to directly complete this guide on the updated firmware. Continue reading below otherwise.
-
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](../PostRoot/#bank-planning-without-firmware-upgrade).
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is optimal. Jump to [Bank Planning](../PostRoot/#bank-planning).
