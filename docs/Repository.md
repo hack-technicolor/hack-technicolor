@@ -50,7 +50,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 15.51.6436       | 2016-03-21 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | -          | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| ???    | 17.2.0405        | 2018-10-17 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
 
 ## TG788vn v2 / VDNT-W
 
@@ -89,7 +89,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG789vac v2 / VANT-6
 
-### iiNet
+### iiNet & Internode
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
