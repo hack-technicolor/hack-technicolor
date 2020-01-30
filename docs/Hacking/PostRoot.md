@@ -22,7 +22,7 @@ xxxxx
 xxxxx
 ```
 
-At the end of this guide your Gateway will boot the current firmware image as per *optimal* bank plan:
+At the end of this guide your Gateway will boot the same firmware you are now running as per *optimal* bank plan:
 
 ```bash
 /proc/banktable/active
@@ -31,14 +31,14 @@ bank_1
 bank_2
 ```
 
+We will now check the current state and move to the above one, such that it will boot from the recommended bank on every reboot.
+
 !!! caution "On which bank should I stay to be safe?"
     It's strongly recommended to stick to the *optimal* bank plan (listed above) before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
 
-We need to make sure the current firmware loads from the recommended bank on every reboot.
-
 !!! danger "Notable exception: Missing RBI"
-    In the unfortunate case that there are no RBI firmware files available for your model, you are not in a safe position because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your rootable firmware on both banks. Skip the next step for optimality.
+    In the unfortunate case that there are no RBI firmware files available for your model, you are not in a safe position because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your current rooted *Type 2* firmware on both banks. Skip bank planning for optimality.
 
 If your `booted` bank is `bank_2` already, run the following commands:
 

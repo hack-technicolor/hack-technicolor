@@ -150,9 +150,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG799vac Xtream / VANT-W
 
-!!! danger "OSCK Not Known"
-    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
-
 ### Telia - Wifi-router Plus
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
