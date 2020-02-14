@@ -9,9 +9,9 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
 
  | Strategy # | Known as            | Where to look for instructions |
  |:----------:|:--------------------|:------------------------------:|
- | #0         | AutoFlashGUI        | [external link](https://github.com/mswhirl/autoflashgui) |
+ | #0         | AutoFlashGUI        | [external link](https://github.com/mswhirl/autoflashgui) ([download](https://github.com/mswhirl/autoflashgui/archive/master.zip)) |
  | #1         | FASTGate samba hack | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php?topic=80598) |
- | #2         | tch-exploit         | [external link](https://github.com/BoLaMN/tch-exploit) |
+ | #2         | tch-exploit         | [external link](https://github.com/BoLaMN/tch-exploit) ([download](https://github.com/BoLaMN/tch-exploit/releases)) |
  | #3         | clash escaping      | not documented yet, ask communities |
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
@@ -31,7 +31,4 @@ sed -i 's/#//' /etc/inittab
 
 At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over. Take note of the exact `Type 2` firmware version you are now running, could be useful in future for recovery purposes.
 
-!!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware? Doing it now would require more effort but would also save expert users some time and steps. You could also upgrade later in future following a simpler upgrade guide. Jump over to [Bank Planning (with firmware upgrade)](../PostRoot/#bank-planning-with-firmware-upgrade) to directly complete this guide on the updated firmware. Continue reading below otherwise.
-
-If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is correct. Jump to [Bank Planning (without firmware upgrade)](../PostRoot/#bank-planning-without-firmware-upgrade).
+If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is optimal. Jump to [Bank Planning](../PostRoot/#bank-planning).
