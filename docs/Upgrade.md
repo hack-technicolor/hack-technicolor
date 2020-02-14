@@ -38,6 +38,9 @@ Will the upgrade affect my bank planning?
 Will any setting and customization be lost?
   - It depends on the firmware you want to flash, read further.
 
+!!! danger "Risky exception: Missing *Type 2* RBI"
+    In the unfortunate case that there are no *Type 2* RBI firmware files available for your model, you are not in a safe position. If something goes wrong with this guide, using `BOOTP` recovery with *non-Type  2* images will bring you into a working unrootable firmware. In such a situation, upgrading is not recommended. Let expert users test this guide on that new firmware first.
+
 ## Preparing Firmware
 
 Check the file format your new firmware is. It could be either an RBI file or a raw bank dump.
