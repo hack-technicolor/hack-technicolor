@@ -50,7 +50,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 15.51.6436       | 2016-03-21 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | 2018-10-17 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
+| 3    | 17.2.0405        | 2018-10-17 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
 
 ## TG788vn v2 / VDNT-W
 
@@ -146,7 +147,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
 ## TG799vac Xtream / VANT-W
 
@@ -157,7 +158,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/1627732w2221002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
 
 ## TG799vac Xtream / VBNT-H
 
@@ -168,7 +169,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/1627732h2221002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
-| ???    | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 
 ## TG789vac v2 HP / VBNT-L
 
