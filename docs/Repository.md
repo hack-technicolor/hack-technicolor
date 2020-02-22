@@ -32,7 +32,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:-------------:|:-------|
-| 2      | 15.28.6169        | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
+| 2      | 15.28.6169_FW_120 | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
 
 ## TG797n v3 / DANT-O
 
@@ -70,7 +70,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0279        | 2017-10-31 | #3            | [HTTP](http://gateway.telmex.com/test/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi.torrent?raw=true) |
 | 2      | 17.2.0360        | 2018-07-16 | #0            | [HTTP](http://gateway.telmex.com/TECHNICOLOR_TG788vnv2_17.2.0360/F_TG788vnv2_17.2.0360.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/F_TG788vnv2_17.2.0360.rbi.torrent?raw=true) |
 
-## TG384ac / GANT-1
+## TG389ac / GANT-1
 
 ### Com Hem
 
