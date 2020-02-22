@@ -26,6 +26,14 @@ Other branding codes you could see worldwide:
 
 Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
+## TG582n v2 / DANT-7
+
+### Fastweb
+
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------|:-----------|:-------------:|:-------|
+| 2      | 15.28.6169        | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
+
 ## TG797n v3 / DANT-O
 
 !!! note "OSCK Not Required"
