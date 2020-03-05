@@ -1,0 +1,20 @@
+Naming Conventions for Raw Bank Dumps
+
+ - In general:
+
+     isp-board-mnemonic_version-mask-bank_dump.xz
+
+   Examples:
+
+     myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz
+     comhem-gant-1_15.53.6568-1721005-bank_dump.xz
+
+ - Otherwise, when known RBIs stick to a rigid custover convention, use the same one.
+
+   Examples:
+
+     iiNet:	vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz
+     Telstra:	vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz
+
+
+Thank you in advance for your cooperation.
