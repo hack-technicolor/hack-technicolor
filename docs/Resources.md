@@ -459,4 +459,5 @@ lua -v
 Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio (double int32)
 ```
 
-[Lua 5.1 Reference](https://www.lua.org/manual/5.1/)
+[Lua 5.1 Reference](https://www.lua.org/manual/5.1/)  
+[Lua Tutorial - Tutorialspoint](https://www.tutorialspoint.com/lua/index.htm)
