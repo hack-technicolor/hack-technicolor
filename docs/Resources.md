@@ -279,7 +279,26 @@ You can get a firmware image flashed by using one of the following modes:
 
 ## Decrypting firmware
 
-Firmware RBI files are easily decrypted using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
+RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
+
+## Checking firmware signature
+
+RBI files are digitally signed. This means if you flip a single bit of your RBI file it will be detected as invalid, and won't get flashed. Signature keys differ between each board model. This means RBI files not compatible with your board won't get flashed either, so nothing bad happens if you try flashing a bad one. You can also check by yourself if a file is going to be fine or not for your device. You can do this from your rooted gateway, or from your PC, for any available firmware with known OSIK.
+
+From the router, just run:
+```bash
+signature_checker -b /tmp/firmware_to_check.rbi [-k /tmp/other_board_to_check.osik]
+```
+From your PC (requires: linux/WSL, binwalk and qemu-static), decrypt any available RBI for any board (not necessarily that one you are going to check), then run:
+```bash
+binwalk -e any_decrypted_firmware.bin
+mv firmware_to_check.rbi board_to_check.osik _any_decrypted_firmware.bin.extracted/squashfs-root/tmp/
+cd _any_decrypted_firmware.bin.extracted/squashfs-root
+cp $(which qemu-arm-static) .
+sudo chroot . ./qemu-arm-static /usr/bin/signature_checker -b /tmp/firmware_to_check.rbi -k /tmp/board_to_check.osik
+```
+
+If it doesn't print `Signature incorrect`, then the image is good. You can double check everything is actually working by altering some bytes inside the RBI you are checking, then repeat the check: this time it will report the signature is incorrect.
 
 ## Backup/restore bit-for-bit dumps
 
