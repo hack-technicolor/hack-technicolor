@@ -136,11 +136,11 @@ By holding down a button (usually reset) at power on, the Gateway will enter BOO
 If both firmware banks contain invalid firmware's, the Gateway will enter BOOTP mode automatically after three failed boot attempts on both banks.
 
 !!! warning "Please note and take into account"
-    - This will not automatically switch the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
+    - This **will not** automatically **switch** the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
 
-    - Flashing via this method does not perform any factory reset, the new firmware will run on old and possibly corrupt or incompatible config. It is therefore recommended that you perform a factory reset before flashing a new firmware.
+    - Flashing via this method **does not** perform any factory **reset**, the new firmware will run on old and possibly corrupt or incompatible config. It is therefore recommended that you perform a factory reset before flashing a new firmware.
 
-    - The firmware image is digitally signed and verified upon boot, so you can't boot an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
+    - The firmware BLI image (.bli/.rbi files) is digitally signed, and the signature is verified by BOOTP before flashing, so you can't flash an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
 ### Set up TFTP
 
