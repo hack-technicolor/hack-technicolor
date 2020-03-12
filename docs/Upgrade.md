@@ -82,7 +82,7 @@ mkdir -p /overlay/`cat /proc/banktable/booted`/etc
 chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/booted`/etc
 echo -e "echo root:root | chpasswd
 sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
-sed -i 's/#//' /etc/inittab
+sed -i -e 's/#//' -e 's#askconsole:.*\$#askconsole:/bin/ash#' /etc/inittab
 uci -q set \$(uci show firewall | grep -m 1 \$(fw3 -q print | \
 egrep 'iptables -t filter -A zone_lan_input -p tcp -m tcp --dport 22 -m comment --comment \"!fw3: .+\" -j DROP' | \
 sed -n -e 's/^iptables.\+fw3: \(.\+\)\".\+/\1/p') | \
