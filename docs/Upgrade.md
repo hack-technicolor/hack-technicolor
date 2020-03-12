@@ -83,7 +83,7 @@ chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/bo
 echo -e "echo root:root | chpasswd
 sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i 's/#//' /etc/inittab
-uci -q set $(uci show firewall | grep -m 1 $(fw3 -q print | \
+uci -q set \$(uci show firewall | grep -m 1 \$(fw3 -q print | \
 egrep 'iptables -t filter -A zone_lan_input -p tcp -m tcp --dport 22 -m comment --comment \"!fw3: .+\" -j DROP' | \
 sed -n -e 's/^iptables.\+fw3: \(.\+\)\".\+/\1/p') | \
 sed -n -e \"s/\(.\+\).name='.\+'$/\1/p\").target='ACCEPT'
@@ -99,7 +99,7 @@ uci set dropbear.afg.RootLogin='1'
 uci commit dropbear
 /etc/init.d/dropbear enable
 /etc/init.d/dropbear restart
-rm /overlay/`cat /proc/banktable/booted`/etc/rc.local
+rm /overlay/\$(cat /proc/banktable/booted)/etc/rc.local
 " > /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
