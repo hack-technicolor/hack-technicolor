@@ -129,15 +129,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732) |
 
-## TG789vac v3 / VBNT-1
-
-### iiNet & Internode
-
-| Type   | Version            | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| ???    | 18.3.0442-ver3.4.1 | 2019-11-14 | -             | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
-
 ## TG799vac / VANT-F
 
 ### Telstra - Gateway Max
@@ -178,6 +169,29 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+
+## TG789vac v3 / VBNT-1
+
+### iiNet & Internode
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| ???    | 18.3.0442-ver3.4.1 | 2019-11-14 | -             | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
+
+## TG789vax Xtream 35b / VBNT-F
+
+### Fastweb - FASTGate
+
+| Type   | Version              | Timestamp  | Root Strategy | Mirror |
+|:------:|:---------------------|:-----------|:-------------:|:-------|
+| 2      | 16.1.6637_FW_108_MOS | 2016-03-29 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.1.6866_FW_111_IAD | 2016-05-19 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7384_FW_209_IAD | 2017-01-04 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7384_FW_209_MOS | 2017-01-04 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7825_FW_212_IAD | 2017-06-27 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7825_FW_212_MOS | 2017-06-27 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 
 ## TG799vac Xtream / VBNT-H
 
@@ -231,6 +245,22 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0219-820-RB | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF778-17.2.0219-820-RB.rbi.torrent?raw=true) |
 | 2      | 17.2.0261-820-RA | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF847-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | 2      | 17.2.0284-820-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF913-17.2.0284-820-RA/vbnt-j_CRF913-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF913-17.2.0284-820-RA.rbi.torrent?raw=true) |
+
+## DGA4131 / VBNT-O
+
+### Fastweb - FASTGate
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:-------------:|:-------|
+| 2      | 17.2.0214_FW_219   | 2017-10-17 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0214_FW_219_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0245_FW_223   | 2017-11-28 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_223_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0245_FW_226   | 2017-12-22 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_226_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0279_FW_233   | 2018-04-13 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_233_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0279_FW_235   | 2018-06-22 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_235_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0392_FW_245   | 2018-10-24 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0392_FW_245_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0407_FW_247   | 2018-12-06 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0407_FW_247_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0412_FW_248   | 2018-12-15 | #1            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
+| ???    | 18.3.n.0439_FW_258 | 2020-01-21 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
 
 ## DJA0230 / VBNT-V
 
