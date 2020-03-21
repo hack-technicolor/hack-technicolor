@@ -231,7 +231,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version                  | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------------|:-----------|:-------------:|:-------|
 | 1      | 17.1.7875-CRF731         | 2017-09-04 | -             | [HTTP](http://downloads.vodafone.co.nz/ultrahub_crf731.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/ultrahub_crf731.rbi.torrent?raw=true) |
-| 2      | 17.1.7988-CRF846-V2.4.6  | 2018-05-09 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
+| 2      | 17.1.7988-CRF846-V2.4.6  | 2018-05-09 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
 | 3      | 17.1.7988-CRF897-RC2-4-9 | 2018-10-21 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/DGA-2-4-9-Prod.rbi.torrent?raw=true) |
 
 ## DJN2130 / VBNT-J
@@ -282,7 +282,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:-------------:|:-------|
-| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
+| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
 
