@@ -106,6 +106,18 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG789vac v2 / VANT-6
 
+### MST (no-brand) from UNO.UK
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732) |
+
+### Tiscali
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.3.7636        | 2017-04-19 | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
+
 ### iiNet & Internode
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
@@ -116,18 +128,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 1      | 16.3.8046-ver3.0   | 2017-12-18 | -             | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi.torrent?raw=true)
 |        | *note: this is officially named `ver3.0` but it is version `2.3.0` indeed* | |
 | 2      | 16.3.8046-ver2.5.3 | 2019-03-22 | #2            | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi.torrent?raw=true) |
-
-### Tiscali
-
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7636        | 2017-04-19 | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
-
-### MST (no-brand) from UNO.UK
-
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732) |
 
 ## TG799vac / VANT-F
 
