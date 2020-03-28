@@ -23,6 +23,7 @@ Other branding codes you could see worldwide:
 | FWB  | Fastweb      | Italy             |
 | TIS  | Tiscali      | Italy             |
 | TI   | TIM          | Italy             |
+| TN   | Telenor      | Sweden            |
 
 Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
@@ -156,7 +157,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
-## TG799vac Xtream / VANT-W
+## TG799vac Xtream / VANT-W_Rev-2
 
 ### Telia - Wifi-router Plus
 
@@ -169,6 +170,16 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+
+## TG799vac Xtream / VANT-W_Rev-1
+
+### Telenor TG799vac Xtream
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2    | 15.53.7451-1761003       | 2017-03-20 | #0 #2            | HTTP*note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2    | 17.1.7937-1281019       | 2018-10-17 | #2             | HTTP |
+| 3    | 18.1.0297-1321006-20191213145958      | 2019-12-13 | -           | HTTP |
 
 ## TG789vac v3 / VBNT-1
 
