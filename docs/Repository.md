@@ -90,7 +90,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
-| 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690) |
+| 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-d/MST TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
 
 ## TG-1 / VANT-5
 
@@ -110,7 +110,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732) |
+| 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
 
 ### Tiscali
 
@@ -302,6 +302,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 18.3.0385          | 2019-07-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0445          | 2019-09-30 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.k.0451        | 2019-10-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_004_CLOSED.rbi.torrent?raw=true) |
+| 1      | 18.3.k.0451        | 2019-10-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0495          | 2019-12-03 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
 
