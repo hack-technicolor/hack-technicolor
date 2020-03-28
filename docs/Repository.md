@@ -177,8 +177,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2    | 15.53.7451-1761003       | 2017-03-20 | #0 #2            | HTTP*note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2    | 17.1.7937-1281019       | 2018-10-17 | #2             | HTTP |
+| 2    | 15.53.7451-1761003       | 2017-03-20 | #0 #2            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/15.53.7451-1761003-20170320115330.bin.torrent?raw=true) HTTP*note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2    | 17.1.7937-1281019       | 2018-10-17 | #2             |[Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) HTTP |
 | 3    | 18.1.0297-1321006-20191213145958      | 2019-12-13 | -           | HTTP |
 
 ## TG789vac v3 / VBNT-1
