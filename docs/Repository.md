@@ -31,7 +31,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 ### Fastweb
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
-|:------:|:------------------|:-----------|:-------------:|:-------|
+|:------:|:------------------|:-----------|:--------------|:-------|
 | 2      | 15.28.6169_FW_120 | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
 
 ## TG797n v3 / DANT-O
@@ -44,7 +44,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Telstra - T-Gateway
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
-|:------:|:------------------|:-----------|:-------------:|:-------|
+|:------:|:------------------|:-----------|:--------------|:-------|
 | 2      | 15.53.6469-510-RA | 2016-01-07 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
 | 2      | 16.1.7565-580-RC  | 2017-06-08 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
 | ???    | 16.1.8372-580-RA  | 2018-09-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF869-16.1.8372-580-RA/dant-o_CRF869-16.1.8372-580-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF869-16.1.8372-580-RA.rbi.torrent?raw=true) |
@@ -54,7 +54,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Telia
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:-------------:|:-------|
+|:------:|:-----------------|:-----------|:--------------|:-------|
 | ???    | 15.51.6436       | 2016-03-21 | -             | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
@@ -66,7 +66,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Telmex
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:-------------:|:-------|
+|:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 17.2.0279        | 2017-10-31 | #3            | [HTTP](http://gateway.telmex.com/test/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi.torrent?raw=true) |
 | 2      | 17.2.0360        | 2018-07-16 | #0            | [HTTP](http://gateway.telmex.com/TECHNICOLOR_TG788vnv2_17.2.0360/F_TG788vnv2_17.2.0360.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/F_TG788vnv2_17.2.0360.rbi.torrent?raw=true) |
 
@@ -184,7 +184,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Fastweb - FASTGate
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
-|:------:|:---------------------|:-----------|:-------------:|:-------|
+|:------:|:---------------------|:-----------|:--------------|:-------|
 | 2      | 16.1.6637_FW_108_MOS | 2016-03-29 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 | 2      | 16.1.6866_FW_111_IAD | 2016-05-19 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi.torrent?raw=true) |
 | 2      | 16.2.7384_FW_209_IAD | 2017-01-04 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi.torrent?raw=true) |
@@ -229,7 +229,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Vodafone - Ultra Hub
 
 | Type   | Version                  | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------------|:-----------|:-------------:|:-------|
+|:------:|:-------------------------|:-----------|:--------------|:-------|
 | 1      | 17.1.7875-CRF731         | 2017-09-04 | -             | [HTTP](http://downloads.vodafone.co.nz/ultrahub_crf731.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/ultrahub_crf731.rbi.torrent?raw=true) |
 | 2      | 17.1.7988-CRF846-V2.4.6  | 2018-05-09 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
 | 3      | 17.1.7988-CRF897-RC2-4-9 | 2018-10-21 | -             | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-9/DGA-2-4-9-Prod.rbi.torrent?raw=true) |
@@ -251,13 +251,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Tiscali
 
 | Type   | Version   | Timestamp  | Root Strategy | Mirror |
-|:------:|:----------|:-----------|:-------------:|:-------|
+|:------:|:----------|:-----------|:--------------|:-------|
 | ???    | 17.1.7970 | 2018-03-01 | -             | [HTTP](http://ftp.tr69.tiscali.it/TR69/Tiscali_DGA4130_17.1.7970-0001001-20180301141418.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/Tiscali_DGA4130_17.1.7970-0001001-20180301141418.rbi.torrent?raw=true) |
 
 ### TIM - Smart Modem Plus (AGTEF)
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------|:-----------|:-------------:|:-------|
+|:------:|:-------------------|:-----------|:--------------|:-------|
 | ???    | 16.3.7196          | 2016-10-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.0_003_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.0_003_closed.rbi.torrent?raw=true) |
 | ???    | 16.3.7271          | 2016-11-01 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.0_004_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.0_004_closed.rbi.torrent?raw=true) |
 | ???    | 16.3.7343          | 2016-11-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.0_006_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.0_006_closed.rbi.torrent?raw=true) |
@@ -311,7 +311,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Fastweb - FASTGate
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------|:-----------|:-------------:|:-------|
+|:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 17.2.0214_FW_219   | 2017-10-17 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0214_FW_219_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0214_FW_219_DGA4131.rbi.torrent?raw=true) |
 | 2      | 17.2.0245_FW_223   | 2017-11-28 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_223_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_223_DGA4131.rbi.torrent?raw=true) |
 | 2      | 17.2.0245_FW_226   | 2017-12-22 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_226_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_226_DGA4131.rbi.torrent?raw=true) |
@@ -322,12 +322,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0412_FW_248   | 2018-12-15 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
 | 2      | 18.3.n.0439_FW_258 | 2020-01-21 | #2            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
 
-## DGA4132 / VBNT-S (VBNT-K_SFP)
+## DGA4132 / VBNT-S
 
 ### TIM - TIM HUB (AGTHP)
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------|:-----------|:-------------:|:-------|
+|:------:|:-------------------|:-----------|:--------------|:-------|
 | ???    | 17.1.7765          | 2017-06-08 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7798          | 2017-06-09 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_002_CLOSED.rbi.torrent?raw=true) |
 | 2      | 17.1.7798          | 2017-06-09 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_CLOSED.rbi.torrent?raw=true) |
@@ -391,7 +391,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 ### Vodafone - Ultra Hub Plus
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
-|:------:|:------------------------|:-----------|:-------------:|:-------|
+|:------:|:------------------------|:-----------|:--------------|:-------|
 | 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
