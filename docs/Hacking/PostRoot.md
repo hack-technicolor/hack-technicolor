@@ -53,19 +53,19 @@ If your `booted` bank is `bank_1` instead, run the following commands:
 
 ```bash
 # Make a temp copy of the firmware in bank_1
-dd if=/dev/mtd3 of=/tmp/bank1.fw
+dd if=/dev/mtd3 of=/tmp/bank.fw
 # Flash that copy into bank_2
-mtd write /tmp/bank1.fw bank_2
+mtd write /tmp/bank.fw bank_2
 # Clean temp firmware copy
-rm /tmp/bank1.fw
+rm /tmp/bank.fw
 # Clean any existing overlay for bank_2 firmware
 rm -rf /overlay/bank_2
 # Make a temp copy of overlay for bank_1 firmware
-cp -rf /overlay/bank_1 /tmp/bank_1_backup
+cp -rf /overlay/bank_1 /tmp/bank_overlay_backup
 # Free up overlay space by removing existing overlay for bank_1 firmware
 rm -rf /overlay/bank_1
 # Use the previously made temp copy as overlay for bank_2 firmware
-cp -rf /tmp/bank_1_backup /overlay/bank_2
+cp -rf /tmp/bank_overlay_backup /overlay/bank_2
 # Activate bank_1
 echo bank_1 > /proc/banktable/active
 # Erase firmware in bank_1
