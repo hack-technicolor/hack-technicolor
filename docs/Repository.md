@@ -404,7 +404,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
-| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
+| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *WIP*         | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-z/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
 
