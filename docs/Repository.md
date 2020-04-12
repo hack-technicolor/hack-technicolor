@@ -157,7 +157,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
-## TG799vac Xtream / VANT-W_Rev-1
+## TG799vac Xtream / VANT-W
 
 ### Telenor
 
@@ -167,6 +167,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.1.7937        | 2018-10-17 | #2            | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-10-03 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-12-13 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi.torrent?raw=true) |
+
+### Etisalat
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 17.1.7854        | 2018-02-15 | #2            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG799vac Xtream / VANT-W_Rev-2
 
