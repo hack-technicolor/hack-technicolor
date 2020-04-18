@@ -40,24 +40,11 @@ We will now check the current state and move to the above one, such that it will
 !!! danger "Notable exception: Missing RBI"
     In the unfortunate case that there are no RBI firmware files available for your model, you are not in a safe position because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your current rooted *Type 2* firmware on both banks. Skip bank planning for optimality.
 
-If your `booted` bank is `bank_2` already, run the following commands:
+Run the following commands:
 
 ```bash
-# Activate bank_1
-echo bank_1 > /proc/banktable/active
-# Erase firmware in bank_1
-mtd erase bank_1
-```
-
-If your `booted` bank is `bank_1` instead, run the following commands:
-
-```bash
-# Make a temp copy of the firmware in bank_1
-dd if=/dev/mtd3 of=/tmp/bank.fw
-# Flash that copy into bank_2
-mtd write /tmp/bank.fw bank_2
-# Clean temp firmware copy
-rm /tmp/bank.fw
+# Copy firmware into bank_2 if applicable
+[ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write /dev/mtd3 bank_2
 # Make a temp copy of overlay for bank_1 firmware
 cp -rf /overlay/bank_1 /tmp/bank_overlay_backup
 # Clean Free up overlay space by removing existing old overlays
@@ -70,6 +57,7 @@ echo bank_1 > /proc/banktable/active
 mtd erase bank_1
 # Reboot to first valid firmware
 reboot
+# please wait for device to reboot...
 ```
 
 You should now be in the previously mentioned *optimal* bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
