@@ -58,12 +58,10 @@ dd if=/dev/mtd3 of=/tmp/bank.fw
 mtd write /tmp/bank.fw bank_2
 # Clean temp firmware copy
 rm /tmp/bank.fw
-# Clean any existing overlay for bank_2 firmware
-rm -rf /overlay/bank_2
 # Make a temp copy of overlay for bank_1 firmware
 cp -rf /overlay/bank_1 /tmp/bank_overlay_backup
-# Free up overlay space by removing existing overlay for bank_1 firmware
-rm -rf /overlay/bank_1
+# Clean Free up overlay space by removing existing old overlays
+rm -rf /overlay/*
 # Use the previously made temp copy as overlay for bank_2 firmware
 cp -rf /tmp/bank_overlay_backup /overlay/bank_2
 # Activate bank_1
