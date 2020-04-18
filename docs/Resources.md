@@ -409,17 +409,17 @@ https://openwrt.org/packages/start
 [Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
 
 * `ls -1 /sys/class/leds/`
-  * List available LED's.
+    - List available LED's.
 
 * `cat /sys/class/leds/<led>:<colour>/trigger`
-  * Shows the triggers available and the current trigger.
-  * Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
+    - Shows the triggers available and the current trigger.
+    - Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
 
 * `echo "default-on" > /sys/class/leds/power:green/trigger`
-  * Reset trigger to default.
+    - Reset trigger to default.
 
 * `opkg list | grep led`
-  * List all LED packages used.
+    - List all LED packages used.
 
 Examples:
 
