@@ -404,22 +404,24 @@ Select the correct package for your processor (modem model) and firmware version
 
 https://openwrt.org/packages/start
 
-## LED's management
+## LED management
 
 [Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
 
+List available LEDs:
 * `ls -1 /sys/class/leds/`
-    - List available LED's.
 
+Show LED triggers available and the current trigger.
 * `cat /sys/class/leds/<led>:<colour>/trigger`
-    - Shows the triggers available and the current trigger.
-    - Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
 
+Replace LED with the name of the LED and colour with the colour:
+* eg. `cat /sys/class/leds/dect:green/trigger`
+
+Reset LED trigger to default:
 * `echo "default-on" > /sys/class/leds/power:green/trigger`
-    - Reset trigger to default.
 
+List all LED packages used:
 * `opkg list | grep led`
-    - List all LED packages used.
 
 Examples:
 
