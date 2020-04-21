@@ -24,8 +24,8 @@ If you followed rooting guides from this Wiki, you were suggested to implement t
 Recovery from any bad state (**excluding full overlay partition issues**) while *optimal* bank plan is in place, always consists in following this path:
 
 1. Use [BOOTP flashing](#bootp-flashing) to flash a valid `Type 2` firmware for your board. Because of *optimal* bank plan, the Gateway is guaranteed to boot this sort of *recovery disk* from `bank_1`. The `Type 2` image you choose to pick now for recovery purposes does not depend on which one you have in `bank_2`. If this is not your first time booting this *recovery disk*, choose the same `Type 2` firmware you used in past.
-2. Being on *optimal* bank plan your `/overlay/bank_1` is assumed to be in a good shape as whatever you work on daily is inside `/overlay/bank_2` instead. For that reason the gateway will boot just fine the image you just flashed. Fire up your SSH client and get in the root shell. If this is your first time booting this *recovery disk* you will need to hack it following [Type 2 rooting](../Hacking/Type2/#type-2-direct-rooting) instructions stopping just before [Post-Root Procedures](../Hacking/Type2/#post-root-procedures).
-3. Whatever was wrong and causing issues with your mods related to the firmware you were booting from `bank_2` is now inside `/overlay/bank_2` folder. Fix it manually if you know what was your mistake, otherwise restore `/overlay/bank_2` folder contents from a previous overlay backup. If you didn't get any (shame on you) forget about whatever you were running from `bank_2`, jump to and go through [Post-Root Procedures](../Hacking/Type2/#post-root-procedures) to the end as if it were the first time you read that page, do not come back to this recovery guide.
+2. Being on *optimal* bank plan your `/overlay/bank_1` is assumed to be in a good shape as whatever you work on daily is inside `/overlay/bank_2` instead. For that reason the gateway will boot just fine the image you just flashed. Fire up your SSH client and get in the root shell. If this is your first time booting this *recovery disk* you will need to hack it following [Type 2 rooting](../Hacking/Type2/) instructions stopping just after [Final Type 2 steps](../Hacking/Type2/#final-type-2-steps).
+3. Whatever was wrong and causing issues with your mods related to the firmware you were booting from `bank_2` is now inside `/overlay/bank_2` folder. Fix it manually if you know what was your mistake, otherwise restore `/overlay/bank_2` folder contents from a previous overlay backup. If you didn't get any (shame on you) forget about whatever you were running from `bank_2`, jump to [Bank Planning](../Hacking/PostRoot/#bank-planning) and go on to the end like you probably did the first time you read that page. Do not come back to this recovery guide.
 4. When you have finished, go back booting form `bank_2`: run `mtd erase bank_1` to eject this *recovery image* and reboot.
 
 !!! warning "DO NOT..."
@@ -67,8 +67,8 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 2. RTFD via the reset button
 3. RTFD via the CLI (shell)
 
-!!! caution "Unroot prevention"
-    The procedures in these guidelines will not break RTFD functionality. Some heavy mods, like the custom tch-nginx-gui, can also modify RTFD scripts to prevent unrooting which breaks RTFD functionality. If the Gateway has one of these mods installed and RTFD does not work then check the mod details.
+!!! caution "Unroot prevention may break RTFD"
+    Procedures and guidelines found in this wiki won't break ordinary RTFD functionality. However, some heavy mods, like the custom tch-nginx-gui, also install modded RTFD scripts to prevent loosing root access on RTFD, and this means RTFD may also fail. These scripts are also designed to survive after RTFD. This means you can't get rid of them by doing RTFD. If the Gateway had one of these mods installed and RTFD does not work for you, then check the mod details.
 
 ### RTFD via the web interface
 

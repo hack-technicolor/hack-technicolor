@@ -29,6 +29,6 @@ As your first step into your brand-new rooted Gateway, it is a good idea to alwa
 sed -i 's/#//' /etc/inittab
 ```
 
-At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over. Take note of the exact `Type 2` firmware version you are now running, could be useful in future for recovery purposes.
+At this point you have a rooted `Type 2` image on your Gateway, but your trip is not over. Take note of the exact `Type 2` firmware version you are now running and backup the configuration, could be useful in future for recovery purposes.
 
 If you would like to stay on this `Type 2` firmware for daily usage and stay safe from possible soft-bricks or terrible issues, you now need to ensure your *bank plan* is optimal. Jump to [Bank Planning](../PostRoot/#bank-planning).
