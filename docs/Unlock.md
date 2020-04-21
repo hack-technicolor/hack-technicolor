@@ -49,11 +49,14 @@ uci commit
 
 ## Custom GUI
 
-A highly universal custom GUI with tons (!) of features is available [here](https://github.com/Ansuel/tch-nginx-gui).
+A highly universal custom GUI with tons (!) of features is [available here](https://github.com/Ansuel/tch-nginx-gui). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/Ansuel/tch-nginx-gui/issues) to ask for support.
 
 **This is highly recommended for users who want the most usability out of their new gateway!**
 
-!!! danger "Custom GUI has permanently bricked Gateways before"
+!!! danger "No more easy recovery"
+    This mod will enforce a *non-optimal* bank plan. Please, read Recovery page carefully and be prepared to do some advanced recovery, like the bootfail bank switching. The easy and reliable Recovery for optimal bank plan users won't be available for you. Any RTFD attempt will not uninstall this mod completely.
+
+!!! danger "This mod has permanently bricked Gateways before"
     In older versions of this GUI, it has bricked low space devices like the TG799vac. Make sure you remove unneeded packages before installing!
     It now has a brick prevention method in place so this is not so much of a worry.
 

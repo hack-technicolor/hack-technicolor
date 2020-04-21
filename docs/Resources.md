@@ -392,22 +392,41 @@ sysupgrade -f /tmp/sysupgrade-backup-*.tar.gz
 Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
 [technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)
 
-## LED's management
+## Extend with OpenWrt packages (opkg)
+
+Select the correct package for your processor (modem model) and firmware version and update the configuration files as described in the posts:
+
+* <a href="https://forums.whirlpool.net.au/archive/2650998#r56263564">BCM63168 (MIPS based)</a> eg TG789/TG799
+
+* <a href="https://forums.whirlpool.net.au/forum-replies.cfm?t=2650998&p=46&#r913">BCM63138 (ARM based)</a> eg DGA4130/DGA4132/TG800
+
+* <a href="https://forums.whirlpool.net.au/forum-replies.cfm?t=2650998&p=46&#r915">NLS suitable for Telia routers with 16.2 Jade</a>
+
+https://openwrt.org/packages/start
+
+## LED management
 
 [Directly accessing /sys/class/leds is a BAD practice...](https://github.com/davidjb/technicolor-tg799vac-hacks/issues/6#issue-388905312)
 
+List available LEDs:
+
 * `ls -1 /sys/class/leds/`
-  * List available LED's.
+
+Show LED triggers available and the current trigger.
 
 * `cat /sys/class/leds/<led>:<colour>/trigger`
-  * Shows the triggers available and the current trigger.
-  * Replace LED with the name of the LED and colour with the colour, eg. `cat /sys/class/leds/dect:green/trigger`
+
+Replace LED with the name of the LED and colour with the colour:
+
+* eg. `cat /sys/class/leds/dect:green/trigger`
+
+Reset LED trigger to default:
 
 * `echo "default-on" > /sys/class/leds/power:green/trigger`
-  * Reset trigger to default.
+
+List all LED packages used:
 
 * `opkg list | grep led`
-  * List all LED packages used.
 
 Examples:
 
