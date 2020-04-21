@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+**Important:** Check issue still occurs in [Latest](https://hack-technicolor.readthedocs.io/en/latest/) branch.
+
 Please fill out the following, remembering to put an 'X' in the '[ ]' to mark the checkbox:
 
 **Firmware version**
