@@ -35,6 +35,14 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 |:------:|:------------------|:-----------|:--------------|:-------|
 | 2      | 15.28.6169_FW_120 | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
 
+## TG582n v2 / DANT-8
+
+### Wind
+
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------|:-----------|:--------------|:-------|
+| 2      | 15.05.5876        | 2015-10-15 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## TG797n v3 / DANT-O
 
 !!! note "OSCK Not Required"
