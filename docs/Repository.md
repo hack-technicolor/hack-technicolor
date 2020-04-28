@@ -165,6 +165,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
+## TG789vac v2 HP / VBNT-L
+
+### MyRepublic - WiFi Hub+
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## TG799vac Xtream / VANT-W
 
 ### Telenor
@@ -229,14 +237,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339h1441002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
-
-## TG789vac v2 HP / VBNT-L
-
-### MyRepublic
-
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG800vac / VANT-Y
 
