@@ -68,7 +68,7 @@ This feature is implemented by an official tool from Technicolor you can invoke 
 3. RTFD via the CLI (shell)
 
 !!! caution "Unroot prevention may break RTFD"
-    Procedures and guidelines found in this wiki won't break ordinary RTFD functionality. However, some heavy mods, like the custom tch-nginx-gui, also install modded RTFD scripts to prevent loosing root access on RTFD, and this means RTFD may also fail. These scripts are also designed to survive after RTFD. This means you can't get rid of them by doing RTFD. If the Gateway had one of these mods installed and RTFD does not work for you, then check the mod details.
+    Procedures and guidelines found in this wiki won't break ordinary RTFD functionality. However, some heavy mods, like the custom tch-nginx-gui, also install modded RTFD scripts to prevent loosing root access on RTFD, and this means RTFD may also fail. These scripts are also designed to survive after RTFD. This means you might be unable to get rid of them by doing RTFD. If the Gateway had one of these mods installed and RTFD does not work for you, then check the mod details. You might need to repeat RTFD twice or do a full data partition wipe.
 
 ### RTFD via the web interface
 
