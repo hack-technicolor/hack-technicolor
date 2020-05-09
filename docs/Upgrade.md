@@ -48,6 +48,7 @@ Check the file format your new firmware is. It could be either an RBI file or a 
 ### RBI file
 
 Take the RBI file to flash and move it to `/tmp/new.rbi` by SCP. Here is an example from WinSCP, but you can use any SCP client.
+
 ![WinSCP firmware upload](../images/winscp_upload.png)
 
 Run this command to unpack the RBI image, will take a while:
@@ -105,6 +106,7 @@ uci commit dropbear
 rm /overlay/\$(cat /proc/banktable/booted)/etc/rc.local
 " > /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
+
 ```
 
 Please note: your ssh credentials will be changed back to `root:root`.
