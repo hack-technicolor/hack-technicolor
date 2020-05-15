@@ -51,14 +51,18 @@ uci commit
 
 A highly universal custom GUI with tons (!) of features is [available here](https://github.com/Ansuel/tch-nginx-gui). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/Ansuel/tch-nginx-gui/issues) to ask for support.
 
-**This is highly recommended for users who want the most usability out of their new gateway!**
+This is recommended for users who don't fear a few bugs and want the most out-of-box usability from their modded gateway.
 
-!!! danger "No more easy recovery"
-    This mod will enforce a *non-optimal* bank plan. Please, read Recovery page carefully and be prepared to do some advanced recovery, like the bootfail bank switching. The easy and reliable Recovery for optimal bank plan users won't be available for you. Any RTFD attempt will not uninstall this mod completely.
+!!! info "Recovery options"
+    Since version `9.5.60` this mod is compatible with the same *noptimal* bank plan suggested in this wiki. Please, read Recovery page carefully and get familiar with recovery strategies available when this special planning is in order. The easy and reliable Recovery for optimal bank plan users will also be available for you.
+
+!!! info "Different RTFD behavior"
+    Any RTFD attempt will not uninstall this mod completely. Since version `9.5.60` you will need to repeat RTFD two times in a row to bring back the gateway to the same state a normal RTFD would.
 
 !!! danger "This mod has permanently bricked Gateways before"
-    In older versions of this GUI, it has bricked low space devices like the TG799vac. Make sure you remove unneeded packages before installing!
+    In older versions of this GUI, it has bricked low space devices like the TG799vac.
     It now has a brick prevention method in place so this is not so much of a worry.
+    Do noy use versions older than `9.5.60`.
 
 ## Change DNS
 

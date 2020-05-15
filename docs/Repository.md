@@ -35,6 +35,14 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 |:------:|:------------------|:-----------|:--------------|:-------|
 | 2      | 15.28.6169_FW_120 | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
 
+## TG582n v2 / DANT-8
+
+### Wind
+
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------|:-----------|:--------------|:-------|
+| 2      | 15.05.5876        | 2015-10-15 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## TG797n v3 / DANT-O
 
 !!! note "OSCK Not Required"
@@ -61,6 +69,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's management network*
 
 ## TG788vn v2 / VDNT-W
 
@@ -93,6 +103,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:--------------|:-------|
 | 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-d/MST TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network*
+
 ## TG-1 / VANT-5
 
 ### iiNet & Internode
@@ -113,11 +125,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network*
+
 ### Tiscali
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 16.3.7636        | 2017-04-19 | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and and download password*
 
 ### iiNet & Internode
 
@@ -157,6 +173,16 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's management network*
+
+## TG789vac v2 HP / VBNT-L
+
+### MyRepublic - WiFi Hub+
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## TG799vac Xtream / VANT-W
 
 ### Telenor
@@ -167,6 +193,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.1.7937        | 2018-10-17 | #2            | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-10-03 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-12-13 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi.torrent?raw=true) |
+
+> *\* requires download password*
 
 ### Etisalat
 
@@ -187,6 +215,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's management network*
 
 ## TG789vac v3 / VBNT-1
 
@@ -211,6 +241,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7825_FW_212_MOS | 2017-06-27 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi.torrent?raw=true) |
 | 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network*
+
 ## TG799vac Xtream / VBNT-H
 
 ### Telia - Wifi-router Plus v3
@@ -222,13 +254,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 
-## TG789vac v2 HP / VBNT-L
-
-### MyRepublic
-
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+> *\* requires access to ISP's management network*
 
 ## TG800vac / VANT-Y
 
@@ -271,6 +297,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version   | Timestamp  | Root Strategy | Mirror |
 |:------:|:----------|:-----------|:--------------|:-------|
 | ???    | 17.1.7970 | 2018-03-01 | -             | [HTTP](http://ftp.tr69.tiscali.it/TR69/Tiscali_DGA4130_17.1.7970-0001001-20180301141418.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/Tiscali_DGA4130_17.1.7970-0001001-20180301141418.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
 
 ### TIM - Smart Modem Plus (AGTEF)
 
@@ -324,6 +352,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 18.3.0495          | 2019-12-03 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network and download password*
+
 ## DGA4131 / VBNT-O
 
 ### Fastweb - FASTGate
@@ -339,6 +369,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0407_FW_247   | 2018-12-06 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0407_FW_247_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0407_FW_247_DGA4131.rbi.torrent?raw=true) |
 | 2      | 17.2.0412_FW_248   | 2018-12-15 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
 | 2      | 18.3.n.0439_FW_258 | 2020-01-21 | #2            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network*
 
 ## DGA4132 / VBNT-S
 
@@ -389,6 +421,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 1      | 18.3.k.0451        | 2019-10-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0495          | 2019-12-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
 
 ## DJA0230 / VBNT-V
 
