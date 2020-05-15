@@ -45,9 +45,9 @@ Run the following commands:
 ```bash
 # Copy firmware into bank_2 if applicable
 [ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write /dev/mtd3 bank_2
-# Make a temp copy of overlay for bank_1 firmware
-cp -rf /overlay/bank_1 /tmp/bank_overlay_backup
-# Clean Free up overlay space by removing existing old overlays
+# Make a temp copy of overlay for booted firmware
+cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
+# Clean up overlay space by removing existing old overlays
 rm -rf /overlay/*
 # Use the previously made temp copy as overlay for bank_2 firmware
 cp -rf /tmp/bank_overlay_backup /overlay/bank_2
