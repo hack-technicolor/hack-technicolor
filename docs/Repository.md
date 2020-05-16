@@ -133,7 +133,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 16.3.7636        | 2017-04-19 | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
 
-> *\* requires access to ISP's network and and download password*
+> *\* requires access to ISP's network and download password*
 
 ### iiNet & Internode
 
