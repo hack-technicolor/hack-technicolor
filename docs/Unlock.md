@@ -416,22 +416,22 @@ Here is how you go setting this up properly:
 
 At this point the TG799vac should be transparent to incoming requests which will hit the WAN interface of your internal router and be handled normally.
 
-## Using DGA0231 VDSL and 4G as multiple WAN interfaces 
+## Using DGA0231's VDSL and 4G as multiple WAN interfaces 
 
-Those who are using a modem in bridge mode would normally have all (or almost all) other features of the modem disabled or unused.  That is the user just wants to bridge the VDSL connection to an Ethernet interface that their firewall/router connects to. However the DGA0231 also has a 4G interface which could be ustised by the firwall/router in a multi-wan (VDSL and 4G) configuration. This is espescially relevant if you are not happy with native 4G failover in the modem, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
+Those who are using a modem in bridge mode would normally have all (or almost all) other features of the modem disabled or unused.  That is, they just want to bridge the VDSL connection to an Ethernet interface that their firewall/router connects to. However, the DGA0231 also has a 4G interface which could be utilised by the firwwall/router in a multi-wan (VDSL and 4G) configuration. You might also want to do this if you are not happy with native 4G failover in the modem, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
 
 ### Assumptions
 
-1. Using a Technicolor DGA0231 (although other modems should also work).  In this example the Telstra vaiant was used.
+1. Using a Technicolor DGA0231, although other modems should also work.  In this example the Telstra vaiant was used.
 2. Ansuel GUI has been installed: https://github.com/Ansuel/tch-nginx-gui
 3. The modem has been configured in bridge mode
-4. The WAN connection is VDSL/DHCP (other modes like PPPoE should also work)  
+4. The WAN connection is VDSL/DHCP with 4G, other modes like PPPoE should also work with a small modification to the config.
 
 ### Confirm bridge mode is working
 
-Confirm that bridge mode is configured correctly.  Configure your PC's Ethernet adaptor for DHCP and plug it in directly to the modem.  If confiugred correctly you will get an IP address from your ISP.  
+You need to be sure bridge mode is configured and working correctly.  Configure your PC's Ethernet adaptor for DHCP and plug it  directly into onw of the modem's LAN ports.  If confiugred correctly you will get an IP address from your ISP.  
 
-**Don't forget to reapply the static IP address on your PC so that you can coninue to configure the modem**
+**Don't forget to reapply the static IP address on your PC so that you can continue to configure the modem**
     
 !!! info "Turning on bridging with Ansuel GUI" 
 The Ansuel GUI allows the modem to be configured into bridge mode, but unlile the native Telstra code, is not a one-step press "Bridge Mode" button. The advanatage is that it leaves much of the features intact and allows you to reverse it without doing a factory reset.
@@ -445,7 +445,7 @@ The following depicts what we are trying to achieve from a layer-3 networking po
 As part of this process we will be dedicating LAN port 1 (eth0) as the bridged VDSL connection, while leaving the other ports on the existing LAN segment that will allow connection to the modem as router hop to the 4G connection.
 
 ### Disable wansensing
-Here we stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up
+We need to stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up.
 
 ```
 # Check status
@@ -455,8 +455,8 @@ Here we stop the modem from detecting the WAN state which causes the 4G to be br
 /etc/init.d/wansensing disable
 /etc/init.d/wansensing enabled && echo on
 ```
-### Enable wwan
-wwan is the 4G interface. Here we need to enable it 
+### Enable `wwan`
+`wwan` is the 4G interface. Here we need to enable it 
 
 ```
 # Check status
@@ -470,18 +470,16 @@ uci commit
 # reload config files
 /etc/init.d/network reload
 ```
-### Change /etc/config/network 
-I used WinSCP to perform the modifcations to `/etc/config/network`. First step is to remove LAN port 1 and the VDSL connection from the existing LAN.  
+### Change `/etc/config/network` 
+First step is to remove LAN port 1 and the VDSL connection from the existing LAN. I used WinSCP to perform the modifcations to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
 
-Under the section `config interface 'lan'` remove the following lines
 ```
     list ifname 'eth0'
     list ifname 'ptm0'
 ```
 
-Now we need to add a new interface for the bridged VDSL segement.
+Now we need to add a new interface for the bridged VDSL segement.  Add the following just after the `config interface 'lan'` section:
 
-Add the following just after the `config interface 'lan'` section
 ```
 config interface 'vdslbr'
 	option force_link '1'
@@ -490,7 +488,8 @@ config interface 'vdslbr'
 	list ifname 'ptm0'
 ```
 
-After saving `config interface 'lan'` apply config with the following commands
+After saving `config interface 'lan'` apply config with the following commands:
+
 ```
 uci commit
 /etc/init.d/network reload
