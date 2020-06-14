@@ -436,15 +436,13 @@ You need to be sure bridge mode is configured and working correctly.  Configure 
 !!! info "Turning on bridging with Ansuel GUI" 
 The Ansuel GUI allows the modem to be configured into bridge mode, but unlile the native Telstra code, is not a one-step press "Bridge Mode" button. The advanatage is that it leaves much of the features intact and allows you to reverse it without doing a factory reset.
 
-### Network Diagram
+The following depicts what we are trying to achieve from a layer-3 networking point of view.
 
-The following depicts what we are trying to achieve from a layer-3 networking porint of view.
-
-**Diagram**
+![alt text](images/dual_wan.png)
 
 The diagram above shows the IP layer connections in green with the green circles representing IP addresses. The VDSL connection is bridged through the modem and is effectively invisible from an IP perspective.  On the 4G path the IP connection terminates on the router in the modem, which will create a double NAT path from your home network (firewall/router and DJA0231 modem). 
 
-This example will allocate a dedicated LAN port 1 (eth0) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop on the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.
+This example will allocate a dedicated LAN port 1 (eth0) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop on the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.  In this example the modem's IP address is `10.0.0.138` and on the firewall/router's side its IP address is `10.0.0.1`.
 
 ### Disable `wansensing`
 We need to stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up.
@@ -498,16 +496,31 @@ uci commit
 ```
 
 ### Update static routes
-The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in GUI.
+The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in GUI and the values you put here will be specific to your local environment
 
 - IP Extras
   - IPv4 Static Routes Configuration 
     - Press `Add new static IPv4 route` button
     - Enter the following values:
       - Destination: 192.168.0.0
-      - Mask: 255.255.0.0
+      - Mask: 255.255.240.0
       - Gateway: 10.0.0.1
       - Metric: 1
       - Interface: LAN
 
- 
+### What does it look it when its working
+
+Below are some pictures and screenshots of the modem used in a multi-wan environment with a PfSense firewall.
+
+![alt text](images/modem_with_firewall.jpg)
+
+In the picture above the firewall the far left Etheport port is used to connect to the bridged VDSL path, while the far right Ethernet port is used to connect to the routed 4G path.
+
+![alt text](images/route.png)
+
+The screen capture above shows the routes in the modem. You can see only a single default route directing to the 4G interface. The bridged VDSL path is invisible from layer-3 IP viewpoint.
+
+![alt text](images/gateways_definition.png)
+![alt text](images/gateways_status.png)
+
+The pictures above show the PfSense using the two WAN links on the modem. In the above config the VDSL connection and the 4G connection are defined as a gateway group with the VDSL connection having a higher priority.
