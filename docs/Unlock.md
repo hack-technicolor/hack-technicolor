@@ -415,3 +415,113 @@ Here is how you go setting this up properly:
 7. Turn off WiFi on the TG799vac.
 
 At this point the TG799vac should be transparent to incoming requests which will hit the WAN interface of your internal router and be handled normally.
+
+## Using DGA0231's VDSL and 4G as multiple WAN interfaces 
+
+Those who are using a modem in bridge mode would normally have all (or almost all) other features of the modem disabled or unused.  That is, they just want to bridge the VDSL connection to an Ethernet interface that their firewall/router connects to. However, the DGA0231 also has a 4G interface which could be utilised by the firewall/router in a multi-WAN (VDSL and 4G) configuration. You might also want to do this if you are not happy with native 4G failover in the modem, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
+
+### Assumptions
+
+1. Using a Technicolor DGA0231, although other modems should also work. In this example the Telstra variant was used.
+2. Ansuel GUI has been installed: https://github.com/Ansuel/tch-nginx-gui
+3. The modem has been configured in bridge mode
+4. The WAN connection is VDSL/DHCP plus 4G. Other modes like PPPoE should also work with a small modification to the config.
+
+### Confirm bridge mode is working
+
+You need to be sure bridge mode is configured and working correctly.  Configure your PC's Ethernet adaptor for DHCP and plug it  directly into one of the modem's LAN ports.  If configured correctly the PC will get an IP address from your ISP.  
+
+**Don't forget to reapply the static IP address on your PC so that you can continue to configure the modem**
+    
+!!! info "Turning on bridging with Ansuel GUI" 
+The Ansuel GUI allows the modem to be configured into bridge mode, but unlike the native Telstra code, is not a one-step press the "Bridge Mode" button procedure and can be picky in the order in which things are done. However, the advantage Ansuel GUI has is that it leaves much of the features intact and allows you to reverse it without doing a factory reset. 
+
+The following diagram shows what we are trying to achieve.
+
+![alt text](images/dual_wan.png)
+
+In the diagram above the IP layer connections are green with the green circles representing terminating IP addresses. The VDSL connection is bridged through the modem and is effectively invisible from an IP perspective.  On the 4G path the IP connection terminates on the router in the modem.  This will create a double NAT path from your home network (firewall/router and DJA0231 modem). 
+
+This example will allocate dedicated *LAN port 1* (`eth0`) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop for the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.  In this example the modem's IP address is `10.0.0.138` and on the firewall/router side the IP address is `10.0.0.1`.
+
+### Disable `wansensing`
+We need to stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up.
+
+```
+# Check status
+/etc/init.d/wansensing enabled && echo on
+
+# Stop service and confirm status
+/etc/init.d/wansensing disable
+/etc/init.d/wansensing enabled && echo on
+```
+### Enable `wwan`
+4G interface `wwan` needs to be enabled.
+
+```
+# Check status
+uci show network.wwan.enabled
+
+# Enable wwan
+uci set network.wwan.enabled=1
+uci show network.wwan.enabled
+uci commit
+
+# reload config files
+/etc/init.d/network reload
+```
+### Change `/etc/config/network` 
+LAN port 1 and the VDSL connection needs to be removed from the existing LAN. I used WinSCP to perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
+
+```
+    list ifname 'eth0'
+    list ifname 'ptm0'
+```
+
+Now we need to add a new interface `vdslbr` for the bridged VDSL segement.  Add the following just after the `config interface 'lan'` section:
+
+```
+config interface 'vdslbr'
+	option force_link '1'
+	option type 'bridge'
+	list ifname 'eth0'
+	list ifname 'ptm0'
+```
+
+After saving `/etc/config/network` apply the new config with the following commands:
+
+```
+uci commit
+/etc/init.d/network reload
+```
+
+### Update static routes
+The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in the GUI.  The values you put here will be specific to your local environment. The example below will cater for networks from `192.168.0.0` to `192.168.15.0`. 
+
+- IP Extras
+  - IPv4 Static Routes Configuration 
+    - Press `Add new static IPv4 route` button
+    - Enter the following values:
+      - Destination: 192.168.0.0
+      - Mask: 255.255.240.0
+      - Gateway: 10.0.0.1
+      - Metric: 1
+      - Interface: LAN
+
+### What it looks like when its working
+
+Below are some pictures and screenshots of the modem used in a multi-WAN environment with a PfSense firewall.
+
+![alt text](images/modem_with_firewall.jpg)
+
+In the picture above the firewall's far left Ethernet port is used to connect to the bridged VDSL path, while the far right Ethernet port is used to connect to the routed 4G path.
+
+![alt text](images/route.png)
+
+The screen capture above shows the routes in the modem. You can see only a single default route pointing to the 4G interface and a static route pointing to the local networks. The bridged VDSL path cannot be seen as it is invisible from a layer-3 IP viewpoint.
+
+![alt text](images/gateways_definition.png)
+![alt text](images/gateways_status.png)
+
+The screen captures above show the PfSense firewall using the two WAN links on the modem. On the first screen capture you can see that the VDSL connection and the 4G connection are defined as the gateway group `VDSL_4G` with the VDSL connection having a higher priority. On the second screen capture you can see that the firewall sees both WAN interfaces as online allowing it to direct traffic as it sees fit.
+
