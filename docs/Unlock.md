@@ -442,9 +442,11 @@ The following depicts what we are trying to achieve from a layer-3 networking po
 
 **Diagram**
 
-As part of this process we will be dedicating LAN port 1 (eth0) as the bridged VDSL connection, while leaving the other ports on the existing LAN segment that will allow connection to the modem as router hop to the 4G connection.
+The diagram above shows the IP layer connections in green with the green circles representing IP addresses. The VDSL connection is bridged through the modem and is effectively invisible from an IP perspective.  On the 4G path the IP connection terminates on the router in the modem, which will create a double NAT path from your home network (firewall/router and DJA0231 modem). 
 
-### Disable wansensing
+This example will allocate a dedicated LAN port 1 (eth0) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop on the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.
+
+### Disable `wansensing`
 We need to stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up.
 
 ```
@@ -456,7 +458,7 @@ We need to stop the modem from detecting the WAN state which causes the 4G to be
 /etc/init.d/wansensing enabled && echo on
 ```
 ### Enable `wwan`
-`wwan` is the 4G interface. Here we need to enable it 
+`wwan` is the 4G interface which needs to be enabled. 
 
 ```
 # Check status
@@ -471,14 +473,14 @@ uci commit
 /etc/init.d/network reload
 ```
 ### Change `/etc/config/network` 
-First step is to remove LAN port 1 and the VDSL connection from the existing LAN. I used WinSCP to perform the modifcations to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
+Firstly LAN port 1 and the VDSL connection needs to be removed from the existing LAN. I used WinSCP to perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
 
 ```
     list ifname 'eth0'
     list ifname 'ptm0'
 ```
 
-Now we need to add a new interface for the bridged VDSL segement.  Add the following just after the `config interface 'lan'` section:
+Now we need to add a new interface `vdslbr` for the bridged VDSL segement.  Add the following just after the `config interface 'lan'` section:
 
 ```
 config interface 'vdslbr'
@@ -494,5 +496,18 @@ After saving `/etc/config/network` apply the new config with the following comma
 uci commit
 /etc/init.d/network reload
 ```
+
+### Update static routes
+The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in GUI.
+
+- IP Extras
+  - IPv4 Static Routes Configuration 
+    - Press `Add new static IPv4 route` button
+    - Enter the following values:
+      - Destination: 192.168.0.0
+      - Mask: 255.255.0.0
+      - Gateway: 10.0.0.1
+      - Metric: 1
+      - Interface: LAN
 
  
