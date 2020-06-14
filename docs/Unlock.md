@@ -488,7 +488,7 @@ config interface 'vdslbr'
 	list ifname 'ptm0'
 ```
 
-After saving `config interface 'lan'` apply config with the following commands:
+After saving `/etc/config/network` apply the new config with the following commands:
 
 ```
 uci commit
