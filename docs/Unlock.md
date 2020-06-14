@@ -418,14 +418,14 @@ At this point the TG799vac should be transparent to incoming requests which will
 
 ## Using DGA0231's VDSL and 4G as multiple WAN interfaces 
 
-Those who are using a modem in bridge mode would normally have all (or almost all) other features of the modem disabled or unused.  That is, they just want to bridge the VDSL connection to an Ethernet interface that their firewall/router connects to. However, the DGA0231 also has a 4G interface which could be utilised by the firwwall/router in a multi-wan (VDSL and 4G) configuration. You might also want to do this if you are not happy with native 4G failover in the modem, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
+Those who are using a modem in bridge mode would normally have all (or almost all) other features of the modem disabled or unused.  That is, they just want to bridge the VDSL connection to an Ethernet interface that their firewall/router connects to. However, the DGA0231 also has a 4G interface which could be utilised by the firewall/router in a multi-wan (VDSL and 4G) configuration. You might also want to do this if you are not happy with native 4G failover in the modem, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
 
 ### Assumptions
 
-1. Using a Technicolor DGA0231, although other modems should also work.  In this example the Telstra vaiant was used.
+1. Using a Technicolor DGA0231, although other modems should also work. In this example the Telstra variant was used.
 2. Ansuel GUI has been installed: https://github.com/Ansuel/tch-nginx-gui
 3. The modem has been configured in bridge mode
-4. The WAN connection is VDSL/DHCP with 4G, other modes like PPPoE should also work with a small modification to the config.
+4. The WAN connection is VDSL/DHCP plus 4G. Other modes like PPPoE should also work with a small modification to the config.
 
 ### Confirm bridge mode is working
 
@@ -434,15 +434,15 @@ You need to be sure bridge mode is configured and working correctly.  Configure 
 **Don't forget to reapply the static IP address on your PC so that you can continue to configure the modem**
     
 !!! info "Turning on bridging with Ansuel GUI" 
-The Ansuel GUI allows the modem to be configured into bridge mode, but unlile the native Telstra code, is not a one-step press "Bridge Mode" button. The advanatage is that it leaves much of the features intact and allows you to reverse it without doing a factory reset.
+The Ansuel GUI allows the modem to be configured into bridge mode, but unlike the native Telstra code, is not a one-step press the "Bridge Mode" button procedure. However, the advanatage Ansuel GUI has is that it leaves much of the features intact and allows you to reverse it without doing a factory reset.
 
-The following depicts what we are trying to achieve from a layer-3 networking point of view.
+The following diagram shows what we are trying to achieve from a layer-3 networking point of view.
 
 ![alt text](images/dual_wan.png)
 
-The diagram above shows the IP layer connections in green with the green circles representing IP addresses. The VDSL connection is bridged through the modem and is effectively invisible from an IP perspective.  On the 4G path the IP connection terminates on the router in the modem, which will create a double NAT path from your home network (firewall/router and DJA0231 modem). 
+In the diagram above the IP layer connections are green with the green circles representing terminating IP addresses. The VDSL connection is bridged through the modem and is effectively invisible from an IP perspective.  On the 4G path the IP connection terminates on the router in the modem.  This will create a double NAT path from your home network (firewall/router and DJA0231 modem). 
 
-This example will allocate a dedicated LAN port 1 (eth0) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop on the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.  In this example the modem's IP address is `10.0.0.138` and on the firewall/router's side its IP address is `10.0.0.1`.
+This example will allocate a dedicated LAN port 1 (eth0) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the modem as router hop for the 4G connection.  Note this is also the connection that you use to manage the modem as it terminates on an IP address in the modem.  In this example the modem's IP address is `10.0.0.138` and on the firewall/router's side its IP address is `10.0.0.1`.
 
 ### Disable `wansensing`
 We need to stop the modem from detecting the WAN state which causes the 4G to be brought down if it detects the VDSL interface is up.
@@ -456,7 +456,7 @@ We need to stop the modem from detecting the WAN state which causes the 4G to be
 /etc/init.d/wansensing enabled && echo on
 ```
 ### Enable `wwan`
-`wwan` is the 4G interface which needs to be enabled. 
+4G interface `wwan` needs to be enabled.
 
 ```
 # Check status
@@ -471,7 +471,7 @@ uci commit
 /etc/init.d/network reload
 ```
 ### Change `/etc/config/network` 
-Firstly LAN port 1 and the VDSL connection needs to be removed from the existing LAN. I used WinSCP to perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
+LAN port 1 and the VDSL connection needs to be removed from the existing LAN. I used WinSCP to perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines:
 
 ```
     list ifname 'eth0'
@@ -496,7 +496,7 @@ uci commit
 ```
 
 ### Update static routes
-The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in GUI and the values you put here will be specific to your local environment
+The modem (4G router) needs to know the existence of your downstream networks, otherwise it does not know how to get the packets back to your devices. This can be done via the *IP Extras* card in GUI.  The values you put here will be specific to your local environment. The example below will cater for networks from `192.168.0.0` to `192.168.15.0`. 
 
 - IP Extras
   - IPv4 Static Routes Configuration 
@@ -514,13 +514,13 @@ Below are some pictures and screenshots of the modem used in a multi-wan environ
 
 ![alt text](images/modem_with_firewall.jpg)
 
-In the picture above the firewall the far left Etheport port is used to connect to the bridged VDSL path, while the far right Ethernet port is used to connect to the routed 4G path.
+In the picture above the firewall's far left Ethernet port is used to connect to the bridged VDSL path, while the far right Ethernet port is used to connect to the routed 4G path.
 
 ![alt text](images/route.png)
 
-The screen capture above shows the routes in the modem. You can see only a single default route directing to the 4G interface. The bridged VDSL path is invisible from layer-3 IP viewpoint.
+The screen capture above shows the routes in the modem. You can see only a single default route pointing to the 4G interface. The bridged VDSL path cannot be seen as it is invisible from a layer-3 IP viewpoint.
 
 ![alt text](images/gateways_definition.png)
 ![alt text](images/gateways_status.png)
 
-The pictures above show the PfSense using the two WAN links on the modem. In the above config the VDSL connection and the 4G connection are defined as a gateway group with the VDSL connection having a higher priority.
+The secreen captures above show the PfSense firewall using the two wan links on the modem. The VDSL connection and the 4G connection are defined as a gateway group with the VDSL connection having a higher priority.
