@@ -425,7 +425,7 @@ Those who are using a Homeware gateway in "bridge modes" would normally have all
 1. We're going to use a DJA0231 from Telstra, although other gateways with external 4G USB dongles should also work.
 2. The modem interface has been configured to be bridged to LAN1 Ethernet port.
 3. The main WAN connection is going to be over VDSL with DHCP. Other WAN types like Ethernet over PPPoE would also work with small modifications to interface names used to the config.
-4. For simplicity, We're going to dedicate two distinct LAN ports to main and cellular WAN connections. It is possible to use a single one with proper VLAN setup.
+4. For simplicity, we're going to dedicate two distinct LAN ports to main and cellular WAN connections. It is possible to use a single one with proper VLAN setup.
 
 ### Confirm bridge mode is working
 
@@ -444,7 +444,7 @@ This example will allocate dedicated *LAN port 1* (`eth0`) for the bridged VDSL 
 
 ### Disable `wansensing` service
 
-We need to stop Homeware from doing automatic detection of WAN state which causes the 4G to be brought down if it detects the main wAN interface is up.
+We need to stop Homeware from doing automatic detection of WAN state which causes the 4G to be brought down if it detects the main WAN interface is up.
 
 ```bash
 # Check status
@@ -477,14 +477,14 @@ uci commit network
 
 ### Change `/etc/config/network` settings
 
-LAN port 1 and the VDSL modem interface needs to be removed from the existing `lan` interface if they have been somehow added in there. This usually happens when you use one-touch "bridge modes". You can use WinSCP to easily perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines (if any):
+LAN port 1 and the VDSL modem interface need to be removed from the existing `lan` interface if they have been somehow added in there. This usually happens when you use one-touch "bridge modes". You can use WinSCP to easily perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines (if any):
 
 ```
     list ifname 'eth0'
     list ifname 'ptm0' # or eth4 for Ethernet WAN, or whatever different name in case of VLAN interfaces
 ```
 
-Now we need to add a new interface `vdslbr` for the bridged VDSL segement.  Add the following just after the `config interface 'lan'` section:
+Now we need to add a new interface `bridgedwan` for the bridged VDSL segment.  Add the following just after the `config interface 'lan'` section:
 
 ```
 config interface 'bridgedwan'
@@ -517,7 +517,7 @@ If you preferred not to enable a second NAT on your main router towards the cell
 
 ### What it looks like when its working
 
-Below are some pictures and screenshots of the Homeware gateway used in a multi-WAN environment with a PfSense firewall as main router with NAT disabled over $G WAN interface.
+Below are some pictures and screenshots of the Homeware gateway used in a multi-WAN environment with a PfSense firewall as main router with NAT disabled over 4G WAN interface.
 
 ![alt text](images/modem_with_firewall.jpg)
 
