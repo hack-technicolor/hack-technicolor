@@ -62,15 +62,19 @@ reboot
 
 You should now be in the previously mentioned *optimal* bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
+!!! hint "Upgrade now!"
+    Would you like to upgrade to a newer firmware? This is the perfect moment for doing it. It is now safe to also install *non-Type 2* firmwares. Just follow the [Safe Firmware Upgrade](../../Upgrade/) guide for this. You could also upgrade later in future and continue tweaking the current firmware. Once you did install the updated firmware, come back here and continue reading.
+
 At this point, you now need to check if your [SSH server setup](#setting-up-permanent-ssh-server) is permanent.
 
 ## Setting up Permanent SSH Server
 
-Are you connected to SSH on port `6666`?
+Are you connected to SSH on port `6666`? In most cases, the answer is "No, I didn't need to specify port 6666, I've got connected on default port 22". You don't need to run the below commands if you can already connect on default port `22`, your SSH setup is permanent already.
 
 If the answer is "Yes", run these commands to setup a permanent SSH access on port `22` by defining a new dropbear instance:
 
 ```bash
+uci -q delete dropbear.afg
 uci add dropbear dropbear
 uci rename dropbear.@dropbear[-1]=afg
 uci set dropbear.afg.enable='1'
@@ -84,11 +88,6 @@ uci commit dropbear
 /etc/init.d/dropbear enable
 /etc/init.d/dropbear restart
 ```
-
-You don't need to run the above commands if you can already connect on port `22`, the default one.
-
-!!! hint "Upgrade now!"
-    Would you like to upgrade to a newer firmware? This is the perfect moment for doing it. It is now safe to also install *non-Type 2* firmwares. Just follow the [Safe Firmware Upgrade](../../Upgrade/) guide for this. You could also upgrade later in future and continue tweaking the current firmware. Once you did install the updated firmware, come back here and continue reading.
 
 Now proceed to changing your [root password](#change-the-root-password), this is **mandatory**.
 
