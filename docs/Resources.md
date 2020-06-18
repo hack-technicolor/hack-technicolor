@@ -307,11 +307,6 @@ This guide will show you how to dump a bit-for-bit clone of any partition and re
 !!! info "Decrypted RBI v.s. bank dumps"
     Decrypted RBI firmwares are the same as `bank_1` or `bank_2` dumps except for their first four bytes. A correctly decrypted RBI starts with a sequence of four `0xFF`. You can edit these bytes to `0x00` and use the resulting file as a bank dump to be restored.
 
-### You will need
-
-* FAT32 USB Stick
-* 5min
-
 ### Making dumps
 
 `bank_1` is usually mapped to the `mtd3` partition and `bank_2` is usually mapped to `mtd4`, you do not really need to backup firmware banks if you already have an RBI file for that same firmware available.
@@ -320,34 +315,32 @@ If you are not sure you already have the same firmware saved somewhere, you can 
 
 You definitely need instead to backup all other partitions, especially the `eripv2` one, and all the others. You can get the full partition list with `cat /proc/mtd`
 
-It is good practice to keep moving dumped partitions to USB as soon as you complete one in order to minimise the chance of filling the ram, and causing an out-of-memory crash and reboot.
+It is good practice to keep moving dumped partitions out of the gateway memory as soon as you complete one in order to minimise the chance of filling the ram, and causing an out-of-memory crash and reboot. Here we show how to do that by using an USB drive attached to the gateway. Alternatively, you can also move them out using SCP in case your device has no USB ports or you don0t have an USB drive available.
 
-1. Plug in a USB stick and run:
+1. If you are going to usa an USB drive, you will need to know its mountpoint. Plug it in and run: `ls -la /mnt/usb`
 
-```bash
-ls -la /mnt/usb
-```
-
-Example output:
+    * Take note of that path the arrow is pointing to. Example output:
 
 ```bash
 root@mygateway:~# ls -la /mnt/usb/
-drwxr-xr-x    2 root     root             0 Jan 16 12:31 .
-drwxrwxrwx    1 root     root             0 Jan 16 10:55 ..
-lrwxrwxrwx    1 root     root            20 Jan 16 12:31 USB-A1 -> /tmp/run/mountd/sda1
+drwxr-xr-x    2 root     root     0 Jan 16 12:31 .
+drwxrwxrwx    1 root     root     0 Jan 16 10:55 ..
+lrwxrwxrwx    1 root     root     0 Jan 16 12:31 USB-A1 -> /tmp/run/mountd/sda1
 ```
 
-1. To backup, run: `dd if=/dev/mtd<X> of=/tmp/mtd<X>.dump`.
+2. To backup a partition, run: `dd if=/dev/mtd<X> of=/tmp/mtd<X>.dump`.
 
     * Replace `<X>` with any block device number.
 
-2. Move the dumped partition into USB drive, run: `mv /tmp/mtdX.dump /mnt/usb/<usb-path>/`.
+3. Move the dumped partition into USB drive by running: `mv /tmp/mtd<X>.dump /tmp/run/mountd/<usb-path>/`.
 
-    * Replace `<usb-path>` with your USB drive, see Step 1.
+    * Replace `<usb-path>` with your USB drive, see Step 1. In the example the USB path name is `sda1`.
 
-3. If `<X>` partition does not include any flash portion currently mounted with enabled write access, make sure to compare checksums to ensure the dump is a 1:1 exact copy.
+4. Make sure to compare checksums of dumped `bank_1`, `bank_2` and `eripv2` partitions to ensure the dump is a 1:1 exact copy.
 
-4. Repeat from Step 1 for every partition you would like to dump.
+    * Other partitions include flash portions which are currently mounted with enabled write access, their checksums are constantly changing
+
+5. Repeat from Step 2 for every partition you would like to dump.
 
 ### Restoring dumps
 
