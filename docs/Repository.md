@@ -463,21 +463,19 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0443-950-RB | 2019-11-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
 
-# What to do if your firmware is not listed here
+## What to do if your firmware is not listed here
 
 If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
-- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL
+- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL.
 
-- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
-
-- Ask kevdagoat and he will use his CRF Guesser :)
+- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks).
 
 Read further below to get some more useful tips.
 
-If you find another firmware for a Technicolor gateway which is not yet listed, create an Issue so it can be added!
+If you find another firmware for a Technicolor gateway which is not yet listed in this page, please, [open a new Issue on GitHub](https://github.com/kevdagoat/hack-technicolor/issues/new?assignees=&labels=Add+FW+Request&template=add-firmware.md&title=Add+_VERSION_+for+_BOARD_) so it can be added!
 
-## Guessing RBI Firmware URL's
+### Guessing RBI Firmware URL's
 
 The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X).
 
@@ -520,17 +518,12 @@ Newer firmware images are often encrypted with a board-specific AES-128 (thus sy
 
 Every firmware image is also verified by asymmetric keys. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
 
-## Make a raw device dump
+### Make a raw device dump
 
 Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
 
 In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
 
-To make a full dump of them you can easily use the built-in busybox `dd` command:
-
-```bash
-dd if=/dev/mtd3 of=/tmp/bank_1.dump
-dd if=/dev/mtd4 of=/tmp/bank_2.dump
-```
-
 Please note the two banks are usually mapped to `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
+
+To make a full dump of them you can follow [Making dumps](../Resources/#making-dumps) instructions.
