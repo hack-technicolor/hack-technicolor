@@ -70,10 +70,10 @@ It is **not recommended** to keep custom changes to files and configs if you are
 
 If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping this section and jumping [over](#flashing-firmware). In this section you have required steps to keep root access only.
 
-Make a full backup of your bank configuration:
+Make a full backup of your booted bank configuration:
 
 ```bash
-tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz bank_1 bank_2
+tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz $(cat /proc/banktable/booted)
 ```
 
 Move the backup to your PC by SCP or USB drive. Make sure you can open the backup archive and keep it in a safe place.
