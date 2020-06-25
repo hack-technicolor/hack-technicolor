@@ -423,7 +423,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 18.3.0495          | 2019-12-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0600          | 2020-04-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_003_CLOSED.rbi.torrent?raw=true) |
-
+| ???    | 19.4.0297          | 2020-05-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.2_001_CLOSED.rbi.torrent?raw=true) |
 > *\* requires access to ISP's network and download password*
 
 ## DJA0230 / VBNT-V
