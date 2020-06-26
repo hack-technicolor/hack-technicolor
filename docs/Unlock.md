@@ -54,7 +54,7 @@ A highly universal custom GUI with tons (!) of features is [available here](http
 This is recommended for users who don't fear a few bugs and want the most out-of-box usability from their modded gateway.
 
 !!! info "Recovery options"
-    Since version `9.5.60` this mod is compatible with the same *noptimal* bank plan suggested in this wiki. Please, read Recovery page carefully and get familiar with recovery strategies available when this special planning is in order. The easy and reliable Recovery for optimal bank plan users will also be available for you.
+    Since version `9.5.60` this mod is compatible with the same *optimal* bank plan suggested in this wiki. Please, read Recovery page carefully and get familiar with recovery strategies available when this special planning is in order. The easy and reliable Recovery for optimal bank plan users will also be available for you.
 
 !!! info "Different RTFD behavior"
     Any RTFD attempt will not uninstall this mod completely. Since version `9.5.60` you will need to repeat RTFD two times in a row to bring back the gateway to the same state a normal RTFD would.
@@ -62,7 +62,7 @@ This is recommended for users who don't fear a few bugs and want the most out-of
 !!! danger "This mod has permanently bricked Gateways before"
     In older versions of this GUI, it has bricked low space devices like the TG799vac.
     It now has a brick prevention method in place so this is not so much of a worry.
-    Do noy use versions older than `9.5.60`.
+    Do not use versions older than `9.5.60`.
 
 ## Change DNS
 
@@ -382,7 +382,7 @@ pwrctl config --eee off
 pwrctl config --autogreeen off
 ```
 
-## Running the TG799vac as the router with a second router behind it (Double NAT)
+## Running the Homeware gateway as router with a second router behind it (Double NAT)
 
 Double NAT used to break many things, but testing with this configuration shows that most current applications are very tolerant of it. Most applications assume they are on a private network and that their visible IP is not the one they are visible on on the internet via, so if it's nested one more level down via NAT with a DMZ redirecting traffic to the second router's WAN interface it makes very little difference (if this guide is followed)!
 
@@ -415,3 +415,119 @@ Here is how you go setting this up properly:
 7. Turn off WiFi on the TG799vac.
 
 At this point the TG799vac should be transparent to incoming requests which will hit the WAN interface of your internal router and be handled normally.
+
+## Keep WWAN functionality while Homeware gateway is bridged
+
+Those who are using a Homeware gateway in "bridge modes" would normally have all (or almost all) other features disabled or unused.  That is, they just want to bridge the main WAN interface (modem, ethernet, ont, cable, ...) connection to a LAN Ethernet interface that their main router/firewall connects to. However, these Homeware gateways also supports cellular  interfaces for failover purposes which could be still utilised by the router/firewall in a multi-WAN (fixed and cellular) configuration. You might also want to do this if you are not happy with native 4G failover behavior implemented by Technicolor, for example it does not cutover quickly enough, leaving long periods of no internet connectivity.
+
+### In this example
+
+1. We're going to use a DJA0231 from Telstra, although other gateways with external 4G USB dongles should also work.
+2. The modem interface has been configured to be bridged to LAN1 Ethernet port.
+3. The main WAN connection is going to be over VDSL with DHCP. Other WAN types like Ethernet over PPPoE would also work with small modifications to interface names used to the config.
+4. For simplicity, we're going to dedicate two distinct LAN ports to main and cellular WAN connections. It is possible to use a single one with proper VLAN setup.
+
+### Confirm bridge mode is working
+
+You need to be sure main WAN bridging is configured and working correctly. Configure your main router for DHCP WAN and plug it directly into the bridged one of the gateway's LAN ports. If configured correctly, the main router will get an IP address from your ISP. Plug your PC to an unbridged LAN port or connect via Wi-Fi so that you can continue to configure the gateway.
+
+!!! warning "Bridge mode of tch-nginx-gui"
+    The tch-nginx-gui mod allows the gateway to be configured into a so-called "bridge mode", but unlike the native Telstra code, is not a one-step press the "bridge Mode" button procedure and can be picky in the order in which things are done. However, the advantage tch-nginx-gui has is that it leaves much of the features intact and allows you to reverse it without doing a factory reset.
+
+The following diagram shows what we are trying to achieve.
+
+![alt text](images/dual_wan.png)
+
+In the diagram above the IP layer connections are green with the green circles representing terminating IP addresses. The VDSL modem is bridged at layer 2 through the switch LAN port 1 and the Homeware gateway is effectively invisible from an layer 3 (IP) perspective. On the 4G path, the IP connection terminates on the router in the gateway. This will create a double NAT (firewall/router and DJA0231 modem) path from your home network towards the cellular WAN. Of course, you may still add a static NAT rule or setup static routes to avoid this if you prefer, like we will explain later on.
+
+This example will allocate dedicated *LAN port 1* (`eth0`) for the bridged VDSL connection, while leaving the other ports on the existing LAN segment to allow connection to the gateway as router hop for the 4G connection and Homeware gateway administration. In this example the gateway's LAN IP address is `10.0.0.138` and on the firewall/router side the IP address is `10.0.0.1`.
+
+### Disable `wansensing` service
+
+We need to stop Homeware from doing automatic detection of WAN state which causes the 4G to be brought down if it detects the main WAN interface is up.
+
+```bash
+# Check status
+/etc/init.d/wansensing enabled && echo wansensing is currently ENABLED
+
+# Disable service and confirm status
+/etc/init.d/wansensing disable
+/etc/init.d/wansensing enabled || echo wansensing is currently DISABLED
+
+# Stop service
+/etc/init.d/wansensing stop
+```
+
+### Enable `wwan` interface
+
+The 4G interface `wwan` needs to be enabled.
+
+```bash
+# Check status
+uci show network.wwan.enabled
+
+# Enable wwan
+uci set network.wwan.enabled=1
+uci show network.wwan.enabled
+uci commit network
+
+# reload config files
+/etc/init.d/network reload
+```
+
+### Change `/etc/config/network` settings
+
+LAN port 1 and the VDSL modem interface need to be removed from the existing `lan` interface if they have been somehow added in there. This usually happens when you use one-touch "bridge modes". You can use WinSCP to easily perform the modifications to `/etc/config/network`. Under the section `config interface 'lan'` remove the following lines (if any):
+
+```
+    list ifname 'eth0'
+    list ifname 'ptm0' # or eth4 for Ethernet WAN, or whatever different name in case of VLAN interfaces
+```
+
+Now we need to add a new interface `bridgedwan` for the bridged VDSL segment.  Add the following just after the `config interface 'lan'` section:
+
+```
+config interface 'bridgedwan'
+	option force_link '1'
+	option type 'bridge'
+	list ifname 'eth0'
+	list ifname 'ptm0' # or eth4 for Ethernet WAN, or whatever different name in case of VLAN interfaces
+```
+
+After saving `/etc/config/network` apply the new config with the following commands:
+
+```bash
+uci commit network
+/etc/init.d/network reload
+```
+
+### Update static routes
+
+If you preferred not to enable a second NAT on your main router towards the cellular WAN, the Homeware gateway (used as router for 4G WAN) needs to know the existence of your downstream local networks, otherwise it does not know how to get the packets back to your devices. This can be done either directly from inside `/etc/config/network` or via the *IP Extras* card in the WebUI. The values you put here will be specific to your local IP environment. The example below will cater for networks from `192.168.0.0` to `192.168.15.0`.
+
+- IP Extras
+  - IPv4 Static Routes Configuration 
+    - Press `Add new static IPv4 route` button
+    - Enter the following values:
+      - Destination: 192.168.0.0
+      - Mask: 255.255.240.0
+      - Gateway: 10.0.0.1
+      - Metric: 1
+      - Interface: LAN
+
+### What it looks like when its working
+
+Below are some pictures and screenshots of the Homeware gateway used in a multi-WAN environment with a PfSense firewall as main router with NAT disabled over 4G WAN interface.
+
+![alt text](images/modem_with_firewall.jpg)
+
+In the picture above the firewall's far left Ethernet port is used to connect to the bridged VDSL path, while the far right Ethernet port is used to connect to the routed 4G path.
+
+![alt text](images/route.png)
+
+The screen capture above shows the IP routes in the Homeware gateways. You can see only a single default route pointing to the 4G interface and a static route pointing to the local networks we added to avoid double NAT. The bridged VDSL path cannot be seen as it is invisible from a layer-3 IP viewpoint.
+
+![alt text](images/gateways_definition.png)
+![alt text](images/gateways_status.png)
+
+The screen captures above show the PfSense firewall using the two WAN links from the Homeware gateway. On the first screen capture you can see that the VDSL connection and the 4G connection are defined as the gateway group `VDSL_4G` with the VDSL connection having a higher priority. On the second screen capture you can see that the firewall sees both WAN interfaces as online allowing it to direct traffic as it sees fit.
