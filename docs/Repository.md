@@ -25,7 +25,7 @@ Other branding codes you could see worldwide:
 | TI   | TIM          | Italy             |
 | TN   | Telenor      | Sweden            |
 
-Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
+Type 1/2/3 indicates if it can be rooted directly. For Type 2 only, Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
 ## TG582n v2 / DANT-7
 
@@ -33,7 +33,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:--------------|:-------|
-| 2      | 15.28.6169_FW_120 | 2015-07-11 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
+| 2      | 15.28.6169_FW_120 | 2015-07-11 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/15.28.6169_FW_120_TG582nv2.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-7/15.28.6169_FW_120_TG582nv2.rbi.torrent?raw=true) |
 
 ## TG582n v2 / DANT-8
 
@@ -41,7 +41,7 @@ Type 1/2/3 indicates if it can be rooted directly. For Type 2,  Firmware Root St
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:--------------|:-------|
-| 2      | 15.05.5876        | 2015-10-15 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.05.5876        | 2015-10-15 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG797n v3 / DANT-O
 
@@ -54,8 +54,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:--------------|:-------|
-| 2      | 15.53.6469-510-RA | 2016-01-07 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
-| 2      | 16.1.7565-580-RC  | 2017-06-08 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
+| 2      | 15.53.6469-510-RA | 2016-01-07 | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF483-15.53.6469-510-RA/dant-o_CRF483-15.53.6469-510-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF483-15.53.6469-510-RA.rbi.torrent?raw=true) |
+| 2      | 16.1.7565-580-RC  | 2017-06-08 | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF685-16.1.7565-580-RC/dant-o_CRF685-16.1.7565-580-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF685-16.1.7565-580-RC.rbi.torrent?raw=true) |
 | ???    | 16.1.8372-580-RA  | 2018-09-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_dant-o_CRF869-16.1.8372-580-RA/dant-o_CRF869-16.1.8372-580-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/dant-o/dant-o_CRF869-16.1.8372-580-RA.rbi.torrent?raw=true) |
 
 ## TG799vn v2 / VDNT-O
@@ -66,8 +66,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | ???    | 15.51.6436       | 2016-03-21 | -             | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
-| 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
@@ -78,8 +78,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0279        | 2017-10-31 | #3            | [HTTP](http://gateway.telmex.com/test/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi.torrent?raw=true) |
-| 2      | 17.2.0360        | 2018-07-16 | #0            | [HTTP](http://gateway.telmex.com/TECHNICOLOR_TG788vnv2_17.2.0360/F_TG788vnv2_17.2.0360.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/F_TG788vnv2_17.2.0360.rbi.torrent?raw=true) |
+| 2      | 17.2.0279        | 2017-10-31 | #D            | [HTTP](http://gateway.telmex.com/test/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/vdnt-w_TG788vnV2_17.2.0279_Upgrade.rbi.torrent?raw=true) |
+| 2      | 17.2.0360        | 2018-07-16 | #A            | [HTTP](http://gateway.telmex.com/TECHNICOLOR_TG788vnv2_17.2.0360/F_TG788vnv2_17.2.0360.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vdnt-w/F_TG788vnv2_17.2.0360.rbi.torrent?raw=true) |
 
 ## TG389ac / GANT-1
 
@@ -87,7 +87,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 15.53.6568         | 2016-09-09 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.53.6568         | 2016-09-09 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG789vac / VANT-D
 
@@ -101,7 +101,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Root Strategy | Mirror |
 |:------:|:-----------------|:--------------|:-------|
-| 2      | 16.2.7064        | #0            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-d/MST TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
+| 2      | 16.2.7064        | #A            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-d/MST TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -123,7 +123,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0278        | 2018-01-08 | #3            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
+| 2      | 17.2.0278        | 2018-01-08 | #D            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -131,20 +131,20 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7636        | 2017-04-19 | #0            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
+| 2      | 16.3.7636        | 2017-04-19 | #A            | [HTTP](http://ftp.tr69.tiscali.it/TR69/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7636-2921002-20170419153951-718b590506a915e24be58946f4755c0c617d9c8d.rbi.torrent?raw=true) |
 
-> *\* requires access to ISP's network and and download password*
+> *\* requires access to ISP's network and download password*
 
 ### iiNet & Internode
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7196-ver2.0.5 | 2016-10-21 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi.torrent?raw=true) |
-| 2      | 16.3.7637-ver2.2.0 | 2017-05-23 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002%20.rbi.torrent?raw=true) |
-| 2      | 16.3.7637-ver2.2.1 | 2017-06-30 | #0            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7637-ver2.2.1-CRF695-2721005.rbi.torrent?raw=true) |
+| 2      | 16.3.7196-ver2.0.5 | 2016-10-21 | #A            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7196-ver2.0.5-CRF592-2729004.rbi.torrent?raw=true) |
+| 2      | 16.3.7637-ver2.2.0 | 2017-05-23 | #A            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/VANT-6_16.3.7637-ver2.2.0-CRF638-2721002%20.rbi.torrent?raw=true) |
+| 2      | 16.3.7637-ver2.2.1 | 2017-06-30 | #A            | [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.7637-ver2.2.1-CRF695-2721005.rbi.torrent?raw=true) |
 | 1      | 16.3.8046-ver3.0   | 2017-12-18 | -             | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi.torrent?raw=true)
 |        | *note: this is officially named `ver3.0` but it is version `2.3.0` indeed* | |
-| 2      | 16.3.8046-ver2.5.3 | 2019-03-22 | #2            | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi.torrent?raw=true) |
+| 2      | 16.3.8046-ver2.5.3 | 2019-03-22 | #C            | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi.torrent?raw=true) |
 
 ## TG799vac / VANT-F
 
@@ -153,11 +153,11 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version           | Root Strategy | Mirror |
 |:------:|:------------------|:--------------|:-------|
 | ???    | 15.18.6052-420-RA | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF363-15.18.6052-420-RA/vant-f_CRF363-15.18.6052-420-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF363-15.18.6052-420-RA.rbi.torrent?raw=true) |
-| 2      | 15.53.6886-510-RF | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF540-15.53.6886-510-RF.rbi.torrent?raw=true) |
-| 2      | 16.3.7567-660-RG  | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF687-16.3.7567-660-RG.rbi.torrent?raw=true) |
-| 2      | 17.2.0188-820-RA  | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF683-17.2.188-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0213-820-RC  | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
-| 2      | 17.2.0261-820-RA  | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
+| 2      | 15.53.6886-510-RF | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF540-15.53.6886-510-RF/vant-f_CRF540-15.53.6886-510-RF.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF540-15.53.6886-510-RF.rbi.torrent?raw=true) |
+| 2      | 16.3.7567-660-RG  | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF687-16.3.7567-660-RG/vant-f_CRF687-16.3.7567-660-RG.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF687-16.3.7567-660-RG.rbi.torrent?raw=true) |
+| 2      | 17.2.0188-820-RA  | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF683-17.2.188-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0213-820-RC  | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
+| 2      | 17.2.0261-820-RA  | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | ???    | 17.2.0284-820-RA  | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF915-17.2.0284-820-RA/vant-f_CRF915-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF915-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## TG799vac / VANT-R
@@ -166,11 +166,11 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.51.6436       | 2016-02-05 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/telia-vant-r_15.51.6436-1361003-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2      | 15.51.6436       | 2016-05-27 | #0            | [HTTP](http://131.116.22.230/15516436r1361008closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/15516436r1361008closed.rbi.torrent?raw=true) |
-| 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732r2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339r1021008closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
+| 2      | 15.51.6436       | 2016-02-05 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/telia-vant-r_15.51.6436-1361003-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.51.6436       | 2016-05-27 | #A            | [HTTP](http://131.116.22.230/15516436r1361008closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/15516436r1361008closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732r2221004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339r1021008closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
@@ -181,7 +181,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG799vac Xtream / VANT-W
 
@@ -189,8 +189,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.53.7451       | 2017-03-20 | #0 #2         | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/telenor-vant-w_15.53.7451-1761003-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2      | 17.1.7937        | 2018-10-17 | #2            | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) |
+| 2      | 15.53.7451       | 2017-03-20 | #A #C         | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/telenor-vant-w_15.53.7451-1761003-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 17.1.7937        | 2018-10-17 | #C            | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-10-03 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-12-13 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi.torrent?raw=true) |
 
@@ -200,7 +200,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.1.7854        | 2018-02-15 | #2            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 17.1.7854        | 2018-02-15 | #C            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/blob/master/firmware/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG799vac Xtream / VANT-W_Rev-2
 
@@ -211,9 +211,9 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 15.51.6436       | 2015-12-23 | -             | [HTTP](http://131.116.22.230/15516436w1361002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/15516436w1361002closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-02-26 | -             | [HTTP](http://131.116.22.230/15516436w1361005closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/15516436w1361005closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [HTTP](http://131.116.22.230/15516436w1361006closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/15516436w1361006closed.rbi.torrent?raw=true) |
-| 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732w2221002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/1627732w2221002closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732w2221002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/1627732w2221002closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
@@ -224,7 +224,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #0            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | ???    | 18.3.0442-ver3.4.1 | 2019-11-14 | -             | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
 
 ## TG789vac Xtream 35b / VBNT-F
@@ -233,13 +233,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
-| 2      | 16.1.6637_FW_108_MOS | 2016-03-29 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.1.6866_FW_111_IAD | 2016-05-19 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.2.7384_FW_209_IAD | 2017-01-04 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.2.7384_FW_209_MOS | 2017-01-04 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7384-2349001-FW_209-MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-MOS_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.2.7825_FW_212_IAD | 2017-06-27 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7825-2349001-FW_212-IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-IAD_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.2.7825_FW_212_MOS | 2017-06-27 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi.torrent?raw=true) |
-| 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #0            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.1.6637_FW_108_MOS | 2016-03-29 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.1.6866_FW_111_IAD | 2016-05-19 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6866-2081001_FW_111_IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7384_FW_209_IAD | 2017-01-04 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7384_FW_209_MOS | 2017-01-04 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7384-2349001-FW_209-MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7384-2349001-FW_209-MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7825_FW_212_IAD | 2017-06-27 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7825-2349001-FW_212-IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-IAD_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.7825_FW_212_MOS | 2017-06-27 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.2.7825-2349001-FW_212-MOS_TG789vacXtream.rbi.torrent?raw=true) |
+| 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-f/16.1.6637-2081001_FW_108_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -249,9 +249,9 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.2.7732        | 2017-05-02 | #0            | [HTTP](http://131.116.22.230/1627732h2221002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/1627732h2221002closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-02-28 | #0            | [HTTP](http://131.116.22.230/172339h1441002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #0            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732h2221002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/1627732h2221002closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339h1441002closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
@@ -262,10 +262,10 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7567-660-RD | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF690-16.3.7567-660-RD.rbi.torrent?raw=true) |
-| 2      | 17.2.0188-820-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0213-820-RB | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF779-17.2.0213-820-RB.rbi.torrent?raw=true) |
-| 2      | 17.2.0261-820-RA | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
+| 2      | 16.3.7567-660-RD | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF690-16.3.7567-660-RD/vant-y_CRF690-16.3.7567-660-RD.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF690-16.3.7567-660-RD.rbi.torrent?raw=true) |
+| 2      | 17.2.0188-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0213-820-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF779-17.2.0213-820-RB.rbi.torrent?raw=true) |
+| 2      | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | ???    | 17.2.0284-820-RA | -          | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## DGA0130 / VANT-9
@@ -284,11 +284,11 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7413-660-RF | -          | #0 #2         | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2      | 17.2.0219-820-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF752-17.2.0219-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0219-820-RB | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF778-17.2.0219-820-RB.rbi.torrent?raw=true) |
-| 2      | 17.2.0261-820-RA | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF847-17.2.0261-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0284-820-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF913-17.2.0284-820-RA/vbnt-j_CRF913-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF913-17.2.0284-820-RA.rbi.torrent?raw=true) |
+| 2      | 16.3.7413-660-RF | -          | #A #C         | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 17.2.0219-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF752-17.2.0219-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0219-820-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF778-17.2.0219-820-RB.rbi.torrent?raw=true) |
+| 2      | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF847-17.2.0261-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0284-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF913-17.2.0284-820-RA/vbnt-j_CRF913-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF913-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## DGA4130 / VBNT-K
 
@@ -309,10 +309,10 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 16.3.7343          | 2016-11-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.0_006_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.0_006_closed.rbi.torrent?raw=true) |
 | ???    | 16.3.7391          | 2016-12-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.2_001_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.2_001_closed.rbi.torrent?raw=true) |
 | ???    | 16.3.7498          | 2017-01-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.2_002_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.2_002_closed.rbi.torrent?raw=true) |
-| 2      | 16.3.7498          | 2017-01-30 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.2_CLOSED.rbi.torrent?raw=true) |
+| 2      | 16.3.7498          | 2017-01-30 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 16.3.7573          | 2017-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.3_001_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.3_001_closed.rbi.torrent?raw=true) |
 | ???    | 16.3.7636          | 2017-03-17 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.3_003_closed.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.3_003_closed.rbi.torrent?raw=true) |
-| 2      | 16.3.7636          | 2017-04-11 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.3_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.3_CLOSED.rbi.torrent?raw=true) |
+| 2      | 16.3.7636          | 2017-04-11 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.3_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.3_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7745          | 2017-05-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_1.0.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7765          | 2017-05-23 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_1.0.1_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7765          | 2017-06-07 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_004_CLOSED.rbi.torrent?raw=true) |
@@ -321,8 +321,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 17.1.7882          | 2017-09-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_007_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_007_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7882          | 2017-10-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_008_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_008_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7882          | 2017-10-31 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_009_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_009_CLOSED.rbi.torrent?raw=true) |
-| 2      | 17.1.7882          | 2017-11-23 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0177          | 2017-11-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.0_001_CLOSED.rbi.torrent?raw=true) |
+| 2      | 17.1.7882          | 2017-11-23 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.0.4_CLOSED.rbi.torrent?raw=true) |
 | 1      | 17.3.0177          | 2018-02-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0238          | 2018-03-09 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0268          | 2018-04-05 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.1_002_CLOSED.rbi.torrent?raw=true) |
@@ -330,27 +330,28 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 17.3.0307          | 2018-05-23 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0331        | 2018-07-05 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-07-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_004_CLOSED.rbi.torrent?raw=true) |
-| 3      | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-08-31 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.2.0_001_CLOSED.rbi.torrent?raw=true) |
+| 3      | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-10-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-10-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-11-28 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_003_CLOSED.rbi.torrent?raw=true) |
 | 1      | 17.3.c.0349        | 2019-01-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0365        | 2019-01-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0365        | 2019-03-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.1_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.1_003_CLOSED.rbi.torrent?raw=true) |
-| 1      | 17.3.c.0365        | 2019-04-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.1_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0313          | 2019-04-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_001_CLOSED.rbi.torrent?raw=true) |
+| 1      | 17.3.c.0365        | 2019-04-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.1_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0335          | 2019-05-06 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0335          | 2019-05-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0357          | 2019-05-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0376          | 2019-06-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_005_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_005_CLOSED.rbi.torrent?raw=true) |
-| 1      | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0385          | 2019-07-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_001_CLOSED.rbi.torrent?raw=true) |
+| 1      | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0445          | 2019-09-30 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.k.0451        | 2019-10-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_004_CLOSED.rbi.torrent?raw=true) |
 | 1      | 18.3.k.0451        | 2019-10-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0495          | 2019-12-03 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
+| ???    | 18.3.0600          | 2020-04-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_003_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
 
@@ -360,15 +361,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0214_FW_219   | 2017-10-17 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0214_FW_219_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0214_FW_219_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0245_FW_223   | 2017-11-28 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_223_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_223_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0245_FW_226   | 2017-12-22 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_226_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_226_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0279_FW_233   | 2018-04-13 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0279_FW_233_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_233_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0279_FW_235   | 2018-06-22 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0279_FW_235_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_235_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0392_FW_245   | 2018-10-24 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0392_FW_245_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0392_FW_245_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0407_FW_247   | 2018-12-06 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0407_FW_247_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0407_FW_247_DGA4131.rbi.torrent?raw=true) |
-| 2      | 17.2.0412_FW_248   | 2018-12-15 | #1            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
-| 2      | 18.3.n.0439_FW_258 | 2020-01-21 | #2            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0214_FW_219   | 2017-10-17 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0214_FW_219_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0214_FW_219_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0245_FW_223   | 2017-11-28 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_223_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_223_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0245_FW_226   | 2017-12-22 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0245_FW_226_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0245_FW_226_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0279_FW_233   | 2018-04-13 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0279_FW_233_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_233_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0279_FW_235   | 2018-06-22 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0279_FW_235_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0279_FW_235_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0392_FW_245   | 2018-10-24 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0392_FW_245_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0392_FW_245_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0407_FW_247   | 2018-12-06 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0407_FW_247_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0407_FW_247_DGA4131.rbi.torrent?raw=true) |
+| 2      | 17.2.0412_FW_248   | 2018-12-15 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
+| 2      | 18.3.n.0439_FW_258 | 2020-01-21 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -380,14 +381,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | ???    | 17.1.7765          | 2017-06-08 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7798          | 2017-06-09 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_002_CLOSED.rbi.torrent?raw=true) |
-| 2      | 17.1.7798          | 2017-06-09 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_CLOSED.rbi.torrent?raw=true) |
+| 2      | 17.1.7798          | 2017-06-09 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7812          | 2017-06-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.3_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.3_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7812          | 2017-06-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.3_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.3_002_CLOSED.rbi.torrent?raw=true) |
-| 2      | 17.1.7812          | 2017-07-04 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.3_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.3_CLOSED.rbi.torrent?raw=true) |
+| 2      | 17.1.7812          | 2017-07-04 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.3_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.3_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7841          | 2017-07-24 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.4_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.4_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7882          | 2017-09-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.5_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.5_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.1.7882          | 2017-09-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.5_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.5_002_CLOSED.rbi.torrent?raw=true) |
-| 2      | 17.1.7882          | 2017-10-23 | #0            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.5_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.5_CLOSED.rbi.torrent?raw=true) |
+| 2      | 17.1.7882          | 2017-10-23 | #A            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.5_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.5_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0165          | 2017-10-23 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.0.6_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.0.6_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0177          | 2017-11-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.0177          | 2017-12-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.0_002_CLOSED.rbi.torrent?raw=true) |
@@ -398,8 +399,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 17.3.0307          | 2018-05-23 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.2_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0331        | 2018-07-05 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.2_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.2_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-07-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.2_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.2_004_CLOSED.rbi.torrent?raw=true) |
-| 3      | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-08-31 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.2.0_001_CLOSED.rbi.torrent?raw=true) |
+| 3      | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_1.1.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-10-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-10-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-11-28 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.0_003_CLOSED.rbi.torrent?raw=true) |
@@ -407,21 +408,22 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 17.3.c.0365        | 2019-01-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0365        | 2019-02-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.1_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0365        | 2019-03-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.1_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.1_003_CLOSED.rbi.torrent?raw=true) |
-| 1      | 17.3.c.0365        | 2019-04-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.1_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0313          | 2019-04-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_001_CLOSED.rbi.torrent?raw=true) |
+| 1      | 17.3.c.0365        | 2019-04-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.0.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.0.1_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0335          | 2019-05-06 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0335          | 2019-05-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0357          | 2019-05-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0376          | 2019-06-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_005_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_005_CLOSED.rbi.torrent?raw=true) |
-| 1      | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0385          | 2019-07-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_001_CLOSED.rbi.torrent?raw=true) |
+| 1      | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0412          | 2019-09-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0445          | 2019-09-30 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.k.0451        | 2019-10-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_004_CLOSED.rbi.torrent?raw=true) |
 | 1      | 18.3.k.0451        | 2019-10-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0495          | 2019-12-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0547          | 2020-02-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_002_CLOSED.rbi.torrent?raw=true) |
-
+| ???    | 18.3.0600          | 2020-04-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_003_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0297          | 2020-05-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.2_001_CLOSED.rbi.torrent?raw=true) |
 > *\* requires access to ISP's network and download password*
 
 ## DJA0230 / VBNT-V
@@ -430,13 +432,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0188-820-RA   | -          | #2            | *No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
-| 2      | 17.2.0288-820-RA   | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF761-17.2.0288-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0320-820-RA   | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF795-17.2.0320-820-RA.rbi.torrent?raw=true) |
-| 2      | 17.2.0406-820-RC   | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF909-17.2.0406-820-RC.rbi.torrent?raw=true) |
-| 2      | 17.2.0468-820-RA   | 2019-07-19 | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF928-17.2.0468-820-RA/vbnt-v_CRF928-17.2.0468-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF928-17.2.0468-820-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0429-950-RA | 2019-09-20 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979-18.1.c.0429-950-RA/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0443-950-RA | 2019-10-21 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979_18.1.c.0443-950-RA/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0188-820-RA   | -          | #C            | *No RBI available, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
+| 2      | 17.2.0288-820-RA   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF761-17.2.0288-820-RA/vbnt-v_CRF761-17.2.0288-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF761-17.2.0288-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0320-820-RA   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF795-17.2.0320-820-RA/vbnt-v_CRF795-17.2.0320-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF795-17.2.0320-820-RA.rbi.torrent?raw=true) |
+| 2      | 17.2.0406-820-RC   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF909-17.2.0406-820-RC/vbnt-v_CRF909-17.2.0406-820-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF909-17.2.0406-820-RC.rbi.torrent?raw=true) |
+| 2      | 17.2.0468-820-RA   | 2019-07-19 | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF928-17.2.0468-820-RA/vbnt-v_CRF928-17.2.0468-820-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF928-17.2.0468-820-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0429-950-RA | 2019-09-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979-18.1.c.0429-950-RA/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979-18.1.c.0429-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0443-950-RA | 2019-10-21 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979_18.1.c.0443-950-RA/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0462-950-RA | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_vbnt-v_CRF993-18.1.c.0462-950-RA/vbnt-v_CRF993-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF993-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
 
 ## DNA0130 / VBNT-Z
 
@@ -452,29 +455,27 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 18.1.c.0215-950-RA | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0241-950-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0283-950-RA | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0347-950-RC | -          | #0 #2         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0384-950-RB | -          | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0443-950-RB | 2019-11-20 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0462-950-RB | 2020-02-14 | #2            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0215-950-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0241-950-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0283-950-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0347-950-RC | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0384-950-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0443-950-RB | 2019-11-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
 
-# What to do if your firmware is not listed here
+## What to do if your firmware is not listed here
 
 If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
 
-- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL
+- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL.
 
-- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks)
-
-- Ask kevdagoat and he will use his CRF Guesser :)
+- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks).
 
 Read further below to get some more useful tips.
 
-If you find another firmware for a Technicolor gateway which is not yet listed, create an Issue so it can be added!
+If you find another firmware for a Technicolor gateway which is not yet listed in this page, please, [open a new Issue on GitHub](https://github.com/kevdagoat/hack-technicolor/issues/new?assignees=&labels=Add+FW+Request&template=add-firmware.md&title=Add+_VERSION_+for+_BOARD_) so it can be added!
 
-## Guessing RBI Firmware URL's
+### Guessing RBI Firmware URL's
 
 The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X).
 
@@ -517,17 +518,12 @@ Newer firmware images are often encrypted with a board-specific AES-128 (thus sy
 
 Every firmware image is also verified by asymmetric keys. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
 
-## Make a raw device dump
+### Make a raw device dump
 
 Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
 
 In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
 
-To make a full dump of them you can easily use the built-in busybox `dd` command:
-
-```bash
-dd if=/dev/mtd3 of=/tmp/bank_1.dump
-dd if=/dev/mtd4 of=/tmp/bank_2.dump
-```
-
 Please note the two banks are usually mapped to `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
+
+To make a full dump of them you can follow [Making dumps](../Resources/#making-dumps) instructions.
