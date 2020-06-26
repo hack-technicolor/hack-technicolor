@@ -11,11 +11,11 @@ assignees: ''
 
 My gateway is currently running firmware version _VERSION_ from _ISP_ in _COUNTRY_
 
-- Product: *(e.g. DJA0231TLS, FGA2130FWB, TG788vn v2, ...)*
+- Product: *(e.g. DJA0231TLS, DGA2231, FGA2130FWB, TG788vn v2, ...)*
 - ISP: *(e.g. Vodafone, Comcast, Sky, Telstra, ...)
 - Countries: *(i.e. in which country or countries you know that model has been sold)*
 - Commercial name from the ISP: *(i.e. any fancy name ISP gave it, like "Ultra Smart Stuff 2" or similar)*
-- Board: *()*
+- Board: *(e.g. VCNT-A, GBNT-2, VCNT-C, ...)*
 
 **Did anybody ever manage to get root on that device already?**
 
