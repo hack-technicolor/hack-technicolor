@@ -88,7 +88,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 15.53.6568         | 2016-09-09 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2      | 16.1.7053          | 2016-10-28 | ?             | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 16.1.7053          | 2016-10-28 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
 
 ## TG789vac / VANT-D
 
