@@ -425,7 +425,7 @@ echo 0 > /sys/class/leds/power:red/brightness
 
 ## IPv6 issues
 
-IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
+IPv6 is problematic in older Homeware builds since Chaos Calmer had broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
 ## BusyBox (ash)
 
