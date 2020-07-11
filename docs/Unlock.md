@@ -98,12 +98,14 @@ Add:
 list server '<IP of DNS>'
 ```
 
-## VoIP Setup
+## VoIP Tweaks for Testra firmwares
+
+### Switch from FXO lines to VoIP
 
 If you want to use VoIP, the following is the quickest way to set it up and remove some broken config that causes calls to be sent out via the FXO port which will be unplugged for everyone in Australia, once you are on NBN.
 
-!!! hint
-    This code will not work for some Gateway / Firmware combinations (eg [DJA0230](https://forums.whirlpool.net.au/thread/9vxxl849?p=204#r64998059)). Use:
+!!! warning
+    This code will not work as is for some Gateway / Firmware combinations because their default configurations are different (eg [DJA0230](https://forums.whirlpool.net.au/thread/9vxxl849?p=204#r64998059)). Use:
     ```uci del_list mmpbx.@outgoing_map[*].priority='3' instead of '2'```
 
 ```bash
@@ -165,13 +167,11 @@ uci commit
 /etc/init.d/mmpbxd restart
 ```
 
+## Expose some more VoIP settings into the web UI
+
 The following commands are only required for older Telstra firmware i.e. `17.2.0188-820-RA` and earlier.  
 
 They aren't required on newer firmware.  Failures can be ignored. Some of the extra tabs exist in the newer firmware but they hang, so they have been left out!
-
- We also reset the LAN SIP inbound passwords here for security.
-
- Please don't post the default passwords in public forums as they could be a security risk for those still using them!
 
 ```bash
 # Block 2 - most people can skip this
@@ -187,6 +187,20 @@ uci add_list web.ruleset_main.rules=mmpbxstatisticsmodal
 uci set web.mmpbxstatisticsmodal=rule
 uci set web.mmpbxstatisticsmodal.target='/modals/mmpbx-statistics-modal.lp'
 uci add_list web.mmpbxstatisticsmodal.roles='admin'
+sed -e 's/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},\n{"mmpbx-inoutgoingmap-modal.lp", T"In-Out Mapping"},\n{"mmpbx-statistics-modal.lp", T"Statistics"},/' -i /www/snippets/tabs-voice.lp
+uci commit
+```
+
+### Change internal VoIP extensions credentials
+
+!!! warning
+    This only applies to firmwares with mmpbxrvsipdev support.
+
+ We also reset the LAN SIP inbound passwords here for security.
+
+ Please don't post the default passwords in public forums as they could be a security risk for those still using them!
+
+```bash
 uci set mmpbxrvsipdev.sip_dev_0.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
 uci set mmpbxrvsipdev.sip_dev_1.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
 uci set mmpbxrvsipdev.sip_dev_2.password=`dd if=/dev/urandom bs=1 | tr -dc A-Za-z0-9 | head -c${1:-10}`
@@ -203,10 +217,35 @@ uci set mmpbxrvsipdev.sip_dev_5.push_type='none'
 uci set mmpbxrvsipdev.sip_dev_6.push_type='none'
 uci delete mmpbxrvsipdev.sip_server.apn_cert_key
 uci delete mmpbxrvsipdev.sip_server.apn_interface
-sed -e 's/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},/{"mmpbx-sipdevice-modal.lp", T"Sip Device"},\n{"mmpbx-inoutgoingmap-modal.lp", T"In-Out Mapping"},\n{"mmpbx-statistics-modal.lp", T"Statistics"},/' -i /www/snippets/tabs-voice.lp
-uci commit
 ```
-## Unlocking the option to add a second SIP Network Provider
+
+### VoLTE backup voice service & SMS reception
+
+From firmware `17.2.0406-820-RC` on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the Gateway to provide a phone service on the phone ports and to DECT handsets.  
+
+If you have SIP profiles configured, these will be used before the call is routed via the mobile network.  This has been tested with a Telstra 4G SIM; it's unknown if it will work with Vodafone/Optus SIMs due to the internal VoLTE configuration in the 4G module in the Gateway.
+
+VoLTE status is visible under *Advanced > Telephony > VoLTE tab*; SMS messages are under the *Advanced > Mobile > SMS tab*.
+
+```bash
+uci set mmpbxmobilenet.mobile_profile_0.enabled='1'
+uci set mobiled_device_specific.@device[0].ims_pdn_autobringup='1'
+uci set mobiled_sessions.@session[0].activated='1'
+uci set mobiled_sessions.@session[0].autoconnect='1'
+uci set mobiled_sessions.@session[0].optional='1'
+uci add_list web.ruleset_main.rules=ltesms
+uci set web.ltesms=rule
+uci set web.ltesms.target='/modals/lte-sms.lp'
+uci add_list web.ltesms.roles='admin'
+uci commit
+/etc/init.d/mmpbxd restart
+/etc/init.d/nginx restart
+```
+
+## Unlocking the option to setup a second SIP network
+
+!!! warning
+    mmpbx (the Homeware VoIP stack) support for multiple SIP networks is broken. The SIP message listener for the second network will end up being used for both SIP networks. Effects of this issue will vary according to specific VoIP deployments and settings in ways we couldn't really predict in general. You can install and use sngrep application to better diagnose these weird situations. Please note multiple profiles for the same SIP network are working fine. You can still get better results by setting up a single local Asterisk PBX and connect mmpbx to it as a single network with multiple profiles.
 
 ```bash
 # Block 3A (Optional: Adding 2nd SIP Provider)
@@ -269,7 +308,8 @@ uci commit
 /etc/init.d/nginx restart
 /etc/init.d/mmpbxd restart
 ```
-Setting SIP profiles which can be easily edited via GUI for multiple accounts per VOIP provider
+
+Setting SIP profiles which can be easily edited via GUI for multiple accounts per VoIP provider
 
 ```bash
 # SIP Account defaults
@@ -298,30 +338,10 @@ uci set mmpbxrvsipnet.sip_profile_3.uri='Uri3'
 uci commit
 ```
 
-## VoLTE backup voice service & SMS reception
-
-From firmware `17.2.0406-820-RC` on the DJA0230TLS it is possible to use a 4G/VoLTE enabled SIM card in the Gateway to provide a phone service on the phone ports and to DECT handsets.  
-
-If you have SIP profiles configured, these will be used before the call is routed via the mobile network.  This has been tested with a Telstra 4G SIM; it's unknown if it will work with Vodafone/Optus SIMs due to the internal VoLTE configuration in the 4G module in the Gateway.
-
-VoLTE status is visible under *Advanced > Telephony > VoLTE tab*; SMS messages are under the *Advanced > Mobile > SMS tab*.
-
-```bash
-uci set mmpbxmobilenet.mobile_profile_0.enabled='1'
-uci set mobiled_device_specific.@device[0].ims_pdn_autobringup='1'
-uci set mobiled_sessions.@session[0].activated='1'
-uci set mobiled_sessions.@session[0].autoconnect='1'
-uci set mobiled_sessions.@session[0].optional='1'
-uci add_list web.ruleset_main.rules=ltesms
-uci set web.ltesms=rule
-uci set web.ltesms.target='/modals/lte-sms.lp'
-uci add_list web.ltesms.roles='admin'
-uci commit
-/etc/init.d/mmpbxd restart
-/etc/init.d/nginx restart
-```
-
 ## Enable VOIP for both SIP providers while on 4G Backup (Frontier DJN2130 & SMG1 DJA0230)
+
+!!! warning
+    This is not a general trick. It depends on other special firmware settings about VoIP routing and NAT rules.
 
 ```bash
 # Enable VOIP while on backup
@@ -333,10 +353,14 @@ uci commit
 /etc/init.d/nginx restart
 ```
 
-## Speeding up VDSL sync times
+## xDSL modem tweaks
 
-!!! note "Firmware 16.3"
-    Firmware version 16.3.x works the best in terms of xDSL sync and compatibility. Use if available
+These tweaks only apply to Homeware gateways with an integrated xDSL modem.
+
+!!! note "xDSL drivers"
+    There exist multiple xDSL drivers versions across different firmwares. You can observe differences in stability and/or performance moving from devices based on older xDSL SoC to newer ones. If you think you really need some specific xDSL driver version, you can switch it by picking compatible blobs from other firmwares. The tch-nginx-gui provides an user-friendly way to play with such things.
+
+### Speeding up VDSL sync times
 
 If you're on VDSL you may be able to speed up your sync times by removing redundant DSL profiles so the integrated Gateway does not even try to use them.
 
