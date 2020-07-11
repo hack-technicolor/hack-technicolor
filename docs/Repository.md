@@ -89,6 +89,16 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 15.53.6568         | 2016-09-09 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
+### Teo & Telia Lithuania
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 15.32.6210         | 2015-10-21 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/telia-gant-1_15.32.6210-1081007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 16.1.7053          | 2016-10-28 | #A            | [HTTPS](https://github.com/kevdagoat/hack-technicolor/raw/master/firmware/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 17.1.7992          | 2018-05-15 | #C            | [HTTP](http://10.0.98.250/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gant-1/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's management network*
+
 ## TG789vac / VANT-D
 
 !!! warning "Model Warning"
