@@ -475,6 +475,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0384-950-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0443-950-RB | 2019-11-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0514-950-RB | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
 
 ## What to do if your firmware is not listed here
 
@@ -488,15 +489,15 @@ Read further below to get some more useful tips.
 
 If you find another firmware for a Technicolor gateway which is not yet listed in this page, please, [open a new Issue on GitHub](https://github.com/kevdagoat/hack-technicolor/issues/new?assignees=&labels=Add+FW+Request&template=add-firmware.md&title=Add+_VERSION_+for+_BOARD_) so it can be added!
 
-### Guessing RBI Firmware URL's
+### Hunting RBI Firmware URL's
 
-The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware board mnemonic version (something like XXXX-X).
+The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware version, usually identified with a board mnemonic string like `XXXX-X`. HAving an RBI file for your Gateway board is therefore really important.
 
-The Firmware filename combination is usually ISP specific, so the first thing to do is to find another known firmware from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining:
+The Firmware filename combination is usually ISP specific, so the first thing to do is to find another known firmware from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining some tokens like product vendor, product name, hardware version, firmware version and special ISP-specific suffixes or prefixes.
 
-Product Vendor + **Hardware** + CRF + **Firmware**
+The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`. Look for any firmware version prefiz, suffic, or complete string overrides.
 
-Using the web interface, go to `Advanced >>Gateway`. In here you will find the Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version:
+Using the web interface, go to `Advanced >>Gateway`. In here you will find all basic information like Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version (including any suffix or prefix):
 
 ```bash
 Global Information
@@ -507,13 +508,17 @@ Firmware Version    15.53.6469-510-RA
 Hardware Version    DANT-O
 ```
 
-If the Gateway is rooted, the CRF number can be found in `/rom/etc/config/env`
+#### Configuration version
 
-Obtain by running `cat /rom/etc/config/env | grep "CRF"`
+For some ISP's, you may see the configuration version as part of the firmware URL. If the Gateway is rooted, the CONF_VERSION string can be found in `/rom/etc/config/env`
+
+Obtain by running `cat /rom/etc/config/env | grep "CONF_VERSION"`
 
 ```bash
 option CONF_VERSION 'CRF483'
 ```
+
+#### Past upgrades history
 
 You can also run
 
@@ -521,15 +526,7 @@ You can also run
 strings /etc/cwmpd.db
 ```
 
-Which may yield some firmware URL's.
-
-The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`.
-
-Once you have guessed it please create an issue to get it added!
-
-Newer firmware images are often encrypted with a board-specific AES-128 (thus symmetric) key, called OSCK. When flashing via either TFTP or web interface, the gateway first decrypts the RBI and then flashes it to the inactive bank.
-
-Every firmware image is also verified by asymmetric keys. This second action is performed on boot by the stock bootloader which will fail to boot if the signature verification fails.
+Which may yield some firmware URL's your Gateway received as automatic update.
 
 ### Make a raw device dump
 
