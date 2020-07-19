@@ -279,7 +279,7 @@ You can get a firmware image flashed by using one of the following modes:
 
 ## Decrypting firmware
 
-RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
+RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/hack-technicolor/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
 
 ## Checking firmware signature
 
