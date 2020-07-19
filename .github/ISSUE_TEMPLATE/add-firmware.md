@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Important:** Please, check issue still occurs in [Latest](https://hack-technicolor.readthedocs.io/en/latest/) branch before opening a new one. Use the "Model Support Request" issue template in place of this one in case you're going to share the first firmware for your gateway device.
+**Important:** Please, check firmware isn't already listed in [Latest branch](https://hack-technicolor.readthedocs.io/en/latest/Repository) before opening a new one. Use the "Model Support Request" issue template in place of this one in case you're going to share the first firmware for your gateway device.
 
 Please fill out the following, remembering to put an 'x' in the '[ ]' to mark the checkbox:
 
