@@ -349,3 +349,254 @@ A Python program written by Mark Smith is available on [GitHub](https://github.c
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
 If you do any electronics and have some relays and transistors lying around, you probably already have everything required for this!
+
+## NAND glitching to force change booted bank
+
+If the bootloader fails to boot the kernel from the current bank 3 times in a row, it will try another bank. By temporary shorting specific NAND pins you can cause NAND CRC error which will force the bootloader to retry booting. After 3 times glitching the NAND this way - the router will boot another bank. This method requires a serial console as you need to see the exact moment when the bootloader tries to boot.
+
+![Typical NAND flash memory](images/nand.png)
+
+You need to short `IO/0` and `IO/1` pins as soon as you see a message `Booting : Bank 1`. Put a needle or similar object between IO/0 and IO/1 and remove as soon as the bootloader shows an error. Repeat 3 times and you should see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
+
+An example serial console log:
+```
+----
+PHYS
+STRF
+400H
+PHYE
+DDR3
+SIZ3
+DINT
+USYN
+LSYN
+MFAS
+LMBE
+RACE
+PASS
+----
+
+Technicolor Gateway
+(c) 2014, All rights reserved
+
+Decompressing Bootloader................................
+Gateway initialization sequence started
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc24fe000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	81332ae0 8133508c 81326e68 81326bbc 813252e4 813242cc 
+	8131fe4c 8131fef0 813032f8 8130df48 81317178 8130f8a4 
+	8131aa10 81317178 8131f854 8131a884 8131a3f0 8131fa78 
+	8131a224 8131a0d0 81320edc 
+
+Exception frame:
+812ff4d0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 4f e0 00    .........2.D.O..
+812ff4e0: 00 02 a0 80 a1 16 d5 90 a2 16 1f e6 5e 0f 65 65    ............^.ee
+812ff4f0: 00 00 00 00 a0 00 00 00 00 00 00 01 7f 61 99 59    .............a.Y
+812ff500: c2 4f e0 00 81 2f f6 34 c2 4f df c4 b4 33 a2 83    .O.../.4.O...3..
+812ff510: 40 04 c5 c3 44 df 01 33 00 00 00 0f c2 82 fc fa    @...D..3........
+812ff520: 71 a7 f2 d0 3a 22 7c 28 5f 11 1c e1 81 33 7b 2c    q...:"|(_....3{,
+812ff530: 81 2f f7 90 01 00 20 c0 81 2f f7 90 c2 4f df c4    ./......./...O..
+812ff540: 00 00 00 40 00 00 00 01 81 3a 75 b0 00 00 00 00    ...@.....:u.....
+812ff550: 81 2f f7 90 00 00 00 00 07 d5 e0 00 00 00 08 00    ./..............
+812ff560: 81 34 7f 40 81 2f f5 f8 90 7e df 68 81 32 15 94    .4.@./.....h.2..
+812ff570: 49 24 92 4c ff ff ff fe 00 00 18 00 81 30 3d 90    I$.L.........0=.
+812ff580: 00 00 00 00 81 34 03 40 81 34 b8 00 81 34 03 40    .....4.@.4...4.@
+812ff590: 00 00 00 01 e2 68 d3 35 07 d5 e0 00 00 00 00 00    .....h.5........
+812ff5a0: c0 03 e0 00 00 00 00 00 81 37 00 00 00 00 00 01    .........7......
+812ff5b0: 81 34 a0 00 00 00 00 00 90 7e df 68 81 30 3c 30    .4.........h.0<0
+812ff5c0: 24 26 1d d1 81 34 a0 00 81 31 91 24 8d 03 5b 5f    $&...4...1.$..[_
+812ff5d0: 00 00 20 00 00 00 20 00 81 30 41 e4 81 30 41 d0    .........0A..0A.
+812ff5e0: 81 31 8d 28 80 00 00 00 00 00 00 00 00 00 00 00    .1.(............
+812ff5f0: 81 34 a0 00 81 2f f6 48                            .4.../.H
+
+----
+PHYS
+STRF
+400H
+PHYE
+DDR3
+SIZ3
+DINT
+USYN
+LSYN
+MFAS
+LMBE
+RACE
+PASS
+----
+
+Technicolor Gateway
+(c) 2014, All rights reserved
+
+Decompressing Bootloader................................
+Gateway initialization sequence startednand: error M
+nand: ECC correctable
+
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 (attempt 2) nand: ECC uncorrectable!
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc2220000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	81332ae0 8133508c 81326e68 81326bbc 813252e4 813242cc 
+	8131fe4c 813032f8 8130df48 81316364 81317178 8130f8a4 
+	8131aa10 81317178 8131f854 8131a884 8131a3f0 8131fa78 
+	8131a224 
+
+Exception frame:
+812ff4b0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 22 00 00    .........2.D."..
+812ff4c0: 00 02 a0 80 99 69 6a 48 b0 b1 1c 28 98 4b 05 c3    .....ijH...(.K..
+812ff4d0: 00 00 00 00 a0 00 00 00 00 00 00 01 f3 2c 24 c8    .............,$.
+812ff4e0: c2 22 00 00 81 2f f6 14 c2 21 ff c4 94 c4 8f 9c    .".../...!......
+812ff4f0: e2 30 9c 45 09 26 96 e4 00 00 00 0f f6 57 e7 4c    .0.E.&.......W.L
+812ff500: 96 14 e8 fb 66 62 cc 73 6a cf 98 69 81 33 7b 2c    ....fb.sj..i.3{,
+812ff510: 81 2f f7 70 01 2e 00 c0 81 2f f7 70 c2 21 ff c4    ./.p...../.p.!..
+812ff520: 00 00 00 40 00 00 00 01 81 3a 75 b0 00 00 00 00    ...@.....:u.....
+812ff530: 81 2f f7 70 00 00 00 00 07 d5 e0 00 00 00 08 00    ./.p............
+812ff540: 81 34 7f 40 81 2f f5 d8 90 7e df 68 81 32 15 94    .4.@./.....h.2..
+812ff550: 49 24 92 4c ff ff ff fe 00 00 18 00 81 30 3d 90    I$.L.........0=.
+812ff560: 91 b7 30 31 91 b0 0f b0 81 34 b8 00 c3 2e 7f d3    ..01.....4......
+812ff570: 00 00 00 01 47 1a 89 02 07 d5 e0 00 00 00 00 00    ....G...........
+812ff580: c0 03 e0 00 00 00 00 00 81 37 00 00 00 00 00 01    .........7......
+812ff590: 81 34 a0 00 00 00 00 00 90 7e df 68 81 30 3c 30    .4.........h.0<0
+812ff5a0: 00 00 00 20 81 34 a0 00 81 31 91 24 00 00 00 08    .....4...1.$....
+812ff5b0: 00 00 20 00 00 00 20 00 81 30 41 e4 81 30 41 d0    .........0A..0A.
+812ff5c0: 81 31 8d 28 78 c1 0c 20 60 df dd e8 8d 03 5b 5f    .1.(x...`.....[_
+812ff5d0: 81 34 a0 00 81 2f f6 28                            .4.../.(
+
+----
+PHYS
+STRF
+400H
+PHYE
+DDR3
+SIZ3
+DINT
+USYN
+LSYN
+MFAS
+LMBE
+RACE
+PASS
+----
+
+Technicolor Gateway
+(c) 2014, All rights reserved
+
+Decompressing Bootloader................................
+Gateway initialization sequence startednand: error M
+nand: ECC correctable
+
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 (attempt 3)nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+nand: mark block bad.
+nand: error E
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc246e000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	81332ae0 8133508c 81326e68 81326bbc 813252e4 813242cc 
+	8131fe4c 813032f8 8130df48 81316364 81317178 8130f8a4 
+	8131aa10 81317178 8131f854 8131a884 8131a3f0 8131fa78 
+	8131a224 
+
+Exception frame:
+812ff4b0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 46 e0 00    .........2.D.F..
+812ff4c0: 00 02 a0 80 99 69 6a 48 b0 b1 1c 28 98 4b 05 c3    .....ijH...(.K..
+812ff4d0: 00 00 00 00 a0 00 00 00 00 00 00 01 55 3e cc ca    ............U>..
+812ff4e0: c2 46 e0 00 81 2f f6 14 c2 46 df c4 51 54 57 bd    .F.../...F..QTW.
+812ff4f0: ed 31 27 fa a4 2f 4e a6 00 00 00 0f c1 1a 5f 7f    .1'../N......._.
+812ff500: f8 72 86 46 89 ad 73 b2 9b 9f 61 2c 81 33 7b 2c    .r.F..s...a,.3{,
+812ff510: 81 2f f7 70 01 09 20 c0 81 2f f7 70 c2 46 df c4    ./.p...../.p.F..
+812ff520: 00 00 00 40 00 00 00 01 81 3a 75 b0 00 00 00 00    ...@.....:u.....
+812ff530: 81 2f f7 70 00 00 00 00 07 d5 e0 00 00 00 08 00    ./.p............
+812ff540: 81 34 7f 40 81 2f f5 d8 90 7e df 68 81 32 15 94    .4.@./.....h.2..
+812ff550: 49 24 92 4c ff ff ff fe 00 00 18 00 81 30 3d 90    I$.L.........0=.
+812ff560: ff ff ff ff 81 31 a3 f0 81 34 b8 00 c3 2e 7f d3    .....1...4......
+812ff570: 00 00 00 01 be 73 4f ed 81 3a 00 00 81 3a 3b e4    .....sO..:...:;.
+812ff580: 81 3a 00 00 81 3a 3b ec 81 3a 00 00 00 00 00 01    .:...:;..:......
+812ff590: 81 3a 75 b0 00 00 00 00 90 7e df 68 81 31 a2 24    .:u........h.1.$
+812ff5a0: 00 00 00 20 81 34 a0 00 81 31 91 24 00 00 00 08    .....4...1.$....
+812ff5b0: 10 00 04 03 00 00 20 00 81 2f f7 70 01 28 06 80    ........./.p.(..
+812ff5c0: 81 2f f7 70 c2 27 fa 44 00 00 00 40 81 31 a0 d0    ./.p.'.D...@.1..
+812ff5d0: 10 00 04 03 00 80 04 00                            ........
+
+----
+PHYS
+STRF
+400H
+PHYE
+DDR3
+SIZ3
+DINT
+USYN
+LSYN
+MFAS
+LMBE
+RACE
+PASS
+----
+
+Technicolor Gateway
+(c) 2014, All rights reserved
+
+Decompressing Bootloader................................
+Gateway initialization sequence started
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 2 (bank 1 failed 3 times)
+Magic packet        : 
+SW Version          : 0.0.0.0.0
+Starting the Linux kernel
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.4.11-rt19 (repowrt-builder@8d48c62ce462) (gcc version 4.6.4 (OpenWrt/Linaro GCC 4.6-2013.05 r48709) ) #1 SMP PREEMPT Sat Mar 3 04:16:44 UTC 2018
+[    0.000000] GANT-1 prom init
+[    0.000000] CPU revision is: 0002a080 (Broadcom BMIPS4350)
+..
+.
+```
