@@ -352,11 +352,11 @@ If you do any electronics and have some relays and transistors lying around, you
 
 #### NAND glitching
 
-By temporary shorting specific NAND pins you can cause NAND CRC error which will force the bootloader to fail and retry booting. After 3 times glitching the NAND this way bootfail is triggered. It is difficult to do this in the exact moment when the firmware is loading, thus connecting to the serial console is highly recommended.
+This is a last resort if you can't manage to get any previous working. There are high chances that NAND flash will get damaged. By temporary shorting specific NAND pins you can cause NAND CRC error which will force the bootloader to fail and retry booting. After 3 times glitching the NAND this way bootfail is triggered. It is difficult to do this in the exact moment when the firmware is loading, thus connecting to the serial console is highly recommended.
 
 ![Typical NAND flash memory](images/nand.png)
 
-You need to short `IO/0` and `IO/1` pins as soon as you see a message `Booting : Bank 1`. Put a needle or similar object between IO/0 and IO/1 and remove as soon as the bootloader shows an error. Repeat 3 times and you should see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
+You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soona it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
 
 An example serial console log:
 ```
@@ -432,10 +432,6 @@ Market ID           : FFFCExternal switch id = 53125
 
 Booting             : Bank 1 (attempt 3)nand: ECC uncorrectable!
 nand: ECC uncorrectable!
-nand: ECC uncorrectable!
-nand: ECC uncorrectable!
-nand: ECC uncorrectable!
-nand: mark block bad.
 nand: error E
 
 Unhandled TLB
