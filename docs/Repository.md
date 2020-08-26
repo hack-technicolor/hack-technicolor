@@ -479,6 +479,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0462-950-RA | 2020-01-22 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF991-18.1.c.0462-950-RA/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0514-950-RB | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0543-950-RA | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
 
 ## What to do if your firmware is not listed here
 
