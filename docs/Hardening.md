@@ -50,3 +50,21 @@ uci commit
 opkg --force-removal-of-dependent-packages remove conf-cwmpd cwmpd autoreset-tch mappings-fon geolocation-tch
 find /rom/usr/lib/ipk -type f |xargs -n1 basename | cut -f 1 -d '_' |xargs opkg --force-removal-of-dependent-packages remove
 ```
+
+# Restoring Root after an ISP update
+
+If by any chance your ISP upgrades or resets your router, you may loose your root access. If that ever happens, there is a way to repack a saved config file with an injected exploit. Importing such config back will restore the root access.
+
+While you still have root access you need to save one file and keep it in a safe place off the router:
+
+`dd if=/proc/rip/0108 of=proc_rip_0108`
+
+Download a python script:
+
+[https://github.com/antnks/technicolor-config-decrypt#python-poc](https://github.com/antnks/technicolor-config-decrypt#python-poc)
+
+Save your `config.bin` and `proc_rip_0108` into the same directory and run:
+
+`./exploit_config.py`
+
+This will produce a file `config_patched.bin`. Import it, wait until the router boots and press the WPS button. Now you can log in as `root:root`. Change the password immediately.
