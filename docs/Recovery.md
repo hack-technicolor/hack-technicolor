@@ -305,6 +305,12 @@ Another common case is that your gateway has self-updated to a firmware version 
 
 Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.
 
+#### SysRq reboot
+
+This is so far the easiest and more comfortable way of forcing bootfail, but you are required to connect the gateway serial console to input the reboot command. Read further for other bootfail methods where serial console is not strictly required.
+
+You can read the [SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) commands theory and their magic keys from Wikipedia. In short, you connect the serial console, wait for _"Starting the Linux kernel"_ message to appear and immediately press `Ctrl+Break` followed by `b+Enter` on your keyboard. This would cause the kernel to fail and trigger the next boot attempt. Repeat this thrice in a row and you will see it finally try booting from the inactive bank.
+
 #### Timed button action
 
 This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded. Timing for different gateways may vary.
@@ -469,6 +475,5 @@ Starting the Linux kernel
 [    0.000000] Linux version 3.4.11-rt19 (repowrt-builder@8d48c62ce462) (gcc version 4.6.4 (OpenWrt/Linaro GCC 4.6-2013.05 r48709) ) #1 SMP PREEMPT Sat Mar 3 04:16:44 UTC 2018
 [    0.000000] GANT-1 prom init
 [    0.000000] CPU revision is: 0002a080 (Broadcom BMIPS4350)
-..
-.
+...
 ```
