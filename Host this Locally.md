@@ -38,7 +38,7 @@ pip install mkdocs mkdocs-material
 
 ### Download the Repository
 
-1. Click [here](https://github.com/kevdagoat/hack-technicolor/archive/master.zip) to download a zip version of the documentation.
+1. Click [here](https://github.com/hack-technicolor/hack-technicolor/archive/master.zip) to download a zip version of the documentation.
 
 2. Extract the zip to the directory you want.
 
@@ -86,7 +86,7 @@ pip3 install mkdocs mkdocs-material mkdocs-pdf-export-plugin
 
 ### Download the Repository
 
-1. Click [here](https://github.com/kevdagoat/hack-technicolor/archive/master.zip) to download a zip version of the documentation.
+1. Click [here](https://github.com/hack-technicolor/hack-technicolor/archive/master.zip) to download a zip version of the documentation.
 
 2. Extract the zip to the directory you want. This can be achieved by using the `Archive Manager` tool implemented in most Ubuntu-based distro's.
 
