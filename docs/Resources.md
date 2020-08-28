@@ -279,7 +279,7 @@ You can get a firmware image flashed by using one of the following modes:
 
 ## Decrypting firmware
 
-RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/kevdagoat/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
+RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/hack-technicolor/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
 
 ## Checking firmware signature
 
@@ -425,7 +425,7 @@ echo 0 > /sys/class/leds/power:red/brightness
 
 ## IPv6 issues
 
-IPv6 is very problematic in most "TCH" Wrt builds (Homeware). The old OpenWRT version used by Technicolor to build Homeware (Chaos Calmer) has broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
+IPv6 is problematic in older Homeware builds since Chaos Calmer had broken IPv6 Support. It also depends on the ISP's configuration. [See more.](https://github.com/Ansuel/tch-nginx-gui/issues/114)
 
 ## BusyBox (ash)
 

@@ -7,30 +7,35 @@ assignees: ''
 
 ---
 
-**Important:** Check issue still occurs in [Latest](https://hack-technicolor.readthedocs.io/en/latest/) branch.
+**Important:** Please, check firmware isn't already listed in [Latest branch](https://hack-technicolor.readthedocs.io/en/latest/Repository) before opening a new one. Use the "Model Support Request" issue template in place of this one in case you're going to share the first firmware for your gateway device.
 
-Please fill out the following, remembering to put an 'X' in the '[ ]' to mark the checkbox:
+Please fill out the following, remembering to put an 'x' in the '[ ]' to mark the checkbox:
 
-**Firmware version**
-_VERSION_
+## Firmware version
 
-**Image Format**
+<!--PASTE FW VERSION HERE-->
 
-- [ ] Bank Dump (compressed as xz)
-- [ ] RBI
+## Device Info
 
-**Would you take care of adding this new firmware in the wiki?**
+Board Mnemonic: <!--eg: VCNT-A for DJA0231TLS-->
 
-- [ ] Yes! I will take care of that
-- [ ] No, do it for me, I can't use GitHub...
+Model Number: <!--eg: DJA0231 for DJA0231TLS-->
 
-**Where can we get it?**
+Vendor Name/Code: <!--eg: Telstra or TLS for DJA0231TLS-->
 
-- [ ] From ISP's url - public
-- [ ] From ISP's url - private
-- [ ] From own cloud sharing
+## Where did you find it?
 
-**Did you manage to root this firmware version already?**
+ISP RBI file link (if known):
+
+- Protocol: <!--eg. FTP HTTP-->
+- Link: <!--PASTE RBI URL HERE-->
+- Restrictions (if any): <!--eg: link works on ISP network only, from private VLAN, requires password, ...-->
+
+Attach the RBI firmware in case above URL is restricted, or attach a bank dump if RBI URL is unknown:
+
+- Firmware file: <!--DROP FW FILE HERE-->
+
+## Did you manage to root this firmware version already?
 
 - [ ] Yes, following Type 2 instructions
 - [ ] Yes, following Type 1 instructions
@@ -38,14 +43,7 @@ _VERSION_
 - [ ] No, I can't root it following instructions from the wiki
 - [ ] I didn't try
 
-Type: _<eg. FTP HTTP>_
+## Would you take care of adding this new firmware in the wiki?
 
-Link: _<PUT LINK HERE>_
-
-**Device Info**
-
-Board Mnemonic: _<eg: VCNT-A for DJA0231TLS>_
-
-Model Number: _<eg: DJA0231 for DJA0231TLS>_
-
-Vendor Name/Code: _<eg: Telstra or TLS for DJA0231TLS>_
+- [ ] Yes! I will take care of that
+- [ ] No, do it for me, I can't use GitHub...
