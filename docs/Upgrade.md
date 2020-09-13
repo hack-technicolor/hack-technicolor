@@ -127,7 +127,6 @@ chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 
 !!! hint "Clean and rooted"
     Your gateway is now clean but will re-enable permanent root SSH access on the next boot. Please note, your SSH credentials will be changed back to `root:root`. **Do not reboot** the gateway and move on to the next section where you will finally flash the new firmware image.
-    Alternatively, you could stop here if you are not interested in replacing currently installed firmware. You could also simply power off the gateway and safely return the device to your ISP or gift it to a friend.
 
 ## Flashing firmware
 
