@@ -84,6 +84,8 @@ Run the command below to completely reset the overlay for your currently booted 
 rm -rf /overlay/`cat /proc/banktable/booted`
 ```
 
+The above command cleans up the same files a regular RTFD would. We need to prepare a couple more things before rebooting, that's why we didn't use RTFD.
+
 !!! warning "Don't stop here!"
     Your gateway is now completely **clean**, you could stop reading here and reboot to your current firmware if you really want to restore your device to its original conditions (no more ssh root access!). You should **really** keep the getaway on and proceed to the next step to avoid loosing root access entirely.
 
@@ -124,8 +126,8 @@ chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 ```
 
 !!! hint "Clean and rooted"
-   Your gateway is now clean but will re-enable permanent root SSH access on the next boot. Please note, your SSH credentials will be changed back to `root:root`. **Do not reboot** the gateway and move on to the next section where you will finally flash the new firmware image.
-   Alternatively, you could stop here if you are not interested in replacing currently installed firmware. You could also simply power off the gateway and safely return the device to your ISP or gift it to a friend.
+    Your gateway is now clean but will re-enable permanent root SSH access on the next boot. Please note, your SSH credentials will be changed back to `root:root`. **Do not reboot** the gateway and move on to the next section where you will finally flash the new firmware image.
+    Alternatively, you could stop here if you are not interested in replacing currently installed firmware. You could also simply power off the gateway and safely return the device to your ISP or gift it to a friend.
 
 ## Flashing firmware
 
