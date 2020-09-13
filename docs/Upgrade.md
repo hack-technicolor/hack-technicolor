@@ -68,15 +68,16 @@ Download **and extract** the raw bank image, and move this file into `/tmp/new.b
 
 It is **not recommended** to keep custom changes to files and configs if you are either downgrading or moving to a firmware of a different brand.
 
-If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping skipping over to [Flashing firmware](#flashing-firmware).
+If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping over to [Flashing firmware](#flashing-firmware).
 
-Make a full backup of your booted bank configuration:
+Make a full backup of your old firmware overlay:
 
 ```bash
 tar -C /overlay -cz -f /tmp/backup-$(date -I).tar.gz $(cat /proc/banktable/booted)
 ```
 
 Move the backup to your PC by SCP or USB drive. Make sure you can open the backup archive and keep it in a safe place.
+Please note, importing back this full backup on the new firmware is dangerous. This will come handy in future whenever you go back to the old firmware, or if you want to check how the old firmware was configured.
 
 Run the command below to completely reset the overlay for your currently booted bank:
 
@@ -140,7 +141,11 @@ Reboot the Gateway now.
 
 ## Completing setup
 
-The Gateway should boot normally into the new firmware. You should still have root access at least. Make sure everything will be fine: read [Hardening Root Access](../Hardening/).
+The Gateway should boot normally into the new firmware. Please review the following:
+
+- Your bank plan hasn't been modified. If you are not sure the current bank plan is optimal, follow [Bank Planning](../Hacking/PostRoot/#bank-planning) instructions.
+- You should still have permanent SSH server on port `22`.
+- Your root credentials have been reset to `root:root`. MAke sure you [change password](../Hacking/PostRoot/#change-the-root-password) now.
 
 !!! hint "Something went wrong?"
-    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same Type 2 firmware you had on bank_1 during root, we assume you remember which one it was since we asked you to take note. You will need to follow the rooting guide from scratch.
+    BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same `Type 2` firmware you had on `bank_1` during root, we assume you remember which one it was since we asked you to take note. Otherwise, use another `Type 2` one and cross your fingers. You will need to follow the rooting guide from scratch.
