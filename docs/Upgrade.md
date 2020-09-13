@@ -87,7 +87,7 @@ rm -rf /overlay/`cat /proc/banktable/booted`
 The above command cleans up the same files a regular RTFD would. We need to prepare a couple more things before rebooting, that's why we didn't use RTFD.
 
 !!! warning "Don't stop here!"
-    Your gateway is now completely **clean**, you could stop reading here and reboot to your current firmware if you really want to restore your device to its original conditions (no more ssh root access!). You should **really** keep the getaway on and proceed to the next step to avoid loosing root access entirely.
+    Your gateway's booted bank is now completely **clean** and reset to factory defaults, right now there is no more ssh root access enabled!. You should **really** keep the getaway on and proceed to the next step to avoid loosing root access.
 
 ## Preserving root access
 
