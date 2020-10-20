@@ -305,6 +305,12 @@ Another common case is that your gateway has self-updated to a firmware version 
 
 Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.
 
+#### SysRq reboot
+
+This is so far the easiest and more comfortable way of forcing bootfail, but you are required to connect the gateway serial console to input the reboot command. Read further for other bootfail methods where serial console is not strictly required.
+
+You can read the [SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) commands theory and their magic keys from Wikipedia. In short, you connect the serial console, wait for _"Starting the Linux kernel"_ message to appear and immediately press `Ctrl+Break` followed by `b+Enter` on your keyboard. This would cause the kernel to fail and trigger the next boot attempt. Repeat this thrice in a row and you will see it finally try booting from the inactive bank.
+
 #### Timed button action
 
 This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded. Timing for different gateways may vary.
@@ -349,3 +355,125 @@ A Python program written by Mark Smith is available on [GitHub](https://github.c
 Please see the pictures for the physical setup, and the comments at the top of bouncer.py for more technical details (it may require timing tweaks for different models).
 
 If you do any electronics and have some relays and transistors lying around, you probably already have everything required for this!
+
+#### NAND glitching
+
+This is a last resort if you can't manage to get any previous working. There are high chances that NAND flash will get damaged. By temporary shorting specific NAND pins you can cause NAND CRC error which will force the bootloader to fail and retry booting. After 3 times glitching the NAND this way bootfail is triggered. It is difficult to do this in the exact moment when the firmware is loading, thus connecting to the serial console is highly recommended.
+
+![Typical NAND flash memory](images/nand.png)
+
+You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soona it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
+
+An example serial console log:
+```
+Decompressing Bootloader................................
+Gateway initialization sequence started
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc24fe000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	...
+	8131a224 8131a0d0 81320edc 
+
+Exception frame:
+812ff4d0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 4f e0 00    .........2.D.O..
+...
+812ff5f0: 81 34 a0 00 81 2f f6 48                            .4.../.H
+
+...
+
+Decompressing Bootloader................................
+Gateway initialization sequence startednand: error M
+nand: ECC correctable
+
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 (attempt 2) nand: ECC uncorrectable!
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc2220000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	...
+	8131aa10 81317178 8131f854 8131a884 8131a3f0 8131fa78
+
+Exception frame:
+812ff4b0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 22 00 00    .........2.D."..
+...
+812ff5d0: 81 34 a0 00 81 2f f6 28                            .4.../.(
+
+...
+
+Decompressing Bootloader................................
+Gateway initialization sequence startednand: error M
+nand: ECC correctable
+
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 1 (attempt 3)nand: ECC uncorrectable!
+nand: ECC uncorrectable!
+nand: error E
+
+Unhandled TLB
+
+Unhandled exception (core 0):
+EPC=0x81321244, BadVAddr=0xc246e000, RA=81321594
+
+Call stack:
+	8131fd0c 81320008 81319da8 8131a0d0 8130deb8 81332d90 
+	...
+	8131a224 
+
+Exception frame:
+812ff4b0: 10 00 04 03 00 80 00 08 81 32 12 44 c2 46 e0 00    .........2.D.F..
+...
+812ff5d0: 10 00 04 03 00 80 04 00                            ........
+
+...
+
+Decompressing Bootloader................................
+Gateway initialization sequence started
+Boot Loader Version : 2.0.67
+CPU                 : BCM63169-D0
+RAM                 : 256MB
+Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
+Board Mnemonic      : GANT-1
+Market ID           : FFFCExternal switch id = 53125
+
+Booting             : Bank 2 (bank 1 failed 3 times)
+Magic packet        : 
+SW Version          : 0.0.0.0.0
+Starting the Linux kernel
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.4.11-rt19 (repowrt-builder@8d48c62ce462) (gcc version 4.6.4 (OpenWrt/Linaro GCC 4.6-2013.05 r48709) ) #1 SMP PREEMPT Sat Mar 3 04:16:44 UTC 2018
+[    0.000000] GANT-1 prom init
+[    0.000000] CPU revision is: 0002a080 (Broadcom BMIPS4350)
+...
+```
