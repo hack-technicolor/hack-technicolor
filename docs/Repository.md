@@ -191,7 +191,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761003-20170907085601-501361d1f0abcd3206e49f0897c4a6cca07a114d.rbi?raw=true) |
 
 ## TG799vac Xtream / VANT-W
 
@@ -301,6 +301,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0284-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF913-17.2.0284-820-RA/vbnt-j_CRF913-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF913-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## DGA4130 / VBNT-K
+
+### MST
+
+| Type   | Version   | Timestamp  | Root Strategy | Mirror |
+|:------:|:----------|:-----------|:--------------|:-------|
+| ???    | 17.3.0165 | 2018-02-28 | -             | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/MST%20DGA4130%2017.3.0165.1681007.rbi?raw=true) |
 
 ### Tiscali
 
