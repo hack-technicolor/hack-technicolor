@@ -95,7 +95,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 15.32.6210         | 2015-10-21 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telia-gant-1_15.32.6210-1081007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
 | 2      | 16.1.7053          | 2016-10-28 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
-| 2      | 17.1.7992          | 2018-05-15 | #C            | [HTTP](http://10.0.98.250/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gant-1/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi.torrent?raw=true) |
+| 2      | 17.1.7992          | 2018-05-15 | #C #E         | [HTTP](http://10.0.98.250/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gant-1/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -364,6 +364,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 18.3.0600          | 2020-04-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0600          | 2020-07-01 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0600          | 2020-07-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.1_CLOSED.rbi.torrent?raw=true) |
+
 > *\* requires access to ISP's network and download password*
 
 ## DGA4131 / VBNT-O
@@ -381,6 +382,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0407_FW_247   | 2018-12-06 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0407_FW_247_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0407_FW_247_DGA4131.rbi.torrent?raw=true) |
 | 2      | 17.2.0412_FW_248   | 2018-12-15 | #B            | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
 | 2      | 18.3.n.0439_FW_258 | 2020-01-21 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
+| 2      | 18.3.n.0462_FW_261 | 2020-07-17 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0462_FW_261_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0462_FW_261_DGA4131.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -437,6 +439,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 1      | 19.4.0297          | 2020-05-20 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.2_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.2_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0600          | 2020-07-01 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0600          | 2020-07-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHP_2.2.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.2.1_CLOSED.rbi.torrent?raw=true) |
+
 > *\* requires access to ISP's network and download password*
 
 ## DJA0230 / VBNT-V
@@ -477,6 +480,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0462-950-RA | 2020-01-22 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF991-18.1.c.0462-950-RA/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0514-950-RB | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0543-950-RA | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
 
 ## What to do if your firmware is not listed here
 
