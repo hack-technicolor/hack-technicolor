@@ -27,7 +27,7 @@ What you will need:
 ## Things to know
 
 Will root access be preserved?
-  - Well, that is the point of this guide, however we can't gusrantee root access preservation won't break in future firmwares.
+  - Well, that is the point of this guide, however we can't guarantee root access preservation won't break in future firmwares.
 
 On which bank will the new firmware be flashed?
   - The booted one, the currently installed firmware will be overwritten. Make sure it is listed in our [Repository](../Repository/) before overwriting!
@@ -36,7 +36,7 @@ Will the upgrade affect my bank planning?
   - No it won't, there won't be any bank switches.
 
 Will any setting and customization be lost?
-  - It depends on the firmware you want to flash and how much you would liek to be *safe*, read further.
+  - It depends on the firmware you want to flash and how much you would like to be *safe*, read further.
 
 !!! danger "Risky exception: Missing *Type 2* RBI"
     In the unfortunate case that there are no *Type 2* RBI firmware files available for your model, you are not in a safe position. If something goes wrong with this guide, using `BOOTP` recovery with *non-Type  2* images will bring you into a working unrootable firmware. In such a situation, upgrading is not recommended. Let expert users test this guide on that new firmware first.
@@ -58,7 +58,7 @@ cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs
 ```
 
 !!! hint "Something went wrong?"
-    If the above command causes the gateway to reboot, use an USB drive instead. Move the RBI file into the USB drive and use it as working folder in place of `/tmp/new.rbi`. This is usually needed when there is not enough free RAM to perform firmware unpacking in memory.
+    If the above command causes the gateway to reboot, use an USB drive instead. Move the RBI file into the USB drive and use its mount path in place of `/tmp`. Read [issue #128](https://github.com/hack-technicolor/hack-technicolor/issues/128) for more details. This is usually needed when there is not enough free RAM to perform firmware unpacking in memory.
 
 ### Raw bank dump
 
