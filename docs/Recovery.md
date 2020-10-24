@@ -362,10 +362,11 @@ This is a last resort if you can't manage to get any previous working. There are
 
 ![Typical NAND flash memory](images/nand.png)
 
-You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soona it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
+You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soon as it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
 
 An example serial console log:
-```
+
+```hex
 Decompressing Bootloader................................
 Gateway initialization sequence started
 Boot Loader Version : 2.0.67
@@ -375,7 +376,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 nand: ECC uncorrectable!
+Booting             : Bank 1 
+nand: ECC uncorrectable!
 nand: ECC uncorrectable!
 
 Unhandled TLB
@@ -396,7 +398,8 @@ Exception frame:
 ...
 
 Decompressing Bootloader................................
-Gateway initialization sequence startednand: error M
+Gateway initialization sequence started
+nand: error M
 nand: ECC correctable
 
 Boot Loader Version : 2.0.67
@@ -406,7 +409,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 (attempt 2) nand: ECC uncorrectable!
+Booting             : Bank 1 (attempt 2) 
+nand: ECC uncorrectable!
 
 Unhandled TLB
 
@@ -426,7 +430,8 @@ Exception frame:
 ...
 
 Decompressing Bootloader................................
-Gateway initialization sequence startednand: error M
+Gateway initialization sequence started
+nand: error M
 nand: ECC correctable
 
 Boot Loader Version : 2.0.67
@@ -436,7 +441,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 (attempt 3)nand: ECC uncorrectable!
+Booting             : Bank 1 (attempt 3)
+nand: ECC uncorrectable!
 nand: ECC uncorrectable!
 nand: error E
 
