@@ -241,29 +241,32 @@ You are now ready to try booting the Gateway to do the flash!
 From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
 !!! note "A few things to note"
-    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware. Would you like to force it booting from `bank_1` instead? Read below chapters.
+    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware.
 
-    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
+    - If you followed rooting guide on this wiki and your bank plan is still optimal you are guaranteed to see this just flashed firmware to boot because active bank is always `bank_1` on optimal bank plan.
+
+    - TFTP does not always play nice and may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
 
     - This guide and process will not work if your device is bricked at bootloader stage.
 
-    - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
+    - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. This might also cause the webui of booted firmware to show a misleading firmware version number obtained from past firmwares leftovers. If so, you either need to perform RTFD now or wipe user data partition. Read above sections.
 
-### Check booted bank
+This concludes the BOOTP flashing process. Depending on what you are trying to achieve by flashing a firmware via BOOTP, you might now go back to guides which brought you here.
+
+## Check booted bank
 
 Dual-banks gateways work very similar to a dual-boot computer system. For example, the computer might have a data partition with personal data and two OS partitions, each with a different OS. The gateway has a data partition and two firmware banks.
 
 When you power on your device it starts loading by default the firmware from the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
-!!! note "TFTP flashes into bank_1 only"
+!!! note "BOOTP flashing via TFTP writes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the *active bank* is currently `bank_2`. It will never set `bank_1` as active.
 
-!!! hint "Check current *active bank*"
-    - read contents of `/proc/banktable/active`
-    - read serial console log during boot
-    - try flashing something with TFTP and see if it's being booted
+In order to check which firmware bank is currently set as *active bank*" you can do any of the following:
 
-If the required firmware is in the *active bank* this process is completed and the device can be restarted.
+- Read contents of `/proc/banktable/active` file. This requires you have root access to the gateway.
+- Read serial console log during boot. This requires a serial adapter connected to the gateway device board. Recommended in case of soft-bricks.
+- Fash some different, yet valid firmware from BOOTP via TFTP and see if the flashed firmware is being booted by default. This is recommended whenever you have yet to root the gateway for the first time and it is in normal working order.
 
 ## Change booted bank
 
