@@ -164,7 +164,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](../Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the firmware RBI file you want to load into the Gateway from the [Repository](../Repository/) and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -289,7 +289,7 @@ If you have shell access to the Gateway, or you can easily get root or run arbit
 echo bank_1 > /proc/banktable/active
 ```
 
-If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. You could also use the same firmware version you're running for this purpose.  Please note: this will also imply a firmware flashing via [sysupgrade](../Resources/#sysupgrade) and every drawbacks it derives.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. Get an RBI firmware for your board from the [Repository](../Repository/), prefer to use the same firmware version you're currently running for this purpose, or pick a newer one if any, no matter the *Type*. Downgrades are likely to be disallowed. Please note: this will also imply a firmware flashing via [sysupgrade](../Resources/#sysupgrade) and every drawbacks it derives.
 
 If none of the above options are viable in your situation, unfortunately you must opt for *Bootfail* instead.
 
