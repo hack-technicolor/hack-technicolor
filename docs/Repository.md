@@ -99,21 +99,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's management network*
 
-## TG789vac / VANT-D
+## TG588v v2 / VANT-2
 
-!!! warning "Model Warning"
-    This is not for the VANT-6, it is for a VANT-D model we often informally refer to as TG789vac **v1**. This won't boot on more common TG789vac v2/v3.
+### MST (no-brand)
 
-!!! danger "OSCK Not Known"
-    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
-
-### MST (no-brand) from UNO.UK
-
-| Type   | Version          | Root Strategy | Mirror |
-|:------:|:-----------------|:--------------|:-------|
-| 2      | 16.2.7064        | #A            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-d/MST TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
-
-> *\* requires access to ISP's network*
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 15.53.6970         | 2016-06-24 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
+| 2      | 16.2.7064          | 2016-08-25 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
 
 ## TG-1 / VANT-5
 
@@ -129,7 +122,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG789vac v2 / VANT-6
 
-### MST (no-brand) from UNO.UK
+### MST (no-brand)
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
@@ -155,6 +148,19 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 1      | 16.3.8046-ver3.0   | 2017-12-18 | -             | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver3.0-CRF767-2721002.rbi.torrent?raw=true)
 |        | *note: this is officially named `ver3.0` but it is version `2.3.0` indeed* | |
 | 2      | 16.3.8046-ver2.5.3 | 2019-03-22 | #C            | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi.torrent?raw=true) |
+
+## TG789vac / VANT-D
+
+!!! danger "OSCK Not Known"
+    Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
+
+### MST (no-brand)
+
+| Type   | Version          | Root Strategy | Mirror |
+|:------:|:-----------------|:--------------|:-------|
+| 2      | 16.2.7064        | #A            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-d/MST%20TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network*
 
 ## TG799vac / VANT-F
 
