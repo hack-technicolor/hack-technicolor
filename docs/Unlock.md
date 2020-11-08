@@ -70,7 +70,7 @@ This is by far one of the most requested mods.
 
 ### Changing the default assigned server from your Gateways IP address to your DNS server
 
-1. Using `vi` or a program like WinSCP edit /etc/config/DHCP
+1. Using `vi` or a program like WinSCP edit /etc/config/dhcp
 2. Under
 
 ```bash
