@@ -74,7 +74,7 @@ This is by far one of the most requested mods.
 2. Under
 
 ```bash
-config dhcp '<interface name>'
+config dhcp 'lan'
 ```
 
 Add:
