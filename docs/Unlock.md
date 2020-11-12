@@ -53,15 +53,16 @@ A highly universal custom GUI with tons (!) of features is [available here](http
 
 This is recommended for users who don't fear a few bugs and want the most out-of-box usability from their modded gateway.
 
+
 !!! info "Recovery options"
     Since version `9.5.60` this mod is compatible with the same *optimal* bank plan suggested in this wiki. Please, read Recovery page carefully and get familiar with recovery strategies available when this special planning is in order. The easy and reliable Recovery for optimal bank plan users will also be available for you.
 
 !!! info "Different RTFD behavior"
     Any RTFD attempt will not uninstall this mod completely. Since version `9.5.60` you will need to repeat RTFD two times in a row to bring back the gateway to the same state a normal RTFD would.
 
-!!! info "SSID being reset on reboot"
-    Certain Technicolor variants (DJA0230, DJA0231) are known to have issues with SSIDs being reset on reboot.
-    For a workaround and to track the progress of this issue, see [here](https://github.com/Ansuel/tch-nginx-gui/issues/842).
+!!! info "Issues with Telstra variants"
+    There are several known issues, such as SSIDs being reset and non-working SIM backup, with Telstra variants (DJA0230, DJA0231) after installing custom GUI.
+    An alternative mod that is more suitable for Telstra variants is ItsAllTooMuch4Me's [tch-gui-unhide](https://github.com/seud0nym/tch-gui-unhide).
 
 !!! danger "This mod has permanently bricked Gateways before"
     In older versions of this GUI, it has bricked low space devices like the TG799vac.
