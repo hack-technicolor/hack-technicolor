@@ -59,6 +59,11 @@ This is recommended for users who don't fear a few bugs and want the most out-of
 !!! info "Different RTFD behavior"
     Any RTFD attempt will not uninstall this mod completely. Since version `9.5.60` you will need to repeat RTFD two times in a row to bring back the gateway to the same state a normal RTFD would.
 
+!!! info "SSID being reset on reboot"
+    Certain Technicolor variants (DJA0230, DJA0231) are known to have issues with SSIDs being reset on reboot.
+    For a workaround and to track the progress of this issue, see [here](https://github.com/Ansuel/tch-nginx-gui/issues/842).
+
+
 !!! danger "This mod has permanently bricked Gateways before"
     In older versions of this GUI, it has bricked low space devices like the TG799vac.
     It now has a brick prevention method in place so this is not so much of a worry.
