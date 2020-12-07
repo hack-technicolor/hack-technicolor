@@ -117,12 +117,14 @@ uci set dropbear.afg.IdleTimeout='600'
 uci set dropbear.afg.PasswordAuth='on'
 uci set dropbear.afg.RootPasswordAuth='on'
 uci set dropbear.afg.RootLogin='1'
+uci set dropbear.lan.enable='0'
 uci commit dropbear
 /etc/init.d/dropbear enable
 /etc/init.d/dropbear restart
 rm /overlay/\$(cat /proc/banktable/booted)/etc/rc.local
 " > /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
+sync
 
 ```
 
