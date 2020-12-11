@@ -197,7 +197,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz?raw=true) |
+| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz?raw=true) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 16.3.7190        | 2017-09-07 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/vbnt-l_16.3.7190-2761003-20170907085601-501361d1f0abcd3206e49f0897c4a6cca07a114d.rbi?raw=true) |
 
 ## TG799vac Xtream / VANT-W
