@@ -198,7 +198,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| 2      | 16.3.7190        | 2017-09-07 | #A            | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/vbnt-l_16.3.7190-2761003-20170907085601-501361d1f0abcd3206e49f0897c4a6cca07a114d.rbi.torrent?raw=true) |
+| 2      | 16.3.7190        | 2017-09-07 | #A            | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-l/vbnt-l_16.3.7190-2761003-20170907085601-501361d1f0abcd3206e49f0897c4a6cca07a114d.rbi.torrent?raw=true) |
 
 ## TG799vac Xtream / VANT-W
 
@@ -321,7 +321,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version   | Timestamp  | Root Strategy | Mirror |
 |:------:|:----------|:-----------|:--------------|:-------|
-| 2      | 17.3.0165 | 2018-02-28 | #D            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/MST%20DGA4130%2017.3.0165.1681007.rbi.torrent?raw=true) |
+| 2      | 17.3.0165 | 2018-02-28 | #D            | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/MST%20DGA4130%2017.3.0165.1681007.rbi.torrent?raw=true) |
 
 ### Tiscali
 
@@ -494,18 +494,19 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telstra - Smart Modem (Gen2)
 
-| Type   | Version            | Timestamp  | Root Strategy | Mirror |
-|:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 18.1.c.0215-950-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0241-950-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0283-950-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0347-950-RC | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0384-950-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0443-950-RB | 2019-11-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0462-950-RA | 2020-01-22 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF991-18.1.c.0462-950-RA/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0462-950-RB | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0514-950-RB | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
-| 2      | 18.1.c.0543-950-RA | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
+| Type   | Version              | Timestamp  | Root Strategy | Mirror |
+|:------:|:---------------------|:-----------|:--------------|:-------|
+| 2      | 18.1.c.0215-950-RA   | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF867-18.1.c.0215-950-RA/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF867-18.1.c.0215-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0241-950-RA   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF899-18.1.c.0241-950-RA/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF899-18.1.c.0241-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0283-950-RA   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF916-18.1.c.0283-950-RA/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF916-18.1.c.0283-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0347-950-RC   | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF947-18.1.c.0347-950-RC/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF947-18.1.c.0347-950-RC.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0384-950-RB   | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF964-18.1.c.0384-950-RB/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF964-18.1.c.0384-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0443-950-RB   | 2019-11-20 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF983-18.1.c.0443-950-RB/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF983-18.1.c.0443-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0462-950-RA   | 2020-01-22 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF991-18.1.c.0462-950-RA/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF991-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0462-950-RB   | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_CRF994-18.1.c.0462-950-RB/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_CRF994-18.1.c.0462-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0514-950-RB   | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0543-950-RA   | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
+| 2      | 18.1.c.0585-MR7.1-RA | 2020-11-17 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0585-MR7.1-RA.rbi/vcnt-a_18.1.c.0585-MR7.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0585-MR7.1-RA.rbi.torrent?raw=true) |
 
 ## What to do if your firmware is not listed here
 
