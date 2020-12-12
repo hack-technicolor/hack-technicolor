@@ -105,8 +105,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 15.53.6970         | 2016-06-24 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
-| 2      | 16.2.7064          | 2016-08-25 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
+| 2      | 15.53.6970         | 2016-06-24 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
+| 2      | 16.2.7064          | 2016-08-25 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
 
 ## TG-1 / VANT-5
 
@@ -321,7 +321,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version   | Timestamp  | Root Strategy | Mirror |
 |:------:|:----------|:-----------|:--------------|:-------|
-| ???    | 17.3.0165 | 2018-02-28 | -             | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/MST%20DGA4130%2017.3.0165.1681007.rbi.torrent?raw=true) |
+| 2      | 17.3.0165 | 2018-02-28 | #D            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/MST%20DGA4130%2017.3.0165.1681007.rbi.torrent?raw=true) |
 
 ### Tiscali
 
