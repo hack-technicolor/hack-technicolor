@@ -164,7 +164,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the [firmware](../Repository/) (RBI) file you want to load into the Gateway and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the firmware RBI file you want to load into the Gateway from the [Repository](../Repository/) and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -241,29 +241,32 @@ You are now ready to try booting the Gateway to do the flash!
 From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
 !!! note "A few things to note"
-    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware. Would you like to force it booting from `bank_1` instead? Read below chapters.
+    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware.
 
-    - TFTP does not always play nice & may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
+    - If you followed rooting guide on this wiki and your bank plan is still optimal you are guaranteed to see this just flashed firmware to boot because active bank is always `bank_1` on optimal bank plan.
+
+    - TFTP does not always play nice and may require a few loads to get working, as well as mentioned above, BOOTP mode can be a pain.
 
     - This guide and process will not work if your device is bricked at bootloader stage.
 
-    - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. If so, you either need to perform RTFD now or wipe user data partition. Read above chapters.
+    - If you did not perform RTFD for `bank_1` before TFTP flashing and the new firmware is not fully compatible with previous one, you may now have booted into an unstable setup. This might also cause the webui of booted firmware to show a misleading firmware version number obtained from past firmwares leftovers. If so, you either need to perform RTFD now or wipe user data partition. Read above sections.
 
-### Check booted bank
+This concludes the BOOTP flashing process. Depending on what you are trying to achieve by flashing a firmware via BOOTP, you might now go back to guides which brought you here.
+
+## Check booted bank
 
 Dual-banks gateways work very similar to a dual-boot computer system. For example, the computer might have a data partition with personal data and two OS partitions, each with a different OS. The gateway has a data partition and two firmware banks.
 
 When you power on your device it starts loading by default the firmware from the so-called *active bank*. With no surprise, the other one gets called *passive bank*. Of course only one bank at time can be used.
 
-!!! note "TFTP flashes into bank_1 only"
+!!! note "BOOTP flashing via TFTP writes into bank_1 only"
     BOOTP flashing allows flashing a valid firmware into `bank_1` only and will do so even if the *active bank* is currently `bank_2`. It will never set `bank_1` as active.
 
-!!! hint "Check current *active bank*"
-    - read contents of `/proc/banktable/active`
-    - read serial console log during boot
-    - try flashing something with TFTP and see if it's being booted
+In order to check which firmware bank is currently set as *active bank*" you can do any of the following:
 
-If the required firmware is in the *active bank* this process is completed and the device can be restarted.
+- Read contents of `/proc/banktable/active` file. This requires you have root access to the gateway.
+- Read serial console log during boot. This requires a serial adapter connected to the gateway device board. Recommended in case of soft-bricks.
+- Fash some different, yet valid firmware from BOOTP via TFTP and see if the flashed firmware is being booted by default. This is recommended whenever you have yet to root the gateway for the first time and it is in normal working order.
 
 ## Change booted bank
 
@@ -286,7 +289,7 @@ If you have shell access to the Gateway, or you can easily get root or run arbit
 echo bank_1 > /proc/banktable/active
 ```
 
-If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. You could also use the same firmware version you're running for this purpose.  Please note: this will also imply a firmware flashing via [sysupgrade](../Resources/#sysupgrade) and every drawbacks it derives.
+If you have no shell access, but you have the possibility to run a firmware upgrade (for example via web interface, AutoFlashGUI or CWMP), as previously stated, a switchover will be executed automatically at the end of the process. Get an RBI firmware for your board from the [Repository](../Repository/), prefer to use the same firmware version you're currently running for this purpose, or pick a newer one if any, no matter the *Type*. Downgrades are likely to be disallowed. Please note: this will also imply a firmware flashing via [sysupgrade](../Resources/#sysupgrade) and every drawbacks it derives.
 
 If none of the above options are viable in your situation, unfortunately you must opt for *Bootfail* instead.
 
@@ -362,10 +365,11 @@ This is a last resort if you can't manage to get any previous working. There are
 
 ![Typical NAND flash memory](images/nand.png)
 
-You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soona it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
+You need to short `VCC (12)` and `VSS (13)` pins as soon as you see a message `Starting the Linux kernel`. Put a needle or similar object between `VCC` and `VSS` for an instant, you should hear a small sparkle to fire, take the needle away as soon as it happens. A few moments later, the bootloader shows an error. This will repeat 3 times in a row and you should finally see a message `Booting : Bank 2 (bank 1 failed 3 times)`.
 
 An example serial console log:
-```
+
+```hex
 Decompressing Bootloader................................
 Gateway initialization sequence started
 Boot Loader Version : 2.0.67
@@ -375,7 +379,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 nand: ECC uncorrectable!
+Booting             : Bank 1 
+nand: ECC uncorrectable!
 nand: ECC uncorrectable!
 
 Unhandled TLB
@@ -396,7 +401,8 @@ Exception frame:
 ...
 
 Decompressing Bootloader................................
-Gateway initialization sequence startednand: error M
+Gateway initialization sequence started
+nand: error M
 nand: ECC correctable
 
 Boot Loader Version : 2.0.67
@@ -406,7 +412,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 (attempt 2) nand: ECC uncorrectable!
+Booting             : Bank 1 (attempt 2) 
+nand: ECC uncorrectable!
 
 Unhandled TLB
 
@@ -426,7 +433,8 @@ Exception frame:
 ...
 
 Decompressing Bootloader................................
-Gateway initialization sequence startednand: error M
+Gateway initialization sequence started
+nand: error M
 nand: ECC correctable
 
 Boot Loader Version : 2.0.67
@@ -436,7 +444,8 @@ Flash               : 128MB NAND, blocksize=128KB, pagesize=2048B
 Board Mnemonic      : GANT-1
 Market ID           : FFFCExternal switch id = 53125
 
-Booting             : Bank 1 (attempt 3)nand: ECC uncorrectable!
+Booting             : Bank 1 (attempt 3)
+nand: ECC uncorrectable!
 nand: ECC uncorrectable!
 nand: error E
 
