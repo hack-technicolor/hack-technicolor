@@ -53,13 +53,14 @@ rm -rf /overlay/*
 cp -rf /tmp/bank_overlay_backup /overlay/bank_2
 # Activate bank_1
 echo bank_1 > /proc/banktable/active
+# Make sure above changes get written to flash
+sync
 # Erase firmware in bank_1
 mtd erase bank_1
-# Reboot to first valid firmware
-reboot
-# please wait for device to reboot...
+#
 ```
 
+Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.
 You should now be in the previously mentioned *optimal* bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
 !!! hint "Upgrade now!"
