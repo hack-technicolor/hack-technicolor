@@ -260,13 +260,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.8706_FW_214_IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-f/16.2.8706_FW_214_IAD_TG789vacXtream.rbi.torrent?raw=true) |
 | 2      | 16.2.8706_FW_214_MOS | 2019-04-30 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.8706_FW_214_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-f/16.2.8706_FW_214_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network*
+
 ### TIM San Marino
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
 | 2      | 16.3.7446            | 2017-03-15 | #A #D         | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/timsm-vbnt-f_16.3.7446-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-
-> *\* requires access to ISP's network*
 
 ## TG799vac Xtream / VBNT-H
 
