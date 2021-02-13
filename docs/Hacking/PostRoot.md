@@ -43,8 +43,12 @@ We will now check the current state and move to the above one, such that it will
 Run the following commands:
 
 ```bash
+# Ensure platform is dual bank
+[ "$(cat /proc/mtd | grep bank_1 | cut -d' ' -f2)" = \
+"$(cat /proc/mtd | grep bank_2 | cut -d' ' -f2)" ] && {
 # Copy firmware into bank_2 if applicable
-[ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write /dev/mtd3 bank_2
+[ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write \
+/dev/$(cat /proc/mtd | grep bank_1 | cut -d: -f1) bank_2
 # Make a temp copy of overlay for booted firmware
 cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
 # Clean up overlay space by removing existing old overlays
@@ -57,7 +61,7 @@ echo bank_1 > /proc/banktable/active
 sync
 # Erase firmware in bank_1
 mtd erase bank_1
-#
+} # end
 ```
 
 Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.
