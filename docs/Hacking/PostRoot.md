@@ -43,12 +43,13 @@ We will now check the current state and move to the above one, such that it will
 Run the following commands:
 
 ```bash
-# Ensure platform is dual bank
-[ "$(cat /proc/mtd | grep bank_1 | cut -d' ' -f2)" = \
-"$(cat /proc/mtd | grep bank_2 | cut -d' ' -f2)" ] && {
+# Ensure two banks match in sizes
+[ $(grep -c bank_ /proc/mtd) = 2 ] && \
+[ "$(grep bank_1 /proc/mtd | cut -d' ' -f2)" = \
+"$(grep bank_2 /proc/mtd | cut -d' ' -f2)" ] && {
 # Copy firmware into bank_2 if applicable
 [ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write \
-/dev/$(cat /proc/mtd | grep bank_1 | cut -d: -f1) bank_2
+/dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2
 # Make a temp copy of overlay for booted firmware
 cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
 # Clean up overlay space by removing existing old overlays
