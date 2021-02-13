@@ -1,17 +1,17 @@
 # Post-Root Procedures
 
 !!! warning "Stop!"
-    Do not follow any post-root procedure unless explicitly told to.
+    Do not follow any post-root procedure unless explicitly told to in a previous step of this guide.
 
 ## Bank Planning
 
-We are now going to prepare an optimal bank plan for the same firmware version you have now booted.
+We are now going to prepare an *optimal* bank plan for the same firmware version you have now booted.
 
 Run the following command to look at your Gateway's bank state:
 
 ```find /proc/banktable -type f -print -exec cat {} ';'```
 
-Take note of `active` and `booted` banks:
+You should see something like this being printed:
 
 ```bash
 xxxxx
@@ -22,7 +22,8 @@ xxxxx
 xxxxx
 ```
 
-At the end of this guide your Gateway will boot the same firmware you are now running as per *optimal* bank plan:
+If the above command failed, your board is not dual bank and no bank planning is possible. Otherwise, take note of the current `active` and `booted` banks.
+This guide will let you setup your Gateway to boot the same firmware you are now running as per *optimal* bank plan. An optimal bank plan looks like this:
 
 ```bash
 /proc/banktable/active
@@ -31,14 +32,15 @@ bank_1
 bank_2
 ```
 
-We will now check the current state and move to the above one, such that it will boot from the recommended bank on every reboot.
+We will now do what your current state requires to match the above one, such that the device will boot from the recommended bank on every reboot.
 
-!!! caution "On which bank should I stay to be safe?"
-    It's strongly recommended to stick to the *optimal* bank plan (listed above) before modding your device further. The bigger picture description can be found [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really consider modding your preferred firmware version (not necessarily of `Type 2`) while booted from `bank_2` keeping `bank_1` as the active one.
-    **Key Point**: it's unsafe to deeply mod firmware settings of any firmware booted from `bank_1`.
+!!! caution "Which bank should I _use_ to stay safe?"
+    It's strongly recommended to stick to the above mentioned *optimal* bank plan before applying any further mod to your device. The bigger picture description is available [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really mod your preferred firmware version (not necessarily of *Type 2*) only while it's being booted from `bank_2` and keep `bank_1` as the active one.
+    **Key Point**: it's unsafe to deeply mod any firmware which is being booted from `bank_1`.
 
 !!! danger "Notable exception: Missing RBI"
-    In the unfortunate case that there are no RBI firmware files available for your model, you are not in a safe position because you can't exploit `BOOTP` recovery options. In such a situation whatever bank you boot is the same. Your best option is to keep a copy of your current rooted *Type 2* firmware on both banks. Skip bank planning for optimality.
+    In the unfortunate case that there are no RBI firmware files available for your board, you are not in a safe position because you can't rely on `BOOTP` firmware recovery. The *optimal* bank plan relies on `BOOTP` to flash and clean-boot a firmware from `bank_1`. Your best option is to ensure you keep a copy of a rootable *Type 2* firmware on both banks and to avoid modding one of them. Please, check the firmware repository page for any available RBI and stop following this bank planning guide if there are none.
+    In case some RBI firmwares are available but none of them is of *Type 2*, the hereby described *optimal* bank plan is still fine, despite some limitations.
 
 Run the following commands:
 
@@ -54,7 +56,7 @@ Run the following commands:
 cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
 # Clean up overlay space by removing existing old overlays
 rm -rf /overlay/*
-# Use the previously made temp copy as overlay for bank_2 firmware
+# Use the previously made temp copy as overlay for bank_2
 cp -rf /tmp/bank_overlay_backup /overlay/bank_2
 # Activate bank_1
 echo bank_1 > /proc/banktable/active
@@ -108,4 +110,4 @@ Run:
 passwd
 ```
 
-Now you **must** harden your access, to prevent it from being lost because of unwanted automatic firmware upgrades in future. See [Hardening Root Access](../../Hardening/) page.
+Now you **must** harden your access, to prevent it from being lost because of limited RBI availability or automatic firmware upgrades in future. See [Hardening Root Access](../../Hardening/) page.
