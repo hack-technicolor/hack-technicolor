@@ -49,12 +49,14 @@ Run the following commands:
 [ $(grep -c bank_ /proc/mtd) = 2 ] && \
 [ "$(grep bank_1 /proc/mtd | cut -d' ' -f2)" = \
 "$(grep bank_2 /proc/mtd | cut -d' ' -f2)" ] && {
-# Copy firmware into bank_2 if applicable
-[ "$(cat /proc/banktable/booted)" = "bank_1" ] && mtd write \
-/dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2
+# Clone and verify firmware into bank_2 if applicable
+[ "$(cat /proc/banktable/booted)" = "bank_1" ] && \
+mtd -e bank_2 write /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2 && \
+mtd verify /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2 || \
+{ echo Clone verification failed, retry; exit; }
 # Make a temp copy of overlay for booted firmware
 cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
-# Clean up overlay space by removing existing old overlays
+# Clean up jffs2 space by removing existing old overlays
 rm -rf /overlay/*
 # Use the previously made temp copy as overlay for bank_2
 cp -rf /tmp/bank_overlay_backup /overlay/bank_2
@@ -63,8 +65,8 @@ echo bank_1 > /proc/banktable/active
 # Make sure above changes get written to flash
 sync
 # Erase firmware in bank_1
-mtd erase bank_1
-} # end
+mtd erase bank_1; }
+# end
 ```
 
 Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.

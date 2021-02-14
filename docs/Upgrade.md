@@ -136,7 +136,7 @@ sync
 Run this command to write `/tmp/new.bin` image into `booted` bank:
 
 ```bash
-mtd write "/tmp/new.bin" $(cat /proc/banktable/booted)
+mtd -e $(cat /proc/banktable/booted) write "/tmp/new.bin" $(cat /proc/banktable/booted)
 ```
 
 Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.
