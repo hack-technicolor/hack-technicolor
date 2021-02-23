@@ -466,6 +466,23 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's network and download password*
 
+## DGA4331 / VCNT-3
+
+### TIM - TIM HUB+ (AGTHF)
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 19.4.0285          | 2020-05-08 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_002_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0306          | 2020-06-03 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_003_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0335          | 2020-06-29 | -            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_004_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0351          | 2020-07-17 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_005_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_005_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0351          | 2020-07-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0393          | 2020-09-02 | -            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_001_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0421          | 2020-09-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_002_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0421          | 2020-10-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_CLOSED.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
+
 ## DJA0230 / VBNT-V
 
 ### Telstra - Smart Modem (Gen1)
