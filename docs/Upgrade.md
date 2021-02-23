@@ -122,6 +122,7 @@ uci commit dropbear
 /etc/init.d/dropbear enable
 /etc/init.d/dropbear restart
 rm /overlay/\$(cat /proc/banktable/booted)/etc/rc.local
+source /rom/etc/rc.local
 " > /overlay/`cat /proc/banktable/booted`/etc/rc.local
 chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
 sync
