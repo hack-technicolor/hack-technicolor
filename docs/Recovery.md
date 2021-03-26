@@ -1,15 +1,10 @@
 # Recovery
 
-## IMPORTANT, do not SKIP
-
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
-
-!!! caution "DISCLAIMER"
-    In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse, potentially leading to a bricked Gateway. Anyone following this guide accepts full responsibility for the outcome(s).
-
-This Guide is based on a few different states.
+!!! important "Do not SKIP!"
+    !!! warning "WARNING"
+        This process is not supported by the manufacturer or supplier of your Gateway.
+    !!! caution "DISCLAIMER"
+        In some cases there is no way of knowing your exact situation and taking the wrong actions could make things worse, potentially leading to a bricked Gateway. Anyone following this guide accepts full responsibility for the outcome(s).
 
 ## Recovering gateways on optimal bank plan
 
@@ -33,7 +28,7 @@ Recovery from any bad state (**excluding full overlay partition issues**) while 
     * Do not apply any mod except root access while booting the *recovery disk*
     * Do not try RTFD or bootfail
 
-!!! note "What if my overlay partition is full?"
+!!! question "What if my overlay partition is full?"
     *Optimal* bank plan is not intended to make things easier in such cases. You can still try booting recovery as explained above and [wipe the filled up partition](#wipe-custom-data-partition) as soon as you get a root shell. Expect something in the above step 2 to go wrong: either your *recovery disk* doesn't boot fine (bootloops) since something running upon startup is crashing because of file writing failures, or you can't get root access because root strategies fail to apply needed changes. Your chances to sort out from this situation are bigger if this is not the first time booting into recovery since everything usually created upon startup and root access is there already.
 
 ## Wipe Custom Data Partition
@@ -127,7 +122,7 @@ If you previously backed up your configuration, you can now restore it to your G
 This guide is useful if you need to load a different firmware on your `bank_1` firmware partition, in case of a downgrade or replace a corrupt one.
 
 !!! note "Your firmware is unlikely to be corrupt!"
-    - If your Gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead. Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
+    If your Gateway stopped working normally after some mods or tweaks, it is very unlikely you messed up the firmware partitions since all your mods and settings are stored in the `userfs` or `rootfs_data` partition instead. Reloading a firmware in such situations won't make any difference unless you load a different version which is known to somehow work fine enough with your messed up mods & settings.
 
 This should work for any known Technicolor device build on a Broadcom BCM63xx platform. Since basically forever, Technicolor gateways have had a corrupt firmware recovery mechanism built in.  
 
@@ -303,7 +298,7 @@ Another common case is that your gateway has self-updated to a firmware version 
 
 **Key Point:** Once you get your passive bank booted, it sadly won't be marked as the active one for the next boot, therefore you will need to repeat the following steps every time you would like to boot that bank until you take *appropriate actions*.
 
-!!! hint "Which kind of actions?"
+!!! question "Which kind of actions?"
     If you came here starting from this wiki index, just keep your device powered on and continue reading, the rooting guide, which includes the correct bank setup steps. Otherwise, cast your eyes over to the [switchover](#switchover) section.
 
 Here you find some alternative ways of triggering a Bootfail. The chance of success is very high if you read the bootlogs from the serial console while performing the procedure.

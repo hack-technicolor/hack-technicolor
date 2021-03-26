@@ -34,7 +34,7 @@ bank_2
 
 We will now do what your current state requires to match the above one, such that the device will boot from the recommended bank on every reboot.
 
-!!! caution "Which bank should I _use_ to stay safe?"
+!!! question "Which bank should I _use_ to stay safe?"
     It's strongly recommended to stick to the above mentioned *optimal* bank plan before applying any further mod to your device. The bigger picture description is available [here](https://github.com/Ansuel/tch-nginx-gui/issues/514). The short thing is that you should really mod your preferred firmware version (not necessarily of *Type 2*) only while it's being booted from `bank_2` and keep `bank_1` as the active one.
     **Key Point**: it's unsafe to deeply mod any firmware which is being booted from `bank_1`.
 

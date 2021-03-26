@@ -1,10 +1,10 @@
 # Unlock Functionality
 
-## IMPORTANT, do not SKIP
-
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
+!!! important "Do not SKIP!"
+    !!! warning "WARNING"
+        This process is not supported by the manufacturer or supplier of your Gateway.
+    !!! danger "DANGER"
+        The process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
 ## Unlock Web GUI Tiles
 
