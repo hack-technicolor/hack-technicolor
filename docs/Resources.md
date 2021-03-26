@@ -1,11 +1,5 @@
 # Resources
 
-## IMPORTANT, do not SKIP
-
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
-
 ## The flash layout
 
 Here is how the Homeware flash layout typically looks like on newer ARM boards:
@@ -304,7 +298,7 @@ If it doesn't print `Signature incorrect`, then the image is good. You can doubl
 
 This guide will show you how to dump a bit-for-bit clone of any partition and reflash it.
 
-!!! info "Decrypted RBI v.s. bank dumps"
+!!! info "Decrypted RBI _v.s._ bank dumps"
     Decrypted RBI firmwares are the same as `bank_1` or `bank_2` dumps except for their first four bytes. A correctly decrypted RBI starts with a sequence of four `0xFF`. You can edit these bytes to `0x00` and use the resulting file as a bank dump to be restored.
 
 ### Making dumps
@@ -380,7 +374,7 @@ To restore the Config:
 sysupgrade -f /tmp/sysupgrade-backup-*.tar.gz
 ```
 
-## Change the logo
+## Change the web UI logo
 
 Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
 [technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)

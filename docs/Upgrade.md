@@ -57,7 +57,7 @@ Run this command to unpack the RBI image, will take a while:
 cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
 ```
 
-!!! hint "Something went wrong?"
+!!! fail "Something went wrong?"
     If the above command causes the gateway to reboot, use an USB drive instead. Move the RBI file into the USB drive and use its mount path in place of `/tmp`. Read [issue #128](https://github.com/hack-technicolor/hack-technicolor/issues/128) for more details. This is usually needed when there is not enough free RAM to perform firmware unpacking in memory.
 
 ### Raw bank dump
@@ -150,5 +150,5 @@ The Gateway should boot normally into the new firmware. Please review the follow
 - You should still have permanent SSH server on port `22`.
 - Your root credentials have been reset to `root:root`. MAke sure you [change password](../Hacking/PostRoot/#change-the-root-password) now.
 
-!!! hint "Something went wrong?"
+!!! fail "Something went wrong?"
     BOOTP usually allows you to recover in case of boot failure caused by bad firmware flashing. Chances of successful recovery are greater if you were on optimal bank plan. Please, use the same `Type 2` firmware you had on `bank_1` during root, we assume you remember which one it was since we asked you to take note. Otherwise, use another `Type 2` one and cross your fingers. You will need to follow the rooting guide from scratch.
