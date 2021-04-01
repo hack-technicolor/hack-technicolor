@@ -24,6 +24,10 @@ Once you finished running through any of the above guides, and you got your SSH 
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
 
+!!! note "Legacy ciphers and mismatching key alerts"
+    If your SSH client refuses to use the only cipher supported by the Gateway, you need to allow it from your SSH client options.
+    If your SSH client refuses to connect because of a different key was previously saved for your Gateway host/IP, follow your client instructions to clean or replace the old keys.
+
 As first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
 
 ```bash
