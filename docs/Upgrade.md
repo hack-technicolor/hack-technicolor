@@ -134,13 +134,17 @@ sync
 
 ## Flashing firmware
 
-Run this command to write `/tmp/new.bin` image into `booted` bank:
+Run these commands to write `/tmp/new.bin` image into `booted` bank and reboot soon after:
 
 ```bash
+# Erase and write new firmware into booted bank
 mtd -e $(cat /proc/banktable/booted) write "/tmp/new.bin" $(cat /proc/banktable/booted)
+# Emulate system crash to hard reboot
+echo c > /proc/sysrq-trigger
+
 ```
 
-Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.
+PThe last command above will intentionally make the Gateway to crash. Wait for it to reboot completely.
 
 ## Completing setup
 
