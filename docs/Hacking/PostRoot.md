@@ -65,11 +65,13 @@ echo bank_1 > /proc/banktable/active
 # Make sure above changes get written to flash
 sync
 # Erase firmware in bank_1
-mtd erase bank_1; }
+mtd erase bank_1;
+# Emulate system crash to hard reboot
+echo c > /proc/sysrq-trigger }
 # end
 ```
 
-Power off the Gateway now. It is better not to use the reboot command here. Power it on again and wait for it to boot completely.
+If everything went good, the Gateway will intentionally crash. Wait for it to reboot completely.
 You should now be in the previously mentioned *optimal* bank plan. On each reboot, your device will try booting `active` bank first. Since we set `bank_1` as active and we also erased `bank_1` firmware, it will boot from `bank_2`.
 
 !!! hint "Upgrade now!"
