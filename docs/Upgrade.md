@@ -66,9 +66,9 @@ Download **and extract** the raw bank image, and move this file into `/tmp/new.b
 
 ## Clean-up
 
-It is **not recommended** to keep custom changes to files and configs if you are either downgrading or moving to a firmware of a different brand.
+It is **recommended** to clean-up every changes to files and configs whenever you are either downgrading or moving to a firmware of a different brand.
 
-If you are just upgrading to a newer firmware of the same brand you can try the easy (*not the **safest***) way by skipping over to [Flashing firmware](#flashing-firmware).
+If you are just flashing a minor firmware update of the same brand, you could take the short (and **unsafe**) path by skipping over to [Flashing firmware](#flashing-firmware). Please note, if anything goes wrong or you experience any issues, this will almost certainly be the culprit.
 
 Make a full backup of your old firmware overlay:
 
