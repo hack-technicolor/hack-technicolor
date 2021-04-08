@@ -1,15 +1,39 @@
 site_name: Hacking Technicolor Gateways
+site_url: https://hack-technicolor.rtfd.io
+site_description: >-
+  Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down
+  in functionality to match service requirements. This kind of sucks because if you decide to use this device with
+  a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That ia the
+  motivation to hack the device and at least re-enable as many features as possible.
+
+repo_name: hack-technicolor
 repo_url: https://github.com/hack-technicolor/hack-technicolor/
 
 theme:
     name: material
-    
+    custom_dir: docs/overrides
+    palette:
+      scheme: preference
+    static_templates:
+      - 404.html
+    features:
+      - navigation.instant
+      - navigation.sections
+      - navigation.tabs
+      #- header.autohide
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hack-technicolor
+
 markdown_extensions:
     - toc:
         permalink:
     - admonition
     - def_list
     - nl2br
+    - md_in_html
 
 extra_css:
     - css/extra.css
@@ -19,10 +43,20 @@ plugins:
 
 nav:
     - 'Home': 'index.md'
+    - 'Hacking':
+      - 'Getting Started':
+        - 'Quick Start': 'QuickStart.md'
+        - 'Hacking Introduction': 'Introduction.md'
+      - 'Hacking Guide':
+        - 'Replacing Type 1': 'Hacking/Type1.md'
+        - 'Rooting Type 2': 'Hacking/Type2.md'
+        - 'Replacing Type 3': 'Hacking/Type3.md'
+        - 'Post-Root Procedures': 'Hacking/PostRoot.md'
     - 'Firmware Repository': 'Repository.md'
-    - 'Hacking Introduction': 'Hacking/Introduction.md'
-    - 'Hardening Root Access': 'Hardening.md'
-    - 'Unlock Functionality': 'Unlock.md'
+    - 'Other guides':
+      - 'Safe Firmware Upgrade': 'Upgrade.md'
+      - 'Hardening Root Access': 'Hardening.md'
+      - 'Unlock Functionality': 'Unlock.md'
     - 'Recovery': 'Recovery.md'
     - 'Resources': 'Resources.md'
-    - 'Safe Firmware Upgrade': 'Upgrade.md'
+
