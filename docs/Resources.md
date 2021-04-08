@@ -1,11 +1,5 @@
 # Resources
 
-## IMPORTANT, do not SKIP
-
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
-
 ## The flash layout
 
 Here is how the Homeware flash layout typically looks like on newer ARM boards:
@@ -36,20 +30,20 @@ When a proper [Reset to Factory Defaults (RTFD)](../Recovery/#reset-to-factory-d
 
 ## The boot process
 
-There exist many versions of this bootloader stack. Here we describe one from a VBNT-O (ARM) board. Actual addresses or unpacking code may differ between board versions, still what you read here is quite general.
+There exist many versions of this bootloader stack. Here we describe one from a VBNT-O (ARMv7) board. Actual addresses or unpacking code may differ between board versions, still what you read here is quite general.
 
 There are 4 different stages involved in the boot process:
 `boot0`: BootROM (BTRM v1.6) - to be dumped
 
 Boot memory is mapped to `0x80700000` with the following layout
 
-| Load Address | Offset | Name  |
-| :------ | :------| :------ |
-| `0x80700000` | - | `boot0` - BootRom (mapped from ROM) |
-| `0x80710000` | `0x10000` | `boot1-factory` |
-| `0x80710000` | `0x20000` | `boot1-secure` |
-| `0x00f00000` | `0x60000` | `boot2` (main loader) |
-| - | `0x80000` | unknown |
+| Load Address | Offset    | Name                                |
+| :----------- | :-------- | :---------------------------------- |
+| `0x80700000` | -         | `boot0` - BootRom (mapped from ROM) |
+| `0x80710000` | `0x10000` | `boot1-factory`                     |
+| `0x80710000` | `0x20000` | `boot1-secure`                      |
+| `0x00f00000` | `0x60000` | `boot2` (main loader)               |
+| -            | `0x80000` | unknown                             |
 
 ### boot0
 
@@ -130,11 +124,11 @@ Commands available within this menu regard the device lock-down and don't seem t
 | X | Exit from menu |
 
 Since `boot2` is derived from CFE, it holds some of the code that would handle the CFE command line menu, and has the string "`CFE> `" included in the binary.
-However, the code to spawn the shell seems to be removed. It's as such impossible to enter the CFE shell
+However, the code to spawn the shell seems to be removed. It's as such impossible to enter the CFE shell.
 
 ### Bootloader unlocking
 
-`boot2` can be unlocked to load unsigned linux kernels. However, this requires a signed `RIP_ID_UNLOCK_TAG` to be present in the RIP storage. Such tag is valid only for the specific device it was issued for as it's based on some device-unique parameters such as the S/N and Chip ID, and must be issued by Technicolor.
+`boot2` can be unlocked to load unsigned linux kernels. However, this requires a signed `RIP_ID_UNLOCK_TAG` to be present in the RIP storage. Such tag is valid only for the specific device it was issued for as it's based on some device-unique parameters such as the S/N and Chip ID, and must be issued by the platform privete keys owner (e.g. Technicolor).
 
 Device specific parameters can be obtained from
 
@@ -277,13 +271,13 @@ You can get a firmware image flashed by using one of the following modes:
 * Sysupgrade and switchover scripts may have been patched by a custom mod you installed to behave differently.
 * AutoFlashGUI exploits this flashing method.
 
-## Decrypting firmware
+## Decrypting RBI firmware
 
 RBI files usually contains encrypted BLI images. You can easily decrypt them using [Decrypt_RBI_Firmware_Utility](https://github.com/Ansuel/Decrypt_RBI_Firmware_Utility/releases) on any platform (Java Required). If you cannot find your OSCK and your device is rooted, then extract it and [share it](https://github.com/hack-technicolor/hack-technicolor/upload/master/osck). See [secr](https://github.com/pedro-n-rocha/secr) tools for further details about keys usage and extraction.
 
-## Checking firmware signature
+## Checking RBI firmware signature
 
-RBI files are digitally signed. This means if you flip a single bit of your RBI file it will be detected as invalid, and won't get flashed. Signature keys differ between each board model. This means RBI files not compatible with your board won't get flashed either, so nothing bad happens if you try flashing a bad one. You can also check by yourself if a file is going to be fine or not for your device. You can do this from your rooted gateway, or from your PC, for any available firmware with known OSIK.
+RBI files are digitally signed by OSIK, which is the public portion of an asymmetric key. This means if you flip a single bit of your RBI file it will be detected as invalid, and won't get flashed. For instance, editing the board name inside an RBI file header to match that one of your board will cause signcheck to fail. Nothing bad happens if you try flashing a bad one, it will simply get refused. Keep in mind that RBI signcheck against OSIK happens before RBI decryption through OSCK. OSIK is the same across multiple board models, but OSCK is different for each one. You can also check by yourself wether an RBI file integrity is compromised or not according to the OSIK for your device. You can do this from your rooted gateway, or from your PC, for any available firmware with known OSIK.
 
 From the router, just run:
 ```bash
@@ -292,10 +286,10 @@ signature_checker -b /tmp/firmware_to_check.rbi [-k /tmp/other_board_to_check.os
 From your PC (requires: linux/WSL, binwalk and qemu-static), decrypt any available RBI for any board (not necessarily that one you are going to check), then run:
 ```bash
 binwalk -e any_decrypted_firmware.bin
-mv firmware_to_check.rbi board_to_check.osik _any_decrypted_firmware.bin.extracted/squashfs-root/tmp/
+mv firmware_to_check.rbi pubkey_to_check.osik _any_decrypted_firmware.bin.extracted/squashfs-root/tmp/
 cd _any_decrypted_firmware.bin.extracted/squashfs-root
 cp $(which qemu-arm-static) .
-sudo chroot . ./qemu-arm-static /usr/bin/signature_checker -b /tmp/firmware_to_check.rbi -k /tmp/board_to_check.osik
+sudo chroot . ./qemu-arm-static /usr/bin/signature_checker -b /tmp/firmware_to_check.rbi -k /tmp/pubkey_to_check.osik
 ```
 
 If it doesn't print `Signature incorrect`, then the image is good. You can double check everything is actually working by altering some bytes inside the RBI you are checking, then repeat the check: this time it will report the signature is incorrect.
@@ -304,7 +298,7 @@ If it doesn't print `Signature incorrect`, then the image is good. You can doubl
 
 This guide will show you how to dump a bit-for-bit clone of any partition and reflash it.
 
-!!! info "Decrypted RBI v.s. bank dumps"
+!!! info "Decrypted RBI _v.s._ bank dumps"
     Decrypted RBI firmwares are the same as `bank_1` or `bank_2` dumps except for their first four bytes. A correctly decrypted RBI starts with a sequence of four `0xFF`. You can edit these bytes to `0x00` and use the resulting file as a bank dump to be restored.
 
 ### Making dumps
@@ -380,7 +374,7 @@ To restore the Config:
 sysupgrade -f /tmp/sysupgrade-backup-*.tar.gz
 ```
 
-## Change the logo
+## Change the web UI logo
 
 Copy a new file to /www/docroot/img/logo.gif – will be updated next time page is displayed.
 [technicolor.gif](https://mega.nz/#!f7ZmjAiA!D44GBZhin9p2Io17m9whX56adtBWJxZH1yskUJrRqv8)

@@ -1,16 +1,10 @@
 # Firmware Repository
 
-## IMPORTANT, do not SKIP
-
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
-
-## Firmware versions and URLs if available
+## About model names
 
 For simplicity, model names are reported here without branding codes.
 
-For example `DJA0230TLS`, where `TLS` stands for `Telstra`, is listed here as simply `DJA0230` since all of them share the same board mnemonic.
+For example `DJA0230TLS`, where `TLS` stands for `Telstra`, is listed here as simply `DJA0230` since they often refers to the same board and device.
 
 Other branding codes you could see worldwide:
 
@@ -26,6 +20,67 @@ Other branding codes you could see worldwide:
 | TN   | Telenor      | Sweden            |
 
 Type 1/2/3 indicates if it can be rooted directly. For Type 2 only, Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
+
+## What to do if your firmware is not listed here
+
+If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
+
+- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL.
+
+- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks).
+
+Read further below to get some more useful tips.
+
+If you find another firmware for a Technicolor gateway which is not yet listed in this page, please, [open a new Issue on GitHub](https://github.com/hack-technicolor/hack-technicolor/issues/new?assignees=&labels=Add+FW+Request&template=add-firmware.md&title=Add+_VERSION_+for+_BOARD_) so it can be added!
+
+### Hunting RBI Firmware URL's
+
+The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware version, usually identified with a board mnemonic string like `XXXX-X`. HAving an RBI file for your Gateway board is therefore really important.
+
+The Firmware filename combination is usually ISP specific, so the first thing to do is to find another known firmware from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining some tokens like product vendor, product name, hardware version, firmware version and special ISP-specific suffixes or prefixes.
+
+The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`. Look for any firmware version prefiz, suffic, or complete string overrides.
+
+Using the web interface, go to `Advanced >>Gateway`. In here you will find all basic information like Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version (including any suffix or prefix):
+
+```bash
+Global Information
+Product Vendor      Technicolor
+Product Name        Technicolor TG797n v3
+Software Version    15.3
+Firmware Version    15.53.6469-510-RA
+Hardware Version    DANT-O
+```
+
+#### Configuration version
+
+For some ISP's, you may see the configuration version as part of the firmware URL. If the Gateway is rooted, the CONF_VERSION string can be found in `/rom/etc/config/env`
+
+Obtain by running `cat /rom/etc/config/env | grep "CONF_VERSION"`
+
+```bash
+option CONF_VERSION 'CRF483'
+```
+
+#### Past upgrades history
+
+You can also run
+
+```bash
+strings /etc/cwmpd.db
+```
+
+Which may yield some firmware URL's your Gateway received as automatic update.
+
+### Make a raw device dump
+
+Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
+
+In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
+
+Please note the two banks are usually mapped to `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
+
+To make a full dump of them you can follow [Making dumps](../Resources/#making-dumps) instructions.
 
 ## TG582n v2 / DANT-7
 
@@ -115,10 +170,10 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version             | Root Strategy | Mirror |
 |:------:|:--------------------|:--------------|:-------|
 | ???    | 15.32.1509-ver1.4   | -             | *None, **no RBI available**!, this version has been found on some devices. If you have it on your device please share a dump! Ask for help if you don't know how to get the dump.* |
-| ???    | 15.53.6627-ver1.6   | -             | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi.torrent?raw=true) |
-| ???    | 15.53.7004-ver1.7.1 | -             | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi.torrent?raw=true) |
-| ???    | 15.53.8141-ver1.9.0 | -             | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi.torrent?raw=true) |
-| ???    | 15.53.8141-ver1.9.2 | -             | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi.torrent?raw=true) |
+|  2     | 15.53.6627-ver1.6   | #A #C         | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.6627-ver1.6-CRF509-1729006.rbi.torrent?raw=true) |
+|  2     | 15.53.7004-ver1.7.1 | #A #C         | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/old/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.7004-ver1.7.1-CRF557-1721003.rbi.torrent?raw=true) |
+|  2     | 15.53.8141-ver1.9.0 | #A #C         | [HTTP](http://mirror.internode.on.net/pub/internode-support/hardware/tg1/firmware/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.0-CRF775-1721002.rbi.torrent?raw=true) |
+|  2     | 15.53.8141-ver1.9.2 | #A #C         | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG-1/VANT-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-5/vant-5_15.53.8141-ver1.9.2-CRF908-1721006.rbi.torrent?raw=true) |
 
 ## TG789vac v2 / VANT-6
 
@@ -260,13 +315,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.8706_FW_214_IAD | 2019-04-30 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.8706_FW_214_IAD_TG789vacXtream.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-f/16.2.8706_FW_214_IAD_TG789vacXtream.rbi.torrent?raw=true) |
 | 2      | 16.2.8706_FW_214_MOS | 2019-04-30 | #A            | [HTTP](http://59.0.121.191:8080/ACS-server/file/16.2.8706_FW_214_MOS_TG789vacXtream.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-f/16.2.8706_FW_214_MOS_TG789vacXtream.rbi.torrent?raw=true) |
 
+> *\* requires access to ISP's network*
+
 ### TIM San Marino
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
 | 2      | 16.3.7446            | 2017-03-15 | #A #D         | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/timsm-vbnt-f_16.3.7446-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-
-> *\* requires access to ISP's network*
 
 ## TG799vac Xtream / VBNT-H
 
@@ -331,7 +386,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's network and download password*
 
-### TIM - Smart Modem Plus (AGTEF)
+### TIM - Smart Modem Plus
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
@@ -409,7 +464,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## DGA4132 / VBNT-S
 
-### TIM - TIM HUB (AGTHP)
+### TIM - TIM HUB
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
@@ -508,63 +563,19 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0543-950-RA   | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0585-MR7.1-RA | 2020-11-17 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0585-MR7.1-RA.rbi/vcnt-a_18.1.c.0585-MR7.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0585-MR7.1-RA.rbi.torrent?raw=true) |
 
-## What to do if your firmware is not listed here
+## DGA4331 / VCNT-3
 
-If you want to get an image of a Technicolor firmware which is not listed here you have two main options:
+### TIM - TIM HUB+
 
-- Try searching very deeply in the web for the original RBI file. Most ISP's keep all firmware's released via remote upgrade on their server, so you may resort into just guessing the right URL.
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 19.4.0285          | 2020-05-08 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_002_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0306          | 2020-06-03 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_003_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0335          | 2020-06-29 | -            | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_004_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0351          | 2020-07-17 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_005_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_005_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0351          | 2020-07-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.0_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.0_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0393          | 2020-09-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_001_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0421          | 2020-09-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_002_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0421          | 2020-10-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_CLOSED.rbi.torrent?raw=true) |
 
-- Try getting root access on a device currently running the firmware you are looking for and grab a dump of its firmware partitions (banks).
-
-Read further below to get some more useful tips.
-
-If you find another firmware for a Technicolor gateway which is not yet listed in this page, please, [open a new Issue on GitHub](https://github.com/hack-technicolor/hack-technicolor/issues/new?assignees=&labels=Add+FW+Request&template=add-firmware.md&title=Add+_VERSION_+for+_BOARD_) so it can be added!
-
-### Hunting RBI Firmware URL's
-
-The stock bootloader allows TFTP flashing only with the correct RBI firmware file for the hardware version, usually identified with a board mnemonic string like `XXXX-X`. HAving an RBI file for your Gateway board is therefore really important.
-
-The Firmware filename combination is usually ISP specific, so the first thing to do is to find another known firmware from the same ISP to get a better idea of how it should look like. As you can see from below links, it is often constructed by combining some tokens like product vendor, product name, hardware version, firmware version and special ISP-specific suffixes or prefixes.
-
-The ISP may have customized firmware version numbers to match their own versioning scheme. If so, check the contents of `/rom/etc/config/versioncusto`. Look for any firmware version prefiz, suffic, or complete string overrides.
-
-Using the web interface, go to `Advanced >>Gateway`. In here you will find all basic information like Product Vendor, Hardware Version (aka board mnemonic) and Firmware Version (including any suffix or prefix):
-
-```bash
-Global Information
-Product Vendor      Technicolor
-Product Name        Technicolor TG797n v3
-Software Version    15.3
-Firmware Version    15.53.6469-510-RA
-Hardware Version    DANT-O
-```
-
-#### Configuration version
-
-For some ISP's, you may see the configuration version as part of the firmware URL. If the Gateway is rooted, the CONF_VERSION string can be found in `/rom/etc/config/env`
-
-Obtain by running `cat /rom/etc/config/env | grep "CONF_VERSION"`
-
-```bash
-option CONF_VERSION 'CRF483'
-```
-
-#### Past upgrades history
-
-You can also run
-
-```bash
-strings /etc/cwmpd.db
-```
-
-Which may yield some firmware URL's your Gateway received as automatic update.
-
-### Make a raw device dump
-
-Firmware partitions, called banks, contain **signed** and **read-only** squashfs images that get extracted from RBI files during regular firmware flash or upgrade. These images cannot boot on different boards and **do not include any sensitive info** about your own device so they are totally safe to be shared.
-
-In usual dual-bank devices the two firmware partitions are named `bank_1` and `bank_2`, at least one of them has to contain valid firmware in order to boot correctly.
-
-Please note the two banks are usually mapped to `mtd3` and `mtd4` respectively, but you should always check yourself by reading contents of `/proc/mtd` from your own device (eg. `cat /proc/mtd`).
-
-To make a full dump of them you can follow [Making dumps](../Resources/#making-dumps) instructions.
+> *\* requires access to ISP's network and download password*

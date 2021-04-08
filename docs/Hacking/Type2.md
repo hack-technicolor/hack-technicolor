@@ -17,12 +17,16 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
-!!! warning "Is the current SSH server permanent?"
+!!! question "Is the current SSH server permanent?"
     If the rooting strategy you just used does not allow to directly set root SSH access on your firmware in a permanent fashion, or you mixed different rooting strategies without resetting between them, you may get a temporary SSH dropbear instance on port `6666`. You will configure dropbear in order to run a permanent LAN-side SSH server later on following this guide. Do not reboot the Gateway until then.
 
 ## Final Type 2 steps
 
 Fire up your SSH client and connect with user `root` to the Gateway IP on default port `22`, or `6666`.
+
+!!! note "Legacy ciphers and mismatching key alerts"
+    If your SSH client refuses to use the only cipher supported by the Gateway, you need to allow it from your SSH client options.
+    If your SSH client refuses to connect because of a different key was previously saved for your Gateway host/IP, follow your client instructions to clean or replace the old keys.
 
 As first step into your brand-new rooted Gateway, it is a good idea to always ensure the serial console port is enabled - this is a very useful feature in case of disasters, so just do it. Execute the following command:
 

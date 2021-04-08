@@ -1,27 +1,23 @@
 # Introduction to Homeware Hacking
 
-## IMPORTANT, do not SKIP
+!!! important "Do not SKIP!"
+    !!! warning "WARNING"
+        This process is not supported by the manufacturer or supplier of your Gateway.
+    !!! danger "DANGER"
+        The process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-**Warning:** This process is not supported by the manufacturer or supplier of your Gateway.
-
-There is no way of knowing your situation and the process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
-
-## Introduction
-
-### Why Hack your Gateway
+## Why Hack your Gateway
 
 Devices mentioned above and similar ones are very capable pieces of equipment, each with different features, which may include: 802.11ac, MU-MIMO, ADSL2/VDSL2/eVDSL modem, DECT base station, [FXS](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) ports, [FXO](https://en.wikipedia.org/wiki/Foreign_exchange_service_%28telecommunications%29#Foreign_exchange_station) port,  4G backup, [SFP](https://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver) slot, etc. They are known to have a high quality internal PCB and low power consumption, for example the TG799vac Xtream uses about 12 watts with WiFi on (typical router config) and 9 watts with WiFi off (typical bridge mode config).
 
-There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down in functionality to match service requirements. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That was the motivation to hack the device and at least re-enable as many features as possible.
+There is usually no *generic* firmware available that will *just* give you access to the Gateway as any other device you would purchase. Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down in functionality to match service requirements. This kind of sucks because if you decide to use this device with a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That is the motivation to hack the device and at least re-enable as many features as possible.
 
 For some other devices, a no-brand firmware exists. They appear as "Technicolor" branded and implement "MST" integration, a default third-party remote management platform for ISP's that do not pay for firmware customization. On such firmware's no regular configuration options are locked out, but getting root access will still open a wider window of possibilities.
 
 The default IP address of the Gateway varies by Gateway model, it could be `10.0.0.138`, `192.168.0.1`, `192.168.1.1`, `10.1.1.1` and so on. Your best option is to get an IP address by DHCP the first time you connect and see what your default Gateway is.
 
-!!! tip "Asking about your gateway?"
+!!! tip "Referring to your gateway"
     Avoid referring to your device by its commercial product name, refer to your device with its unique board mnemonic identifier `XXXX-X` to avoid any potential ambiguity.
-
-## Gaining Root Access
 
 ## Things you will need
 

@@ -2,7 +2,7 @@
 
 Run the following in the SSH terminal to prevent your Gateway loosing root access unexpectedly.
 
-!!! hint "You can pick only what you need"
+!!! hint "Pick only what you need"
     You can paste each block directly into the terminal independently, use only ones your firmware needs. If you don't know, just paste them all. If you get any error messages from a command, just ignore it, it means that command wasn't needed for your firmware version.
 
 ```bash
@@ -19,6 +19,7 @@ uci commit
 /etc/init.d/cwmpdboot stop
 /etc/init.d/zkernelpanic disable
 /etc/init.d/zkernelpanic stop
+
 # Disable CWMP - extra, in case you think it may resurrect
 uci set cwmpd.cwmpd_config.state=0
 uci set cwmpd.cwmpd_config.acs_url='https://127.0.1.1:7547/'
@@ -26,6 +27,7 @@ uci set cwmpd.cwmpd_config.use_dhcp=0
 uci set cwmpd.cwmpd_config.interface=loopback
 uci set cwmpd.cwmpd_config.enforce_https=1
 uci commit cwmpd
+
 # Disable Telstra monitoring
 uci delete tls-vsparc.Config
 uci delete tls-vsparc.Passive
@@ -35,18 +37,20 @@ uci delete wifi_doctor_agent.acs
 uci delete wifi_doctor_agent.config
 uci delete wifi_doctor_agent.as_config
 uci commit
+
 # Disable Telstra Air/Fon WiFi
 /etc/init.d/hotspotd stop
 /etc/init.d/hotspotd disable
 uci delete dhcp.hotspot
 uci delete dhcp.fonopen
 uci commit
-# Remove any ISP ssh access pubkey
+
+# Remove any default SSH pubkey
 echo > /etc/dropbear/authorized_keys
-# Completely disable SSH access over wan
+# Disable SSH access over wan
 uci set dropbear.wan.enable='0'
-uci commit
+uci commit dropbear
+
 # Free space for gateways with small flash
-opkg --force-removal-of-dependent-packages remove conf-cwmpd cwmpd autoreset-tch mappings-fon geolocation-tch
 find /rom/usr/lib/ipk -type f |xargs -n1 basename | cut -f 1 -d '_' |xargs opkg --force-removal-of-dependent-packages remove
 ```
