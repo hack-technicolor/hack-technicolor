@@ -355,7 +355,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version                  | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------------|:-----------|:--------------|:-------|
 | 1      | 17.1.7875-CRF731         | 2017-09-04 | -             | [HTTP](http://downloads.vodafone.co.nz/ultrahub_crf731.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-9/ultrahub_crf731.rbi.torrent?raw=true) |
-| 2      | 17.1.7988-CRF846-V2.4.6  | 2018-05-09 | *WIP*         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
+| 2      | 17.1.7988-CRF846-V2.4.6  | 2018-05-09 | *[WIP](https://github.com/hack-technicolor/hack-technicolor/issues/68#issuecomment-578359876)*         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-9/RC2.4.6_prod_AUTH_vant-9_17.1.7988-2461009-20180510014336.rbi.torrent?raw=true) |
 | 3      | 17.1.7988-CRF897-RC2-4-9 | 2018-10-21 | -             | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-9/DGA-2-4-9-Prod.rbi.torrent?raw=true) |
 
 ## DJN2130 / VBNT-J
@@ -543,7 +543,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
-| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *WIP*         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-z/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
+| 2      | 17.4.0182CRF877-RC2.0.1 | 2018-11-19 | *[WIP](https://github.com/hack-technicolor/hack-technicolor/issues/68#issuecomment-578359876)*         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-z/UHP-2-0-1-Prod.rbi.torrent?raw=true) |
 
 ## DJA0231 / VCNT-A
 
@@ -577,5 +577,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0393          | 2020-09-02 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0421          | 2020-09-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0421          | 2020-10-15 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.1_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.1_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0539          | 2021-03-10 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTHF_1.0.2_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.0.2_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*

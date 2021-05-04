@@ -67,7 +67,7 @@ sync
 # Erase firmware in bank_1
 mtd erase bank_1;
 # Emulate system crash to hard reboot
-echo c > /proc/sysrq-trigger }
+echo c > /proc/sysrq-trigger; }
 # end
 ```
 
