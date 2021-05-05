@@ -50,10 +50,10 @@ Run the following commands:
 [ "$(grep bank_1 /proc/mtd | cut -d' ' -f2)" = \
 "$(grep bank_2 /proc/mtd | cut -d' ' -f2)" ] && {
 # Clone and verify firmware into bank_2 if applicable
-[ "$(cat /proc/banktable/booted)" = "bank_1" ] && \
+[ "$(cat /proc/banktable/booted)" = "bank_1" ] && {
 mtd -e bank_2 write /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2 && \
 mtd verify /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2 || \
-{ echo Clone verification failed, retry; exit; }
+{ echo Clone verification failed, retry; exit; } }
 # Make a temp copy of overlay for booted firmware
 cp -rf /overlay/$(cat /proc/banktable/booted) /tmp/bank_overlay_backup
 # Clean up jffs2 space by removing existing old overlays
