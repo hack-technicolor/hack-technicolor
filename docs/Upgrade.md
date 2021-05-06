@@ -82,7 +82,7 @@ Please note, importing back this full backup on the new firmware is dangerous. T
 Run the command below to completely reset the overlay for your currently booted bank:
 
 ```bash
-rm -rf /overlay/`cat /proc/banktable/booted`
+rm -rf /overlay/$(cat /proc/banktable/booted)
 ```
 
 The above command cleans up the same files a regular RTFD would. We need to prepare a couple more things before rebooting, that's why we didn't use RTFD.
@@ -96,11 +96,11 @@ The below block of commands prepares a run-once root access setup script to be e
 
 Run the following set of commands:
 
-> *please note there is a long multi-line command here, paste them all at once*
+> *please note there is a long multi-line command here, paste it all at once*
 
 ```bash
-mkdir -p /overlay/`cat /proc/banktable/booted`/etc
-chmod 755 /overlay/`cat /proc/banktable/booted` /overlay/`cat /proc/banktable/booted`/etc
+mkdir -p /overlay/$(cat /proc/banktable/booted)/etc
+chmod 755 /overlay/$(cat /proc/banktable/booted) /overlay/$(cat /proc/banktable/booted)/etc
 echo -e "echo root:root | chpasswd
 sed -i 's#/root:.*\$#/root:/bin/ash#' /etc/passwd
 sed -i -e 's/#//' -e 's#askconsole:.*\$#askconsole:/bin/ash#' /etc/inittab
@@ -123,8 +123,8 @@ uci commit dropbear
 /etc/init.d/dropbear restart
 rm /overlay/\$(cat /proc/banktable/booted)/etc/rc.local
 source /rom/etc/rc.local
-" > /overlay/`cat /proc/banktable/booted`/etc/rc.local
-chmod +x /overlay/`cat /proc/banktable/booted`/etc/rc.local
+" > /overlay/$(cat /proc/banktable/booted)/etc/rc.local
+chmod +x /overlay/$(cat /proc/banktable/booted)/etc/rc.local
 sync
 
 ```
@@ -144,7 +144,7 @@ echo c > /proc/sysrq-trigger
 
 ```
 
-PThe last command above will intentionally make the Gateway to crash. Wait for it to reboot completely.
+The last command above will intentionally make the Gateway to crash. Wait for it to reboot completely.
 
 ## Completing setup
 
