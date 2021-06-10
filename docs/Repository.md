@@ -536,6 +536,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0443-950-RA  | 2019-10-21 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_CRF979_18.1.c.0443-950-RA/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF979_18.1.c.0443-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0462-950-RA  | 2020-02-14 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_vbnt-v_CRF993-18.1.c.0462-950-RA/vbnt-v_CRF993-18.1.c.0462-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_CRF993-18.1.c.0462-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0549-MR17-RB | 2020-09-01 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_18.1.c.0549-MR17-RB/vbnt-v_18.1.c.0549-MR17-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_18.1.c.0549-MR17-RB.rbi.torrent?raw=true) |
+| 2      | 20.3.c.0329-MR19-RA | 2021-05-28 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0329-MR19-RA/vbnt-v_20.3.c.0329-MR19-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0329-MR19-RA.rbi.torrent?raw=true) |
 
 ## DNA0130 / VBNT-Z
 
