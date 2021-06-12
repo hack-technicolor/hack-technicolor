@@ -9,17 +9,17 @@ We are now going to prepare an *optimal* bank plan for the same firmware version
 
 Run the following command to look at your Gateway's bank state:
 
-```find /proc/banktable -type f -print -exec cat {} ';'```
+```find /proc/banktable -type f -print -exec cat {} ';' -exec echo ';'```
 
 You should see something like this being printed:
 
 ```bash
-xxxxx
+...
 /proc/banktable/booted
 <take note of this>
 /proc/banktable/active
 <take note of this>
-xxxxx
+...
 ```
 
 If the above command failed, your board is not dual bank and no bank planning is possible. Otherwise, take note of the current `active` and `booted` banks.
@@ -28,8 +28,12 @@ This guide will let you setup your Gateway to boot the same firmware you are now
 ```bash
 /proc/banktable/active
 bank_1
+/proc/banktable/activeversion
+Unknown
 /proc/banktable/booted
 bank_2
+/proc/banktable/bootedversion
+xx.x.xxxx-...
 ```
 
 We will now do what your current state requires to match the above one, such that the device will boot from the recommended bank on every reboot.
