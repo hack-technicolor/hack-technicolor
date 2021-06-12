@@ -96,7 +96,7 @@ To make a full dump of them you can follow [Making dumps](../Resources/#making-d
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------|:-----------|:--------------|:-------|
-| 2      | 15.05.5876        | 2015-10-15 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.05.5876        | 2015-10-15 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/dant-8/wind-dant-8_15.05.5876-0521002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG797n v3 / DANT-O
 
@@ -142,14 +142,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 15.53.6568         | 2016-09-09 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.53.6568         | 2016-09-09 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/gant-1/comhem-gant-1_15.53.6568-1721005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ### Teo & Telia Lithuania
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 15.32.6210         | 2015-10-21 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telia-gant-1_15.32.6210-1081007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
-| 2      | 16.1.7053          | 2016-10-28 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 15.32.6210         | 2015-10-21 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/gant-1/telia-gant-1_15.32.6210-1081007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 16.1.7053          | 2016-10-28 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/gant-1/telia-gant-1_16.1.7053-1941003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
 | 2      | 17.1.7992          | 2018-05-15 | #C #E         | [HTTP](http://10.0.98.250/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gant-1/TG389ac_gant-1_17.1.7992-0001012-20180515151413_PROD.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
@@ -237,7 +237,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.51.6436       | 2016-02-05 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telia-vant-r_15.51.6436-1361003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.51.6436       | 2016-02-05 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-r/telia-vant-r_15.51.6436-1361003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 15.51.6436       | 2016-05-27 | #A            | [HTTP](http://131.116.22.230/15516436r1361008closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/15516436r1361008closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732r2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339r1021008closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
@@ -252,7 +252,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.3.7190        | 2016-10-06 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-l/myrepublic-vbnt-l_16.3.7190-2761005-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 16.3.7190        | 2017-09-07 | #A            | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-l/vbnt-l_16.3.7190-2761003-20170907085601-501361d1f0abcd3206e49f0897c4a6cca07a114d.rbi.torrent?raw=true) |
 
 ## TG799vac Xtream / VANT-W
@@ -261,7 +261,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.53.7451       | 2017-03-20 | #A #C         | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/telenor-vant-w_15.53.7451-1761003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 15.53.7451       | 2017-03-20 | #A #C         | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-w/telenor-vant-w_15.53.7451-1761003-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 17.1.7937        | 2018-10-17 | #C            | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/TN_SWE_TG799vacXtream_17.1.7937-1281014-20180313133921-Official.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-10-03 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/TG799vacXtream_18.1.0297-1321001-20191002151007_official_closed.rbi.torrent?raw=true) |
 | 3      | 18.1.0297        | 2019-12-13 | -             | [HTTP](http://acs.bredband.com/Technicolor/Technicolor_TG799vacXTREAM/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/vant-w_18.1.0297-1321006-20191213145958-e139794833dfb6bcc766549899da1ff0e0631539_official.rbi.torrent?raw=true) |
@@ -273,7 +273,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.1.7854        | 2018-02-15 | #C            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 17.1.7854        | 2018-02-15 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-w/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG799vac Xtream / VANT-W_Rev-2
 
@@ -297,7 +297,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #A            | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-1/iinet-vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | ???    | 18.3.0442-ver3.4.1 | 2019-11-14 | -             | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
 
 ## TG789vac Xtream 35b / VBNT-F
@@ -321,7 +321,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7446            | 2017-03-15 | #A #D         | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/timsm-vbnt-f_16.3.7446-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.3.7446            | 2017-03-15 | #A #D         | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-f/timsm-vbnt-f_16.3.7446-2921002-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## TG799vac Xtream / VBNT-H
 
@@ -364,7 +364,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 16.3.7413-660-RF | -          | #A #C         | [HTTPS](https://github.com/hack-technicolor/hack-technicolor/raw/master/firmware/vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 16.3.7413-660-RF | -          | #A #C         | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-j/telstra-vbnt-j_CRF640-16.3.7413-660-RF-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2      | 17.2.0219-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF752/vbnt-j_CRF752-17.2.0219-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF752-17.2.0219-820-RA.rbi.torrent?raw=true) |
 | 2      | 17.2.0219-820-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF778-17.2.0219-820-RB/vbnt-j_CRF778-17.2.0219-820-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF778-17.2.0219-820-RB.rbi.torrent?raw=true) |
 | 2      | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-j_CRF847-17.2.0261-820-RA/vbnt-j_CRF847-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-j/vbnt-j_CRF847-17.2.0261-820-RA.rbi.torrent?raw=true) |
