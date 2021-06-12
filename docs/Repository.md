@@ -563,6 +563,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0514-950-RB   | 2020-06-02 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_ACR-13-18.1.c.0514-950-RB/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_ACR-13-18.1.c.0514-950-RB.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0543-950-RA   | 2020-08-04 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0543-950-RA/vcnt-a_18.1.c.0543-950-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0543-950-RA.rbi.torrent?raw=true) |
 | 2      | 18.1.c.0585-MR7.1-RA | 2020-11-17 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0585-MR7.1-RA.rbi/vcnt-a_18.1.c.0585-MR7.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0585-MR7.1-RA.rbi.torrent?raw=true) |
+| 2      | 20.3.c.0329-MR19-RA  | 2021-05-28 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RA/vcnt-a_20.3.c.0329-MR19-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RA.rbi.torrent?raw=true) |
 
 ## DGA4331 / VCNT-3
 
