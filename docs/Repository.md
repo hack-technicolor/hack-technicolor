@@ -590,5 +590,6 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0623          | 2021-05-07 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.0_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0643          | 2021-06-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-06-29 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.0_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0666          | 2021-07-22 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.1_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
