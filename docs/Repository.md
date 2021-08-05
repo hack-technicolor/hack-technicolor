@@ -298,7 +298,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 18.3.0157-ver3.2.1 | 2018-11-22 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-1/iinet-vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
-| ???    | 18.3.0442-ver3.4.1 | 2019-11-14 | -             | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
+| 2      | 18.3.0442-ver3.4.1 | 2019-11-14 | #A            | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
 
 ## TG789vac Xtream 35b / VBNT-F
 
