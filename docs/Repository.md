@@ -282,7 +282,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | ???    | 15.51.6436       | 2015-12-23 | -             | [HTTP](http://131.116.22.230/15516436w1361002closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/15516436w1361002closed.rbi.torrent?raw=true) |
-| ???    | 15.51.6436       | 2016-02-26 | -             | [HTTP](http://131.116.22.230/15516436w1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/15516436w1361005closed.rbi.torrent?raw=true) |
+| 2      | 15.51.6436       | 2016-02-26 | #A          | [HTTP](http://131.116.22.230/15516436w1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/15516436w1361005closed.rbi.torrent?raw=true) |
 | ???    | 15.51.6436       | 2016-05-24 | -             | [HTTP](http://131.116.22.230/15516436w1361006closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/15516436w1361006closed.rbi.torrent?raw=true) |
 | 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732w2221002closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/1627732w2221002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
