@@ -275,7 +275,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-----------------|:-----------|:--------------|:-------|
 | 2      | 17.1.7854        | 2018-02-15 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-w/etisalat-vant-w_17.1.7854-0001025-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
-## TG799vac Xtream / VANT-W_Rev-2
+## TG799vac Xtream / VANT-W
 
 ### Telia - Wifi-router Plus
 
