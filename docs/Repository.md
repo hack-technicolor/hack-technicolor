@@ -443,6 +443,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0643          | 2021-06-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTEF_2.3.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.3.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-07-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTEF_2.3.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.3.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-07-19 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTEF_2.3.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.3.1_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0666          | 2021-08-13 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTEF_2.3.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.3.2_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0725          | 2021-09-27 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTEF_2.3.3_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.3.3_001_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
 
@@ -525,6 +527,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0643          | 2021-06-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-07-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-07-19 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.1_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0666          | 2021-08-13 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.2_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0725          | 2021-09-27 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.3_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.3_001_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
 
@@ -594,5 +598,17 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0643          | 2021-06-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-06-29 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0666          | 2021-07-22 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.1_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.1_CLOSED.rbi.torrent?raw=true) |
+| ???    | 19.4.0751          | 2021-10-11 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHF_1.1.2_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/AGTHF_1.1.2_001_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
+
+## OWA0131 / GCNT-N
+
+### TIM - EasyMesh Repeater 6
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 19.4.0677          | 2021-07-28 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-3/RPTEM_1.0.4_CLOSED.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
+
