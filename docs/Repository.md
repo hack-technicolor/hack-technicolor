@@ -552,6 +552,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0549-MR17-RB | 2020-09-01 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_18.1.c.0549-MR17-RB/vbnt-v_18.1.c.0549-MR17-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_18.1.c.0549-MR17-RB.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0329-MR19-RA | 2021-05-28 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0329-MR19-RA/vbnt-v_20.3.c.0329-MR19-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0329-MR19-RA.rbi.torrent?raw=true) (*[This version has a broken adsl_phy.bin](https://github.com/hack-technicolor/hack-technicolor/issues/180)*) |
 | 2      | 20.3.c.0329-MR19-RB | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0329-MR19-RB/vbnt-v_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
+| 2      | 20.3.c.0389-MR20-RA | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0389-MR20-RA/vbnt-v_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
 ## DNA0130 / VBNT-Z
 
@@ -580,6 +581,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 18.1.c.0585-MR7.1-RA | 2020-11-17 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_18.1.c.0585-MR7.1-RA.rbi/vcnt-a_18.1.c.0585-MR7.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_18.1.c.0585-MR7.1-RA.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0329-MR19-RA  | 2021-05-28 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RA/vcnt-a_20.3.c.0329-MR19-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RA.rbi.torrent?raw=true) (*[This version has a broken adsl_phy.bin](https://github.com/hack-technicolor/hack-technicolor/issues/180)*) |
 | 2      | 20.3.c.0329-MR19-RB  | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RB/vcnt-a_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
+| 2      | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
 ## DGA4331 / VCNT-3
 
