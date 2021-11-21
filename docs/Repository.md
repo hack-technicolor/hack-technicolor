@@ -162,6 +162,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2      | 15.53.6970         | 2016-06-24 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
 | 2      | 16.2.7064          | 2016-08-25 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
+| 2      | 16.2.7064          | 2017-02-07 | #A #D         | RBI not available |
 
 ## TG-1 / VANT-5
 
