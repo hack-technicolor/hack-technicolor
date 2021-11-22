@@ -555,6 +555,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 20.3.c.0329-MR19-RB | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0329-MR19-RB/vbnt-v_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0389-MR20-RA | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0389-MR20-RA/vbnt-v_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
+
+## DWA0120 / VBNT-2
+
+### MST
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2      | 18.3.0278               | 2019-06-14 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-2/mst-vbnt-2_18.3.0278-2741042-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## DNA0130 / VBNT-Z
 
 ### Vodafone - Ultra Hub Plus
