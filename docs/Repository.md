@@ -156,13 +156,13 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG588v v2 / VANT-2
 
-### MST (no-brand)
+### MST
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| 2      | 15.53.6970         | 2016-06-24 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
-| 2      | 16.2.7064          | 2016-08-25 | #A #D         | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
-| 2      | 16.2.7064          | 2017-02-07 | #A #D         | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-2/mst-vant-2_16.2.7064-2201007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+| 2      | 15.53.6970         | 2016-06-24 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2015.53.6970-1341001.rbi.torrent?raw=true) |
+| 2      | 16.2.7064          | 2016-08-25 | #A #C #D      | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-2/MST%20TG588v%20v2%2016.2.7064.2201001.rbi.torrent?raw=true) |
+| 2      | 16.2.7064          | 2017-02-07 | #A #C #D      | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-2/mst-vant-2_16.2.7064-2201007-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
 
 ## TG-1 / VANT-5
 
@@ -178,11 +178,11 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## TG789vac v2 / VANT-6
 
-### MST (no-brand)
+### MST
 
 | Type   | Version          | Timestamp  | Root Strategy | Mirror |
 |:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 17.2.0278        | 2018-01-08 | #D            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
+| 2      | 17.2.0278        | 2018-01-08 | #C #D            | [HTTPS](https://uno.help/attachments/732)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-6/MST.TG789vac.v2-17.2.278-0901008.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
@@ -205,16 +205,24 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |        | *note: this is officially named `ver3.0` but it is version `2.3.0` indeed* | |
 | 2      | 16.3.8046-ver2.5.3 | 2019-03-22 | #C            | [FTP](ftp://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [HTTP](http://ftp.iinet.net.au/pub/iinet/firmware/TG789vacV2/VANT-6/.2752ae5a/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-6/vant-6_16.3.8046-ver2.5.3-CRF927-2721031.rbi.torrent?raw=true) |
 
+## TG589vac v2 / VANT-8
+
+### MST
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 17.2.0278          | 2018-01-08 | #C #D         | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vant-8/mst-vant-8_17.2.0278-0901009-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools*   |
+
 ## TG789vac / VANT-D
 
 !!! danger "OSCK Not Known"
     Nobody has shared the model specific key for decrypting firmware's for this board. Hence, we generally don't know their contents. If you would like to, please create an issue so we can guide you.
 
-### MST (no-brand)
+### MST
 
-| Type   | Version          | Root Strategy | Mirror |
-|:------:|:-----------------|:--------------|:-------|
-| 2      | 16.2.7064        | #A            | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-d/MST%20TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| 2      | 16.2.7064          | -          | #A #C         | [HTTPS](https://uno.help/attachments/690)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-d/MST%20TG789vac%2016.2.7064.2201002.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
