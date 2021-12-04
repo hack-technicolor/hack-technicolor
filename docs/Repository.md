@@ -344,6 +344,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-11-14 | -             | [HTTP](http://131.116.22.230/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-11-14 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
