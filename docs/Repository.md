@@ -117,13 +117,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telia
 
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.51.6436       | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
-| 2      | 15.51.6436       | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
-| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
-| 3      | 17.2.0405        | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:----------------- |:-----------|:--------------|:-------|
+| 2      | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
+| 2      | 15.51.6436        | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732         | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339         | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405         | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405         | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901068closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901068closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405         | 2018-10-17 | -             | [HTTPS](https://rgw.teliacompany.com:7547/1720405o1901068closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901068closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -252,6 +254,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339r1021008closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405r1021034closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -297,6 +300,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405w1441030closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -342,7 +346,9 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339h1441002closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405h1441028closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-11-14 | -             | [HTTP](http://131.116.22.230/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-11-14 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
