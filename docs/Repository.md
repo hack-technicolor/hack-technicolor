@@ -546,7 +546,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ## DGA4134 / VCNT-J
 
-### Net Link
+### Net Lynk
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
