@@ -612,6 +612,31 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 20.3.c.0329-MR19-RB  | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RB/vcnt-a_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
+## DGA2231 / VCNT-C
+
+### TIM
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 18.3.0140          | 2018-09-05 | -             | [HTTPS](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTSA_1.0.0_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/AGTSA_1.0.0_001_CLOSED.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
+
+### Telmex
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 18.3.g.0301        | 2019-10-28 | -             | [HTTP](http://gateway.telmex.com/test/DGA2231_18.3.G.0301/DGA2231_vcnt-c_18.3.g.0301-official.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/DGA2231_vcnt-c_18.3.g.0301-official.rbi.torrent?raw=true) |
+| ???    | 18.3.g.0301        | 2021-03-08 | -             | [HTTP](http://gateway.telmex.com/Pruebas_Technicolor_DGA2231/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi.torrent?raw=true) |
+
+### MST
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2      | 18.1.0203               | 2018-08-08 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-c/mst-vcnt-c_18.1.0203-1641038-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
+
+
 ## DGA4331 / VCNT-3
 
 ### TIM - TIM HUB+
@@ -658,4 +683,3 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0677          | 2021-07-28 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.4_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
-
