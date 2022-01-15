@@ -626,8 +626,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| ???    | 18.3.g.0301        | 2019-10-28 | -             | [HTTP](http://gateway.telmex.com/test/DGA2231_18.3.G.0301/DGA2231_vcnt-c_18.3.g.0301-official.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/DGA2231_vcnt-c_18.3.g.0301-official.rbi.torrent?raw=true) |
-| ???    | 18.3.g.0301        | 2021-03-08 | -             | [HTTP](http://gateway.telmex.com/Pruebas_Technicolor_DGA2231/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi.torrent?raw=true) |
+| ???    | 18.3.g.0301        | 2019-10-28 | -             | [HTTP](http://gateway.telmex.com/test/DGA2231_18.3.G.0301/DGA2231_vcnt-c_18.3.g.0301-official.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/DGA2231_vcnt-c_18.3.g.0301-official.rbi.torrent?raw=true) |
+| ???    | 18.3.g.0301        | 2021-03-08 | -             | [HTTP](http://gateway.telmex.com/Pruebas_Technicolor_DGA2231/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi.torrent?raw=true) |
 
 ### MST
 
