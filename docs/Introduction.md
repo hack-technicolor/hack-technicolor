@@ -41,4 +41,4 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 
 Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. For instance, on the DJA0231, the SIM card is under a rubber plug above the green port.
 
-Now go back to [Quick Start](../../) and head on to the right guide for your current firmware *Type*.
+Now go back to [Quick Start](./QuickStart.md) and head on to the right guide for your current firmware *Type*.
