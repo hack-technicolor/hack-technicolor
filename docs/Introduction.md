@@ -34,7 +34,7 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 
 5. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
-6. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../../Recovery/) to get it to a stock state first.
+6. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](./Recovery.md) to get it to a stock state first.
 
 !!! caution "Make sure your Gateway is offline!"
     The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
