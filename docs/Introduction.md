@@ -30,7 +30,7 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 
 3. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
-4. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device ***or*** see [Hosting these Docs Locally](https://github.com/hack-technicolor/hack-technicolor/blob/master/Host%20this%20Locally.md).
+4. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device ***or*** see [Hosting these Docs Locally](../Host%20this%20Locally.md).
 
 5. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
