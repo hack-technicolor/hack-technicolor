@@ -24,9 +24,9 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 !!! hint
     Check the following points **before** you go offline
 
-1. A `Type 2` RBI from [firmware repository](./Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
+1. A `Type 2` RBI from [firmware repository](./Repository.md) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
 
-2. **Optionally**, another [firmware](./Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+2. **Optionally**, another [firmware](./Repository.md) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 3. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
