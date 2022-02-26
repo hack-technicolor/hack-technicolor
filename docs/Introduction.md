@@ -24,21 +24,21 @@ The default IP address of the Gateway varies by Gateway model, it could be `10.0
 !!! hint
     Check the following points **before** you go offline
 
-1. A `Type 2` RBI from [firmware repository](../../Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
+1. A `Type 2` RBI from [firmware repository](../Repository/) compatible with your Gateway. If you're on a `Type 2` firmware already and the RBI of your same firmware version is available, pick that one.
 
-2. **Optionally**, another [firmware](../../Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
+2. **Optionally**, another [firmware](../Repository/) file (RBI or bank dump) of any *Type* for the firmware version you would like to stay on at the end of the process for daily usage on your Gateway, like a newer one or some old one you feel more stable and comfortable with.
 
 3. An SSH and SCP client - the famous [PuTTY](https://www.chiark.greenend.org.uk/%7Esgtatham/putty/) is fine for SSH in Windows. [WinSCP](https://winscp.net/eng/download.php) is recommended for SCP. If you have any WSL distribution installed (eg. Cygwin or WSL), or you run a Unix-based OS, you should have both SSH and SCP CLI clients available.
 
-4. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device ***or*** see [Hosting these Docs Locally](https://github.com/hack-technicolor/hack-technicolor/blob/master/Host%20this%20Locally.md).
+4. A copy of this documentation for reference while you're offline. Just keep a tab open in your browser from a mobile device ***or*** see [Hosting these Docs Locally](../Host%20this%20Locally/).
 
 5. Physical access to the Gateway so you can power cycle it and unplug the WAN/DSL cable while you're going through this process.
 
-6. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../../Recovery/) to get it to a stock state first.
+6. A *happy* Gateway! If it's in bridge mode or half the tiles are missing (in the GUI), or it's simply not working as expected, just [recover it](../Recovery) to get it to a stock state first.
 
 !!! caution "Make sure your Gateway is offline!"
     The ISP could lock you out of the Gateway by pushing a firmware update or configuration script through a landline, WiFi or SIM card connection, until the Gateway is rooted and remote management disabled.
 
 Ensure the Gateway does not have a wired or wireless internet connection. Gateways with 4G Backup, must also have the SIM removed from under the 25mm x 25mm white plastic sticker on the bottom. For instance, on the DJA0231, the SIM card is under a rubber plug above the green port.
 
-Now go back to [Quick Start](../../) and head on to the right guide for your current firmware *Type*.
+Now go back to [Quick Start](../QuickStart) and head on to the right guide for your current firmware *Type*.

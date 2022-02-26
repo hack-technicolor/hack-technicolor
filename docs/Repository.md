@@ -117,13 +117,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 ### Telia
 
-| Type   | Version          | Timestamp  | Root Strategy | Mirror |
-|:------:|:-----------------|:-----------|:--------------|:-------|
-| 2      | 15.51.6436       | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
-| 2      | 15.51.6436       | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
-| 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
-| 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
-| 3      | 17.2.0405        | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:----------------- |:-----------|:--------------|:-------|
+| 2      | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
+| 2      | 15.51.6436        | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
+| 2      | 16.2.7732         | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
+| 2      | 17.2.0339         | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339o1901024closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/172339o1901024closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405         | 2018-10-17 | -             | [HTTP](http://131.116.22.230/1720405o1901012closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901012closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405         | 2020-12-15 | -             | [HTTPS](https://rgw.teliacompany.com:7547/1720405o1901068closed.rbi) - [HTTP](http://131.116.22.230/1720405o1901068closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1720405o1901068closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -251,7 +252,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732r2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/1627732r2221004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339r1021008closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172339r1021008closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339r1021022closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172339r1021022closed.rbi.torrent?raw=true) |
-| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405r1021034closed.rbi) - [HTTP](http://131.116.22.230/172405r1021034closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-r/172405r1021034closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -296,7 +297,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 16.2.7732        | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732w2221002closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/1627732w2221002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339w1441004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172339w1441004closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339w1441020closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172339w1441020closed.rbi.torrent?raw=true) |
-| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405w1441030closed.rbi) - [HTTP](http://131.116.22.230/172405w1441030closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-w/172405w1441030closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -342,7 +343,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 17.2.0339        | 2018-02-28 | #A            | [HTTP](http://131.116.22.230/172339h1441002closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441002closed.rbi.torrent?raw=true) |
 | 2      | 17.2.0339        | 2018-04-16 | #A            | [HTTP](http://131.116.22.230/172339h1441018closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172339h1441018closed.rbi.torrent?raw=true) |
 | 3      | 17.2.0405        | 2019-03-29 | -             | [HTTP](http://131.116.22.230/172405h1441028closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
-| 3      | 17.2.0405        | 2019-11-14 | -             | [HTTP](http://131.116.22.230/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-03-29 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405h1441028closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441028closed.rbi.torrent?raw=true) |
+| 3      | 17.2.0405        | 2019-11-14 | -             | [HTTPS](https://rgw.teliacompany.com:7547/172405h1441042closed.rbi) - [HTTP](http://131.116.22.230/172405h1441042closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-h/172405h1441042closed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's management network*
 
@@ -544,6 +546,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's network and download password*
 
+## DGA4134 / VCNT-J
+
+### Net Lynk
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2      | 19.4.0447               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## DJA0230 / VBNT-V
 
 ### Telstra - Smart Modem (Gen1)
@@ -602,6 +612,31 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 20.3.c.0329-MR19-RB  | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RB/vcnt-a_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
+## DGA2231 / VCNT-C
+
+### TIM
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 18.3.0140          | 2018-09-05 | -             | [HTTPS](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTSA_1.0.0_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/AGTSA_1.0.0_001_CLOSED.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network and download password*
+
+### Telmex
+
+| Type   | Version            | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------|:-----------|:--------------|:-------|
+| ???    | 18.3.g.0301        | 2019-10-28 | -             | [HTTP](http://gateway.telmex.com/test/DGA2231_18.3.G.0301/DGA2231_vcnt-c_18.3.g.0301-official.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/DGA2231_vcnt-c_18.3.g.0301-official.rbi.torrent?raw=true) |
+| ???    | 18.3.g.0301        | 2021-03-08 | -             | [HTTP](http://gateway.telmex.com/Pruebas_Technicolor_DGA2231/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-c/vcnt-c_DGA2231TMX_18.3.g.0301v3_ff8f20c8.rbi.torrent?raw=true) |
+
+### MST
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2      | 18.1.0203               | 2018-08-08 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-c/mst-vcnt-c_18.1.0203-1641038-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
+
+
 ## DGA4331 / VCNT-3
 
 ### TIM - TIM HUB+
@@ -648,4 +683,3 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 19.4.0677          | 2021-07-28 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.4_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
-
