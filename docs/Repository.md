@@ -612,6 +612,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2      | 20.3.c.0329-MR19-RB  | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RB/vcnt-a_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2      | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 
+## DNA0332 / VCNT-8
+
+### Telstra - Smart Modem (Gen3)
+
+| Type   | Version              | Timestamp  | Root Strategy | Mirror |
+|:------:|:---------------------|:-----------|:--------------|:-------|
+| 2      | 20.4.0319-MR0-RA     | 19-09-2021 | #C            | TBD    |
+
 ## DGA2231 / VCNT-C
 
 ### TIM
