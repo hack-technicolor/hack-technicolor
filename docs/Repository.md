@@ -618,7 +618,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
-| 2      | 20.4.0319-MR0-RA     | 19-09-2021 | #C            | TBD    |
+| 2      | 20.4.0256-MR0-RA     | 19-09-2021 | #C            | TBD    |
 
 ## DGA2231 / VCNT-C
 
