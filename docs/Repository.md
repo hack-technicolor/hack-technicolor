@@ -619,6 +619,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | Type   | Version              | Timestamp  | Root Strategy | Mirror |
 |:------:|:---------------------|:-----------|:--------------|:-------|
 | 2      | 20.4.0256-MR0-RA     | 19-09-2021 | #C            | TBD    |
+| 2      | 20.4.0319-MR0-RA     | TBD        | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4-319-RC4.2-RA-bootstrap/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb) |
 
 ## DGA2231 / VCNT-C
 
