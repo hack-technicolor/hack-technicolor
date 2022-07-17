@@ -72,8 +72,32 @@ Another GUI modification option for Telstra branded devices _only_ (especially T
 
 Because this GUI modification is limited to Telstra branded devices, there are very few bugs. It exposes all of the hidden GUI cards and adds a few unique features like DNS hijacking and package management.
 
-This Github repository also contains many [utility scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#readme) to simplify maintenance and add features to these devices. Some of these scripts are applicable to any device, not just those that are Telstra branded. In addition, there are scripts to turn Telstra Smart Modems into [EasyMesh nodes](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme), and to replace dnsmasq with [AdGuard Home](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme).
+## Utility Scripts
 
+[This](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#readme) Github repository contains many utility scripts to simplify maintenance and add features to Technicolor devices.
+
+The script names are self-explanatory in most cases:
+- [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns)
+- [mtd-backup](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-backup)
+- [mtd-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-restore)
+- [overlay-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#overlay-restore)
+- [reboot-on-coredump](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#reboot-on-coredump)
+- [reset-to-factory-defaults-with-root](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#reset-to-factory-defaults-with-root)
+- [safe-firmware-upgrade](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#safe-firmware-upgrade)
+- [set-optimal-bank-plan](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#set-optimal-bank-plan)
+- [set-web-admin-password](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#set-web-admin-password)
+- [show-bank-plan](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#show-bank-plan)
+- [transformer-cli](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#transformer-cli)
+- [unpack-rbi](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#unpack-rbi)
+- [update-ca-certificates](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#update-ca-certificates)
+
+### AdGuard Home
+
+[These scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme) allow you to replace dnsmasq with [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) for blocking ads and tracking. (They have only been tested on Telstra branded devices.)
+
+### EasyMesh
+
+Telstra Smart Modems have Wi-Fi mesh capability. [These scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme) configure a Telstra Smart Modem to act as an EasyMesh agent to a Telstra Smart Modem controller using Ethernet back-haul.
 
 ## Change DNS
 
