@@ -47,7 +47,9 @@ uci add_list web.parentalblock.roles='admin'
 uci commit
 ```
 
-## Custom GUI
+## Custom GUIs
+
+### tch-nginx-gui
 
 A highly universal custom GUI with tons (!) of features is [available here](https://github.com/Ansuel/tch-nginx-gui). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/Ansuel/tch-nginx-gui/issues) to ask for support.
 
@@ -63,6 +65,15 @@ This is recommended for users who don't fear a few bugs and want the most out-of
     In older versions of this GUI, it has bricked low space devices like the TG799vac.
     It now has a brick prevention method in place so this is not so much of a worry.
     Do not use versions older than `9.5.60`.
+
+### tch-gui-unhide
+
+Another GUI modification option for Telstra branded devices _only_ (especially Telstra Smart Modems) running firmware version 17.2 and later is [available here](https://github.com/seud0nym/tch-gui-unhide). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/seud0nym/tch-gui-unhide/issues) to ask for support. 
+
+Because this GUI modification is limited to Telstra branded devices, there are very few bugs. It exposes all of the hidden GUI cards and adds a few unique features like DNS hijacking and package management.
+
+This Github repository also contains many [utility scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#readme) to simplify maintenance and add features to these devices. Some of these scripts are applicable to any device, not just those that are Telstra branded. In addition, there are scripts to turn Telstra Smart Modems into [EasyMesh nodes](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme), and to replace dnsmasq with [AdGuard Home](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme).
+
 
 ## Change DNS
 
