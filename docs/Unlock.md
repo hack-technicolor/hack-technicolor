@@ -47,7 +47,9 @@ uci add_list web.parentalblock.roles='admin'
 uci commit
 ```
 
-## Custom GUI
+## Custom GUIs
+
+### tch-nginx-gui
 
 A highly universal custom GUI with tons (!) of features is [available here](https://github.com/Ansuel/tch-nginx-gui). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/Ansuel/tch-nginx-gui/issues) to ask for support.
 
@@ -63,6 +65,49 @@ This is recommended for users who don't fear a few bugs and want the most out-of
     In older versions of this GUI, it has bricked low space devices like the TG799vac.
     It now has a brick prevention method in place so this is not so much of a worry.
     Do not use versions older than `9.5.60`.
+
+### tch-gui-unhide
+
+Another GUI modification option for Telstra branded devices _only_ (especially Telstra Smart Modems) running firmware version 17.2 and later is [available here](https://github.com/seud0nym/tch-gui-unhide). If you encounter any issues after installing this mod, please open a [GitHub issue here](https://github.com/seud0nym/tch-gui-unhide/issues) to ask for support. 
+
+Because this GUI modification is limited to Telstra branded devices, there are very few bugs. It exposes all of the hidden GUI cards and adds a few unique features like DNS hijacking and package management.
+
+## Utility Scripts
+
+[This](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#readme) Github repository contains many utility scripts to simplify maintenance and add features to Technicolor devices.
+
+The script names are self-explanatory in most cases:
+- [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns)
+- [mtd-backup](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-backup)
+- [mtd-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-restore)
+- [overlay-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#overlay-restore)
+- [reboot-on-coredump](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#reboot-on-coredump)
+- [reset-to-factory-defaults-with-root](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#reset-to-factory-defaults-with-root)
+- [safe-firmware-upgrade](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#safe-firmware-upgrade)
+- [set-optimal-bank-plan](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#set-optimal-bank-plan)
+- [set-web-admin-password](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#set-web-admin-password)
+- [show-bank-plan](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#show-bank-plan)
+- [transformer-cli](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#transformer-cli)
+- [unpack-rbi](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#unpack-rbi)
+- [update-ca-certificates](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#update-ca-certificates)
+
+### AdGuard Home
+
+It is possible to install [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) on Technicolor armv7l or aarch64 devices for blocking ads and tracking. This is done by replacing the functionality normally provided by dnsmasq for DNS resolution. It also replaces dnsmasq/odhcpd for DHCP. 
+
+Your device must have either an armv7l or aarch64 processor (check the output of `uname -m`), and sufficient RAM free. 100Mb free is suggested, but actual RAM used will be dependent upon how many block lists are enabled and how big they are.
+
+The installation will take between 40Mb and 80Mb of storage, excluding logs. However, the install scripts do allow installation on an attached external USB device. 
+
+The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
+
+### EasyMesh
+
+Telstra Smart Modems have Wi-Fi mesh capability, based on the EasyMesh standard. Normally the Smart Modem acts as an EasyMesh controller, providing the internet gateway and handling one or more EasyMesh agents (in Telstra parlance, a "Wi-Fi Booster") to provide a mesh network. The controller also acts as an agent to handle locally connected devices, and the mesh network seamlessly handles hand-over between agents as devices such as Smart Phones move in and out of range of each agent. The Telstra Wi-Fi Boosters can be connected to the main controller via ethernet or wireless. This connection is known as the back-haul.
+
+You can determine if you device has EasyMesh installed by checking for the existence of either `/etc/config/multiap` (for EasyMesh R1 devices) or `/etc/config/mesh_broker` (for EasyMesh R2 devices).
+
+Because the Smart Modem itself can act as an agent, [these scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme) configure a Telstra Smart Modem to act as an EasyMesh agent to a Telstra Smart Modem controller using Ethernet back-haul. Note that it is not possible at this time to configure Wi-Fi back-haul, as these devices do not have the software to configure the Wi-Fi to act in station mode to connect wirelessly to the controller, so only direct ethernet connection (or Ethernet-over-Power adapters) are possible.
 
 ## Change DNS
 
