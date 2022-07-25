@@ -429,7 +429,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 17.3.c.0331        | 2018-07-05 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-07-18 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-08-31 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.2.0_001_CLOSED.rbi.torrent?raw=true) |
-| 3      | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_CLOSED.rbi.torrent?raw=true) |
+| 3 🙄   | 17.3.c.0337        | 2018-09-14 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_1.1.2_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_1.1.2_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0337        | 2018-10-12 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_001_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-10-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 17.3.c.0349        | 2018-11-28 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.0.0_003_CLOSED.rbi.torrent?raw=true) |
@@ -443,7 +443,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ???    | 18.3.0357          | 2019-05-29 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_004_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0376          | 2019-06-27 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_005_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_005_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0385          | 2019-07-11 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_001_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_001_CLOSED.rbi.torrent?raw=true) |
-| 1      | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_CLOSED.rbi.torrent?raw=true) |
+| 1 😉   | 18.3.0376          | 2019-07-19 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.1.0_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.1.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.0445          | 2019-09-30 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_003_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 18.3.k.0451        | 2019-10-21 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_004_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_004_CLOSED.rbi.torrent?raw=true) |
 | 1      | 18.3.k.0451        | 2019-10-25 | -             | [HTTP](http://156.54.126.84:80/Firmware/TR069/AGThomson/AGTEF_2.2.0_CLOSED.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-k/AGTEF_2.2.0_CLOSED.rbi.torrent?raw=true) |
@@ -668,7 +668,10 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
-| 2      | 19.4.0381               | 2020-09-07 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-2/belong-vcnt-2_19.4.0381-4961004-bank_dump.lfs.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 19.4.0381-RA            | 2020-09-07 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-2/belong-vcnt-2_19.4.0381-4961004-bank_dump.lfs.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2      | 19.4.1.0393-MR1-RB      | 2022-03-29 | #C            | [HTTPS](https://fw.ax.belong.com.au/vcnt-2_19.4.l.0393-MR1-RB.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vcnt-2/vcnt-2_19.4.l.0393-MR1-RB.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's network*
 
 ## OWA0131 / GCNT-N
 
@@ -676,7 +679,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version            | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------|:-----------|:--------------|:-------|
-| ???    | 19.4.0512          | 2021-01-08 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.0_002_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0512          | 2021-01-08 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.0_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.0_002_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0551          | 2021-03-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.0_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.0_003_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0551          | 2021-03-08 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.0_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.0_CLOSED.rbi.torrent?raw=true) |
 | ???    | 19.4.0615          | 2021-04-29 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.1_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.1_001_CLOSED.rbi.torrent?raw=true) |
