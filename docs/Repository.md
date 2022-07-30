@@ -483,7 +483,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 17.2.0412_FW_248   | 2018-12-15 | #B #C         | [HTTP](http://59.0.121.191:8080/ACS-server/file/17.2.0412_FW_248_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/17.2.0412_FW_248_DGA4131.rbi.torrent?raw=true) |
 | 2 😁   | 18.3.n.0439_FW_258 | 2020-01-21 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0439_FW_258_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0439_FW_258_DGA4131.rbi.torrent?raw=true) |
 | 2 😁   | 18.3.n.0462_FW_261 | 2020-07-17 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0462_FW_261_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0462_FW_261_DGA4131.rbi.torrent?raw=true) |
-| ??? 🤔 | 18.3.n.0482_FW_264 | 2021-11-12 | #C            | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0482_FW_264_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0482_FW_264_DGA4131.rbi.torrent?raw=true) |
+| ??? 🤔 | 18.3.n.0482_FW_264 | 2021-11-12 | -             | [HTTP](http://59.0.121.191:8080/ACS-server/file/18.3.n.0482_FW_264_DGA4131.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-o/18.3.n.0482_FW_264_DGA4131.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network*
 
