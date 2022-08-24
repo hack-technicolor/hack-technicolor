@@ -685,6 +685,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's network*
 
+## FGA2233 / GCNT-R
+
+### JustSpeed
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2 😁   | 19.4.0578_FW_02         | 2021-04-22 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/gcnt-r/justspeed-gcnt-r_19.4.0578_FW_02_FGA2233-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| ??? 🤔 | 19.4.0629_FW_03         | 2021-07-01 | -             | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/gcnt-r/justspeed-gcnt-r_19.4.0629_FW_03_FGA2233-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 ## OWA0131 / GCNT-N
 
 ### TIM - EasyMesh Repeater 6
