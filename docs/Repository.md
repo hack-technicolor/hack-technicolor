@@ -626,6 +626,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21-RA/vcnt-a_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
 
+## DNA0332 / VCNT-8
+
+### Telstra - Smart Modem (Gen3)
+
+| Type   | Version              | Timestamp  | Root Strategy | Mirror |
+|:------:|:---------------------|:-----------|:--------------|:-------|
+| 2      | 20.4.0256-MR0-RA     | 19-09-2021 | #C            | TBD    |
+| 2      | 20.4.0319-MR0-RA     | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4-319-RC4.2-RA-bootstrap/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb) |
+
 ## DGA2231 / VCNT-C
 
 ### TIM
