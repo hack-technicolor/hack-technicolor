@@ -56,7 +56,7 @@ Run the following commands:
 # Clone and verify firmware into bank_2 if applicable
 [ "$(cat /proc/banktable/booted)" = "bank_1" ] && {
 mtd -e bank_2 write /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) bank_2 && \
-echo Verifying ... && \\
+echo Verifying ... && \
 [ $(sha256sum /dev/$(grep bank_1 /proc/mtd | cut -d: -f1) /dev/$(grep bank_2 /proc/mtd | cut -d: -f1) | cut -d' ' -f1 | sort -u | wc -l ) -eq 1 ] || \
 { echo Clone verification failed, retry; exit; } }
 # Make a temp copy of overlay for booted firmware
