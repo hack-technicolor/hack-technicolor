@@ -54,7 +54,8 @@ nav:
         - 'Post-Root Procedures': 'Hacking/PostRoot.md'
     - 'Firmware Repository': 'Repository.md'
     - 'Other guides':
-      - 'Safe Firmware Upgrade': 'Upgrade.md'
+      - 'Safe RBI Firmware Upgrade': 'Upgrade.md'
+      - 'Safe PKGTB Firmware Upgrade': 'Upgrade-pkgtb.md'
       - 'Hardening Root Access': 'Hardening.md'
       - 'Unlock Functionality': 'Unlock.md'
     - 'Recovery': 'Recovery.md'
