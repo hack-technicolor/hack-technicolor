@@ -360,6 +360,17 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | ??? 🤔 | 17.2.0284-820-RA | -          | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
+## DGA0122 / VCNT-P
+
+### Teo & Telia Lithuania
+
+| Type   | Version                  | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------------|:-----------|:--------------|:-------|
+| 1      | 19.4.0539-4521016        | 2021-03-05 | -             | [HTTP](http://acs.telia.lt:8888/TCH/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-p/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's wan network*
+
+
 ## DGA0130 / VANT-9
 
 ### Vodafone - Ultra Hub
