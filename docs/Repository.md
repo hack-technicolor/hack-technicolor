@@ -366,7 +366,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                  | Timestamp  | Root Strategy | Mirror |
 |:------:|:-------------------------|:-----------|:--------------|:-------|
-| 1      | 19.4.0539-4521016        | 2021-03-05 | -             | [HTTP](http://acs.telia.lt:8888/TCH/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-p/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0539-4521016        | 2021-03-05 | -             | [HTTP](http://acs.telia.lt:8888/TCH/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-p/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's wan network*
 
