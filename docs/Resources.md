@@ -30,7 +30,7 @@ When a proper [Reset to Factory Defaults (RTFD)](../Recovery/#reset-to-factory-d
 
 ### Devices with U-boot bootloader
 
-Here is how the Homeware flash layout typically looks like on newer ARM64 boards:
+Here is how the Homeware flash layout typically looks like on devices that use the U-boot bootloader:
 
 `root@CobraXh:~# cat /proc/mtd`
 
