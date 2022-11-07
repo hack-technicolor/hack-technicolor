@@ -1,5 +1,8 @@
 # Safe Firmware Upgrade
 
+!!! warning "RBI packaged firmware OR squashfs/jffs2 raw bank dumps ONLY!"
+    If your device uses the U-boot bootloader and you have a firmware file ending in .pkgtb, or raw bank dumps of ubifs/squashfs filesystems, do *NOT* use ths procedure. Use the [Safe Firmware Upgrade (U-boot bootloader)](../Upgrade-pkgtb.md) instructions instead.
+
 This simple guide will show you how to clean-up your rooted Gateway modifications and safely change firmware avoiding or handling any possible issues, as well as preserving existing root access. If your Gateway is not rooted already or you don't know what *rooting* is about, go to [Home page](../).
 
 This is the way you should regularly clean-up your modifications and install firmware upgrades when available. Firmware flashing via *sysupgrade* or *BOOTP* is not safe as it will remove root access.

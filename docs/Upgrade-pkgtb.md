@@ -1,4 +1,8 @@
-# Safe Upgrade for pkgtb Firmware
+# Safe Upgrade Firmware for U-boot Bootloader Devices
+
+!!! warning "PKGTB packaged firmware OR ubifs/squashfs raw bank dumps ONLY!"
+    If your device does *not* use the U-boot bootloader or you have a firmware file ending in .rbi, or raw bank dumps of jffs2/squashfs filesystems, do *NOT* use ths procedure. Use the [Safe Firmware Upgrade](../Upgrade.md) instructions instead.
+
 
 This simple guide will show you how to clean-up your rooted Gateway modifications and safely change firmware avoiding or handling any possible issues, as well as preserving existing root access. If your Gateway is not rooted already or you don't know what *rooting* is about, go to [Home page](../).
 
@@ -92,6 +96,9 @@ rm -f /overlay/data.remove_due_to_upgrade /overlay/sysupgrade.bank.switchover
 ```
 
 ### ubifs bank dumps
+
+!!! caution "Firmware Bank Dumps Only!"
+    You cannot restore bank dumps to mounted ubifs partitions. This means that you *cannot* overwrite the active firmware, or restore `rootfs_data` dumps. You can only restore a bank dump into the unmounted passive firmware partition.
 
 Run these commands to write `/tmp/bootfs.bin` and `/tmp/rootfs.bin` images into the `notbooted` bank:
 
