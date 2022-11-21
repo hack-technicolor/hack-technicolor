@@ -44,6 +44,7 @@ If you think you are not completely aware of what's going on or you don't know w
 !!! note "This reset method is **not** available if..."
     - You have lost any kind of access to root shell by either SSH, Telnet, or Serial console, and you cannot execute a custom command as root.
     - The Gateway bootloops or fails to boot properly.
+    - The Gateway uses the ubifs filesystem on the `rootfs_data`/`userfs` partition.
 
 1. Log in to root shell (whatever you have available to you; SSH, telnet, serial console ...)
 2. Run `cat /proc/mtd` and look for your user data partition name, it could be either `userfs` on older devices, or `rootfs_data` on newer ones
@@ -131,9 +132,9 @@ By holding down a button (usually reset) at power on, the Gateway will enter BOO
 If both firmware banks contain invalid firmware's, the Gateway will enter BOOTP mode automatically after three failed boot attempts on both banks.
 
 !!! warning "Please note and take into account"
-    - This **will not** automatically **switch** the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here.
+    - Unless your device is a CobraXh, this **will not** automatically **switch** the active bank for you, if the active bank is `bank_2` and it still contains a valid firmware it will still boot it, instead of the one you are flashing here. The CobraXh will **only** enter BOOTP if the active bank is `bank_2`, and it *will* automatically switch to `bank_1` after successful firmware flash.
 
-    - Flashing via this method **does not** perform any factory **reset**, the new firmware will run on old and possibly corrupt or incompatible config. It is therefore recommended that you perform a factory reset before flashing a new firmware.
+    - Unless your device is a CobraXh, flashing via this method **does not** perform any factory **reset**, the new firmware will run on old and possibly corrupt or incompatible config. It is therefore recommended that you perform a factory reset before flashing a new firmware. The CobraXh, on the other hand, **will** perform a factory reset on *both* banks after successful firmware flash.
 
     - The firmware BLI image (.bli/.rbi files) is digitally signed, and the signature is verified by BOOTP before flashing, so you can't flash an incorrect image (a good thing) but you also can't load a modified image (sad face times 1000).
 
@@ -159,7 +160,7 @@ What you will Need
 
 1. Download the latest normal edition of [TFTP64](http://tftpd32.jounin.net/tftpd32_download.html) and install it.
 
-2. Get the firmware RBI file you want to load into the Gateway from the [Repository](../Repository/) and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
+2. Get the firmware file you want to load into the Gateway from the [Repository](../Repository/) and place it in the TFTP64 folder. You may use another folder and change the settings appropriately if you wish.
 
 3. Connect the Ethernet port on your PC to one of the LAN ports on the Gateway (usually LAN1).
 
@@ -226,6 +227,7 @@ You are now ready to try booting the Gateway to do the flash!
 4. Place Gateway into BOOTP mode, this is achieved by turning it off, holding the reset button down and powering on.
     - For TG789vac and TG799vac wait for the ethernet light to flash.
     - For TG800vac count to about 5.
+    - For CobraXh wait for the power light to flash white.
     - TFTP may detect the sooner though.
 
 5. Let the firmware flash, a download progress bar will show. When completed, the Gateway will start flashing the received firmware. Wait for the Gateway to reboot.
@@ -236,7 +238,7 @@ You are now ready to try booting the Gateway to do the flash!
 From here, Gateway has the firmware you flashed into its `bank_1` partition.
 
 !!! note "A few things to note"
-    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware.
+    - Again, the Gateway will not boot from this new firmware if `bank_2` is active and contains a valid firmware (unless your device is a CobraXh).
 
     - If you followed rooting guide on this wiki and your bank plan is still optimal you are guaranteed to see this just flashed firmware to boot because active bank is always `bank_1` on optimal bank plan.
 
@@ -259,9 +261,9 @@ When you power on your device it starts loading by default the firmware from the
 
 In order to check which firmware bank is currently set as *active bank*" you can do any of the following:
 
-- Read contents of `/proc/banktable/active` file. This requires you have root access to the gateway.
+- Read contents of `/proc/banktable/active` file or run the `bootmgr partition active` command if that file does not exist. This requires you have root access to the gateway.
 - Read serial console log during boot. This requires a serial adapter connected to the gateway device board. Recommended in case of soft-bricks.
-- Fash some different, yet valid firmware from BOOTP via TFTP and see if the flashed firmware is being booted by default. This is recommended whenever you have yet to root the gateway for the first time and it is in normal working order.
+- Flash some different, yet valid firmware from BOOTP via TFTP and see if the flashed firmware is being booted by default. This is recommended whenever you have yet to root the gateway for the first time and it is in normal working order.
 
 ## Change booted bank
 

@@ -720,3 +720,17 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ??? 🤔 | 19.4.0677          | 2021-07-28 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.4_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
+
+
+## CobraXh / VCNT-8
+
+### Telstra - Smart Modem (Gen3)
+
+!!! warning "PKGTB Firmware Format"
+    These devices do *NOT* use the RBI firmware file format. The firmware is packaged in PKGTB files. The firmware also consists of two partitions: bootfs and rootfs. See [Safe Upgrade for pkgtb Firmware](../Upgrade-pkgtb) for instructions.
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2 😁   | 20.4.0256-MR0-RA | 2021-09-19 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-8/telstra-vcnt-8_20.4.0256-MR0-RA-bank_dump.tar.xz) - *Note: This **IS NOT** a PKGTB firmware. It is ubifs raw bank dumps. You can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 20.4.0319-MR0-RA | 2021-12-09 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4-319-RC4.2-RA-bootstrap/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb.torrent?raw=true) |
+| 3 🙄   | 20.4.0428-MR1-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4.428-2-3-MR1-RA/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb.torrent?raw=true) |
