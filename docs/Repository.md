@@ -370,6 +370,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 > *\* requires access to ISP's wan network*
 
+### XLN
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2 😁   | 19.4.0810               | 2022-01-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-p/mst-vcnt-p_19.4.0810-4381001-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 
 ## DGA0130 / VANT-9
 
