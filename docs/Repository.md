@@ -360,6 +360,23 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
 | ??? 🤔 | 17.2.0284-820-RA | -          | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
+## DGA0122 / VCNT-P
+
+### Teo & Telia Lithuania
+
+| Type   | Version                  | Timestamp  | Root Strategy | Mirror |
+|:------:|:-------------------------|:-----------|:--------------|:-------|
+| ??? 🤔 | 19.4.0539-4521016        | 2021-03-05 | -             | [HTTP](http://acs.telia.lt:8888/TCH/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-p/DGA0122-VCNT-P-19.4.0539-4521016-Signed.rbi.torrent?raw=true) |
+
+> *\* requires access to ISP's wan network*
+
+### XLN
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| 2 😁   | 19.4.0810               | 2022-01-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-p/mst-vcnt-p_19.4.0810-4381001-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
+
 ## DGA0130 / VANT-9
 
 ### Vodafone - Ultra Hub
@@ -586,6 +603,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0329-MR19-RB | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0329-MR19-RB/vbnt-v_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2 😁   | 20.3.c.0389-MR20-RA | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0389-MR20-RA/vbnt-v_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0432-MR21-RA/vbnt-v_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0432-MR21.1-RA | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vbnt-v_20.3.c.0432-MR21.1-RA/vbnt-v_20.3.c.0432-MR21.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-v/vbnt-v_20.3.c.0432-MR21.1-RA.rbi.torrent?raw=true) |
 
 
 ## DWA0120 / VBNT-2
@@ -625,6 +643,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0329-MR19-RB  | 2021-07-19 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0329-MR19-RB/vcnt-a_20.3.c.0329-MR19-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0329-MR19-RB.rbi.torrent?raw=true) |
 | 2 😁   | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21-RA/vcnt-a_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0432-MR21.1-RA | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21.1-RA/vcnt-a_20.3.c.0432-MR21.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21.1-RA.rbi.torrent?raw=true) |
 
 ## DGA2231 / VCNT-C
 
@@ -709,3 +728,17 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ??? 🤔 | 19.4.0677          | 2021-07-28 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/RPTEM_1.0.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/gcnt-n/RPTEM_1.0.4_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
+
+
+## CobraXh / VCNT-8
+
+### Telstra - Smart Modem (Gen3)
+
+!!! warning "PKGTB Firmware Format"
+    These devices do *NOT* use the RBI firmware file format. The firmware is packaged in PKGTB files. The firmware also consists of two partitions: bootfs and rootfs. See [Safe Upgrade for pkgtb Firmware](../Upgrade-pkgtb) for instructions.
+
+| Type   | Version          | Timestamp  | Root Strategy | Mirror |
+|:------:|:-----------------|:-----------|:--------------|:-------|
+| 2 😁   | 20.4.0256-MR0-RA | 2021-09-19 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-8/telstra-vcnt-8_20.4.0256-MR0-RA-bank_dump.tar.xz) - *Note: This **IS NOT** a PKGTB firmware. It is ubifs raw bank dumps. You can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 20.4.0319-MR0-RA | 2021-12-09 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4-319-RC4.2-RA-bootstrap/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand256_ubifs_update-r20.4-319-2-1-MR0-RA-BOOTSTRAP-signed.pkgtb.torrent?raw=true) |
+| 3 🙄   | 20.4.0428-MR1-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4.428-2-3-MR1-RA/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb.torrent?raw=true) |

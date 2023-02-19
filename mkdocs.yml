@@ -55,6 +55,7 @@ nav:
     - 'Firmware Repository': 'Repository.md'
     - 'Other guides':
       - 'Safe Firmware Upgrade': 'Upgrade.md'
+      - 'Safe Firmware Upgrade (U-boot bootloader)': 'Upgrade-pkgtb.md'
       - 'Hardening Root Access': 'Hardening.md'
       - 'Unlock Functionality': 'Unlock.md'
     - 'Recovery': 'Recovery.md'

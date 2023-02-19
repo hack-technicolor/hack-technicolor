@@ -28,6 +28,33 @@ The `rootfs_data` (formerly `userfs`) partition holds whatever file change (conf
 
 When a proper [Reset to Factory Defaults (RTFD)](../Recovery/#reset-to-factory-defaults-rtfd) is done, the overlay partition is not formatted, the only relevant `/overlay/bank_*` folder is deleted instead. You can learn more on such aspects by reading the [Recovery](../Recovery/) page.
 
+### Devices with U-boot bootloader
+
+Here is how the Homeware flash layout typically looks like on devices that use the U-boot bootloader:
+
+`root@CobraXh:~# cat /proc/mtd`
+
+| Device  | Size       | Erasesize   | Name          |
+|:--------|:-----------|:------------|:--------------|
+| `mtd0`  | `00200000` | `00040000`  | `loader`      |
+| `mtd1`  | `1fc00000` | `00040000`  | `image`       |
+| `mtd2`  | `00000500` | `0003e000`  | `metadata1`   |
+| `mtd3`  | `00000500` | `0003e000`  | `metadata2`   |
+| `mtd4`  | `008bd7b2` | `0003e000`  | `bootfs1`     |
+| `mtd5`  | `0599c000` | `0003e000`  | `rootfs1`     |
+| `mtd6`  | `008dc07a` | `0003e000`  | `bootfs2`     |
+| `mtd7`  | `0599c000` | `0003e000`  | `rootfs2`     |
+| `mtd8`  | `0083c000` | `0003e000`  | `data`        |
+| `mtd9`  | `0083c000` | `0003e000`  | `defaults`    |
+| `mtd10` | `0003e000` | `0003e000`  | `eripv2`      |
+| `mtd11` | `0c80c000` | `0003e000`  | `rootfs_data` |
+
+Firmware is stored in *two* partitions per bank: `bootfs1` and `rootfs1` are equivalent to `bank_1`, and `bootfs2` and `rootfs2` are equivalent to `bank_2`. The `bootfs` partitions contain the kernel, and the `rootfs` partitions contain the read-only filesystem images. The `rootfs` filesystems may be either UBIFS, or UBIFS within SQUASHFS filesystems, depending on the firmware version.
+
+The `rootfs_data` partition is identical in use as described above, with the only difference being that it contains a UBIFS filesystem rather than JFFS2. The overlay folder and its `bank_1` and `bank_2` sub-folders are identical to previous usage.
+
+It is important to note that UBIFS partitions *cannot* be overwritten by direct partition writing to the MTD device. They can be overwritten using the `ubiupdatevol` command through the associated UBI device, but this is only possible on *unmounted* partitions.
+
 ## The boot process
 
 There exist many versions of this bootloader stack. Here we describe one from a VBNT-O (ARMv7) board. Actual addresses or unpacking code may differ between board versions, still what you read here is quite general.
@@ -256,6 +283,9 @@ You can get a firmware image flashed by using one of the following modes:
 
 #### Direct partition writing
 
+!!! info "Devices that use ubifs filesystems"
+    Devices that have `ubifs` filesystems (instead of the more common `jffs2` filesystems) *cannot* use direct partition writing to modify the active bank. The ubifs file system cannot be written whilst mounted.
+
 * The firmware is usually transferred to the gateway temp filesystem via SSH/SCP or USB drive.
 * The firmware image is directly written to the bank you specify on the command line.
 * This flashing method requires root access to a booted firmware.
@@ -300,6 +330,9 @@ This guide will show you how to dump a bit-for-bit clone of any partition and re
 
 !!! info "Decrypted RBI _v.s._ bank dumps"
     Decrypted RBI firmwares are the same as `bank_1` or `bank_2` dumps except for their first four bytes. A correctly decrypted RBI starts with a sequence of four `0xFF`. You can edit these bytes to `0x00` and use the resulting file as a bank dump to be restored.
+
+!!! warning "Devices that use ubifs filesystems"
+    You *cannot* use these commands on partitions that contain `ubifs` filesystems.
 
 ### Making dumps
 
