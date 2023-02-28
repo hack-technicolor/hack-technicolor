@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  hack-technicolor-docs:
+    build: .
+    container_name: hack-technicolor-docs
+    image: hack-technicolor-docs:debian-bullseye-slim
+    ports:
+      - "8000:8000"
