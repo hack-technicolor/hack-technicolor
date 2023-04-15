@@ -239,7 +239,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 17.2.0188-820-RA  | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF683-17.2.188-820-RA/vant-f_CRF683-17.2.188-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF683-17.2.188-820-RA.rbi.torrent?raw=true) |
 | 2 😁   | 17.2.0213-820-RC  | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF780-17.2.0213-820-RC/vant-f_CRF780-17.2.0213-820-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF780-17.2.0213-820-RC.rbi.torrent?raw=true) |
 | 2 😁   | 17.2.0261-820-RA  | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF852-17.2.0261-820-RA/vant-f_CRF852-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF852-17.2.0261-820-RA.rbi.torrent?raw=true) |
-| ??? 🤔 | 17.2.0284-820-RA  | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF915-17.2.0284-820-RA/vant-f_CRF915-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF915-17.2.0284-820-RA.rbi.torrent?raw=true) |
+| 2 😁   | 17.2.0284-820-RA  | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-f_CRF915-17.2.0284-820-RA/vant-f_CRF915-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-f/vant-f_CRF915-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## TG799vac / VANT-R
 
@@ -358,7 +358,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 17.2.0188-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF691-17.2.0188-820-RA/vant-y_CRF691-17.2.0188-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF691-17.2.0188-820-RA.rbi.torrent?raw=true) |
 | 2 😁   | 17.2.0213-820-RB | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF779-17.2.0213-820-RB/vant-y_CRF779-17.2.0213-820-RB.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF779-17.2.0213-820-RB.rbi.torrent?raw=true) |
 | 2 😁   | 17.2.0261-820-RA | -          | #A #C         | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF851-17.2.0261-820-RA/vant-y_CRF851-17.2.0261-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF851-17.2.0261-820-RA.rbi.torrent?raw=true) |
-| ??? 🤔 | 17.2.0284-820-RA | -          | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
+| 2 😁   | 17.2.0284-820-RA | -          | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vant-y_CRF914-17.2.0284-820-RA/vant-y_CRF914-17.2.0284-820-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vant-y/vant-y_CRF914-17.2.0284-820-RA.rbi.torrent?raw=true) |
 
 ## DGA0122 / VCNT-P
 
