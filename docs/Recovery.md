@@ -348,6 +348,16 @@ You only use the middle and outside poles and you split the positive cable to th
 
 Once powered on around 10-15 seconds into the boot cycle you want to turn it around 1/3 turn and just a little more and wait for the led to flash blue then turn it back up and do this 3 times then it will boot on other bank.
 
+#### CNC DC DC Buck Boost Regulated Power Supply
+
+This is similar to the Potentiometer approach above, but it is easy to monitor progress just by watching the current display on the power supply. When it hits the current limit the PSU momentarily switches to CC mode, the voltage drops and the boot fails, shown by the current reverting to 0.29A as the cycle starts again. 
+
+As with other bootfail methods, you count 3 fails and then allow it to boot normally – in this case by raising the settings to 12V, 2+A.
+
+![Buck](images/buck_bankswitch.jpg)
+
+(Source: [Whirlpool](https://whrl.pl/RgwRgI))
+
 #### Automatic monitoring of serial console
 
 A Python program written by Mark Smith is available on [GitHub](https://github.com/mswhirl/bouncer) that you can run on a Raspberry Pi which monitors the serial console output from the Gateway and then automatically cycles the power to the Gateway to cause a brown-out condition during boot, to reliably force a temporary bank switch.
