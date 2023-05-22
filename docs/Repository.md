@@ -644,7 +644,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21-RA/vcnt-a_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21.1-RA | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21.1-RA/vcnt-a_20.3.c.0432-MR21.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21.1-RA.rbi.torrent?raw=true) |
-| 3 🙄   | 20.3.c.0501-MR22-RC | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0501-MR22-RC | 2024-04-11 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
 
 ## DGA2231 / VCNT-C
 
