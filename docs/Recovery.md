@@ -311,7 +311,7 @@ This is so far the easiest and more comfortable way of forcing bootfail, but you
 
 You can read the [SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) commands theory and their magic keys from Wikipedia. In short, you connect the serial console, wait for _"Starting the Linux kernel"_ message to appear and immediately press `Ctrl+Break` followed by `b+Enter` on your keyboard. This would cause the kernel to fail and trigger the next boot attempt. Repeat this thrice in a row and you will see it finally try booting from the inactive bank.
 
-#### Timed button action
+#### Timed button action (DJN2130 Telstra Frontier Gateway)
 
 This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded. Timing for different gateways may vary.
 
@@ -329,6 +329,22 @@ The sequence is (Minutes:Seconds):
 | 7    | 00:50  | 03:32 | Press reset
 | 8    | 00:11  | 03:43 | Release
 | 9    | 06:00  |   -   | Browse to 192.168.0.1 and confirm firmware version
+
+#### Timed button action (DJA0231 Telstra Smart Modem Gen 2)
+
+This is the button pressing sequence for the DJA0231 Telstra Smart Modem Gen2. It has proven successful with various firmwares including `20.3.c.0432-MR21.1-RA` which is not vulnerable to `tch-exploit`. 
+
+1. Start with normal factory reset process using the reset button.
+2. Watch the front light which should soon become bright white. 
+3. When the front white light dims:
+	1. Hold the reset button for 10sec.
+	2. Release and hold the reset button back down for another 10sec.
+	3. Keep repeating step _3.ii_ above until the front light becomes bright white again at which point release the reset button completely.
+4. Keep watching the front white light. When it dims again repeat all of step _3_ (second time).
+5. Keep watching the front white light. When it dims again repeat all of step _3_ (third/last time).
+6. Leave modem to fully boot.
+
+This method is shown in [this video](https://www.youtube.com/watch?v=qnQ0kfh2Hzs).
 
 #### Crazy Power switching
 
