@@ -119,6 +119,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:----------------- |:-----------|:--------------|:-------|
+| 2 😁   | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361002closed.rbi)* |
 | 2 😁   | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | 2 😁   | 15.51.6436        | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
 | 2 😁   | 16.2.7732         | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
