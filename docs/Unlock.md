@@ -58,7 +58,7 @@ Your device must have either an armv7l or aarch64 processor (check the output of
 
 The installation will take between 40Mb and 80Mb of storage, excluding logs. However, the install scripts do allow installation on an attached external USB device. 
 
-The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
+The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
 
 ### EasyMesh
 
@@ -66,7 +66,7 @@ Telstra Smart Modems have Wi-Fi mesh capability, based on the EasyMesh standard.
 
 You can determine if you device has EasyMesh installed by checking for the existence of either `/etc/config/multiap` (for EasyMesh R1 devices) or `/etc/config/mesh_broker` (for EasyMesh R2 devices).
 
-Because the Smart Modem itself can act as an agent, [these scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme) configure a Telstra Smart Modem to act as an EasyMesh agent to a Telstra Smart Modem controller using Ethernet back-haul. Note that it is not possible at this time to configure Wi-Fi back-haul, as these devices do not have the software to configure the Wi-Fi to act in station mode to connect wirelessly to the controller, so only direct ethernet connection (or Ethernet-over-Power adapters) are possible.
+Because the Smart Modem itself can act as an agent, [these scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/wifi-booster#readme) configure a Telstra Smart Modem (Gen 1 and 2 only) to act as an EasyMesh agent to a Telstra Smart Modem (Gen 1 and 2 only) controller using Ethernet back-haul. Note that it is not possible at this time to configure Wi-Fi back-haul, as these devices do not have the software to configure the Wi-Fi to act in station mode to connect wirelessly to the controller, so only direct ethernet connection (or Ethernet-over-Power adapters) are possible.
 
 ## Unlock Web GUI Tiles
 
