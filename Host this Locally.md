@@ -2,6 +2,16 @@
 
 If you ever need to edit or use this documentation without internet, it can be a hard task.
 
+## Using Docker
+
+- clone this repository;
+- open a terminal and go into the `docker` directory of the cloned repository;
+- execute `docker compose up -d --build`;
+
+You can then reach the docs at `http://localhost:8000`.
+
+If Docker is not an option, read below how to install the required dependencies on your host system.
+
 ## Windows
 
 Tip: if you have any WSL distro installed, just use it following Linux instructions

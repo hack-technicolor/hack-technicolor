@@ -6,47 +6,6 @@
     !!! danger "DANGER"
         The process could break your Gateway or reduce its security allowing other people into your network. Anyone following this guide accepts full responsibility for the outcomes.
 
-## Unlock Web GUI Tiles
-
-Tested on Telstra Gateways
-
-```bash
-# Unlock Web Interface Tiles (Telstra Devices)
-uci add_list web.ruleset_main.rules=iproutesmodal
-uci set web.iproutesmodal=rule
-uci set web.iproutesmodal.target='/modals/iproutes-modal.lp'
-uci add_list web.iproutesmodal.roles='admin'
-uci add_list web.ruleset_main.rules=systemmodal
-uci set web.systemmodal=rule
-uci set web.systemmodal.target='/modals/system-modal.lp'
-uci add_list web.systemmodal.roles='admin'
-uci add_list web.ruleset_main.rules=relaymodal
-uci set web.relaymodal=rule
-uci set web.relaymodal.target='/modals/relay-modal.lp'
-uci add_list web.relaymodal.roles='admin'
-uci add_list web.ruleset_main.rules=natalghelpermodal
-uci set web.natalghelpermodal=rule
-uci set web.natalghelpermodal.target='/modals/nat-alg-helper-modal.lp'
-uci add_list web.natalghelpermodal.roles='admin'
-uci add_list web.ruleset_main.rules=diagnosticstcpdumpmodal
-uci set web.diagnosticstcpdumpmodal=rule
-uci set web.diagnosticstcpdumpmodal.target='/modals/diagnostics-tcpdump-modal.lp'
-uci add_list web.diagnosticstcpdumpmodal.roles='admin'
-sed -e 's/session:hasAccess("\/modals\/diagnostics-network-modal.lp")/session:hasAccess("\/modals\/diagnostics-network-modal.lp") and \n session:hasAccess("\/modals\/diagnostics-tcpdump-modal.lp")/' -i /www/cards/009_diagnostics.lp
-sed -e 's^alt="network"></div></td></tr>\\^alt="network"></div></td>\\\n <td><div data-toggle="modal" data-remote="modals/diagnostics-tcpdump-modal.lp" data-id="diagnostics-tcpdump-modal"><img href="#" rel="tooltip" data-original-title="TCPDUMP" src="/img/network_sans-32.png" alt="network"></div></td></tr>\\^' -i /www/cards/009_diagnostics.lp
-sed -e 's/{"logviewer-modal.lp", T"Log viewer"},/{"logviewer-modal.lp", T"Log viewer"},\n {"diagnostics-tcpdump-modal.lp", T"tcpdump"},\n/' -i /www/snippets/tabs-diagnostics.lp
-sed -e 's/if currentuserrole == "guest" /if currentuserrole == "admin" /' -i /www/docroot/modals/gateway-modal.lp
-uci commit
-# Enable Unsigned config export and Firmware upgrade in Web GUI
-uci set system.config.export_plaintext='1'
-uci set system.config.export_unsigned='1'
-uci set system.config.import_plaintext='1'
-uci set system.config.import_unsigned='1'
-uci set web.uidefault.upgradefw_role='admin'
-uci add_list web.parentalblock.roles='admin'
-uci commit
-```
-
 ## Custom GUIs
 
 ### tch-nginx-gui
@@ -99,7 +58,7 @@ Your device must have either an armv7l or aarch64 processor (check the output of
 
 The installation will take between 40Mb and 80Mb of storage, excluding logs. However, the install scripts do allow installation on an attached external USB device. 
 
-The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
+The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
 
 ### EasyMesh
 
@@ -107,7 +66,51 @@ Telstra Smart Modems have Wi-Fi mesh capability, based on the EasyMesh standard.
 
 You can determine if you device has EasyMesh installed by checking for the existence of either `/etc/config/multiap` (for EasyMesh R1 devices) or `/etc/config/mesh_broker` (for EasyMesh R2 devices).
 
-Because the Smart Modem itself can act as an agent, [these scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/wifi-booster#readme) configure a Telstra Smart Modem to act as an EasyMesh agent to a Telstra Smart Modem controller using Ethernet back-haul. Note that it is not possible at this time to configure Wi-Fi back-haul, as these devices do not have the software to configure the Wi-Fi to act in station mode to connect wirelessly to the controller, so only direct ethernet connection (or Ethernet-over-Power adapters) are possible.
+Because the Smart Modem itself can act as an agent, [these scripts](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/wifi-booster#readme) configure a Telstra Smart Modem (Gen 1 and 2 only) to act as an EasyMesh agent to a Telstra Smart Modem (Gen 1 and 2 only) controller using Ethernet back-haul. Note that it is not possible at this time to configure Wi-Fi back-haul, as these devices do not have the software to configure the Wi-Fi to act in station mode to connect wirelessly to the controller, so only direct ethernet connection (or Ethernet-over-Power adapters) are possible.
+
+## Unlock Web GUI Tiles
+
+Tested on Telstra Gateways
+
+!!! info
+    The Custom GUI mods above will already expose the extra functionality that these hidden/locked Web GUI tiles contain, so these commands are unnecessary if you have installed one of the custom GUI options.
+
+```bash
+# Unlock Web Interface Tiles (Telstra Devices)
+uci add_list web.ruleset_main.rules=iproutesmodal
+uci set web.iproutesmodal=rule
+uci set web.iproutesmodal.target='/modals/iproutes-modal.lp'
+uci add_list web.iproutesmodal.roles='admin'
+uci add_list web.ruleset_main.rules=systemmodal
+uci set web.systemmodal=rule
+uci set web.systemmodal.target='/modals/system-modal.lp'
+uci add_list web.systemmodal.roles='admin'
+uci add_list web.ruleset_main.rules=relaymodal
+uci set web.relaymodal=rule
+uci set web.relaymodal.target='/modals/relay-modal.lp'
+uci add_list web.relaymodal.roles='admin'
+uci add_list web.ruleset_main.rules=natalghelpermodal
+uci set web.natalghelpermodal=rule
+uci set web.natalghelpermodal.target='/modals/nat-alg-helper-modal.lp'
+uci add_list web.natalghelpermodal.roles='admin'
+uci add_list web.ruleset_main.rules=diagnosticstcpdumpmodal
+uci set web.diagnosticstcpdumpmodal=rule
+uci set web.diagnosticstcpdumpmodal.target='/modals/diagnostics-tcpdump-modal.lp'
+uci add_list web.diagnosticstcpdumpmodal.roles='admin'
+sed -e 's/session:hasAccess("\/modals\/diagnostics-network-modal.lp")/session:hasAccess("\/modals\/diagnostics-network-modal.lp") and \n session:hasAccess("\/modals\/diagnostics-tcpdump-modal.lp")/' -i /www/cards/009_diagnostics.lp
+sed -e 's^alt="network"></div></td></tr>\\^alt="network"></div></td>\\\n <td><div data-toggle="modal" data-remote="modals/diagnostics-tcpdump-modal.lp" data-id="diagnostics-tcpdump-modal"><img href="#" rel="tooltip" data-original-title="TCPDUMP" src="/img/network_sans-32.png" alt="network"></div></td></tr>\\^' -i /www/cards/009_diagnostics.lp
+sed -e 's/{"logviewer-modal.lp", T"Log viewer"},/{"logviewer-modal.lp", T"Log viewer"},\n {"diagnostics-tcpdump-modal.lp", T"tcpdump"},\n/' -i /www/snippets/tabs-diagnostics.lp
+sed -e 's/if currentuserrole == "guest" /if currentuserrole == "admin" /' -i /www/docroot/modals/gateway-modal.lp
+uci commit
+# Enable Unsigned config export and Firmware upgrade in Web GUI
+uci set system.config.export_plaintext='1'
+uci set system.config.export_unsigned='1'
+uci set system.config.import_plaintext='1'
+uci set system.config.import_unsigned='1'
+uci set web.uidefault.upgradefw_role='admin'
+uci add_list web.parentalblock.roles='admin'
+uci commit
+```
 
 ## Change DNS
 
@@ -152,6 +155,8 @@ If you want to use VoIP, the following is the quickest way to set it up and remo
 !!! warning
     This code will not work as is for some Gateway / Firmware combinations because their default configurations are different (eg [DJA0230](https://forums.whirlpool.net.au/thread/9vxxl849?p=204#r64998059)). Use:
     ```uci del_list mmpbx.@outgoing_map[*].priority='3' instead of '2'```
+!!! warning
+    You should _only_ apply these changes if you are experiencing a problem. Recent firmware does not suffer from the problems this code fixes.
 
 ```bash
 # Block 1

@@ -311,9 +311,17 @@ This is so far the easiest and more comfortable way of forcing bootfail, but you
 
 You can read the [SysRq](https://en.wikipedia.org/wiki/Magic_SysRq_key) commands theory and their magic keys from Wikipedia. In short, you connect the serial console, wait for _"Starting the Linux kernel"_ message to appear and immediately press `Ctrl+Break` followed by `b+Enter` on your keyboard. This would cause the kernel to fail and trigger the next boot attempt. Repeat this thrice in a row and you will see it finally try booting from the inactive bank.
 
-#### Timed button action
+#### Timed reset button action
 
-This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded. Timing for different gateways may vary.
+This method tries force a bootfail through the hardware reset button. The technique tries to cause an abnormal reset process by depressing the reset button in a non-conventional or unexpected manner. 
+
+Hardware reset normally requires the reset button to be depressed for a period of time and then released, after which the modem is left to go through its reset process. The bootfail technique tries to cause a failure by subsequently depressing the reset button in a particular sequence, which could consist of multiple presses of varying time periods. This bootfail technique is dependent on the hardware implementation of the modem and is independent of the firmware that may be installed. As a result, different model modems are likely to require different sequences to cause a bootfail. Once a bootfail technique is discovered the technique is replicated two more times so that three successive bootfails occur, which triggers the bank switch.
+
+The following provides two examples of different model modems:
+
+*DJN2130 Telstra Frontier Gateway*
+
+This is the button pressing sequence for the DJN2130 Telstra Frontier Gateway with `v17.2.0261-820-RA` loaded. 
 
 The sequence is (Minutes:Seconds):
 
@@ -329,6 +337,22 @@ The sequence is (Minutes:Seconds):
 | 7    | 00:50  | 03:32 | Press reset
 | 8    | 00:11  | 03:43 | Release
 | 9    | 06:00  |   -   | Browse to 192.168.0.1 and confirm firmware version
+
+*DJA0231 Telstra Smart Modem Gen 2*
+
+This is the button pressing sequence for the DJA0231 Telstra Smart Modem Gen2. It has proven successful with various firmwares including `20.3.c.0432-MR21.1-RA` which is not vulnerable to `tch-exploit`. 
+
+1. Start with normal factory reset process using the reset button.
+2. Watch the front light which should soon become bright white. 
+3. When the front white light dims:
+	1. Hold the reset button for 10sec.
+	2. Release and hold the reset button back down for another 10sec.
+	3. Keep repeating step _3.ii_ above until the front light becomes bright white again at which point release the reset button completely.
+4. Keep watching the front white light. When it dims again repeat all of step _3_ (second time).
+5. Keep watching the front white light. When it dims again repeat all of step _3_ (third/last time).
+6. Leave modem to fully boot.
+
+This method is shown in [this video](https://www.youtube.com/watch?v=qnQ0kfh2Hzs).
 
 #### Crazy Power switching
 
@@ -347,6 +371,16 @@ This works the same as the above *Crazy Power Switching*, but uses some hardware
 You only use the middle and outside poles and you split the positive cable to the middle pole from the power supply then the outside right pole looking down at the 3 poles from the knob side to the plug going to the Gateway.
 
 Once powered on around 10-15 seconds into the boot cycle you want to turn it around 1/3 turn and just a little more and wait for the led to flash blue then turn it back up and do this 3 times then it will boot on other bank.
+
+#### CNC DC DC Buck Boost Regulated Power Supply
+
+This is similar to the Potentiometer approach above, but it is easy to monitor progress just by watching the current display on the power supply. When it hits the current limit the PSU momentarily switches to CC mode, the voltage drops and the boot fails, shown by the current reverting to 0.29A as the cycle starts again. 
+
+As with other bootfail methods, you count 3 fails and then allow it to boot normally – in this case by raising the settings to 12V, 2+A.
+
+![Buck](images/buck_bankswitch.jpg)
+
+(Source: [Whirlpool](https://whrl.pl/RgwRgI))
 
 #### Automatic monitoring of serial console
 
