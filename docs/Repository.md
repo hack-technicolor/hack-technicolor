@@ -119,6 +119,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version           | Timestamp  | Root Strategy | Mirror |
 |:------:|:----------------- |:-----------|:--------------|:-------|
+| 2 😁   | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361002closed.rbi)* |
 | 2 😁   | 15.51.6436        | 2016-03-21 | #A            | [HTTP](http://131.116.22.230/15516436o1361004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361004closed.rbi.torrent?raw=true) |
 | 2 😁   | 15.51.6436        | 2016-05-24 | #A            | [HTTP](http://131.116.22.230/15516436o1361005closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/15516436o1361005closed.rbi.torrent?raw=true) |
 | 2 😁   | 16.2.7732         | 2017-05-02 | #A            | [HTTP](http://131.116.22.230/1627732o2221004closed.rbi)* - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vdnt-o/1627732o2221004closed.rbi.torrent?raw=true) |
@@ -309,6 +310,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:-------------------|:-----------|:--------------|:-------|
 | 2 😁   | 18.3.0157-ver3.2.1 | 2018-11-22 | #A            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vbnt-1/iinet-vbnt-1_18.3.0157-ver3.2.1-CRF905-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 | 2 😁   | 18.3.0442-ver3.4.1 | 2019-11-14 | #A            | [FTP](ftp://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [HTTP](http://ftp.iinet.net.au/pub/internode-support/hardware/tg789/firmware/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vbnt-1/vbnt-1_18.3.0442-ver3.4.1-CRF981-3141011.rbi.torrent?raw=true) |
+
+## DGA4330TS / VBNT-7
+
+### Telia
+
+| Type   | Version           | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------|:-----------|:--------------|:-------|
+| 3 😁   | 18.30.710         | 2021-02-18 | -             | [HTTPS](https://rgw.teliacompany.com:7547/1830710-7-2981008.rbi) |
+
 
 ## TG789vac Xtream 35b / VBNT-F
 
