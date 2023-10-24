@@ -67,10 +67,10 @@ option CONF_VERSION 'CRF483'
 You can also run
 
 ```bash
-strings /etc/cwmpd.db
+strings /overlay/bank_1/etc/cwmpd.db /overlay/bank_2/etc/cwmpd.db
 ```
 
-or use sqlite (yields a more direct result, but since technicolor don't ship sqlite binary you'll have to copy /etc/cwmpd.db to another machine)
+or use sqlite (yields a more direct result, but since technicolor doesn't ship sqlite binary you'll have to copy cwmpd.db to another machine)
 
 ```bash
 sqlite3 cwmpd.db "select value from tidkv where key = 'URL';"
