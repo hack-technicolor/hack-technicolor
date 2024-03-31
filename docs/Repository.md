@@ -67,14 +67,9 @@ option CONF_VERSION 'CRF483'
 You can also run
 
 ```bash
-strings /overlay/bank_1/etc/cwmpd.db /overlay/bank_2/etc/cwmpd.db
+strings /etc/cwmpd.db
 ```
 
-or use sqlite (yields a more direct result, but since technicolor doesn't ship sqlite binary you'll have to copy cwmpd.db to another machine)
-
-```bash
-sqlite3 cwmpd.db "select value from tidkv where key = 'URL';"
-```
 Which may yield some firmware URL's your Gateway received as automatic update.
 
 ### Make a raw device dump
@@ -649,8 +644,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21-RA/vcnt-a_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21.1-RA | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21.1-RA/vcnt-a_20.3.c.0432-MR21.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21.1-RA.rbi.torrent?raw=true) |
-| 3 🙄   | 20.3.c.0501-MR22-RC | 2023-04-11 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
-| 3 🙄   | 20.3.c.0501-MR22.1-RA | 2023-06-28 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22.1-RA/vcnt-a_20.3.c.0501-MR22.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22.1-RA.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0501-MR22-RC | 2024-04-11 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
 
 ## DGA2231 / VCNT-C
 
@@ -751,3 +745,4 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 3 🙄   | 20.4.0428-MR1-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4.428-2-3-MR1-RA/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb.torrent?raw=true) |
 | 3 🙄   | 21.4.0372-MR2-RA | 2023-02-04 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4-372-2-i4-MR2-RA/vcnt-8_telstra_21.4-372-2-i4-MR2-RA-signed-bcmVCNT-8_nand_squashfs_update.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra_21.4-372-2-i4-MR2-RA-signed-bcmVCNT-8_nand_squashfs_update.pkgtb.torrent?raw=true) |
 | 3 🙄   | 21.4.0439-MR2.1-RA | 2023-07-04 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4.0439-MR2.1-RA/vcnt-8_telstra_21.4-439-2-i2-signed-21.4.0439-MR2.1-RA.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra_21.4-439-2-i2-signed-21.4.0439-MR2.1-RA.pkgtb.torrent?raw=true) |
+| 3 🙄   | 21.4.0500-MR3-RB | 2023-12-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4.0500-MR3-RB/vcnt-8_telstra%4021.4-500-2-i3-signed-VCNT-8_21.4.0500-MR3-RB.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra%4021.4-500-2-i3-signed-VCNT-8_21.4.0500-MR3-RB.pkgtb.torrent?raw=true) |
