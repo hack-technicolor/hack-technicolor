@@ -67,9 +67,14 @@ option CONF_VERSION 'CRF483'
 You can also run
 
 ```bash
-strings /etc/cwmpd.db
+strings /overlay/bank_1/etc/cwmpd.db /overlay/bank_2/etc/cwmpd.db
 ```
 
+or use sqlite (yields a more direct result, but since technicolor doesn't ship sqlite binary you'll have to copy cwmpd.db to another machine)
+
+```bash
+sqlite3 cwmpd.db "select value from tidkv where key = 'URL';"
+```
 Which may yield some firmware URL's your Gateway received as automatic update.
 
 ### Make a raw device dump
@@ -644,7 +649,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 2 😁   | 20.3.c.0389-MR20-RA  | 2021-11-10 | #C            | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0389-MR20-RA/vcnt-a_20.3.c.0389-MR20-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0389-MR20-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21-RA/vcnt-a_20.3.c.0432-MR21-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21-RA.rbi.torrent?raw=true) |
 | 3 🙄   | 20.3.c.0432-MR21.1-RA | 2022-10-13 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0432-MR21.1-RA/vcnt-a_20.3.c.0432-MR21.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0432-MR21.1-RA.rbi.torrent?raw=true) |
-| 3 🙄   | 20.3.c.0501-MR22-RC | 2024-04-11 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0501-MR22-RC | 2023-04-11 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22-RC/vcnt-a_20.3.c.0501-MR22-RC.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22-RC.rbi.torrent?raw=true) |
+| 3 🙄   | 20.3.c.0501-MR22.1-RA | 2023-06-28 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-a_20.3.c.0501-MR22.1-RA/vcnt-a_20.3.c.0501-MR22.1-RA.rbi) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-a/vcnt-a_20.3.c.0501-MR22.1-RA.rbi.torrent?raw=true) |
 
 ## DGA2231 / VCNT-C
 
