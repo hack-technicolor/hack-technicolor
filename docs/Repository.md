@@ -586,7 +586,7 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
-| 2 😁   | 19.4.0447               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 19.4.0477               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
 ## DJA0230 / VBNT-V
 
