@@ -588,6 +588,14 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 |:------:|:------------------------|:-----------|:--------------|:-------|
 | 2 😁   | 19.4.0477               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
 
+### Sorgenia
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| ??? 🤔 | 19.4.0629               | 2021-10-13 | -             | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/sorgenia-vcnt-j_19.4.0629-5661048-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 19.4.0629               | 2022-05-03 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/sorgenia-vcnt-j_19.4.0629-5661052-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
+
 ## DJA0230 / VBNT-V
 
 ### Telstra - Smart Modem (Gen1)
