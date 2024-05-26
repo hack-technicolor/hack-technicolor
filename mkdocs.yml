@@ -1,9 +1,9 @@
 site_name: Hacking Technicolor Gateways
 site_url: https://hack-technicolor.rtfd.io
 site_description: >-
-  Most of Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down
+  Most Technicolor Gateways run customized firmware implementing ISP-specific integrations and get locked down
   in functionality to match service requirements. This kind of sucks because if you decide to use this device with
-  a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That ia the
+  a different ISP, you are likely to be blocked from doing that, or simply lose some functionality. That is the
   motivation to hack the device and at least re-enable as many features as possible.
 
 repo_name: hack-technicolor

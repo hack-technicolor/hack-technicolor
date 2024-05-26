@@ -67,9 +67,14 @@ option CONF_VERSION 'CRF483'
 You can also run
 
 ```bash
-strings /etc/cwmpd.db
+strings /overlay/bank_1/etc/cwmpd.db /overlay/bank_2/etc/cwmpd.db
 ```
 
+or use sqlite (yields a more direct result, but since technicolor doesn't ship sqlite binary you'll have to copy cwmpd.db to another machine)
+
+```bash
+sqlite3 cwmpd.db "select value from tidkv where key = 'URL';"
+```
 Which may yield some firmware URL's your Gateway received as automatic update.
 
 ### Make a raw device dump
@@ -583,12 +588,12 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ??? 🤔 | 19.4.0666          | 2021-08-13 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.2_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.2_CLOSED.rbi.torrent?raw=true) |
 | ??? 🤔 | 19.4.0725          | 2021-09-27 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.3_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.3_001_CLOSED.rbi.torrent?raw=true) |
 | ??? 🤔 | 19.4.0725          | 2021-11-03 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.3_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.3_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0804          | 2021-12-03 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.4_001_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0866          | 2022-03-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.4_002_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0866          | 2022-03-11 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.4_003_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0866          | 2022-03-29 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.4_004_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0866          | 2022-04-26 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.4_CLOSED.rbi.torrent?raw=true) |
-| ??? 🤔 | 19.4.0969          | 2022-07-18 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.5_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-k/AGTHP_2.3.5_001_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0804          | 2021-12-03 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.4_001_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0866          | 2022-03-01 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_002_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.4_002_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0866          | 2022-03-11 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_003_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.4_003_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0866          | 2022-03-29 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_004_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.4_004_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0866          | 2022-04-26 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.4_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.4_CLOSED.rbi.torrent?raw=true) |
+| ??? 🤔 | 19.4.0969          | 2022-07-18 | -             | [HTTP](https://fw.regman-tl.interbusiness.it:11443/Firmware/TR069/AGThomson/AGTHP_2.3.5_001_CLOSED.rbi)* - [Torrent](https://github.com/kevdagoat/hack-technicolor/blob/master/torrents/vbnt-s/AGTHP_2.3.5_001_CLOSED.rbi.torrent?raw=true) |
 
 > *\* requires access to ISP's network and download password*
 
@@ -598,7 +603,15 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 
 | Type   | Version                 | Timestamp  | Root Strategy | Mirror |
 |:------:|:------------------------|:-----------|:--------------|:-------|
-| 2 😁   | 19.4.0447               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 19.4.0477               | 2021-05-25 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/mst-vcnt-j_19.4.0477-4381031-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
+### Sorgenia
+
+| Type   | Version                 | Timestamp  | Root Strategy | Mirror |
+|:------:|:------------------------|:-----------|:--------------|:-------|
+| ??? 🤔 | 19.4.0629               | 2021-10-13 | -             | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/sorgenia-vcnt-j_19.4.0629-5661048-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+| 2 😁   | 19.4.0629               | 2022-05-03 | #C            | [HTTPS](https://github.com/hack-technicolor/tch-bank-dumps/raw/master/vcnt-j/sorgenia-vcnt-j_19.4.0629-5661052-bank_dump.xz) - *note: this **IS NOT** an RBI firmware, it is a raw bank dump, you can't use with TFTP or regular firmware upgrade tools* |
+
 
 ## DJA0230 / VBNT-V
 
@@ -763,3 +776,4 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | 3 🙄   | 20.4.0428-MR1-RA | 2022-03-15 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_20.4.428-2-3-MR1-RA/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/bcmVCNT-8_nand_squashfs_update-20.4.428-2-3-MR1-RA-signed.pkgtb.torrent?raw=true) |
 | 3 🙄   | 21.4.0372-MR2-RA | 2023-02-04 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4-372-2-i4-MR2-RA/vcnt-8_telstra_21.4-372-2-i4-MR2-RA-signed-bcmVCNT-8_nand_squashfs_update.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra_21.4-372-2-i4-MR2-RA-signed-bcmVCNT-8_nand_squashfs_update.pkgtb.torrent?raw=true) |
 | 3 🙄   | 21.4.0439-MR2.1-RA | 2023-07-04 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4.0439-MR2.1-RA/vcnt-8_telstra_21.4-439-2-i2-signed-21.4.0439-MR2.1-RA.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra_21.4-439-2-i2-signed-21.4.0439-MR2.1-RA.pkgtb.torrent?raw=true) |
+| 3 🙄   | 21.4.0500-MR3-RB | 2023-12-20 | -             | [HTTP](http://fwstore.bdms.telstra.net/Technicolor_vcnt-8_21.4.0500-MR3-RB/vcnt-8_telstra%4021.4-500-2-i3-signed-VCNT-8_21.4.0500-MR3-RB.pkgtb) - [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/vcnt-8/vcnt-8_telstra%4021.4-500-2-i3-signed-VCNT-8_21.4.0500-MR3-RB.pkgtb.torrent?raw=true) |
