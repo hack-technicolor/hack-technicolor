@@ -36,7 +36,6 @@ Because this GUI modification is limited to Telstra branded devices, there are v
 [This](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#readme) Github repository contains many utility scripts to simplify maintenance and add features to Technicolor devices.
 
 The script names are self-explanatory in most cases:
-- [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns)
 - [mtd-backup](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-backup)
 - [mtd-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#mtd-restore)
 - [overlay-restore](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#overlay-restore)
@@ -58,7 +57,7 @@ Your device must have either an armv7l or aarch64 processor (check the output of
 
 The installation will take between 40Mb and 80Mb of storage, excluding logs. However, the install scripts do allow installation on an attached external USB device. 
 
-The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP. By default (but optionally), it also installs and configures [hijack-dns](https://github.com/seud0nym/tch-gui-unhide/tree/master/utilities#hijack-dns) to ensure that no devices on the LAN can bypass the defined DNS server.
+The installation [script](https://github.com/seud0nym/tch-gui-unhide/tree/master/supplemental/adguard#readme) has options for various deployment scenarios such as internal vs external storage, and retaining dnsmasq/odhcp for DHCP.
 
 ### EasyMesh
 
