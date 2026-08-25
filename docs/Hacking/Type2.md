@@ -14,6 +14,7 @@ Every `Type 2` firmware can be rooted directly by some known rooting strategy. L
  | #C         | tch-exploit         | [external link](https://github.com/BoLaMN/tch-exploit) ([download](https://github.com/BoLaMN/tch-exploit/releases)) |
  | #D         | clash escaping      | [external link (ita)](https://www.ilpuntotecnico.com/forum/index.php/topic,77981.msg246548.html#msg246548) |
  | #E         | Stock samba hack    | [external link](https://github.com/full-disclosure/FDEU-CVE-2020-1FC5) |
+ | #F         | Ping diagnostics command injection (GDNT-S) | [external link](https://github.com/hack-technicolor/hack-technicolor/issues/363) ([toolkit](https://github.com/VulcanusALex/nexxt-one-toolkit)) |
 
 Once you finished running through any of the above guides, and you got your SSH client connected into a root shell come back here and continue reading [Final Type 2 steps](#final-type-2-steps) below.
 
