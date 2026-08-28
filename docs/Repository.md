@@ -18,6 +18,8 @@ Other branding codes you could see worldwide:
 | TIS  | Tiscali      | Italy             |
 | TI   | TIM          | Italy             |
 | TN   | Telenor      | Sweden            |
+| TN   | Telenor      | Sweden            |
+| NKL  | Giganet, UW) | UK                |
 
 Type 1/2/3 indicates if it can be rooted directly. For Type 2 only, Root Strategy # indicates how to do it. Please, **don't miss these important details** whenever you add a new firmware version to this page if you know about that.
 
