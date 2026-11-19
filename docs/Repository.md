@@ -807,7 +807,8 @@ A basic ADSL only BCM6362 based gateway. Very useful as SIP ATA.
 | ??? 🤔 | 22.2.0378_FW_051   | 2024-02-26 | -             | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gdnt-s/22.2.0378_FW_051_FGA221D.pkgtb.torrent?raw=true) |
 | ??? 🤔 | 22.2.0378_FW_053   | 2024-05-15 | -             | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gdnt-s/22.2.0378_FW_053_FGA221D.pkgtb.torrent?raw=true) |
 | 2 😁   | 22.2.0378_FW_055   | 2024-07-29 | -             | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gdnt-s/22.2.0378_FW_055_FGA221D.pkgtb.torrent?raw=true) |
-| ??? 🤔 | 22.2.0378_FW_056   | 2025-01-09 | -             | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gdnt-s/22.2.0378_FW_056_FGA221D.pkgtb.torrent?raw=true) |
+| 2 😁   | 22.2.0378_FW_056   | 2025-01-09 | #F            | [Torrent](https://github.com/hack-technicolor/hack-technicolor/blob/master/torrents/gdnt-s/22.2.0378_FW_056_FGA221D.pkgtb.torrent?raw=true) |
+| 2 😁   | 22.2.0378_FW_058   | 2026-05-15 | #F            | - |
 
 
 ## FGA2233 / GCNT-R
